@@ -1,7 +1,7 @@
 {
-  "name": "vfa17",
+  "name": "VFA17",
   "version": "1.0.0",
-  "description": "vfa17",
+  "description": "Final project for our first year at Gobelins",
   "main": "static/bundle.js",
   "scripts": {
     "start": "webpack-dev-server"
@@ -9,16 +9,21 @@
   "authors": [
     {
       "name": "Arnaud Rocca",
-      "url": "http://arnaudrocca.fr/",
+      "url": "http://arnaudrocca.fr",
       "mail": "arnaud.rocca@gmail.com"
     },
     {
       "name": "Yann Kubacki",
-      "url": "http://yannkubacki.fr/",
+      "url": "http://yannkubacki.fr",
       "mail": "kubackiyann@gmail.com"
     }
   ],
   "license": "ISC",
+  "repository": {
+   "type": "git",
+   "url": "https://github.com/ArnaudRocca/VFA17.git"
+  },
+  "homepage": "https://github.com/ArnaudRocca/VFA17",
   "dependencies": {
     "flux": "^2.1.1",
     "gsap": "^1.18.2",
