@@ -3,12 +3,12 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: [
-        "./src/scripts/main.js",
-        "./src/styles/main.styl"
+        './src/scripts/main.js',
+        './src/styles/main.styl'
     ],
     output: {
         path: './static',
-        filename: "bundle.js",
+        filename: 'bundle.js',
         publicPath: '/'
     },
     devServer: {
