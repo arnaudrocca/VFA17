@@ -60,11 +60,30 @@
 			right -0.1rem
 			transform-origin 0 100%
 		
+		.wireframe-side__trapezoid
+			position absolute
+			top 2rem
+			left 50%
+			transform scale(-1) translateX(50%)
+		
 	&--right 
 		right 0
 		&:after
 			left 0
 			top 2.9rem
+			
+		.wireframe-side__trapezoid
+			position absolute
+			top 50%
+			right 2rem
+			transform-origin 100% 100%
+			transform rotate(-90deg) translateX(50%)
+			
+		.wireframe-side__arrow
+			top -0.1rem
+			right 1.9rem
+			border-top 1.5rem solid $white
+			border-left 1.5rem solid transparent
 		
 	&--bottom 
 		bottom 0
@@ -76,10 +95,39 @@
 			bottom 0.7rem
 			left -0.1rem
 			transform-origin 100% 0
+			
+		.wireframe-side__trapezoid
+			position absolute
+			bottom 2rem
+			left 50%
+			transform translateX(-50%)
 
 	&--left 
 		left 0
 		&:after
 			right 0
 			bottom 2.9rem
+			
+		.wireframe-side__trapezoid
+			position absolute
+			top 50%
+			left 2rem
+			transform-origin 0 100%
+			transform rotate(90deg) translateX(-50%)
+			
+	&__trapezoid
+		display block
+		width 10rem
+		height 0
+		border-bottom 0.6rem solid $white
+		border-left 0.6rem solid transparent
+		border-right 0.6rem solid transparent
+		
+	&__arrow
+		display block
+		position absolute
+		width 0
+		height 0
+		
+		
 			

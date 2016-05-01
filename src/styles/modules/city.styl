@@ -1,0 +1,27 @@
+.city
+	position fixed
+	top 2rem
+	left 2rem
+	z-index 10
+	
+	&__panel
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 25.5rem
+		height 5.5rem
+		padding-left 2rem
+		background linear-gradient(315deg, transparent 1.1em, $white 0) bottom right //little trick to get the cutted corner
+		
+	&__name
+		font-size 1.6rem
+		text-transform uppercase
+		font-family $font-heading
+		color $blue-dark
+		
+	&__result
+		width 16.5rem
+		height 5rem
+		background linear-gradient(315deg, transparent 0.9em, rgba($grey-lighter, 0.5) 0) bottom right 
+		

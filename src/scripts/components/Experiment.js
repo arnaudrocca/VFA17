@@ -14,16 +14,25 @@ class Experiment extends React.Component {
 
 	}
 
+	// <div className="mess">
+				// 	<RemainingContainer />
+				// 	<MainMenuContainer />
+				// 	<ScoreContainer />
+				// 	<MayorContainer />
+				// </div>
+
 	render() {
 
 		return (
 			<div>
-				<div className="mess">
-					<RemainingContainer />
-					<MainMenuContainer />
-					<ScoreContainer />
-					<MayorContainer />
+				<div className="city">
+					<div className="city__panel">
+						<span className="city__name">Ayaux-les-Bains</span>
+					</div>
+					<div className="city__result">
+					</div>
 				</div>
+				
 				<MapContainer />
 				{this.props.children}
 			</div>
