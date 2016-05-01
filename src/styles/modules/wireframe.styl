@@ -1,0 +1,83 @@
+// #core
+// 	&:hover
+// 		.wireframe-side--top, .wireframe-side--bottom
+// 			&:after
+// 				transition all 0.3s ease-out
+// 				width calc(100% - 3.8rem);
+// 		.wireframe-side--left, .wireframe-side--right
+// 			&:after
+// 				transition all 0.3s ease-out
+// 				height calc(100% - 3.8rem);
+
+.wireframe-side
+	position fixed
+	z-index 10
+	pointer-events none
+	
+	&:after
+		content ''
+		position absolute
+		display block
+		background $white
+				
+	&--top, &--bottom
+		left 2rem
+		height 2rem
+		width calc(100vw - 4rem)
+		
+		&:after
+			width calc(100% - 2.8rem)
+			height 0.1rem
+		
+		&:before
+			content ''
+			position absolute
+			display block
+			height 4.24264068712rem
+			width 0.1rem
+			background $white
+			transform rotate(-45deg)
+	
+			
+	&--left, &--right
+		top 2rem
+		height calc(100vh - 4rem)
+		width 2rem
+		
+		&:after
+			width 0.1rem
+			height calc(100% - 2.8rem)
+	
+	&--top 
+		top 0
+		right 2.9rem	
+		&:after
+			bottom 0
+			
+		&:before
+			top 0.7rem;
+			right -0.1rem
+			transform-origin 0 100%
+		
+	&--right 
+		right 0
+		&:after
+			left 0
+			top 2.8rem
+		
+	&--bottom 
+		bottom 0
+		&:after
+			top 0
+			left 2.9rem
+			
+		&:before
+			bottom 0.7rem
+			left -0.1rem
+			transform-origin 100% 0
+
+	&--left 
+		left 0
+		&:after
+			right 0
+			
