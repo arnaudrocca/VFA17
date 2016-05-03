@@ -13,6 +13,7 @@
 	position fixed
 	z-index 10
 	pointer-events none
+	backdrop-filter blur(10px)
 	
 	&:after
 		content ''
@@ -56,7 +57,7 @@
 			right 2.9rem
 			
 		&:before
-			top 0.7rem;
+			top 0.7rem
 			right -0.1rem
 			transform-origin 0 100%
 		
@@ -82,8 +83,6 @@
 		.wireframe-side__arrow
 			top -0.1rem
 			right 1.9rem
-			border-top 1.5rem solid $white
-			border-left 1.5rem solid transparent
 		
 	&--bottom 
 		bottom 0
@@ -115,6 +114,11 @@
 			transform-origin 0 100%
 			transform rotate(90deg) translateX(-50%)
 			
+		.wireframe-side__arrow
+			bottom 0rem
+			left 1.9rem
+			transform rotate(180deg)
+			
 	&__trapezoid
 		display block
 		width 10rem
@@ -126,8 +130,7 @@
 	&__arrow
 		display block
 		position absolute
-		width 0
-		height 0
+		fill $white
 		
 		
 			

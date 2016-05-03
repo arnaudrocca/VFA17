@@ -1,0 +1,38 @@
+.toolbar
+	position fixed
+	bottom 2rem
+	right 3.2rem
+	display flexbox
+	flex-direction row
+	justify-content space-between
+	
+	&__btn 
+		padding 1.2rem 1.2rem 0 1.2rem
+		text-align center
+		font-size 1.2rem
+		font-family $font-cooper-bold
+		text-transform uppercase
+		color $white
+		
+		&:after
+			content ''
+			display block
+			width 100%
+			height 0
+			margin-top 0.8rem
+			margin-left -0.3rem
+			border-bottom 0.3rem solid rgba($grey-lighter,0.8)
+			border-left 0.3rem solid transparent
+			border-right 0.3rem solid transparent
+			transition transform, border 0.15s ease-out
+			
+		> span 
+			display block
+			transition transform 0.15s ease-out
+			
+		&:hover
+			> span
+				transform translateY(-0.3rem)
+			
+			&:after
+				border-bottom-color $white
