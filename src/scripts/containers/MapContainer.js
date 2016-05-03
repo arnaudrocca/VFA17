@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 }
 
-const mapContainer = connect(
+const MapContainer = connect(
 	mapStateToProps
 )(Map)
 
-export default mapContainer
+export default MapContainer

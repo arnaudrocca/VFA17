@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 }
 
-const remainingContainer = connect(
+const RemainingContainer = connect(
 	mapStateToProps
 )(Remaining)
 
-export default remainingContainer
+export default RemainingContainer

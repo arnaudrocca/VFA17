@@ -1,6 +1,5 @@
 import 'gsap'
 import 'Draggable'
-// import 'CSSPlugin'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -13,7 +12,7 @@ import App from './components/App'
 import Home from './components/Home'
 import Video from './components/Video'
 import Experiment from './components/Experiment'
-import Choice from './containers/ChoiceContainer'
+import Choice from './containers/choiceContainer'
 import ChoiceContext from './components/ChoiceContext'
 import ChoiceInteraction from './components/ChoiceInteraction'
 

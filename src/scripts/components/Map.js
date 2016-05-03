@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import MapComponent from './MapComponent'
-import HotpointsContainer from '../containers/HotpointsContainer'
+import hotpointsContainer from '../containers/hotpointsContainer'
 
 class Map extends React.Component {
 
@@ -90,7 +90,7 @@ class Map extends React.Component {
 						transitionAppear={true} transitionAppearTimeout={600} transitionEnterTimeout={600} transitionLeaveTimeout={600}>
 						{mapItems}
 					</ReactCSSTransitionGroup>
-					<HotpointsContainer />
+					<hotpointsContainer />
 				</svg>
 			</div>
 		)

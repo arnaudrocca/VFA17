@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 }
 
-const mainMenuContainer = connect(
+const MainMenuContainer = connect(
 	mapStateToProps
 )(MainMenu)
 
-export default mainMenuContainer
+export default MainMenuContainer

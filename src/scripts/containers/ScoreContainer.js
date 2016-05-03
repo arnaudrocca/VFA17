@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 }
 
-const scoreContainer = connect(
+const ScoreContainer = connect(
 	mapStateToProps
 )(Score)
 
-export default scoreContainer
+export default ScoreContainer

@@ -21,9 +21,9 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-const choiceContainer = connect(
+const ChoiceContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(Choices)
 
-export default choiceContainer
+export default ChoiceContainer
