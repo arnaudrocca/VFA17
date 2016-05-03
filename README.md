@@ -4,7 +4,7 @@
 It consists in an interactive experiment where the user has to improve the environnemental state of a fake city by changing its past. 
 Concretely the user must make differents choices for the city through interactives experiments and can see the consequences of his choices by exploring the city wich takes the form of an isometric SVG.
 
-#### Technologies
+#### Technologies :
 
  - HTLM5 / CSS3
  - ES6 - Babel
