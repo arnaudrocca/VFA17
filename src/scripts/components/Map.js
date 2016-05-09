@@ -20,10 +20,12 @@ class Map extends React.Component {
 		this.mapContainer = ReactDOM.findDOMNode(this.refs.mapContainer);
 		this.map = ReactDOM.findDOMNode(this.refs.map);
 
-		this.scale = 1;
-		this.scaleStep = .15;
-		this.scaleMin = .75;
+		this.scale = this.initScale = .6;
+		this.scaleStep = .1;
+		this.scaleMin = .5;
 		this.scaleMax = 4;
+
+		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
 
         Draggable.create('.map', {
             type: 'x, y',
@@ -42,8 +44,8 @@ class Map extends React.Component {
 
 	componentWillUpdate() {
 
-		this.scale = 1;
-		this.mapContainer.style.transform = `scale(1)`;
+		this.scale = this.initScale;
+		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
 		this.map.style.transform = 'translate3d(0px, 0px, 0px)';
 
 	}
@@ -65,8 +67,8 @@ class Map extends React.Component {
 		const originX = 100 * event.clientX / this.windowWidth;
 		const originY = 100 * event.clientY / this.windowHeight;
 
-		this.mapContainer.style.transform = `scale(${this.scale})`;
-        this.mapContainer.style.transformOrigin = `${originX}% ${originY}%`;
+		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
+        this.mapContainer.style.transformOrigin = `${originX}% ${originY}% 1`;
 
 	}
 
@@ -80,18 +82,19 @@ class Map extends React.Component {
 		});
 
 		return (
-			<div className="mapContainer" ref="mapContainer">
-				<svg className="map" ref="map" x="0px" y="0px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768"
-                onWheel={this.scaleHandler.bind(this)}>
-					<g>
-						<polygon fill="#444444" points="510.9,155.7 20.6,442.8 510.9,724 1003.1,439.8"/>
-					</g>
-					<ReactCSSTransitionGroup className="mapItems" transitionName="mapItems"  component="g"
+			<div className="mapContainer" ref="mapContainer" onWheel={this.scaleHandler.bind(this)}>
+				<div className="map" ref="map">
+					<svg x="0px" y="0px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768">
+						<g>
+							<polygon fill="#444444" points="510.9,155.7 20.6,442.8 510.9,724 1003.1,439.8"/>
+						</g>
+					</svg>
+					<ReactCSSTransitionGroup className="mapItems" transitionName="mapItems" component="div"
 						transitionAppear={true} transitionAppearTimeout={600} transitionEnterTimeout={600} transitionLeaveTimeout={600}>
 						{mapItems}
 					</ReactCSSTransitionGroup>
 					<hotpointsContainer />
-				</svg>
+				</div>
 			</div>
 		)
 	}
