@@ -20,8 +20,20 @@
 		font-family $font-cooper-heavy
 		color $blue-dark
 		
+	&__shield
+		margin-right 2rem
+		
 	&__result
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
 		width 16.5rem
 		height 5rem
+		padding-left 2rem
 		background linear-gradient(315deg, transparent 0.9em, rgba($grey-lighter, 0.5) 0) bottom right 
+		
+		> svg
+			& + svg
+				margin-left 0.8rem
 		

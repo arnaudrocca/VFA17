@@ -5,6 +5,8 @@ import MainMenuContainer from '../containers/mainMenuContainer'
 import MapContainer from '../containers/mapContainer'
 import ScoreContainer from '../containers/scoreContainer'
 import MayorContainer from '../containers/mayorContainer'
+import IconFlower from './svg/icon-flower'
+import IconShield from './svg/icon-shield'
 
 class Experiment extends React.Component {
 
@@ -33,10 +35,19 @@ class Experiment extends React.Component {
 				</div>
 				<div className="city">
 					<div className="city__panel">
+						<IconShield width="25" classes="city__shield"/>
 						<span className="city__name">Ayaux-les-Bains</span>
 					</div>
 					<div className="city__result">
+						<IconFlower width="17" color="#FF5951"/>
+						<IconFlower width="17" color="#FF5951"/>
+						<IconFlower width="17" color="#d7d9df"/>
+						<IconFlower width="17" color="#d7d9df"/>
+						<IconFlower width="17" color="#d7d9df"/>
 					</div>
+				</div>
+
+				<div className="mayor">
 				</div>
 
 				<MapContainer />
