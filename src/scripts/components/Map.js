@@ -68,7 +68,7 @@ class Map extends React.Component {
 		const originY = 100 * event.clientY / this.windowHeight;
 
 		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
-        this.mapContainer.style.transformOrigin = `${originX}% ${originY}% 1`;
+        this.mapContainer.style.transformOrigin = `${originX}% ${originY}%`;
 
 	}
 
