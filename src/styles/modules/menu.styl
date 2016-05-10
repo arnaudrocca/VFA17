@@ -1,0 +1,37 @@
+.menu
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	z-index 10
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center
+	width 100%
+	height 100vh
+	background rgba($blue-darker,0.25)
+	
+	&__slice
+		position relative
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width calc((100% - 4rem) / 6)
+		height calc(100vh - 4rem)
+		
+		&:after
+			content ''
+			position absolute
+			top 0
+			right 0
+			height calc(100vh - 4rem)
+			width 0.1rem
+			background rgba($white,0.3)
+			
+		&:last-child
+			&:after
+				content none
+				

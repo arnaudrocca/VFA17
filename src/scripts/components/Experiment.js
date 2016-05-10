@@ -7,6 +7,7 @@ import ScoreContainer from '../containers/scoreContainer'
 import MayorContainer from '../containers/mayorContainer'
 import IconFlower from './svg/icon-flower'
 import IconShield from './svg/icon-shield'
+import IconDone from './svg/icon-done'
 
 class Experiment extends React.Component {
 
@@ -14,25 +15,19 @@ class Experiment extends React.Component {
 
 		super();
 
-	}
+		/*<div className="mess">
+			<RemainingContainer />
+			<MainMenuContainer />
+			<ScoreContainer />
+			<MayorContainer />
+		</div>*/
 
-	// <div className="mess">
-	// 	<RemainingContainer />
-	// 	<MainMenuContainer />
-	// 	<ScoreContainer />
-	// 	<MayorContainer />
-	// </div>
+	}
 
 	render() {
 
 		return (
-			<div>
-				<div className="mess">
-					<RemainingContainer />
-					<MainMenuContainer />
-					<ScoreContainer />
-					<MayorContainer />
-				</div>
+			<div className="experiment">
 				<div className="city">
 					<div className="city__panel">
 						<IconShield width="25" classes="city__shield"/>
@@ -49,6 +44,16 @@ class Experiment extends React.Component {
 
 				<div className="mayor">
 				</div>
+
+				<div className="menu">
+					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
+					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
+					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
+					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
+					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
+					<div className="menu__slice"></div>
+				</div>
+
 
 				<MapContainer />
 				{this.props.children}
