@@ -1,10 +1,9 @@
 import React from 'react'
-import IconSound from './svg/icon-sound'
-import IconScreen from './svg/icon-screen'
 import IconBorderTop from './svg/icon-border-top'
 import IconBorderRight from './svg/icon-border-right'
 import IconBorderBottom from './svg/icon-border-bottom'
 import IconBorderLeft from './svg/icon-border-left'
+import Toolbar from './Toolbar'
 
 class App extends React.Component {
 
@@ -38,12 +37,7 @@ class App extends React.Component {
 					</svg>
 				</div>
 				{this.props.children}
-
-				<div className="toolbar">
-					<button className="toolbar__btn"><span>Infos</span></button>
-					<button className="toolbar__btn"><span><IconSound width="18" color="#fff"/></span></button>
-					<button className="toolbar__btn"><span><IconScreen width="22" color="#fff"/></span></button>
-				</div>
+				<Toolbar />
 			</div>
 		)
 
