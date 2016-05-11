@@ -36,19 +36,32 @@
 				content none
 				
 	&__item
-		display flex
-		flex-direction column
-		justify-content center
-		align-items center
+		position relative
 				
 	&__label
-		margin-top 2.5rem
+		position absolute
+		top 10rem
+		right 0
+		left 0
+		text-align center
 		font-size 1.2rem
 		font-family $font-cooper-heavy
 		text-transform uppercase
 		letter-spacing 0.6px
+		color rgba($white,0.6)
+		antialiased()
+		
+	&__infos
+		position absolute
+		right 0
+		bottom 5.5rem
+		left 0
+		text-align center
+		font-size 1.4rem
+		font-family $font-pressura-regular
+		letter-spacing 0.2px
 		color $white
-		-webkit-font-smoothing antialiased
+		antialiased()
 
 		
 				
