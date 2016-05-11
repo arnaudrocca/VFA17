@@ -73,7 +73,7 @@ module.exports = {
             {
                 test: /\.styl$/,
                 exclude: /node_modules/,
-                loader: 'style!css!postcss!stylus'
+                loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus')
             },
             {
                 test: /\.json$/,
