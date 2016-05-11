@@ -2,5 +2,6 @@
 *.log*
 *.DS_Store
 
-/static/bundle.js
+/build
+
 state.js
