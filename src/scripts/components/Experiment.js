@@ -46,11 +46,34 @@ class Experiment extends React.Component {
 				</div>
 
 				<div className="menu">
-					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
-					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
-					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
-					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
-					<div className="menu__slice"><IconDone width="75" opacity="0.6" color="#ffffff"/></div>
+					<div className="menu__slice">
+						<div className="menu__item">
+							<IconDone width="75" opacity="0.6" color="#ffffff"/>
+							<span className="menu__label">Voyage 1</span>
+						</div>
+					</div>
+					<div className="menu__slice">
+						<div className="menu__item">
+							<IconDone width="75" opacity="0.6" color="#ffffff"/>
+							<span className="menu__label"></span>
+						</div>
+					</div>
+					<div className="menu__slice">
+						<div className="menu__item">
+							<IconDone width="75" opacity="0.6" color="#ffffff"/>
+							<span className="menu__label"></span>
+						</div>
+					</div>
+					<div className="menu__slice">
+						<div className="menu__item">
+							<IconDone width="75" opacity="0.6" color="#ffffff"/>
+						</div>
+					</div>
+					<div className="menu__slice">
+						<div className="menu__item">
+							<IconDone width="75" opacity="0.6" color="#ffffff"/>
+						</div>
+					</div>
 					<div className="menu__slice"></div>
 				</div>
 
