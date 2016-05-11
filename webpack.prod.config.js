@@ -1,6 +1,9 @@
 var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
@@ -11,7 +14,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
+        filename: '[name]-[hash].min.js',
         publicPath: '/'
     },
     devServer: {
@@ -42,12 +45,21 @@ module.exports = {
                 ignore: ['.DS_Store', '.keep']
             }
         ),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: true
+                // pure_funcs: ['console.log']
+            }
+        }),
+        new ExtractTextPlugin('[name]-[hash].min.css', { allChunks: true }),
+        new CleanWebpackPlugin(['build'], { root: __dirname }),
     ],
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
+                exclude: ['/node_modules/', '/ v/'],
                 loader: 'babel',
                 query: {
                     presets: ['es2015', 'react'],
@@ -80,7 +92,7 @@ module.exports = {
             precss,
             autoprefixer({
                 add: true,
-                remove: false
+                remove: true
             })
         ];
     }
