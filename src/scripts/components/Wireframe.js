@@ -20,22 +20,23 @@ class Wireframe extends React.Component {
 
 		const location = this.props.location.pathname.split('/')
 
-		console.log(location)
+		this.classes = 'wireframe'
 		this.drag = null
-		this.borderRight = <IconBorderRightArrow classes="wireframe-side__trapezoid wireframe-side__trapezoid--right" width="14" fill="#ffffff"/>
+		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#ffffff"/>
 
 		if(location[1] == 'experiment'){
 			this.drag = <div>
-							<span className="wireframe-side__timeline-connector"></span>
-							<IconDrag classes="wireframe-side__drag" width="70"/>
+							<span className="wireframe__timeline-connector"></span>
+							<IconDrag classes="wireframe__drag" width="70"/>
 						</div>
 		} else if(location[1] == ''){
+			this.classes += ' wireframe--home'
 			this.drag = <div>
-							<span className="wireframe-side__timeline-connector"></span>
-							<IconDragHome classes="wireframe-side__drag" width="70"/>
+							<span className="wireframe__timeline-connector"></span>
+							<IconDragHome classes="wireframe__drag" width="70"/>
 						</div>
 		} else {
-			this.borderRight = <IconBorderRight classes="wireframe-side__trapezoid wireframe-side__trapezoid--right" width="7" fill="#ffffff"/>
+			this.borderRight = <IconBorderRight classes="wireframe__trapezoid wireframe__trapezoid--right" width="7" fill="#ffffff"/>
 		}
 	}
 
@@ -45,21 +46,23 @@ class Wireframe extends React.Component {
 		this.getContent();
 
 		return (
-			<div className="wireframe">
-				<div className="wireframe-side wireframe-side--top">
-					<IconBorderTop classes="wireframe-side__trapezoid wireframe-side__trapezoid--top" width="100" fill="#ffffff"/>
+			<div className={this.classes}>
+				<div className="wireframe__side wireframe__side--top">
+					<span className="wireframe__line wireframe__line--top"></span>
+					<IconBorderTop classes="wireframe__trapezoid wireframe__trapezoid--top" width="100" fill="#ffffff"/>
 				</div>
-				<div className="wireframe-side wireframe-side--right">
+				<div className="wireframe__side wireframe__side--right">
 					{this.borderRight}
-					<IconCorner classes="wireframe-side__arrow" width="15" color="#ffffff"/>
+					<IconCorner classes="wireframe__arrow" width="15" color="#ffffff"/>
 					{this.drag}
 				</div>
-				<div className="wireframe-side wireframe-side--bottom">
-					<IconBorderBottom classes="wireframe-side__trapezoid wireframe-side__trapezoid--bottom" width="100" fill="#ffffff"/>
+				<div className="wireframe__side wireframe__side--bottom">
+					<span className="wireframe__line wireframe__line--bottom"></span>
+					<IconBorderBottom classes="wireframe__trapezoid wireframe__trapezoid--bottom" width="100" fill="#ffffff"/>
 				</div>
-				<div className="wireframe-side wireframe-side--left">
-					<IconBorderLeft classes="wireframe-side__trapezoid wireframe-side__trapezoid--left" width="7" fill="#ffffff"/>
-					<IconCorner classes="wireframe-side__arrow" width="15" color="#ffffff"/>
+				<div className="wireframe__side wireframe__side--left">
+					<IconBorderLeft classes="wireframe__trapezoid wireframe__trapezoid--left" width="7" fill="#ffffff"/>
+					<IconCorner classes="wireframe__arrow" width="15" color="#ffffff"/>
 				</div>
 			</div>
 		)

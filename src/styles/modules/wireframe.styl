@@ -1,109 +1,148 @@
-.wireframe-side
-	position fixed
-	z-index 100
-	pointer-events none
-	backdrop-filter blur(10px)
+.wireframe
 	
-	&:after
-		content ''
-		position absolute
-		display block
-		background $white
+	&--home
+		
+		.wireframe__line
+			position absolute
+			left 50%
+			display block
+			width 1px
+			height calc(30vh - 2rem)
+			background $white
+			
+			&:after
+				content ''
+				position absolute
+				display block
+				width 0.5rem
+				height 0.5rem
+				border-radius 50%
+				background $white
+				transform translateX(-0.2rem)
 				
-	&--top, &--bottom
-		left 2rem
-		height 2rem
-		width calc(100vw - 4rem)
+			&--top
+				top 2rem
+				
+				&:after
+					bottom 0
+				
+			&--bottom
+				bottom 2rem
+		
+		.wireframe__trapezoid--top
+			&:after
+				content ''
+				display block
+				width 1px
+				height calc(38vh - 2rem)
+				background $white
+	
+	&__side
+		position fixed
+		z-index 100
+		pointer-events none
+		backdrop-filter blur(10px)
 		
 		&:after
-			width calc(100% - 2.9rem)
-			height 0.1rem
-		
-		&:before
 			content ''
 			position absolute
 			display block
-			height 4.24264068712rem
-			width 0.1rem
 			background $white
-			transform rotate(-45deg)
-			
-		.wireframe-side__trapezoid
-			position absolute
-			left 50%
-			transform translateX(-50%)
-	
-			
-	&--left, &--right
-		top 2rem
-		height calc(100vh - 4rem)
-		width 2rem
-		
-		&:after
-			width 0.1rem
-			height calc(100% - 2.8rem)
-			
-		.wireframe-side__trapezoid
-			position absolute
-			top 50%
-			transform translateY(-50%)
-			
-	
-	&--top 
-		top 0	
-		&:after
-			bottom 0
-			right 2.9rem
-			
-		&:before
-			top 0.7rem
-			right -0.1rem
-			transform-origin 0 100%
-			
-		.wireframe-side__trapezoid
-			top 2rem
-		
-	&--right 
-		right 0
-		&:after
-			left 0
-			top 2.9rem	
-			
-		.wireframe-side__arrow
-			top -0.1rem
-			right 1.9rem
-			
-		.wireframe-side__trapezoid
-			right 2rem
-		
-	&--bottom 
-		bottom 0
-		&:after
-			top 0
-			left 2.9rem
-			
-		&:before
-			bottom 0.7rem
-			left -0.1rem
-			transform-origin 100% 0
-			
-		.wireframe-side__trapezoid
-			bottom 2rem
-
-	&--left 
-		left 0
-		&:after
-			right 0
-			bottom 2.9rem
-			
-		.wireframe-side__arrow
-			bottom 0rem
-			left 1.9rem
-			transform rotate(180deg)
-		
-		.wireframe-side__trapezoid
+					
+		&--top, &--bottom
 			left 2rem
+			height 2rem
+			width calc(100vw - 4rem)
 			
+			&:after
+				width calc(100% - 2.9rem)
+				height 0.1rem
+			
+			&:before
+				content ''
+				position absolute
+				display block
+				height 4.24264068712rem
+				width 0.1rem
+				background $white
+				transform rotate(-45deg)
+				
+			.wireframe__trapezoid
+				position absolute
+				left 50%
+				transform translateX(-50%)
+		
+				
+		&--left, &--right
+			top 2rem
+			height calc(100vh - 4rem)
+			width 2rem
+			
+			&:after
+				width 0.1rem
+				height calc(100% - 2.8rem)
+				
+			.wireframe__trapezoid
+				position absolute
+				top 50%
+				transform translateY(-50%)
+				
+		
+		&--top 
+			top 0	
+			&:after
+				bottom 0
+				right 2.9rem
+				
+			&:before
+				top 0.7rem
+				right -0.1rem
+				transform-origin 0 100%
+				
+			.wireframe__trapezoid
+				top 2rem
+			
+		&--right 
+			right 0
+			&:after
+				left 0
+				top 2.9rem	
+				
+			.wireframe__arrow
+				top -0.1rem
+				right 1.9rem
+				
+			.wireframe__trapezoid
+				right 2rem
+			
+		&--bottom 
+			bottom 0
+			&:after
+				top 0
+				left 2.9rem
+				
+			&:before
+				bottom 0.7rem
+				left -0.1rem
+				transform-origin 100% 0
+				
+			.wireframe__trapezoid
+				bottom 2rem
+
+		&--left 
+			left 0
+			&:after
+				right 0
+				bottom 2.9rem
+				
+			.wireframe__arrow
+				bottom 0rem
+				left 1.9rem
+				transform rotate(180deg)
+			
+			.wireframe__trapezoid
+				left 2rem
+				
 	&__trapezoid
 		fill $white
 		
@@ -118,14 +157,15 @@
 		display block
 		width calc((100vw / 12) - 3.7rem)
 		height 0.2rem
-		background $white	
+		background $white
+			
 		
 	&__drag
 		position absolute
 		top 50%
 		right calc((100vw / 12) - 2rem)
 		transform translateY(-50%)
-		
 			
-		
+				
 			
+				
