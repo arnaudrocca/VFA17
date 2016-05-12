@@ -29,11 +29,10 @@ render(
             <Route path="/" component={App}>
                 <IndexRoute component={Home}/>
                 <Route path="video" component={Video}></Route>
-                <Route path="experiment" component={Experiment}>
-                    <Route name="choice" path="choice/:id" component={Choice}>
-                        <IndexRoute component={ChoiceContext}/>
-                        <Route path="interaction" component={ChoiceInteraction}></Route>
-                    </Route>
+                <Route path="experiment" component={Experiment}></Route>
+                <Route name="choice" path="choice/:id" component={Choice}>
+                    <IndexRoute component={ChoiceContext}/>
+                    <Route path="interaction" component={ChoiceInteraction}></Route>
                 </Route>
             </Route>
         </Router>

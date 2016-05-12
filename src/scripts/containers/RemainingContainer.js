@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Remaining from '../components/Remaining'
+import City from '../components/City'
 
 const mapStateToProps = (state) => {
 
@@ -12,6 +12,6 @@ const mapStateToProps = (state) => {
 
 const RemainingContainer = connect(
 	mapStateToProps
-)(Remaining)
+)(City)
 
 export default RemainingContainer

@@ -1,5 +1,6 @@
 import React from 'react'
 import { debounce } from 'lodash'
+import { Link } from 'react-router'
 
 class Mayor extends React.Component {
 
@@ -83,8 +84,9 @@ class Mayor extends React.Component {
 		this.getContent();
 
 		return (
-			<div>
+			<div className="mayor">
 			  	<h1>John Ricard</h1>
+			  	<Link to="/choice/1">Choice</Link>
 			  	<p>{this.content}</p>
 			</div>
 		)

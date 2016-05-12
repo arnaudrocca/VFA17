@@ -12,13 +12,7 @@ class Menu extends React.Component {
 
 	}
 
-	getContent() {
-
-	}
-
 	render() {
-
-		this.getContent();
 
 		return (
 			<div className="menu">
@@ -52,7 +46,7 @@ class Menu extends React.Component {
 						<span className="menu__label">Voyage 5</span>
 					</div>
 				</div>
-				<div className="menu__slice"></div>
+				<div className="menu__slice menu__slice--empty"></div>
 				<div className="menu__infos">
 					<p>Glissez pour voyager dans le temps</p>
 				</div>

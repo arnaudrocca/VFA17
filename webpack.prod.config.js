@@ -81,7 +81,7 @@ module.exports = {
                 loader: 'json'
             },
             {
-                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+                test: /\.(png|jpg|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
                 exclude: /node_modules/,
                 loader : 'file-loader'
             }
