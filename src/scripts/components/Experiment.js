@@ -7,8 +7,6 @@ import ScoreContainer from '../containers/scoreContainer'
 import MayorContainer from '../containers/mayorContainer'
 import IconFlower from './svg/icon-flower'
 import IconShield from './svg/icon-shield'
-import IconDone from './svg/icon-done'
-import IconLocked from './svg/icon-locked'
 
 class Experiment extends React.Component {
 
@@ -21,14 +19,20 @@ class Experiment extends React.Component {
 			<MainMenuContainer />
 			<ScoreContainer />
 			<MayorContainer />
-		</div>*/
+		</div>
+		<IconFlower width="17" color="#FF5951"/>
+						<IconFlower width="17" color="#FF5951"/>
+						<IconFlower width="17" color="#6c707b"/>
+						<IconFlower width="17" color="#6c707b"/>
+						<IconFlower width="17" color="#6c707b"/>
+		*/
 
 	}
 
 	render() {
 
 		return (
-			<div className="experiment">
+			<div className="experiment is-menu-active">
 				<div className="city">
 					<div className="city__panel">
 						<IconShield width="25" classes="city__shield"/>
@@ -37,52 +41,17 @@ class Experiment extends React.Component {
 					<div className="city__infos">
 						<IconFlower width="17" color="#FF5951"/>
 						<IconFlower width="17" color="#FF5951"/>
-						<IconFlower width="17" color="#d7d9df"/>
-						<IconFlower width="17" color="#d7d9df"/>
-						<IconFlower width="17" color="#d7d9df"/>
+						<IconFlower width="17" color="#6c707b"/>
+						<IconFlower width="17" color="#6c707b"/>
+						<IconFlower width="17" color="#6c707b"/>
 					</div>
 				</div>
 
 				<div className="mayor">
 				</div>
 
-				<div className="menu">
-					<div className="menu__slice">
-						<div className="menu__item">
-							<IconDone width="75" opacity="0.6" color="#ffffff"/>
-							<span className="menu__label">Voyage 1</span>
-						</div>
-					</div>
-					<div className="menu__slice">
-						<div className="menu__item">
-							<IconDone width="75" opacity="0.6" color="#ffffff"/>
-							<span className="menu__label">Voyage 2</span>
-						</div>
-					</div>
-					<div className="menu__slice">
-						<div className="menu__item">
-							<IconDone width="75" opacity="0.6" color="#ffffff"/>
-							<span className="menu__label">Voyage 3</span>
-						</div>
-					</div>
-					<div className="menu__slice">
-						<div className="menu__item">
-							<IconLocked width="75" opacity="0.6" color="#ffffff"/>
-							<span className="menu__label">Voyage 4</span>
-						</div>
-					</div>
-					<div className="menu__slice">
-						<div className="menu__item">
-							<IconLocked width="75" opacity="0.6" color="#ffffff"/>
-							<span className="menu__label">Voyage 5</span>
-						</div>
-					</div>
-					<div className="menu__slice"></div>
-					<div className="menu__infos">
-						<p>Glissez pour voyager dans le temps</p>
-					</div>
-				</div>
-
+				
+				<MainMenuContainer />
 
 				<MapContainer />
 				{this.props.children}
