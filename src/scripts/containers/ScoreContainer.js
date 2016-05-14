@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Score from '../components/Score'
+import City from '../components/City'
 
 const mapStateToProps = (state) => {
 
@@ -12,6 +12,6 @@ const mapStateToProps = (state) => {
 
 const ScoreContainer = connect(
 	mapStateToProps
-)(Score)
+)(City)
 
 export default ScoreContainer

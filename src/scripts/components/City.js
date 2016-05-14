@@ -9,7 +9,24 @@ class City extends React.Component {
 		super();
 
 	}
+
+	getContent() {
+
+		this.flowers = new Array();
+
+		for(let i = 0; i < 5; i++){
+			if (i < this.props.score){
+				this.flowers.push(<IconFlower key={i} width="17" color="#FF5951"/>)
+			} else {
+				this.flowers.push(<IconFlower key={i} width="17" color="#6c707b"/>)
+			}
+		}
+
+	}
+
 	render() {
+
+		this.getContent();
 
 		return (
 			<div className="city">
@@ -18,11 +35,7 @@ class City extends React.Component {
 					<span className="city__name">Ayaux-les-Bains</span>
 				</div>
 				<div className="city__infos">
-					<IconFlower width="17" color="#FF5951"/>
-					<IconFlower width="17" color="#FF5951"/>
-					<IconFlower width="17" color="#6c707b"/>
-					<IconFlower width="17" color="#6c707b"/>
-					<IconFlower width="17" color="#6c707b"/>
+					{this.flowers}
 				</div>
 			</div>
 		)

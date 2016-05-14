@@ -12,10 +12,10 @@ const choiceUpdate = (choiceId, choice, nextChoiceVersion) => {
 
 }
 
-const remainingDecrement = () => {
+const choicesDoneIncrement = () => {
 
     return {
-        type: CONSTANTS.REMAINING_DECREMENT
+        type: CONSTANTS.CHOICESDONE_INCREMENT
     }
 
 }
@@ -75,7 +75,7 @@ export const choiceMade = (choiceId, answer) => {
         });
 
         dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion));
-        dispatch(remainingDecrement());
+        dispatch(choicesDoneIncrement());
         dispatch(menuUpdate(choiceId));
         for (let i of consequences.mapIds) {
             dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]));

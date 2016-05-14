@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import City from '../components/City'
+import DragRemaining from '../components/DragRemaining'
 
 const mapStateToProps = (state) => {
 
@@ -12,6 +12,6 @@ const mapStateToProps = (state) => {
 
 const RemainingContainer = connect(
 	mapStateToProps
-)(City)
+)(DragRemaining)
 
 export default RemainingContainer

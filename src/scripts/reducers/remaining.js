@@ -1,10 +1,10 @@
 import { CONSTANTS } from '../constants/index'
 
-const remaining = (state = 5, action) => {
+const choicesDone = (state = 1, action) => {
 
 	switch (action.type) {
-		case CONSTANTS.REMAINING_DECREMENT:
-			return state - 1;
+		case CONSTANTS.CHOICESDONE_INCREMENT:
+			return state + 1;
 
 		default:
 			return state;
@@ -12,4 +12,4 @@ const remaining = (state = 5, action) => {
 
 }
 
-export default remaining
+export default choicesDone

@@ -1,10 +1,10 @@
 import React from 'react'
+import RemainingContainer from '../containers/RemainingContainer'
 import IconBorderTop from './svg/icon-border-top'
 import IconBorderRight from './svg/icon-border-right'
 import IconBorderRightArrow from './svg/icon-border-right-arrow'
 import IconBorderBottom from './svg/icon-border-bottom'
 import IconBorderLeft from './svg/icon-border-left'
-import IconDrag from './svg/icon-drag'
 import IconDragHome from './svg/icon-drag-home'
 import IconCorner from './svg/icon-corner'
 
@@ -25,10 +25,7 @@ class Wireframe extends React.Component {
 		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#ffffff"/>
 
 		if(location[1] == 'experiment'){
-			this.drag = <div>
-							<span className="wireframe__timeline-connector"></span>
-							<IconDrag classes="wireframe__drag" width="70"/>
-						</div>
+			this.drag = <RemainingContainer />
 		} else if(location[1] == ''){
 			this.classes += ' wireframe--home'
 			this.drag = <div>
