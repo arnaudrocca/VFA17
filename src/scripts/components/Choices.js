@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory, Link } from 'react-router'
+import * as ChoicesComponents from './ChoicesComponents'
 
 class Choices extends React.Component {
 
@@ -18,12 +19,15 @@ class Choices extends React.Component {
 		});
 		this.choiceVersion = currentChoice.version;
 
-		if (currentChoice.answer != 'undefined') {
-			this.choiceIsDone = true;
-		} else {
-			this.choiceIsDone = false;
-		}
+		const componentName = 'Choice' + this.choiceId + this.choiceVersion;
 
+		for (let choiceComponent in ChoicesComponents) {
+			if (choiceComponent == componentName) {
+				this.component = ChoicesComponents[choiceComponent];
+				break;
+			}
+		}
+				
 	}
 
 	returnToMap(){
@@ -32,22 +36,7 @@ class Choices extends React.Component {
 
 	render() {
 
-		// {childrenWithProps}
-		// 		<div className="choices-nav">
-		// 			<Link to={`/experiment/choice/${this.choiceId}`}>Contexte Choix {this.choiceId}</Link><br/>
-		// 			<Link to={`/experiment/choice/${this.choiceId}/interaction`}>Interaction Choix {this.choiceId}</Link>
-		// 		</div>
-
-		// this.getContent();
-
-		// const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-			//160,40 120,30 145,0 160,0 0,0
-		// 	choiceId: this.choiceId,
-		// 	choiceVersion: this.choiceVersion,
-		// 	choiceIsDone : this.choiceIsDone,
-		// 	onSubmit: this.props.onSubmit
-		// }));
-
+		this.getContent()
 
 		return (
 			<div className="choice">
@@ -71,6 +60,7 @@ class Choices extends React.Component {
 			 	</div>
 			 	<div className="choice__interaction">
 			 		<div className="choice__interaction-background"></div>
+			 		<this.component id={this.choiceId} submitHandler={this.props.onSubmit}/>
 			 	</div>
 			</div>
 		)

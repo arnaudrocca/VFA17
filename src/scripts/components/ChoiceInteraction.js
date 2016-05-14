@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import * as ChoicesComponents from './ChoicesComponents'
 
-class ChoiceContext extends React.Component {
+class ChoiceInteraction extends React.Component {
 
 	constructor() {
 
@@ -52,4 +52,4 @@ class ChoiceContext extends React.Component {
 
 }
 
-export default ChoiceContext
+export default ChoiceInteraction
