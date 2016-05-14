@@ -1,5 +1,5 @@
 import React from 'react'
-import RemainingContainer from '../containers/RemainingContainer'
+import ChoicesDoneContainer from '../containers/ChoicesDoneContainer'
 import IconBorderTop from './svg/icon-border-top'
 import IconBorderRight from './svg/icon-border-right'
 import IconBorderRightArrow from './svg/icon-border-right-arrow'
@@ -25,7 +25,7 @@ class Wireframe extends React.Component {
 		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#ffffff"/>
 
 		if(location[1] == 'experiment'){
-			this.drag = <RemainingContainer />
+			this.drag = <ChoicesDoneContainer />
 		} else if(location[1] == ''){
 			this.classes += ' wireframe--home'
 			this.drag = <div>

@@ -1,4 +1,5 @@
 import { CONSTANTS } from '../constants/index'
+import { hashHistory } from 'react-router'
 import answersData from '../data/answers.json'
 
 const choiceUpdate = (choiceId, choice, nextChoiceVersion) => {
@@ -67,24 +68,36 @@ const hotpointUpdate = (mapId, answer) => {
 
 }
 
-export const choiceMade = (choiceId, answer) => {
+export const choiceMade = (choiceId, answer, timeout) => {
 
     return (dispatch, getState) => {
-        let consequences = answersData.find((choice) => {
-            return choice.name == answer;
-        });
 
-        dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion));
-        dispatch(choicesDoneIncrement());
-        dispatch(menuUpdate(choiceId));
-        for (let i of consequences.mapIds) {
-            dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]));
-            dispatch(hotpointUpdate(consequences.mapIds[i], answer));
-        }
-        dispatch(scoreUpdate(consequences.score));
-        dispatch(mayorTalks(consequences.dialog));
+        setTimeout(()=>{
 
-        console.log(getState(),'NEW STATE');
+            let consequences = answersData.find((choice) => {
+                return choice.name == answer;
+            });
+
+            hashHistory.push('/experiment')
+
+            setTimeout(()=>{
+                dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion));
+                dispatch(choicesDoneIncrement());
+                dispatch(menuUpdate(choiceId));
+
+                for (let i of consequences.mapIds) {
+                    dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]));
+                    dispatch(hotpointUpdate(consequences.mapIds[i], answer));
+                }
+
+                dispatch(scoreUpdate(consequences.score));
+                dispatch(mayorTalks(consequences.dialog));
+
+                console.log(getState(),'NEW STATE');
+            },1000)
+
+        },timeout)
+       
     }
 
 }

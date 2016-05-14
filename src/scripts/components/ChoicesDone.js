@@ -1,11 +1,12 @@
 import React from 'react'
 import IconDrag from './svg/icon-drag'
 
-class DragRemaining extends React.Component {
+class ChoicesDone extends React.Component {
 
 	constructor() {
 
 		super();
+		this.choicesNumber = 5
 		this.state = {
 			circlePerimeter : 0,
 		}
@@ -13,8 +14,6 @@ class DragRemaining extends React.Component {
 	}
 
 	componentDidMount() {
-
-		let totalChoices = this.props.remaining
 
 		let circle = document.querySelector('.js-remaining')
 
@@ -24,8 +23,8 @@ class DragRemaining extends React.Component {
 	}
 
 	getContent() {
-		let circlePerimeterFragment = this.state.circlePerimeter / 5
-		this.offset = (5 + this.props.remaining) * circlePerimeterFragment
+		let circlePerimeterFragment = this.state.circlePerimeter / this.choicesNumber
+		this.offset = (this.props.choicesDone + this.choicesNumber) * circlePerimeterFragment
 	}
 
 	render() {
@@ -43,4 +42,4 @@ class DragRemaining extends React.Component {
 
 }
 
-export default DragRemaining
+export default ChoicesDone

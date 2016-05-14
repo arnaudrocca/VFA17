@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import choices from './choices'
-import remaining from './remaining'
+import choicesDone from './choicesDone'
 import menu from './menu'
 import map from './map'
 import score from './score'
@@ -10,7 +10,7 @@ import hotpoints from './hotpoints'
 const mainReducer = combineReducers({
 
 	choices,
-	remaining,
+	choicesDone,
 	menu,
 	map,
 	score,

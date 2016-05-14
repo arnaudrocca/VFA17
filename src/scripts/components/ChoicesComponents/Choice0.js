@@ -21,7 +21,7 @@ class Choice0 extends React.Component {
 			answer = ReactDOM.findDOMNode(this.refs.choiceB).value;
 		}
 
-		this.props.submitHandler(this.props.id, answer);
+		this.props.submitHandler(this.props.id, answer, 1000);
 
 	}
 

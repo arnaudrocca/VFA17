@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory, Link } from 'react-router'
+import choicesData from '../data/choices.json'
 import * as ChoicesComponents from './ChoicesComponents'
 
 class Choices extends React.Component {
@@ -13,12 +14,16 @@ class Choices extends React.Component {
 
 	getContent() {
 
+		//Identifies wich choice to display
 		this.choiceId = this.props.params.id;
+
 		const currentChoice = this.props.choiceState.find((choice) => {
 			return choice.id == this.choiceId;
 		});
+
 		this.choiceVersion = currentChoice.version;
 
+		//Identifies the correct interaction
 		const componentName = 'Choice' + this.choiceId + this.choiceVersion;
 
 		for (let choiceComponent in ChoicesComponents) {
@@ -27,6 +32,11 @@ class Choices extends React.Component {
 				break;
 			}
 		}
+
+		//Identifies the correct wording to use
+		this.choiceData = choicesData.find((choice) => {
+			return choice.id == this.choiceId;
+		});
 				
 	}
 
@@ -51,11 +61,9 @@ class Choices extends React.Component {
 					</svg>
 			 	</button>
 			 		<div className="choice__description">
-			 			<span className ="choice__description__date">Année 150</span>
-			 			<h1 className ="choice__description__title">La Guerre entre la famille plantard et viandé</h1>
-			 			<p className ="choice__description__content">
-			 				L’une est une famille d’éleveurs et l’autre d’agriculteurs. Leurs querelles ancestrales font qu’aujourd’hui la ville à du mal à se positionner sur le marché agricole et est relativement pauvre.
-			 			</p>
+			 			<span className ="choice__description__date">{this.choiceData.period}</span>
+			 			<h1 className ="choice__description__title">{this.choiceData.title}</h1>
+			 			<p className ="choice__description__context">{this.choiceData.context}</p>
 			 		</div>
 			 	</div>
 			 	<div className="choice__interaction">

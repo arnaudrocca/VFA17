@@ -1,6 +1,6 @@
 import { CONSTANTS } from '../constants/index'
 
-const choicesDone = (state = 1, action) => {
+const choicesDone = (state = 0, action) => {
 
 	switch (action.type) {
 		case CONSTANTS.CHOICESDONE_INCREMENT:
