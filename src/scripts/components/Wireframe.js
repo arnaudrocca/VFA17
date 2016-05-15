@@ -24,17 +24,20 @@ class Wireframe extends React.Component {
 		this.drag = null
 		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#ffffff"/>
 
-		if(location[1] == 'experiment'){
+		if (location[1] == 'experiment') {
 			this.drag = <ChoicesDoneContainer />
-		} else if(location[1] == ''){
+		}
+		else if (location[1] == '') {
 			this.classes += ' wireframe--home'
 			this.drag = <div>
 							<span className="wireframe__timeline-connector"></span>
 							<IconDragHome classes="wireframe__drag" width="70"/>
 						</div>
-		} else {
+		}
+		else {
 			this.borderRight = <IconBorderRight classes="wireframe__trapezoid wireframe__trapezoid--right" width="7" fill="#ffffff"/>
 		}
+
 	}
 
 

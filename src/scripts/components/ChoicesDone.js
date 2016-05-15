@@ -10,7 +10,7 @@ class ChoicesDone extends React.Component {
 		this.state = {
 			circlePerimeter : 0,
 		}
-		
+
 	}
 
 	componentDidMount() {
@@ -19,7 +19,7 @@ class ChoicesDone extends React.Component {
 
 		this.setState({
 			circlePerimeter : circle.getAttribute('r') * Math.PI *  2
-		}) 
+		})
 	}
 
 	getContent() {
@@ -34,7 +34,7 @@ class ChoicesDone extends React.Component {
 		return (
 			<div>
 				<span className="wireframe__timeline-connector"></span>
-				<IconDrag classes="wireframe__drag" offset={this.offset} circlePerimeter={this.state.circlePerimeter} width="70"/>
+				<IconDrag classes="wireframe__drag" offset={this.offset} circlePerimeter={this.state.circlePerimeter} width="75"/>
 			</div>
 		)
 
