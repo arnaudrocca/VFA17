@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import MapComponent from './MapComponent'
-import hotpointsContainer from '../containers/hotpointsContainer'
+import HotpointsContainer from '../containers/HotpointsContainer'
 
 class Map extends React.Component {
 
@@ -27,7 +27,7 @@ class Map extends React.Component {
 
 		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
 
-        Draggable.create('.map', {
+        Draggable.create(this.map, {
             type: 'x, y',
             edgeResistance: .8,
             bounds: {
@@ -93,7 +93,7 @@ class Map extends React.Component {
 						transitionAppear={true} transitionAppearTimeout={600} transitionEnterTimeout={600} transitionLeaveTimeout={600}>
 						{mapItems}
 					</ReactCSSTransitionGroup>
-					<hotpointsContainer />
+					<HotpointsContainer />
 				</div>
 			</div>
 		)

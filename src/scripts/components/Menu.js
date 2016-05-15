@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router'
 import IconDone from './svg/icon-done'
 import IconLocked from './svg/icon-locked'
 import IconTodo from './svg/icon-todo'
@@ -14,29 +13,30 @@ class Menu extends React.Component {
 
 	componentDidMount() {
 
-		this.bodyNode = document.querySelector('body')
+		const sideSize = 20
 
 		Draggable.create('.js-menu-btn', {
             type: 'x',
+			edgeResistance: .95,
             bounds: {
-                minX: -window.innerWidth * 10 / 12,
+                minX: -(window.innerWidth - (sideSize * 2)) * 10 / 12,
                 maxX: 0
             },
 			zIndex: 1000,
 			zIndexBoost: false
-        });
+        })
 
 	}
 
 	mouseDownHandler() {
 
-		this.bodyNode.classList.add('is-menu-active')
+		document.body.classList.add('is-menu-active')
 
 	}
 
 	mouseUpHandler() {
 
-		this.bodyNode.classList.remove('is-menu-active')
+		document.body.classList.remove('is-menu-active')
 
 	}
 
