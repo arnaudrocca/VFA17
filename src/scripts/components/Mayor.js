@@ -85,10 +85,11 @@ class Mayor extends React.Component {
 
 		return (
 			<div className="mayor">
-			  	<h1>John Ricard</h1>
 			  	<Link to="/choice/0">Choice 1</Link>
 			  	<Link to="/choice/1">Choice 2</Link>
-			  	<p>{this.content}</p>
+			  	<div className="mayor__dialog">
+			  		<p>{this.content}</p>
+			  	</div>
 			</div>
 		)
 
