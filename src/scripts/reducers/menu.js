@@ -7,19 +7,19 @@ const initialMenu = [
 	},
 	{
 		id: 1,
-		state: 'disabled'
+		state: 'locked'
 	},
 	{
 		id: 2,
-		state: 'disabled'
+		state: 'locked'
 	},
 	{
 		id: 3,
-		state: 'disabled'
+		state: 'locked'
 	},
 	{
 		id: 4,
-		state: 'disabled'
+		state: 'locked'
 	}
 ]
 
