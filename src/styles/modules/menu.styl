@@ -15,10 +15,6 @@
 
 	&__slice
 		position relative
-		display flex
-		flex-direction column
-		justify-content center
-		align-items center
 		width calc((100vw - 4rem) / 6)
 		height calc(100vh - 4rem)
 
@@ -36,7 +32,15 @@
 				content none
 
 	&__item
-		position relative
+		position absolute
+		top 50%
+		right 0
+		left 0
+		transform translateY(-50%)
+
+		svg
+			display block
+			margin 0 auto
 
 	&__label
 		position absolute
@@ -73,6 +77,8 @@
 		background $red
 		border-radius 50%
 		cursor w-resize !important
+
+		transition transform .5s $easeOutExpo
 
 		span
 			position absolute
