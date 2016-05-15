@@ -5,18 +5,18 @@ class MapComponent extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	getContent() {
 
-		this.componentName = 'MapItem' + this.props.id + this.props.version;
+		this.componentName = 'MapItem' + this.props.id + this.props.version
 
 		for (let mapComponent in MapComponents) {
 			if (mapComponent == this.componentName) {
-				this.component = MapComponents[mapComponent];
-				break;
+				this.component = MapComponents[mapComponent]
+				break
 			}
 		}
 
@@ -24,7 +24,7 @@ class MapComponent extends React.Component {
 
 	render() {
 
-		this.getContent();
+		this.getContent()
 
 		return (
 			<this.component id={this.props.id} key={this.componentName} />

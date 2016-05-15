@@ -4,7 +4,7 @@ class MapItem2B extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 

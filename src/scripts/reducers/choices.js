@@ -36,21 +36,21 @@ const choices = (state = initialChoices, action) => {
 				if (index == action.choiceId) {
 					return Object.assign({}, choice, {
 						answer: action.choice
-					});
+					})
 				}
 				else if (index == action.choiceId + 1) {
 					return Object.assign({}, choice, {
 						version: action.nextChoiceVersion
-					});
+					})
 				}
 				else {
-					return choice;
+					return choice
 				}
-			});
-			return result;
+			})
+			return result
 
 		default:
-			return state;
+			return state
 	}
 
 }

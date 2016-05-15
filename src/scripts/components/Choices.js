@@ -8,36 +8,36 @@ class Choices extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	getContent() {
 
 		//Identifies wich choice to display
-		this.choiceId = this.props.params.id;
+		this.choiceId = this.props.params.id
 
 		const currentChoice = this.props.choiceState.find((choice) => {
-			return choice.id == this.choiceId;
-		});
+			return choice.id == this.choiceId
+		})
 
-		this.choiceVersion = currentChoice.version;
+		this.choiceVersion = currentChoice.version
 
 		//Identifies the correct interaction
-		const componentName = 'Choice' + this.choiceId + this.choiceVersion;
+		const componentName = 'Choice' + this.choiceId + this.choiceVersion
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {
-				this.component = ChoicesComponents[choiceComponent];
-				break;
+				this.component = ChoicesComponents[choiceComponent]
+				break
 			}
 		}
 
 		//Identifies the correct wording to use
 		this.choiceData = choicesData.find((choice) => {
-			return choice.id == this.choiceId;
-		});
-				
+			return choice.id == this.choiceId
+		})
+
 	}
 
 	returnToMap(){

@@ -5,7 +5,7 @@ class Hotpoints extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
@@ -30,22 +30,22 @@ class Hotpoints extends React.Component {
             }
         ]
 
-        return this.props.hotpoints.map((hotpoint, index) => {
+        this.hotpoints = this.props.hotpoints.map((hotpoint, index) => {
             return (
                 <Hotpoint key={index} onClick={this.props.onClick} hotpoint={this.props.hotpoints[index]}
                     x={hotpointsPosition[index].x} y={hotpointsPosition[index].y} />
             )
-        });
+        })
 
     }
 
 	render() {
 
-        const content = this.getContent();
+        this.getContent()
 
 		return (
 			<g>
-                {content}
+                {this.hotpoints}
             </g>
 		)
 

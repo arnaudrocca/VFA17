@@ -10,10 +10,10 @@ const mayor = (state = initialMayor, action) => {
 		case CONSTANTS.MAYOR_TALKS:
 			return Object.assign({}, state, {
 				dialog: action.dialog
-			});
+			})
 
 		default:
-			return state;
+			return state
 	}
 
 }

@@ -6,7 +6,7 @@ class ChoiceInteraction extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
@@ -19,12 +19,12 @@ class ChoiceInteraction extends React.Component {
 				</div>
 			)
 		} else {
-			const componentName = 'Choice' + this.props.choiceId + this.props.choiceVersion;
+			const componentName = 'Choice' + this.props.choiceId + this.props.choiceVersion
 
 			for (let choiceComponent in ChoicesComponents) {
 				if (choiceComponent == componentName) {
-					this.component = ChoicesComponents[choiceComponent];
-					break;
+					this.component = ChoicesComponents[choiceComponent]
+					break
 				}
 			}
 
@@ -40,7 +40,7 @@ class ChoiceInteraction extends React.Component {
 
 	render() {
 
-		const content = this.getContent();
+		const content = this.getContent()
 
 		return (
 			<div>

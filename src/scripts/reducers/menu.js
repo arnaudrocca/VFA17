@@ -31,21 +31,21 @@ const menu = (state = initialMenu, action) => {
 		        if (index == action.choiceId) {
 		        	return Object.assign({}, link, {
 		            	state: 'done'
-		        	});
+		        	})
 		    	}
 				else if (index == action.choiceId + 1) {
 		    		return Object.assign({}, link, {
 		    			state: 'todo'
-		    		});
+		    		})
 		    	}
 		    	else {
-		    		return link;
+		    		return link
 		    	}
-	        });
-			return result;
+	        })
+			return result
 
 		default:
-			return state;
+			return state
 	}
 
 }

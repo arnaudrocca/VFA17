@@ -6,20 +6,16 @@ class App extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
-
-	
 
 	render() {
 
 		return (
 			<div id="core">
 				<Wireframe location={this.props.location} />
-
-					{this.props.children}
-
+				{this.props.children}
 				<Toolbar />
 			</div>
 		)

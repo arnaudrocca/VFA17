@@ -1,23 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-// const Home = () => (
-// 	<div>
-// 		<h1>Home</h1>
-// 		<Link to="/video">Voir la vidéo</Link>
-// 	</div>
-
-// )
-
 class Home extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	render(){
+
 		return (
 			<section className="home">
 				<Link className="link" to="/video">Voir la vidéo</Link>
@@ -32,6 +25,7 @@ class Home extends React.Component {
 				<video className="home__video" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
 			</section>
 		)
+		
 	}
 
 }

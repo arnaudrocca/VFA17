@@ -5,12 +5,12 @@ class Audio {
 	 */
     constructor(soundPath) {
 
-        this.soundPath = soundPath;
+        this.soundPath = soundPath
 
-        const constructor = window.AudioContext || window.webkitAudioContext;
-        this.audioCtx = new constructor();
-        this.analyser = this.audioCtx.createAnalyser();
-        this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
+        const constructor = window.AudioContext || window.webkitAudioContext
+        this.audioCtx = new constructor()
+        this.analyser = this.audioCtx.createAnalyser()
+        this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
 
     }
 
@@ -21,9 +21,9 @@ class Audio {
 	 */
     loadSound() {
 
-        let request = new XMLHttpRequest();
-        request.open('GET', this.soundPath, true);
-        request.responseType = 'arraybuffer';
+        let request = new XMLHttpRequest()
+        request.open('GET', this.soundPath, true)
+        request.responseType = 'arraybuffer'
 
         // Decode asynchronously
         request.onload = function() {
@@ -31,32 +31,32 @@ class Audio {
             this.audioCtx.decodeAudioData(request.response, function(buffer) {
 
                 // Success callback
-                this.audioBuffer = buffer;
+                this.audioBuffer = buffer
 
                 // Create sound from buffer
-                this.audioSource = this.audioCtx.createBufferSource();
-                this.audioSource.buffer = this.audioBuffer;
+                this.audioSource = this.audioCtx.createBufferSource()
+                this.audioSource.buffer = this.audioBuffer
 
                 // Connect the audio source to context's output
-                this.audioSource.connect(this.analyser);
-                this.analyser.connect(this.audioCtx.destination);
+                this.audioSource.connect(this.analyser)
+                this.analyser.connect(this.audioCtx.destination)
 
                 // Play the sound
-                this.audioSource.crossOrigin = 'anonymous';
-                this.audioSource.start(this.audioCtx.currentTime);
+                this.audioSource.crossOrigin = 'anonymous'
+                this.audioSource.start(this.audioCtx.currentTime)
 
                 // Loop the sound
-                this.audioSource.loop = true;
+                this.audioSource.loop = true
 
             }.bind(this), function() {
 
                 // Error callback
 
-            });
+            })
 
-        }.bind(this);
+        }.bind(this)
 
-        request.send();
+        request.send()
 
     }
 
@@ -72,15 +72,15 @@ class Audio {
 
         let length = frequencyData.length,
             frequencyArray = new Array(),
-            i = 0;
+            i = 0
 
         while (i < length) {
-            let size = Math.ceil((length - i) / split--);
-            frequencyArray.push(frequencyData.slice(i, i + size));
-            i += size;
+            let size = Math.ceil((length - i) / split--)
+            frequencyArray.push(frequencyData.slice(i, i + size))
+            i += size
         }
 
-        return frequencyArray;
+        return frequencyArray
 
     }
 
@@ -93,39 +93,39 @@ class Audio {
 	 */
     getAudioData(split = 1) {
 
-        this.analyser.getByteFrequencyData(this.frequencyData);
+        this.analyser.getByteFrequencyData(this.frequencyData)
 
         if (split > 1) {
 
             // Split the frequency array
-		    const frequencyArray = this.splitFrenquencyArray(this.frequencyData, split);
+		    const frequencyArray = this.splitFrenquencyArray(this.frequencyData, split)
 
-            let audioData = new Array();
+            let audioData = new Array()
 
             // Make average of frenquency array entries
             for (let i in frequencyArray) {
-                const splittedArray = frequencyArray[i];
-                let average = 0;
+                const splittedArray = frequencyArray[i]
+                let average = 0
 
                 for (let frequency of splittedArray) {
-                    average += frequency;
+                    average += frequency
                 }
-                audioData[i] = average / splittedArray.length;
+                audioData[i] = average / splittedArray.length
             }
 
-            return audioData;
+            return audioData
 
         } else {
 
             // Calculate the average
-            let average = 0;
+            let average = 0
 
             for (let frequency of this.frequencyData) {
-                average += frequency;
+                average += frequency
             }
-            average = average / this.frequencyData.length;
+            average = average / this.frequencyData.length
 
-            return average;
+            return average
 
         }
 

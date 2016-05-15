@@ -31,15 +31,15 @@ const hotpoints = (state = initialHotpoints, action) => {
                 if (index == action.mapId) {
 					return Object.assign({}, hotpoint, {
 						answers: [...hotpoint.answers,action.answer]
-					});
+					})
 				} else {
-					return hotpoint;
+					return hotpoint
 				}
-            });
-            return result;
+            })
+            return result
 
 		default:
-			return state;
+			return state
 	}
 
 }

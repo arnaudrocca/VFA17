@@ -23,15 +23,15 @@ const map = (state = initialMap, action) => {
 				if (index == action.itemId) {
 					return Object.assign({}, mapItem, {
 						version: action.itemVersion
-					});
+					})
 				} else {
-					return mapItem;
+					return mapItem
 				}
-			});
-			return result;
+			})
+			return result
 
 		default:
-			return state;
+			return state
 	}
 
 }

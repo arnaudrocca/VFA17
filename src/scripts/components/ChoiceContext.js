@@ -6,7 +6,7 @@ class ChoiceContext extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
@@ -20,8 +20,8 @@ class ChoiceContext extends React.Component {
 			)
 		} else {
 			const choice = choicesData.find((choice) => {
-				return choice.id == this.props.choiceId;
-			});
+				return choice.id == this.props.choiceId
+			})
 			return (
 				<div>
 					<h2>{choice.title}</h2>
@@ -36,7 +36,7 @@ class ChoiceContext extends React.Component {
 
 	render() {
 
-		const content = this.getContent();
+		const content = this.getContent()
 
 		return (
 			<div>

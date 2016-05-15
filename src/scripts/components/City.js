@@ -6,13 +6,13 @@ class City extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	getContent() {
 
-		this.flowers = new Array();
+		this.flowers = new Array()
 
 		for(let i = 0; i < 5; i++){
 			if (i < this.props.score){
@@ -26,7 +26,7 @@ class City extends React.Component {
 
 	render() {
 
-		this.getContent();
+		this.getContent()
 
 		return (
 			<div className="city">

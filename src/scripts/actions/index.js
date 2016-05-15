@@ -74,7 +74,7 @@ export const choiceMade = (choiceId, answer, timeout) => {
 
         let consequences = answersData.find((choice) => {
             return choice.name == answer
-        });
+        })
 
         hashHistory.push('/experiment')
 

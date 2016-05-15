@@ -4,10 +4,10 @@ const choicesDone = (state = 0, action) => {
 
 	switch (action.type) {
 		case CONSTANTS.CHOICESDONE_INCREMENT:
-			return state + 1;
+			return state + 1
 
 		default:
-			return state;
+			return state
 	}
 
 }
