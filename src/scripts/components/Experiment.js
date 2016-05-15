@@ -1,6 +1,6 @@
 import React from 'react'
 import ScoreContainer from '../containers/ScoreContainer'
-import MainMenuContainer from '../containers/MainMenuContainer'
+import MenuContainer from '../containers/MenuContainer'
 import MapContainer from '../containers/MapContainer'
 import MayorContainer from '../containers/MayorContainer'
 
@@ -18,7 +18,7 @@ class Experiment extends React.Component {
 			<div className="experiment">
 				<ScoreContainer />
 				<MayorContainer />
-				<MainMenuContainer />
+				<MenuContainer />
 				<MapContainer />
 				{this.props.children}
 			</div>

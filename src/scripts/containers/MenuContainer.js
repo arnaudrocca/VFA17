@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import MainMenu from '../components/MainMenu'
 import Menu from '../components/Menu'
 
 const mapStateToProps = (state) => {
@@ -11,8 +10,8 @@ const mapStateToProps = (state) => {
 
 }
 
-const MainMenuContainer = connect(
+const MenuContainer = connect(
 	mapStateToProps
 )(Menu)
 
-export default MainMenuContainer
+export default MenuContainer
