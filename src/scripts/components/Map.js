@@ -8,24 +8,24 @@ class Map extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	componentDidMount() {
 
-		this.windowWidth = window.innerWidth;
-		this.windowHeight = window.innerHeight;
+		this.windowWidth = window.innerWidth
+		this.windowHeight = window.innerHeight
 
-		this.mapContainer = ReactDOM.findDOMNode(this.refs.mapContainer);
-		this.map = ReactDOM.findDOMNode(this.refs.map);
+		this.mapContainer = ReactDOM.findDOMNode(this.refs.mapContainer)
+		this.map = ReactDOM.findDOMNode(this.refs.map)
 
-		this.scale = this.initScale = .6;
-		this.scaleStep = .1;
-		this.scaleMin = .5;
-		this.scaleMax = 4;
+		this.scale = this.initScale = .6
+		this.scaleStep = .1
+		this.scaleMin = .5
+		this.scaleMax = 4
 
-		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
+		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`
 
         Draggable.create(this.map, {
             type: 'x, y',
@@ -34,52 +34,52 @@ class Map extends React.Component {
                 minX: -this.windowWidth / 3,
                 maxX: this.windowWidth / 3,
                 minY: -this.windowHeight / 3,
-                maxY: this.windowHeight / 3,
+                maxY: this.windowHeight / 3
             },
 			zIndex: 1,
 			zIndexBoost: false
-        });
+        })
 
 	}
 
 	componentWillUpdate() {
 
-		this.scale = this.initScale;
-		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
-		this.map.style.transform = 'translate3d(0px, 0px, 0px)';
+		this.scale = this.initScale
+		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`
+		this.map.style.transform = 'translate3d(0px, 0px, 0px)'
 
 	}
 
 	scaleHandler(e) {
 
-        const event = e || document.event;
+        const event = e || document.event
 
 		if (event.deltaY < 0 && this.scale < this.scaleMax) {
-			this.scale += this.scaleStep * this.scale;
+			this.scale += this.scaleStep * this.scale
 		}
         else if (event.deltaY > 0 && this.scale > this.scaleMin) {
-			this.scale -= this.scaleStep * this.scale;
+			this.scale -= this.scaleStep * this.scale
 		}
         else {
-            return;
+            return
         }
 
-		const originX = 100 * event.clientX / this.windowWidth;
-		const originY = 100 * event.clientY / this.windowHeight;
+		const originX = 100 * event.clientX / this.windowWidth
+		const originY = 100 * event.clientY / this.windowHeight
 
-		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`;
-        this.mapContainer.style.transformOrigin = `${originX}% ${originY}%`;
+		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`
+        this.mapContainer.style.transformOrigin = `${originX}% ${originY}%`
 
 	}
 
 	render() {
 
 		let mapItems = this.props.mapState.map((item, index) => {
-			let key = item.id + item.version;
+			let key = item.id + item.version
 			return (
 				<MapComponent key={key} id={item.id} version={item.version} />
 			)
-		});
+		})
 
 		return (
 			<div className="mapContainer" ref="mapContainer" onWheel={this.scaleHandler.bind(this)}>

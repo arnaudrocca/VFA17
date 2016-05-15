@@ -7,21 +7,30 @@ class Menu extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	componentDidMount() {
 
+		this.windowWidth = window.innerWidth
+
 		const sideSize = 20
+		const gridWidth = ((this.windowWidth - (sideSize * 2)) / 6)
 
 		Draggable.create('.js-menu-btn', {
             type: 'x',
-			edgeResistance: .95,
+			// edgeResistance: .95,
             bounds: {
-                minX: -(window.innerWidth - (sideSize * 2)) * 10 / 12,
+                minX: -(this.windowWidth - (sideSize * 2)) * 10 / 12,
                 maxX: 0
             },
+			liveSnap: true,
+			snap: {
+				x: function(endValue) {
+					return Math.round(endValue / gridWidth) * gridWidth
+				}
+			},
 			zIndex: 1000,
 			zIndexBoost: false
         })
@@ -41,8 +50,9 @@ class Menu extends React.Component {
 	}
 
 	getContent() {
+
 		this.menuItems = this.props.menuState.map((item, index) => {
-			if(item.state == 'todo') {
+			if (item.state == 'todo') {
 				return (
 					<div key={index} className="menu__slice">
 						<div className="menu__item">
@@ -51,7 +61,8 @@ class Menu extends React.Component {
 						</div>
 					</div>
 				)
-			} else if(item.state == 'locked') {
+			}
+			else if (item.state == 'locked') {
 				return (
 					<div key={index} className="menu__slice">
 						<div className="menu__item">
@@ -60,7 +71,8 @@ class Menu extends React.Component {
 						</div>
 					</div>
 				)
-			} else {
+			}
+			else {
 				return (
 					<div key={index} className="menu__slice">
 						<div className="menu__item">
@@ -69,8 +81,9 @@ class Menu extends React.Component {
 						</div>
 					</div>
 				)
-			}		
-		});
+			}
+		})
+
 	}
 
 	render() {
