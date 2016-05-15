@@ -10,6 +10,11 @@ class Map extends React.Component {
 
 		super()
 
+		this.scale = this.initScale = .6
+		this.scaleStep = .03
+		this.scaleMin = .5
+		this.scaleMax = 2
+
 	}
 
 	componentDidMount() {
@@ -20,12 +25,7 @@ class Map extends React.Component {
 		this.mapContainer = ReactDOM.findDOMNode(this.refs.mapContainer)
 		this.map = ReactDOM.findDOMNode(this.refs.map)
 
-		this.scale = this.initScale = .6
-		this.scaleStep = .1
-		this.scaleMin = .5
-		this.scaleMax = 4
-
-		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`
+		TweenMax.set(this.mapContainer, {scale: this.scale})
 
         Draggable.create(this.map, {
             type: 'x, y',
@@ -45,8 +45,7 @@ class Map extends React.Component {
 	componentWillUpdate() {
 
 		this.scale = this.initScale
-		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`
-		this.map.style.transform = 'translate3d(0px, 0px, 0px)'
+		TweenMax.set(this.mapContainer, {scale: this.scale, x: 0, y: 0})
 
 	}
 
@@ -67,8 +66,7 @@ class Map extends React.Component {
 		const originX = 100 * event.clientX / this.windowWidth
 		const originY = 100 * event.clientY / this.windowHeight
 
-		this.mapContainer.style.transform = `scale3d(${this.scale}, ${this.scale}, 1)`
-        this.mapContainer.style.transformOrigin = `${originX}% ${originY}%`
+		TweenMax.to(this.mapContainer, .6, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
 
 	}
 

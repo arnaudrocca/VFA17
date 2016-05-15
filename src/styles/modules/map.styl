@@ -2,16 +2,14 @@
 	position absolute
 	width 100vw
 	height 100vh
-	will-change transform
-	transition all 1s $easeOutExpo
+	transition transform, transform-origin .6s $easeOutExpo
 
 	.map
 		position absolute
 		width 100%
 		top -25%
 		overflow visible
-		will-change transform
-		transition transform 1.5s $easeOutExpo
+		transition transform 1s $easeOutExpo
 
 		.mapItems
 			position absolute

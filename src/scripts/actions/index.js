@@ -72,32 +72,26 @@ export const choiceMade = (choiceId, answer, timeout) => {
 
     return (dispatch, getState) => {
 
-        setTimeout(()=>{
+        let consequences = answersData.find((choice) => {
+            return choice.name == answer
+        });
 
-            let consequences = answersData.find((choice) => {
-                return choice.name == answer;
-            });
+        hashHistory.push('/experiment')
 
-            hashHistory.push('/experiment')
+        dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion))
+        dispatch(choicesDoneIncrement())
+        dispatch(menuUpdate(choiceId))
 
-            setTimeout(()=>{
-                dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion));
-                dispatch(choicesDoneIncrement());
-                dispatch(menuUpdate(choiceId));
+        for (let i of consequences.mapIds) {
+            dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]))
+            dispatch(hotpointUpdate(consequences.mapIds[i], answer))
+        }
 
-                for (let i of consequences.mapIds) {
-                    dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]));
-                    dispatch(hotpointUpdate(consequences.mapIds[i], answer));
-                }
+        dispatch(scoreUpdate(consequences.score))
+        dispatch(mayorTalks(consequences.dialog))
 
-                dispatch(scoreUpdate(consequences.score));
-                dispatch(mayorTalks(consequences.dialog));
+        console.log(getState(), 'NEW STATE')
 
-                console.log(getState(),'NEW STATE');
-            },1000)
-
-        },timeout)
-       
     }
 
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import { hashHistory } from 'react-router'
 import IconDone from './svg/icon-done'
 import IconLocked from './svg/icon-locked'
 import IconTodo from './svg/icon-todo'
@@ -13,39 +15,59 @@ class Menu extends React.Component {
 
 	componentDidMount() {
 
-		this.windowWidth = window.innerWidth
+		let windowWidth = window.innerWidth
+
+		let menuState = this.props.menuState
+		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
 
 		const sideSize = 20
-		const gridWidth = ((this.windowWidth - (sideSize * 2)) / 6)
+		let gridWidth = (windowWidth - (sideSize * 2)) / 6
 
-		Draggable.create('.js-menu-btn', {
+		Draggable.create(menuBtn, {
             type: 'x',
-			// edgeResistance: .95,
             bounds: {
-                minX: -(this.windowWidth - (sideSize * 2)) * 10 / 12,
+                minX: -(windowWidth - (sideSize * 2)) * 10 / 12,
                 maxX: 0
             },
+			zIndex: 1000,
+			zIndexBoost: false,
 			liveSnap: true,
 			snap: {
-				x: function(endValue) {
+				x: (endValue) => {
 					return Math.round(endValue / gridWidth) * gridWidth
 				}
 			},
-			zIndex: 1000,
-			zIndexBoost: false
+			onPress: function() {
+				document.body.classList.add('is-menu-active')
+			},
+			onRelease: function(endValue) {
+				document.body.classList.remove('is-menu-active')
+				TweenMax.set(menuBtn, {clearProps: 'x'})
+
+				const selectedId = Math.floor(endValue.x / gridWidth)
+
+				if (selectedId < 5) {
+					const selectedItem = menuState.find((menuItem) => {
+						return menuItem.id == selectedId
+					})
+
+					switch (selectedItem.state) {
+						case 'todo':
+							hashHistory.push(`/choice/${selectedId}`)
+							break
+
+						case 'locked':
+							break
+
+						case 'done':
+							break
+
+						default:
+							break
+					}
+				}
+			}
         })
-
-	}
-
-	mouseDownHandler() {
-
-		document.body.classList.add('is-menu-active')
-
-	}
-
-	mouseUpHandler() {
-
-		document.body.classList.remove('is-menu-active')
 
 	}
 
@@ -88,12 +110,11 @@ class Menu extends React.Component {
 
 	render() {
 
-		this.getContent();
+		this.getContent()
 
 		return (
 			<div>
-				<div className="menu__btn js-menu-btn"
-					onMouseDown={this.mouseDownHandler.bind(this)} onMouseUp={this.mouseUpHandler.bind(this)}>
+				<div className="menu__btn" ref="menuBtn">
 					<span></span>
 				</div>
 				<div className="menu">

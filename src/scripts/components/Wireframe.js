@@ -12,7 +12,7 @@ class Wireframe extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
@@ -43,7 +43,7 @@ class Wireframe extends React.Component {
 
 	render() {
 
-		this.getContent();
+		this.getContent()
 
 		return (
 			<div className={this.classes}>

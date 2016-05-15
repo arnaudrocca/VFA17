@@ -8,7 +8,7 @@ class Experiment extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 

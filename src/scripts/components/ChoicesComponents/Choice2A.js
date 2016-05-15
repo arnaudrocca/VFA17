@@ -5,23 +5,23 @@ class Choice2A extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
 
 	}
 
 	handleSubmit(e) {
 
-		e.preventDefault();
+		e.preventDefault()
 
-		let answer;
+		let answer
 
 		if (ReactDOM.findDOMNode(this.refs.choiceA).checked) {
-			answer = ReactDOM.findDOMNode(this.refs.choiceA).value;
+			answer = ReactDOM.findDOMNode(this.refs.choiceA).value
 		} else {
-			answer = ReactDOM.findDOMNode(this.refs.choiceB).value;
+			answer = ReactDOM.findDOMNode(this.refs.choiceB).value
 		}
 
-		this.props.submitHandler(this.props.id, answer);
+		this.props.submitHandler(this.props.id, answer)
 
 	}
 

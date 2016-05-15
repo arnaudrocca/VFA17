@@ -5,7 +5,8 @@ class ChoicesDone extends React.Component {
 
 	constructor() {
 
-		super();
+		super()
+		
 		this.choicesNumber = 5
 		this.state = {
 			circlePerimeter : 0,
@@ -29,7 +30,7 @@ class ChoicesDone extends React.Component {
 
 	render() {
 
-		this.getContent();
+		this.getContent()
 
 		return (
 			<div>
