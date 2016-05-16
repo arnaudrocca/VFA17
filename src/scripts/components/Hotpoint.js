@@ -7,8 +7,6 @@ class Hotpoint extends React.Component {
 
 		super()
 
-		this.radius = 5
-
 	}
 
 	getContent() {
@@ -34,9 +32,13 @@ class Hotpoint extends React.Component {
 
 		let dialog = ''
 
-		for (let i in this.props.hotpoint.answers) {
-			dialog += this.data.text
+		for (let answer of this.props.hotpoint.answers) {
+			const hotpointDatum = hotpointsData.find((hotpointData) => {
+				return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == answer
+			})
 		}
+
+		dialog += hotpointDatum.text
 
 		this.props.onClick(dialog)
 
