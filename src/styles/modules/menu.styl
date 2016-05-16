@@ -68,6 +68,7 @@
 		antialiased()
 
 	&__btn
+
 		position absolute
 		top calc(50% - 1.5rem)
 		right calc(((100vw - 4rem) / 12) + .5rem)
@@ -80,28 +81,68 @@
 
 		transition transform .8s $easeOutExpo
 
-		span
-			position absolute
-			top 50%
-			left 50%
-			width 0.4rem
-			height 0.4rem
-			background $white
-			border-radius 50%
-			transform translate3d(-50%,-50%, 0)
-
-			&:after, &:before
-				content ''
+		&__icon
+			width 3rem
+			height 3rem
+			transform-origin 50% 50%
+			transition transform .3s $easeOutExpo
+			span
 				position absolute
 				top 50%
+				left 50%
 				width 0.4rem
 				height 0.4rem
 				background $white
 				border-radius 50%
-				transform translate3d(-50%,-50%, 0)
+				transform translate(-50%,-50%)
+				transition transform .3s $easeOutExpo
 
-			&:after
-				left calc(50% - 0.6rem)
+				&:after, &:before
+					content ''
+					position absolute
+					top 50%
+					width 0.4rem
+					height 0.4rem
+					background $white
+					border-radius 50%
+					transform translate(-50%,-50%)
+					transition transform .3s $easeOutExpo
 
-			&:before
-				left calc(50% + 0.6rem)
+				&:after
+					left calc(50% - 0.6rem)
+
+				&:before
+					left calc(50% + 0.6rem)
+
+		&.is-active
+
+			.menu__btn__icon
+				transform rotate(90deg)
+
+				span
+					transform translate(-50%,50%)
+
+					&:after, &:before
+						transform translate(-50%,-200%)
+
+
+	&__drag-start
+		position absolute
+		top calc(50%)
+		right calc(((100vw - 4rem) / 12) + 2rem)
+		z-index 105
+		width 0.8rem
+		height 0.8rem
+		background $red
+		border-radius 50%
+		transform translate(50%, -50%)
+
+	&__drag-line
+		position absolute
+		top calc(50%)
+		right calc(((100vw - 4rem) / 12) + 2rem)
+		z-index 105
+		height 0.2rem
+		background $red
+		transform translate(0, -50%)
+		transition width .8s $easeOutExpo

@@ -1,6 +1,5 @@
 import React from 'react'
 import { debounce } from 'lodash'
-import { Link } from 'react-router'
 
 class Mayor extends React.Component {
 
@@ -85,8 +84,6 @@ class Mayor extends React.Component {
 
 		return (
 			<div className="mayor">
-			  	<Link to="/choice/0">Choice 1</Link>
-			  	<Link to="/choice/1">Choice 2</Link>
 			  	<div className="mayor__dialog">
 			  		<p>{this.content}</p>
 			  	</div>

@@ -40,8 +40,10 @@ class Choices extends React.Component {
 
 	}
 
-	returnToMap(){
+	returnToMap() {
+
 		hashHistory.push('/experiment')
+        
 	}
 
 	render() {

@@ -11,25 +11,27 @@ class Menu extends React.Component {
 
 		super()
 
+		window.addEventListener('resize', this.resize.bind(this))
+
 	}
 
 	componentDidMount() {
 
 		let windowWidth = window.innerWidth
-
 		let menuState = this.props.menuState
 		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
+		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
 
 		const sideSize = 20
-		let gridWidth = (windowWidth - (sideSize * 2)) / 6
+		const gridWidth = (windowWidth - (sideSize * 2)) / 6
 
-		Draggable.create(menuBtn, {
+		this.menuBtnDrag = Draggable.create(menuBtn, {
             type: 'x',
             bounds: {
                 minX: -(windowWidth - (sideSize * 2)) * 10 / 12,
                 maxX: 0
             },
-			zIndex: 1000,
+			zIndex: 110,
 			zIndexBoost: false,
 			liveSnap: true,
 			snap: {
@@ -39,10 +41,17 @@ class Menu extends React.Component {
 			},
 			onPress: function() {
 				document.body.classList.add('is-menu-active')
+				menuBtn.classList.add('is-active')
+			},
+			onDrag: function() {
+				TweenMax.set(menuDragLine,{width: Math.abs(this.x)})
 			},
 			onRelease: function(endValue) {
 				document.body.classList.remove('is-menu-active')
+				menuBtn.classList.remove('is-active')
+
 				TweenMax.set(menuBtn, {clearProps: 'x'})
+				TweenMax.set(menuDragLine, {width: 0})
 
 				const selectedId = Math.floor(endValue.x / gridWidth)
 
@@ -68,6 +77,12 @@ class Menu extends React.Component {
 				}
 			}
         })
+
+	}
+
+	resize() {
+
+		//
 
 	}
 
@@ -115,8 +130,12 @@ class Menu extends React.Component {
 		return (
 			<div>
 				<div className="menu__btn" ref="menuBtn">
-					<span></span>
+					<div className="menu__btn__icon">
+						<span></span>
+					</div>
 				</div>
+				<div className="menu__drag-start"></div>
+				<div ref="menuDragLine" className="menu__drag-line"></div>
 				<div className="menu">
 					{this.menuItems}
 					<div className="menu__slice menu__slice--empty"></div>

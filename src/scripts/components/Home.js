@@ -9,7 +9,7 @@ class Home extends React.Component {
 
 	}
 
-	render(){
+	render() {
 
 		return (
 			<section className="home">
@@ -25,7 +25,7 @@ class Home extends React.Component {
 				<video className="home__video" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
 			</section>
 		)
-		
+
 	}
 
 }

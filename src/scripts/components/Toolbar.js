@@ -38,7 +38,7 @@ class Toolbar extends React.Component {
 
     render() {
 
-        return(
+        return (
             <div className="toolbar">
                 <button className="toolbar__btn">
                     <span>Infos</span>
