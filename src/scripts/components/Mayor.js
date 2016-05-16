@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
 
 class Mayor extends React.Component {
@@ -21,13 +22,20 @@ class Mayor extends React.Component {
 
 	}
 
-	componentWillUnmount() {
+	componentDidMount() {
+		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
+	}
 
+	componentWillUnmount() {
+		//TweenMax.to(this.mayorDialogNode, 0.3, {visibility :'hidden', opacity: 0}) 
 		window.removeEventListener('keydown', this.spacebarDownHandler.bind(this))
 
 	}
 
-	componentWillReceiveProps() {
+	componentWillReceiveProps() {	
+		console.log(this.mayorDialogNode)
+
+		
 
 		this.setState({
 			dialogIndex: 0,
@@ -52,15 +60,20 @@ class Mayor extends React.Component {
 
 		const event = e || document.event
 
-		if (event.keyCode == 32) {
-			if (this.state.dialogIndex + 1 >= this.paragraphs.length && !this.state.talked) {
+		if (event.keyCode == 32 && this.paragraphs != '') {
+
+			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
 				this.setState({
 					talked: true
 				})
-			} else {
+				console.log('done')
+			} 
+
+			if(!this.state.talked) {
 				this.setState({
 					dialogIndex: this.state.dialogIndex + 1
 				})
+				console.log('is talking')
 			}
 		}
 
@@ -75,7 +88,7 @@ class Mayor extends React.Component {
 				<span className="char" key={index}>{char}</span>
 			)
 		})
-
+		
 	}
 
 	render() {
@@ -84,7 +97,7 @@ class Mayor extends React.Component {
 
 		return (
 			<div className="mayor">
-			  	<div className="mayor__dialog">
+			  	<div ref="mayorDialog" className="mayor__dialog">
 			  		<p>{this.content}</p>
 			  	</div>
 			</div>
