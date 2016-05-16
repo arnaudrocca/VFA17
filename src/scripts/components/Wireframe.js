@@ -1,12 +1,12 @@
 import React from 'react'
 import ChoicesDoneContainer from '../containers/ChoicesDoneContainer'
-import IconBorderTop from './svg/icon-border-top'
-import IconBorderRight from './svg/icon-border-right'
-import IconBorderRightArrow from './svg/icon-border-right-arrow'
-import IconBorderBottom from './svg/icon-border-bottom'
-import IconBorderLeft from './svg/icon-border-left'
-import IconDragHome from './svg/icon-drag-home'
-import IconCorner from './svg/icon-corner'
+import IconBorderTop from './iconsComponents/icon-border-top'
+import IconBorderRight from './iconsComponents/icon-border-right'
+import IconBorderRightArrow from './iconsComponents/icon-border-right-arrow'
+import IconBorderBottom from './iconsComponents/icon-border-bottom'
+import IconBorderLeft from './iconsComponents/icon-border-left'
+import IconDragHome from './iconsComponents/icon-drag-home'
+import IconCorner from './iconsComponents/icon-corner'
 
 class Wireframe extends React.Component {
 

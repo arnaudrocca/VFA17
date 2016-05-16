@@ -1,79 +1,79 @@
 .choice
 	position relative
-	
+
 	&__aside
 		position absolute
-		top 2rem
-		left 2rem
 		width calc(34vw - 2rem)
 		height calc(100vh - 4rem)
+		top 2rem
+		left 2rem
 		background $white
-		background linear-gradient(45deg, transparent 2em, $white 0) bottom left //little trick to get the cutted corner
-	
+		background linear-gradient(45deg, transparent 2em, $white 0) bottom left // Little trick to get the cutted corner
+
 	&__btn-return
 		position relative
 		width 16.5rem
 		height 4rem
 		margin 1.6rem 0 0 1.5rem
+		color $purple
+		font-family $font-cooper-heavy
 		font-size 1.2rem
 		line-height 4rem
-		font-family $font-cooper-heavy
 		letter-spacing 0.4px
 		text-transform uppercase
-		color $purple
 		antialiased()
-		
-		svg 
+
+		svg
 			position absolute
 			top -0.1rem
 			left 0
-		
-		
+
+
 	&__description
 		width 29rem
 		margin 16.5rem auto 0
 		antialiased()
-		
+
 		&__date
-			font-size 1.2rem
+			color $red
 			font-family $font-cooper-heavy
+			font-size 1.2rem
 			letter-spacing 0.4px
 			text-transform uppercase
-			color $red
-		
+
 		&__title
 			margin-top 2rem
+			color $purple
+			font-family $font-cooper-heavy
 			font-size 3rem
 			line-height 3.6rem
-			font-family $font-cooper-heavy
 			text-transform uppercase
-			color $purple
-	
+
 		&__context
 			margin-top 3.5rem
+			color $purple-light
+			font-family $font-pressura-regular
 			font-size 1.4rem
 			line-height 2.4rem
-			font-family $font-pressura-regular
-			color $purple-light
-		
+
 	&__interaction
 		position absolute
-		left 34vw
 		width 66vw
 		height 100vh
-		
+		left 34vw
+
 	&__interaction-main
 		position absolute
-		z-index 100
 		top 0
-		
+		z-index 100
+
 	&__interaction-background
 		position relative
 		width 66vw
 		height 100vh
-		background url('../../static/assets/images/choice1.png') center no-repeat
+		background url('../../static/assets/images/choices/choice0.png') center no-repeat
 		background-size cover
-		
+
 		&:after
 			content ''
 			position absolute
@@ -81,5 +81,4 @@
 			right 0
 			bottom 0
 			left 0
-			background rgba($fucking-blue,0.75)
-			
+			background rgba($fucking-blue, 0.75)

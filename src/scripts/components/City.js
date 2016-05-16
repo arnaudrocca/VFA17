@@ -1,6 +1,6 @@
 import React from 'react'
-import IconFlower from './svg/icon-flower'
-import IconShield from './svg/icon-shield'
+import IconFlower from './iconsComponents/icon-flower'
+import IconShield from './iconsComponents/icon-shield'
 
 class City extends React.Component {
 

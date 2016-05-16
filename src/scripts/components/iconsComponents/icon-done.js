@@ -1,6 +1,7 @@
 import React from 'react'
 
-const IconDone = ({width,color,opacity}) => (
+const IconDone = ({width, color, opacity}) => (
+
 	<svg x="0px" y="0px" viewBox="-690 372 58 58" opacity={opacity} width={width} fill={color}>
 		<path d="M-661,387c3.7,0,7.3,1.5,9.9,4.1c5.5,5.5,5.5,14.3,0,19.8c-2.6,2.6-6.2,4.1-9.9,4.1s-7.3-1.5-9.9-4.1
 	c-5.5-5.5-5.5-14.3,0-19.8C-668.3,388.5-664.7,387-661,387 M-661,386c-3.8,0-7.7,1.5-10.6,4.4c-5.9,5.9-5.9,15.4,0,21.2

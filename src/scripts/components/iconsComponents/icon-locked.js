@@ -1,6 +1,7 @@
 import React from 'react'
 
-const IconLocked = ({width,color,opacity}) => (
+const IconLocked = ({width, color, opacity}) => (
+
 	<svg x="0px" y="0px" viewBox="-682 364 74 74" opacity={opacity} width={width} fill={color}>
 		<g>
 			<g>

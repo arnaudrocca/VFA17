@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IconDragHome = ({width,color,classes}) => (
+const IconDragHome = ({width, color, classes}) => (
 
 	<svg className={classes} x="0px" y="0px" viewBox="-269 360 73 73" width={width}>
 		<path opacity="0.5" fill="#2D2E3A" enable-background="new    " d="M-232.5,361.5c-19.3,0-35,15.7-35,35s15.7,35,35,35
@@ -12,8 +12,6 @@ const IconDragHome = ({width,color,classes}) => (
 		<circle fill="#FFFFFF" cx="-232.5" cy="396.5" r="23"/>
 	</svg>
 
-
 )
 
 export default IconDragHome
-

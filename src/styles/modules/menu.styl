@@ -1,17 +1,17 @@
 .menu
 	position fixed
-	top 0
-	right 0
-	bottom 0
-	left 0
-	z-index 10
 	display none
 	flex-direction row
 	justify-content center
 	align-items center
 	width 100%
 	height 100vh
-	background rgba($blue-darker,0.25)
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background rgba($blue-darker, 0.25)
+	z-index 10
 
 	&__slice
 		position relative
@@ -21,11 +21,11 @@
 		&:after
 			content ''
 			position absolute
+			width 0.1rem
+			height calc(100vh - 4rem)
 			top 0
 			right 0
-			height calc(100vh - 4rem)
-			width 0.1rem
-			background rgba($white,0.3)
+			background rgba($white, 0.3)
 
 		&--empty
 			&:after
@@ -47,12 +47,12 @@
 		top 10rem
 		right 0
 		left 0
-		text-align center
-		font-size 1.2rem
+		color rgba($white, 0.6)
 		font-family $font-cooper-heavy
+		font-size 1.2rem
 		text-transform uppercase
 		letter-spacing 0.6px
-		color rgba($white,0.6)
+		text-align center
 		antialiased()
 
 	&__infos
@@ -60,54 +60,52 @@
 		right 0
 		bottom 5.5rem
 		left 0
-		text-align center
-		font-size 1.4rem
-		font-family $font-pressura-regular
-		letter-spacing 0.2px
 		color $white
+		font-family $font-pressura-regular
+		font-size 1.4rem
+		letter-spacing 0.2px
+		text-align center
 		antialiased()
 
 	&__btn
-
 		position absolute
-		top calc(50% - 1.5rem)
-		right calc(((100vw - 4rem) / 12) + .5rem)
-		z-index 110
 		width 3rem
 		height 3rem
+		top calc(50% - 1.5rem)
+		right calc(((100vw - 4rem) / 12) + 0.5rem)
 		background $red
 		border-radius 50%
 		cursor w-resize !important
-
-		transition transform .8s $easeOutExpo
+		z-index 110
+		transition transform 0.8s $easeOutExpo
 
 		&__icon
 			width 3rem
 			height 3rem
 			transform-origin 50% 50%
-			transition transform .3s $easeOutExpo
+			transition transform 0.3s $easeOutExpo
 
 			span
 				position absolute
-				top 50%
-				left 50%
 				width 0.4rem
 				height 0.4rem
+				top 50%
+				left 50%
 				background $white
 				border-radius 50%
-				transform translate(-50%,-50%)
-				transition transform .3s $easeOutExpo
+				transform translate(-50%, -50%)
+				transition transform 0.3s $easeOutExpo
 
 				&:after, &:before
 					content ''
 					position absolute
-					top 50%
 					width 0.4rem
 					height 0.4rem
+					top 50%
 					background $white
 					border-radius 50%
-					transform translate(-50%,-50%)
-					transition transform .3s $easeOutExpo
+					transform translate(-50%, -50%)
+					transition transform 0.3s $easeOutExpo
 
 				&:after
 					left calc(50% - 0.6rem)
@@ -120,29 +118,29 @@
 				transform rotate(90deg)
 
 				span
-					transform translate(-50%,50%)
+					transform translate(-50%, 50%)
 
 					&:after, &:before
-						transform translate(-50%,-200%)
+						transform translate(-50%, -200%)
 
 
 	&__drag-start
 		position absolute
-		top calc(50%)
-		right calc(((100vw - 4rem) / 12) + 2rem)
-		z-index 105
 		width 0.8rem
 		height 0.8rem
+		top calc(50%)
+		right calc(((100vw - 4rem) / 12) + 2rem)
 		background $red
 		border-radius 50%
+		z-index 105
 		transform translate(50%, -50%)
 
 	&__drag-line
 		position absolute
+		height 0.2rem
 		top calc(50%)
 		right calc(((100vw - 4rem) / 12) + 2rem)
-		z-index 105
-		height 0.2rem
 		background $red
+		z-index 105
 		transform translate(0, -50%)
-		transition width .8s $easeOutExpo
+		transition width 0.8s $easeOutExpo

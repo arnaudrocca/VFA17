@@ -1,6 +1,7 @@
 import React from 'react'
 
-const IconScreen = ({width,color}) => (
+const IconScreen = ({width, color}) => (
+
 	<svg  x="0px" y="0px" viewBox="-225.7 360.7 98.4 74" width={width} fill={color}>
 		<g>
 			<path d="M-219.3,388.7h-4.8c-0.9,0-1.6-0.7-1.6-1.6v-24.8c0-0.9,0.7-1.6,1.6-1.6h24.8c0.9,0,1.6,0.7,1.6,1.6v4.8

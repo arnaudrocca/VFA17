@@ -1,6 +1,6 @@
 import React from 'react'
-import IconSound from './svg/icon-sound'
-import IconScreen from './svg/icon-screen'
+import IconSound from './iconsComponents/icon-sound'
+import IconScreen from './iconsComponents/icon-screen'
 
 class Toolbar extends React.Component {
 

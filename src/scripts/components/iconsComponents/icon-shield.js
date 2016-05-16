@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IconShield = ({width,color,classes}) => (
+const IconShield = ({width, color, classes}) => (
 
 	<svg className={classes} x="0px" y="0px" viewBox="0 0 54.2 67.3" width={width} fill={color}>
 		<path fill="#FFEBD3" d="M6.4,61.3h7.8h2.4c3.1,0,6.1,1.3,8.2,3.6l2.3,2.4l2.3-2.4c2.1-2.3,5.1-3.6,8.2-3.6H40h7.8
@@ -24,7 +24,7 @@ const IconShield = ({width,color,classes}) => (
 			<path fill="#82D5E8" d="M44.8,47.6c-13.2,0-22.4,4.4-32.2,6.9c-4.1,1-8,2-12.1,2.8c1,2.3,3.2,3.9,5.9,3.9h7.8h2.4
 				c3.1,0,6.1,1.3,8.2,3.6l2.3,2.4l2.3-2.4c2.1-2.3,5.1-3.6,8.2-3.6H40h7.8c3.5,0,6.4-2.9,6.4-6.4v-6.4C51.1,47.9,47.9,47.6,44.8,47.6
 				z"/>
-		</g>	
+		</g>
 	</svg>
 
 )

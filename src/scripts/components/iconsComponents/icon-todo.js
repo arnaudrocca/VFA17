@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IconTodo = ({width,classes}) => (
+const IconTodo = ({width, classes}) => (
 
 	<svg className={classes} x="0px" y="0px" viewBox="0 0 73.9 73.8" width={width}>
 		<g>

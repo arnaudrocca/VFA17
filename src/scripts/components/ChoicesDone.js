@@ -1,12 +1,12 @@
 import React from 'react'
-import IconDrag from './svg/icon-drag'
+import IconDrag from './iconsComponents/icon-drag'
 
 class ChoicesDone extends React.Component {
 
 	constructor() {
 
 		super()
-		
+
 		this.choicesNumber = 5
 		this.state = {
 			circlePerimeter : 0,
@@ -21,11 +21,14 @@ class ChoicesDone extends React.Component {
 		this.setState({
 			circlePerimeter : circle.getAttribute('r') * Math.PI *  2
 		})
+
 	}
 
 	getContent() {
+
 		let circlePerimeterFragment = this.state.circlePerimeter / this.choicesNumber
 		this.offset = (this.props.choicesDone + this.choicesNumber) * circlePerimeterFragment
+		
 	}
 
 	render() {

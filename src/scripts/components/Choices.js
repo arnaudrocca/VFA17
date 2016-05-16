@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory, Link } from 'react-router'
-import choicesData from '../data/choices.json'
 import * as ChoicesComponents from './ChoicesComponents'
+import choicesData from '../data/choices.json'
 
 class Choices extends React.Component {
 
@@ -43,7 +43,7 @@ class Choices extends React.Component {
 	returnToMap() {
 
 		hashHistory.push('/experiment')
-        
+
 	}
 
 	render() {

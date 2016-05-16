@@ -72,7 +72,6 @@ const hotpointUpdate = (mapId, answer) => {
 export const choiceMade = (choiceId, answer, timeout) => {
 
     return (dispatch, getState) => {
-
         let consequences = answersData.find((choice) => {
             return choice.name == answer
         })
@@ -92,7 +91,6 @@ export const choiceMade = (choiceId, answer, timeout) => {
         dispatch(mayorTalks(consequences.dialog, consequences.mood))
 
         console.log(getState(), 'NEW STATE')
-
     }
 
 }

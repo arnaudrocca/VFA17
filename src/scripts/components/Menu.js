@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory } from 'react-router'
-import IconDone from './svg/icon-done'
-import IconLocked from './svg/icon-locked'
-import IconTodo from './svg/icon-todo'
+import IconDone from './iconsComponents/icon-done'
+import IconLocked from './iconsComponents/icon-locked'
+import IconTodo from './iconsComponents/icon-todo'
 
 class Menu extends React.Component {
 

@@ -3,7 +3,7 @@
 	top 2rem
 	left 2rem
 	z-index 15
-	
+
 	&__panel
 		display flex
 		flex-direction row
@@ -12,18 +12,18 @@
 		width 25.5rem
 		height 5.5rem
 		padding-left 2rem
-		background linear-gradient(315deg, transparent 1.1em, $white 0) bottom right //little trick to get the cutted corner
-		
+		background linear-gradient(315deg, transparent 1.1em, $white 0) bottom right // Little trick to get the cutted corner
+
 	&__name
+		color $blue-dark
+		font-family $font-cooper-heavy
 		font-size 1.6rem
 		letter-spacing 0.08rem
 		text-transform uppercase
-		font-family $font-cooper-heavy
-		color $blue-dark
-		
+
 	&__shield
 		margin-right 2rem
-		
+
 	&__infos
 		display flex
 		flex-direction row
@@ -32,14 +32,13 @@
 		width 16.5rem
 		height 5rem
 		padding-left 2rem
-		font-size 1.8rem
+		color $grey-dark
 		font-family $font-pressura-regular
+		font-size 1.8rem
 		text-transform uppercase
 		letter-spacing 0.4px
 		background linear-gradient(315deg, transparent 0.9em, rgba($grey-lighter, 0.5) 0) bottom right
-		color $grey-dark
-		
+
 		> svg
 			& + svg
 				margin-left 0.8rem
-		

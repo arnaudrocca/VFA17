@@ -1,21 +1,21 @@
 .toolbar
 	position fixed
-	z-index 10
-	bottom 2rem
-	right 3.2rem
 	display flexbox
 	flex-direction row
 	justify-content space-between
-	
-	&__btn 
+	bottom 2rem
+	right 3.2rem
+	z-index 10
+
+	&__btn
 		padding 1.2rem 1.2rem 0 1.2rem
-		text-align center
-		font-size 1.2rem
-		font-family $font-cooper-bold
-		text-transform uppercase
 		color $white
+		font-family $font-cooper-bold
+		font-size 1.2rem
+		text-transform uppercase
+		text-align center
 		antialiased()
-		
+
 		&:after
 			content ''
 			display block
@@ -23,18 +23,18 @@
 			height 0
 			margin-top 0.8rem
 			margin-left -0.3rem
-			border-bottom 0.3rem solid rgba($grey-lighter,0.8)
+			border-bottom 0.3rem solid rgba($grey-lighter, 0.8)
 			border-left 0.3rem solid transparent
 			border-right 0.3rem solid transparent
 			transition transform, border 0.15s ease-out
-			
-		> span 
+
+		> span
 			display block
 			transition transform 0.15s ease-out
-			
+
 		&:hover
 			> span
 				transform translateY(-0.3rem)
-			
+
 			&:after
 				border-bottom-color $white

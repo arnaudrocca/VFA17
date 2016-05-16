@@ -1,6 +1,7 @@
 import React from 'react'
 
-const IconSound = ({width,color}) => (
+const IconSound = ({width, color}) => (
+	
 	<svg x="0px" y="0px" width={width} fill={color} viewBox="-220 358.8 84 69.8">
 		<g>
 			<path d="M-204.2,381H-218c-1.1,0-2,0.9-2,2v21c0,1.1,0.9,2,2,2h13.8c1.1,0,2.1,0.4,2.9,1.2l17.9,18.4c1.3,1.3,3.4,0.4,3.4-1.4V363
