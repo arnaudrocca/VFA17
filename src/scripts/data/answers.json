@@ -5,7 +5,8 @@
         "mapIds": [0, 1],
         "mapVersions": ["C", "B"],
         "score": 1,
-        "dialog": "Tu viens de choisir l'agriculture § mon petit sucre"
+        "dialog": "Tu viens de choisir l'agriculture § mon petit sucre",
+        "mood" : "happy"
     },
     {
         "name": "elevage",
@@ -13,7 +14,8 @@
         "mapIds": [0],
         "mapVersions": ["B"],
         "score": -1,
-        "dialog": "Tu viens de choisir l'élevage § mon petit abricot d'alabama"
+        "dialog": "Tu viens de choisir l'élevage § mon petit abricot d'alabama",
+        "mood" : "sad"
     },
     {
         "name": "lapins",
@@ -21,7 +23,8 @@
         "mapIds": [0],
         "mapVersions": ["A"],
         "score": -1,
-        "dialog": "Tu viens de choisir les lapins § mon petit lapin LOOOOL"
+        "dialog": "Tu viens de choisir les lapins § mon petit lapin LOOOOL",
+        "mood" : "sad"
     },
     {
         "name": "lions",
@@ -29,7 +32,8 @@
         "mapIds": [0],
         "mapVersions": ["C"],
         "score": -1,
-        "dialog": "Tu viens de choisir les lions § mon petit félins du congo"
+        "dialog": "Tu viens de choisir les lions § mon petit félins du congo",
+        "mood" : "sad"
     },
     {
         "name": "jaune",

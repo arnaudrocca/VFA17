@@ -6,7 +6,8 @@ import { mayorTalks } from '../actions/index'
 const mapStateToProps = (state) => {
 
 	return {
-		dialog: state.mayor.dialog
+		dialog: state.mayor.dialog,
+		mood: state.mayor.mood
 	}
 
 }
@@ -15,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
 
 	return {
 	    mayorTalked: () => {
-	    	dispatch(mayorTalks(''))
+	    	dispatch(mayorTalks('', 'neutral'))
 	    }
     }
 

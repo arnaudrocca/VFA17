@@ -12,10 +12,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-	
+
 	return {
-	    onClick: (dialog) => {
-	    	dispatch(mayorTalks(dialog))
+	    onClick: (dialog, mood) => {
+	    	dispatch(mayorTalks(dialog, mood))
 	    }
     }
 

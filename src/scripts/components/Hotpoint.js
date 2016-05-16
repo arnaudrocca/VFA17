@@ -40,7 +40,7 @@ class Hotpoint extends React.Component {
 
 		dialog += this.hotpointDatum.text
 
-		this.props.onClick(dialog)
+		this.props.onClick(dialog, this.data.mood)
 
 	}
 

@@ -26,7 +26,7 @@ class Mayor extends React.Component {
 		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
 
 		if (this.paragraphs != '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {visibility: 'visible', opacity: 1})
+			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
 		}
 
 	}
@@ -43,7 +43,7 @@ class Mayor extends React.Component {
 			dialogIndex: 0
 		})
 
-		TweenMax.to(this.mayorDialogNode, 0.3, {visibility: 'visible', opacity: 1})
+		TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
 
 	}
 
@@ -66,7 +66,7 @@ class Mayor extends React.Component {
 		if (event.keyCode == 32 && this.paragraphs != '') {
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
 				this.props.mayorTalked()
-				TweenMax.to(this.mayorDialogNode, 0.3, {visibility: 'hidden', opacity: 0})
+				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
 			} else {
 				this.setState({
 					dialogIndex: this.state.dialogIndex + 1
@@ -79,11 +79,15 @@ class Mayor extends React.Component {
 	getContent() {
 
 		let splittedDialog = this.paragraphs[this.state.dialogIndex].split('')
-		this.content = splittedDialog.map((char,index) => {
+		this.dialog = splittedDialog.map((char, index) => {
 			return (
 				<span className="char" key={index}>{char}</span>
 			)
 		})
+
+		this.style = {
+			backgroundImage: `url(assets/images/mayor/mayor-${this.props.mood}.jpg)`
+		}
 
 	}
 
@@ -92,9 +96,9 @@ class Mayor extends React.Component {
 		this.getContent()
 
 		return (
-			<div className="mayor">
+			<div className="mayor" style={this.style}>
 			  	<div ref="mayorDialog" className="mayor__dialog">
-			  		<p>{this.content}</p>
+			  		<p>{this.dialog}</p>
 			  	</div>
 			</div>
 		)

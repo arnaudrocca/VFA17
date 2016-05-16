@@ -4,23 +4,26 @@
 		"mapId" : 0,
 		"x": 60,
 		"y": 40,
-		"answer" : "agriculture",
-		"text" : "Le supermarché § eh ben maintenant c'est un Bio C bon."
+		"answer": "agriculture",
+		"text": "Le supermarché § eh ben maintenant c'est un Bio C bon.",
+		"mood": "happy"
 	},
 	{
 		"id": 1,
 		"mapId" : 0,
 		"x": 50,
 		"y": 50,
-		"answer" : "lapins",
-		"text" : "PARTOUT DES LAPINS"
+		"answer": "lapins",
+		"text": "PARTOUT DES LAPINS",
+		"mood": "sad"
 	},
 	{
 		"id": 2,
 		"mapId" : 1,
 		"x": 60,
 		"y": 60,
-		"answer" : "agriculture",
-		"text" : "Maintenant les mecs sont dans le Zaïon"
+		"answer": "agriculture",
+		"text": "Maintenant les mecs sont dans le Zaïon",
+		"mood": "neutral"
 	}
 ]

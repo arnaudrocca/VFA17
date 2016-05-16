@@ -49,11 +49,12 @@ const scoreUpdate = (score) => {
 
 }
 
-export const mayorTalks = (dialog) => {
+export const mayorTalks = (dialog,mood) => {
 
     return {
         type: CONSTANTS.MAYOR_TALKS,
-        dialog
+        dialog,
+        mood
     }
 
 }
@@ -88,7 +89,7 @@ export const choiceMade = (choiceId, answer, timeout) => {
         }
 
         dispatch(scoreUpdate(consequences.score))
-        dispatch(mayorTalks(consequences.dialog))
+        dispatch(mayorTalks(consequences.dialog, consequences.mood))
 
         console.log(getState(), 'NEW STATE')
 
