@@ -9,8 +9,7 @@ class Mayor extends React.Component {
 		super()
 
 		this.state = {
-			dialogIndex: 0,
-			talked: false
+			dialogIndex: 0
 		}
 
 	}
@@ -23,24 +22,28 @@ class Mayor extends React.Component {
 	}
 
 	componentDidMount() {
+
 		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
+
+		if (this.paragraphs != '') {
+			TweenMax.to(this.mayorDialogNode, 0.3, {visibility: 'visible', opacity: 1})
+		}
+
 	}
 
 	componentWillUnmount() {
-		//TweenMax.to(this.mayorDialogNode, 0.3, {visibility :'hidden', opacity: 0}) 
+
 		window.removeEventListener('keydown', this.spacebarDownHandler.bind(this))
 
 	}
 
-	componentWillReceiveProps() {	
-		console.log(this.mayorDialogNode)
-
-		
+	componentWillReceiveProps() {
 
 		this.setState({
-			dialogIndex: 0,
-			talked: false
+			dialogIndex: 0
 		})
+
+		TweenMax.to(this.mayorDialogNode, 0.3, {visibility: 'visible', opacity: 1})
 
 	}
 
@@ -52,7 +55,7 @@ class Mayor extends React.Component {
 
 	componentDidUpdate() {
 
-		TweenMax.staggerFrom('.char', 0, {display:'none'}, .015)
+		TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 
 	}
 
@@ -61,19 +64,13 @@ class Mayor extends React.Component {
 		const event = e || document.event
 
 		if (event.keyCode == 32 && this.paragraphs != '') {
-
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
-				this.setState({
-					talked: true
-				})
-				console.log('done')
-			} 
-
-			if(!this.state.talked) {
+				this.props.mayorTalked()
+				TweenMax.to(this.mayorDialogNode, 0.3, {visibility: 'hidden', opacity: 0})
+			} else {
 				this.setState({
 					dialogIndex: this.state.dialogIndex + 1
 				})
-				console.log('is talking')
 			}
 		}
 
@@ -82,13 +79,12 @@ class Mayor extends React.Component {
 	getContent() {
 
 		let splittedDialog = this.paragraphs[this.state.dialogIndex].split('')
-
 		this.content = splittedDialog.map((char,index) => {
 			return (
 				<span className="char" key={index}>{char}</span>
 			)
 		})
-		
+
 	}
 
 	render() {

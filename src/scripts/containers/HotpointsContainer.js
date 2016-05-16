@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+	
 	return {
 	    onClick: (dialog) => {
 	    	dispatch(mayorTalks(dialog))

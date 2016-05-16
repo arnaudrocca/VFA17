@@ -18,8 +18,8 @@ class Hotpoint extends React.Component {
 		if (this.props.hotpoint.answers.length > 0) {
 			this.hotpoint = <span></span>
 			this.position = {
-				left: this.data.x,
-				top: this.data.y
+				left: `${this.data.x}%`,
+				top: `${this.data.y}%`
 			}
 		} else {
 			this.hotpoint = ''
@@ -33,12 +33,12 @@ class Hotpoint extends React.Component {
 		let dialog = ''
 
 		for (let answer of this.props.hotpoint.answers) {
-			const hotpointDatum = hotpointsData.find((hotpointData) => {
+			this.hotpointDatum = hotpointsData.find((hotpointData) => {
 				return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == answer
 			})
 		}
 
-		dialog += hotpointDatum.text
+		dialog += this.hotpointDatum.text
 
 		this.props.onClick(dialog)
 
