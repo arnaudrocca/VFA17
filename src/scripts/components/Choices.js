@@ -17,7 +17,7 @@ class Choices extends React.Component {
 		//Identifies wich choice to display
 		this.choiceId = this.props.params.id
 
-		const currentChoice = this.props.choiceState.find((choice) => {
+		const currentChoice = this.props.choicesState.find((choice) => {
 			return choice.id == this.choiceId
 		})
 

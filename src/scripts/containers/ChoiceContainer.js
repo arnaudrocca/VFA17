@@ -6,7 +6,7 @@ import Choices from '../components/Choices'
 const mapStateToProps = (state) => {
 
     return {
-        choiceState: state.choices
+        choicesState: state.choices
 	}
 
 }

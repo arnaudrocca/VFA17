@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory } from 'react-router'
+import answersData from '../data/answers.json'
 import IconDone from './iconsComponents/icon-done'
 import IconLocked from './iconsComponents/icon-locked'
 import IconTodo from './iconsComponents/icon-todo'
+
 
 class Menu extends React.Component {
 
@@ -17,8 +19,12 @@ class Menu extends React.Component {
 
 	componentDidMount() {
 
-		let windowWidth = window.innerWidth
-		let menuState = this.props.menuState
+		const windowWidth = window.innerWidth
+
+		const props = this.props
+		const menuState = props.menuState
+		const choicesState = props.choicesState
+
 		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
 		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
 
@@ -60,15 +66,24 @@ class Menu extends React.Component {
 						return menuItem.id == selectedId
 					})
 
+					let dialog, mood = ''
+
 					switch (selectedItem.state) {
 						case 'todo':
 							hashHistory.push(`/choice/${selectedId}`)
 							break
 
 						case 'locked':
+							dialog = 'RIP'
+							mood = 'sad'
+							props.mayorTalks(dialog, mood)
 							break
 
 						case 'done':
+							const answer = answersData.find((answer) => {
+								return answer.name == choicesState[selectedId].answer
+							})
+							props.mayorTalks(answer.dialog, answer.mood)
 							break
 
 						default:
