@@ -51,6 +51,10 @@ class Mayor extends React.Component {
 
 		this.paragraphs = nextProps.dialog.split('§')
 
+		if (this.paragraphs == '') {
+			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
+		}
+
 	}
 
 	componentDidUpdate() {
