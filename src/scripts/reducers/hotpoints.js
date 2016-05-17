@@ -30,7 +30,7 @@ const hotpoints = (state = initialHotpoints, action) => {
             const result = state.map((hotpoint, index) => {
                 if (index == action.mapId) {
 					return Object.assign({}, hotpoint, {
-						answers: [...hotpoint.answers,action.answer]
+						answers: [...hotpoint.answers, action.answer]
 					})
 				} else {
 					return hotpoint
