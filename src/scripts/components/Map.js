@@ -11,9 +11,9 @@ class Map extends React.Component {
 		super()
 
 		this.scale = this.initScale = .6
-		this.scaleStep = .03
 		this.scaleMin = .5
 		this.scaleMax = 2
+		this.scaleStep = .1
 
 	}
 
@@ -95,7 +95,7 @@ class Map extends React.Component {
 				</div>
 			</div>
 		)
-		
+
 	}
 
 }
