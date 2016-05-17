@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory } from 'react-router'
+import { debounce } from 'lodash'
 import answersData from '../data/answers.json'
 import IconDone from './iconsComponents/icon-done'
 import IconLocked from './iconsComponents/icon-locked'
@@ -13,7 +14,7 @@ class Menu extends React.Component {
 
 		super()
 
-		window.addEventListener('resize', this.resize.bind(this))
+		window.addEventListener('resize', debounce(this.createDrag.bind(this), 350))
 
 	}
 
@@ -21,24 +22,27 @@ class Menu extends React.Component {
 
 		document.body.classList.remove('is-menu-active')
 
-		const windowWidth = window.innerWidth
+		this.createDrag()
+
+	}
+
+	createDrag() {
 
 		const props = this.props
-		const menuState = props.menuState
-		const choicesState = props.choicesState
 
 		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
 		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
 
+		const windowWidth = window.innerWidth
 		const sideSize = 20
 		const gridWidth = (windowWidth - (sideSize * 2)) / 6
 
 		this.menuBtnDrag = Draggable.create(menuBtn, {
-            type: 'x',
-            bounds: {
-                minX: -(windowWidth - (sideSize * 2)) * 10 / 12,
-                maxX: 0
-            },
+			type: 'x',
+			bounds: {
+				minX: -(windowWidth - (sideSize * 2)) * 10 / 12,
+				maxX: 0
+			},
 			zIndex: 110,
 			zIndexBoost: false,
 			liveSnap: true,
@@ -60,9 +64,11 @@ class Menu extends React.Component {
 				const selectedId = Math.floor(endValue.x / gridWidth)
 
 				if (selectedId < 5) {
-					const selectedItem = menuState.find((menuItem) => {
+					const selectedItem = props.menuState.find((menuItem) => {
 						return menuItem.id == selectedId
 					})
+
+					let dialog, mood = ''
 
 					switch (selectedItem.state) {
 						case 'todo':
@@ -73,6 +79,9 @@ class Menu extends React.Component {
 									hashHistory.push(`/choice/${selectedId}`)
 								}
 							})
+
+							dialog = ''
+							mood = 'neutral'
 							break
 
 						case 'locked':
@@ -81,9 +90,8 @@ class Menu extends React.Component {
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
 
-							const dialog = 'RIP'
-							const mood = 'sad'
-							props.mayorTalks(dialog, mood)
+							dialog = 'RIP'
+							mood = 'sad'
 							break
 
 						case 'done':
@@ -93,25 +101,23 @@ class Menu extends React.Component {
 							TweenMax.set(menuDragLine, {width: 0})
 
 							const answer = answersData.find((answer) => {
-								return answer.name == choicesState[selectedId].answer
+								return answer.name == props.choicesState[selectedId].answer
 							})
-							props.mayorTalks(answer.dialog, answer.mood)
+							dialog = answer.dialog
+							mood = answer.mood
 							break
 
 						default:
 							break
 					}
+
+					props.mayorTalks(dialog, mood)
+
 				} else {
 					document.body.classList.remove('is-menu-active')
 				}
 			}
-        })
-
-	}
-
-	resize() {
-
-		console.log(this.menuBtnDrag)
+		})
 
 	}
 
