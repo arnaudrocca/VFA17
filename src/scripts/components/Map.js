@@ -95,6 +95,7 @@ class Map extends React.Component {
 				</div>
 			</div>
 		)
+		
 	}
 
 }

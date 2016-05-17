@@ -45,14 +45,14 @@ class Menu extends React.Component {
 					return Math.round(endValue / gridWidth) * gridWidth
 				}
 			},
-			onPress: function() {
+			onPress: () => {
 				document.body.classList.add('is-menu-active')
 				menuBtn.classList.add('is-active')
 			},
-			onDrag: function() {
+			onDrag: () => {
 				TweenMax.set(menuDragLine,{width: Math.abs(this.x)})
 			},
-			onRelease: function(endValue) {
+			onRelease: (endValue) => {
 				document.body.classList.remove('is-menu-active')
 				menuBtn.classList.remove('is-active')
 
@@ -97,7 +97,7 @@ class Menu extends React.Component {
 
 	resize() {
 
-		//
+		console.log(this.menuBtnDrag)
 
 	}
 
