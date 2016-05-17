@@ -13,7 +13,7 @@ class Experiment extends React.Component {
 	}
 
 	render() {
-
+		console.log(window.previousLocation)
 		return (
 			<div className="experiment">
 				<ScoreContainer />

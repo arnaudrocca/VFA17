@@ -10,6 +10,10 @@ class App extends React.Component {
 
 	}
 
+	componentWillReceiveProps() {
+	    window.previousLocation = this.props.location.pathname
+	}
+
 	render() {
 
 		return (

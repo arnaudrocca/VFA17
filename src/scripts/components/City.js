@@ -1,13 +1,37 @@
 import React from 'react'
 import IconFlower from './iconsComponents/icon-flower'
 import IconShield from './iconsComponents/icon-shield'
+import { hashHistory } from 'react-router'
 
 class City extends React.Component {
 
 	constructor() {
 
 		super()
+		console.log(hashHistory)
 
+	}
+
+	componentDidMount(){
+		console.log('hello')
+		if(window.previousLocation == '/video'){
+			console.log('oui')
+			let introTimeline = new TimelineLite();
+
+			introTimeline.from('.city__panel', 0.3, {
+				'width': 0
+			})
+			.from('.city__panel svg, .city__panel span', 0.3, {
+				'x': -10,
+				'opacity': 0 
+			},'-=0.05')
+			.from('.city__infos', 0.3, {
+				'width': 0
+			},'-=0.3')
+			.staggerFrom('city__infos svg', 0.3, {
+				scale: 0
+			},0.2,'-=0.05')
+		}
 	}
 
 	getContent() {
