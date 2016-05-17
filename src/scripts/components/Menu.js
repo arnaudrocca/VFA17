@@ -19,6 +19,8 @@ class Menu extends React.Component {
 
 	componentDidMount() {
 
+		document.body.classList.remove('is-menu-active')
+
 		const windowWidth = window.innerWidth
 
 		const props = this.props
@@ -56,9 +58,6 @@ class Menu extends React.Component {
 				document.body.classList.remove('is-menu-active')
 				menuBtn.classList.remove('is-active')
 
-				TweenMax.set(menuBtn, {clearProps: 'x'})
-				TweenMax.set(menuDragLine, {width: 0})
-
 				const selectedId = Math.floor(endValue.x / gridWidth)
 
 				if (selectedId < 5) {
@@ -66,20 +65,34 @@ class Menu extends React.Component {
 						return menuItem.id == selectedId
 					})
 
-					let dialog, mood = ''
-
 					switch (selectedItem.state) {
 						case 'todo':
-							hashHistory.push(`/choice/${selectedId}`)
+							TweenMax.to('.experiment', 0.3, {
+								opacity: 0,
+								delay: 0.3,
+								onComplete: () => {
+									hashHistory.push(`/choice/${selectedId}`)
+								}
+							})
 							break
 
 						case 'locked':
-							dialog = 'RIP'
-							mood = 'sad'
+							document.body.classList.remove('is-menu-active')
+
+							TweenMax.set(menuBtn, {clearProps: 'x'})
+							TweenMax.set(menuDragLine, {width: 0})
+
+							const dialog = 'RIP'
+							const mood = 'sad'
 							props.mayorTalks(dialog, mood)
 							break
 
 						case 'done':
+							document.body.classList.remove('is-menu-active')
+
+							TweenMax.set(menuBtn, {clearProps: 'x'})
+							TweenMax.set(menuDragLine, {width: 0})
+
 							const answer = answersData.find((answer) => {
 								return answer.name == choicesState[selectedId].answer
 							})

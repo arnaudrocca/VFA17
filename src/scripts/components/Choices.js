@@ -12,6 +12,33 @@ class Choices extends React.Component {
 
 	}
 
+	componentDidMount() {
+
+		let introTimeline = new TimelineLite();
+
+		introTimeline.fromTo('.choice__aside', 0.3, {
+			width: 20
+		},{
+			width: '34%'
+		})
+		introTimeline.fromTo('.choice__interaction', 0.3, {
+			width: 0
+		},{
+			width: '66%'
+		})
+		introTimeline.fromTo('.choice__interaction-background', 0.3, {
+			x: -50,
+			scale: 1.1
+		},{
+			x: 0,
+			scale: 1
+		})
+		.from('.choice__description', 0.3, {
+			opacity: 0
+		})
+
+	}
+
 	getContent() {
 
 		//Identifies wich choice to display
