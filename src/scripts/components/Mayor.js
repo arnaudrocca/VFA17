@@ -27,6 +27,7 @@ class Mayor extends React.Component {
 
 		if (this.paragraphs != '') {
 			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
+			TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 		}
 
 	}

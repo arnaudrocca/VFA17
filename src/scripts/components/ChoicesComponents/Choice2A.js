@@ -28,7 +28,7 @@ class Choice2A extends React.Component {
 	render() {
 
 		return (
-			<div className="choice__interaction-main">
+			<div className="choice__interaction-container">
 				<h1>Jaune ou violette ?</h1>
 				<form onSubmit={this.handleSubmit.bind(this)}>
 					<label labelFor="choice-a">

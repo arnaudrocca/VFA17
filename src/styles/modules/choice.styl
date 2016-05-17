@@ -63,10 +63,27 @@
 		left 34vw
 		overflow hidden
 
-	&__interaction-main
+	&__interaction-container
 		position absolute
 		top 0
-		z-index 100
+		left 0
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		height 100vh
+
+	&__interaction-intro
+		color $white
+		text-align center
+
+		button
+			color $white
+
+	&__interaction-main
+		display none
+		opacity 0
 
 	&__interaction-background
 		position relative
