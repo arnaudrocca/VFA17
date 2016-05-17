@@ -51,11 +51,10 @@ class Menu extends React.Component {
 				document.body.classList.add('is-menu-active')
 				menuBtn.classList.add('is-active')
 			},
-			onDrag: () => {
-				TweenMax.set(menuDragLine,{width: Math.abs(this.x)})
+			onDrag: function() {
+				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
 			},
 			onRelease: (endValue) => {
-				document.body.classList.remove('is-menu-active')
 				menuBtn.classList.remove('is-active')
 
 				const selectedId = Math.floor(endValue.x / gridWidth)
@@ -102,6 +101,8 @@ class Menu extends React.Component {
 						default:
 							break
 					}
+				} else {
+					document.body.classList.remove('is-menu-active')
 				}
 			}
         })
