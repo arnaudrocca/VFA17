@@ -25,30 +25,7 @@ class Choice0 extends React.Component {
 
 	}
 
-	clickHandler() {
-
-		TweenMax.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
-		TweenMax.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
-
-	}
-
 	render() {
-
-		// return (
-		//
-		// 	<div className="choice__interaction-container">
-		// 		<div className="choice__interaction-intro">
-		// 			<p>Reliez les points !</p>
-		// 			<button onClick={this.clickHandler.bind(this)}>
-		// 				Ok !
-		// 			</button>
-		// 		</div>
-		// 		<div className="choice__interaction-main">
-		// 			<p>Choix !</p>
-		// 		</div>
-		// 	</div>
-		//
-		// )
 
 		return (
 			<div className="choice__interaction-container">

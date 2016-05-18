@@ -17,6 +17,9 @@ module.exports = {
         filename: '[name]-[hash].min.js',
         publicPath: '/'
     },
+    node: {
+        fs: 'empty'
+    },
     devServer: {
         inline: true,
         contentBase: './static',

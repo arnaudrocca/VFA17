@@ -14,6 +14,9 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
+    node: {
+        fs: 'empty'
+    },
     devServer: {
         inline: true,
         contentBase: './static',

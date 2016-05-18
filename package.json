@@ -28,6 +28,7 @@
   "dependencies": {
     "flux": "^2.1.1",
     "gsap": "^1.18.2",
+    "pixi.js": "^3.0.11",
     "react": "^15.0.1",
     "react-addons-css-transition-group": "^15.0.1",
     "react-addons-transition-group": "^15.0.1",
