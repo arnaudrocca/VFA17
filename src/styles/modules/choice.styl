@@ -1,0 +1,106 @@
+.choice
+	position relative
+
+	&__aside
+		position absolute
+		width 34%
+		height calc(100vh - 4rem)
+		top 2rem
+		left 2rem
+		background $white
+		background linear-gradient(45deg, transparent 2em, $white 0) bottom left // Little trick to get the cutted corner
+
+	&__btn-return
+		position relative
+		width 16.5rem
+		height 4rem
+		margin 1.6rem 0 0 1.5rem
+		color $purple
+		font-family $font-cooper-heavy
+		font-size 1.2rem
+		line-height 4rem
+		letter-spacing 0.4px
+		text-transform uppercase
+		antialiased()
+
+		svg
+			position absolute
+			top -0.1rem
+			left 0
+
+
+	&__description
+		width 29rem
+		margin 16.5rem auto 0
+		antialiased()
+
+		&__date
+			color $red
+			font-family $font-cooper-heavy
+			font-size 1.2rem
+			letter-spacing 0.4px
+			text-transform uppercase
+
+		&__title
+			margin-top 2rem
+			color $purple
+			font-family $font-cooper-heavy
+			font-size 3rem
+			line-height 3.6rem
+			text-transform uppercase
+
+		&__context
+			margin-top 3.5rem
+			color $purple-light
+			font-family $font-pressura-regular
+			font-size 1.4rem
+			line-height 2.4rem
+
+	&__interaction
+		position absolute
+		width 66%
+		height 100vh
+		left 34vw
+		overflow hidden
+
+	&__interaction-container
+		position absolute
+		top 0
+		left 0
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		height 100vh
+
+	&__interaction-intro
+		color $white
+		text-align center
+
+		button
+			color $white
+
+	&__interaction-main
+		display none
+		opacity 0
+		
+		&--1
+			select
+				appearance none
+
+	&__interaction-background
+		position relative
+		width 100%
+		height 100vh
+		background url('../../static/assets/images/choices/choice0.png') center no-repeat
+		background-size cover
+
+		&:after
+			content ''
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			background rgba($fucking-blue, 0.75)
