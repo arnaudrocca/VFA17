@@ -18,7 +18,7 @@ class Choice2A extends React.Component {
 
 	clickHandler() {
 
-		let transitionTimeline = new TimelineLite();
+		let transitionTimeline = new TimelineLite()
 		transitionTimeline
 			.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
 			.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
@@ -30,6 +30,12 @@ class Choice2A extends React.Component {
 
 	}
 
+	handleSubmit() {
+
+		this.props.submitHandler(this.props.id, this.interaction.answer)
+
+	}
+
 	render() {
 
 		return (
@@ -38,6 +44,7 @@ class Choice2A extends React.Component {
 					<p>Reliez les points !</p>
 					<button onClick={this.clickHandler.bind(this)}>Ok !</button>
 				</div>
+				<button className="choice__interaction-validate" onClick={this.handleSubmit.bind(this)}>Valider !</button>
 				<div className="choice__interaction-main" ref="root"></div>
 			</div>
 		)

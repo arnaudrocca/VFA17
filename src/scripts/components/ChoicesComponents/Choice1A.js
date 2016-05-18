@@ -29,15 +29,15 @@ class Choice1A extends React.Component {
 
 		return (
 			<div className="choice__interaction-container">
-				<h1>Lapins ou lions ?</h1>
+				<h1>Fantome ou Dieu ?</h1>
 				<form onSubmit={this.handleSubmit.bind(this)}>
 					<label labelFor="choice-a">
-						Lapins
-						<input ref="choiceA" id="choice-a" value="lapins" name="choice1A" type="radio"/>
+						Fantome
+						<input ref="choiceA" id="choice-a" value="fantome" name="choice1A" type="radio"/>
 					</label>
 					<label labelFor="choice-b">
-						Lions
-						<input ref="choiceB" id="choice-b" value="lions" name="choice1A" type="radio"/>
+						Dieu
+						<input ref="choiceB" id="choice-b" value="dieu" name="choice1A" type="radio"/>
 					</label>
 					<input value="Faire mon choix" type="submit"/>
 				</form>

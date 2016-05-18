@@ -18,35 +18,39 @@
         "mood": "sad"
     },
     {
-        "name": "lapins",
+        "name": "fantome",
         "nextChoiceVersion": "A",
         "mapIds": [0],
         "mapVersions": ["A"],
         "score": -1,
-        "dialog": "Tu as choisi les lapins, § il y en a partout !",
+        "dialog": "Tu as choisi le fantome, § ils ont brulé la foret !",
         "mood": "sad"
     },
     {
-        "name": "lions",
+        "name": "dieu",
         "nextChoiceVersion": "B",
         "mapIds": [0],
         "mapVersions": ["C"],
-        "score": -1,
-        "dialog": "Tu as choisi les lions, § c'était pas une bonne idée.",
-        "mood": "sad"
+        "score": 1,
+        "dialog": "Tu as choisi le dieu, § ils venerent la foret.",
+        "mood": "happy"
     },
     {
-        "name": "jaune",
+        "name": "eglise",
         "nextChoiceVersion": "A",
-        "mapIds": [0],
-        "mapVersions": ["C"],
-        "score": 0
+        "mapIds": [1],
+        "mapVersions": ["A"],
+        "score": 0,
+        "dialog": "Tu as construit une eglise.",
+        "mood": "neutral"
     },
     {
-        "name": "violette",
+        "name": "marche",
         "nextChoiceVersion": "B",
-        "mapIds": [0],
+        "mapIds": [1],
         "mapVersions": ["B"],
-        "score": 1
+        "score": 1,
+        "dialog": "Tu as construit un marche.",
+        "mood": "happy"
     }
 ]

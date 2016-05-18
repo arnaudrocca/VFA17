@@ -1,4 +1,5 @@
 import { Graphics } from 'pixi.js'
+import { isEqual } from 'lodash'
 import Scene from '../../utils/scene'
 
 class Interaction2A extends Graphics {
@@ -14,13 +15,13 @@ class Interaction2A extends Graphics {
         this.containerHeight = window.innerHeight
         this.contextWidth = window.innerWidth - this.containerWidth
 
+        this.dotRadius = 5
+
         this.scene = new Scene(this.containerWidth, this.containerHeight)
-
-        this.init()
-
         this.scene.add(this)
 
         this.addListeners()
+        this.init()
 
     }
 
@@ -30,9 +31,9 @@ class Interaction2A extends Graphics {
 	 */
     init() {
 
-        this.mousePressed = false
-        this.end = false
+        this.dragging = false
         this.currentId = 0
+        this.end = false
 
         this.setDots()
         this.draw()
@@ -45,7 +46,7 @@ class Interaction2A extends Graphics {
 	 */
     setDots() {
 
-        this.dotsLeft = [
+        this.dotsChurch = [
             {
                 x: this.containerWidth / 10,
                 y: this.containerHeight / 10
@@ -72,39 +73,40 @@ class Interaction2A extends Graphics {
             }
         ]
 
-        this.dotsRight = [
+        this.dotsMarket = [
+            {
+                x: this.containerWidth * 9 / 10,
+                y: this.containerHeight / 10
+            },
             {
                 x: this.containerWidth * 6 / 10,
                 y: this.containerHeight / 10
-            },
-            {
-                x: this.containerWidth * 9 / 10,
-                y: this.containerHeight / 10
-            },
-            {
-                x: this.containerWidth * 9 / 10,
-                y: this.containerHeight / 2
             },
             {
                 x: this.containerWidth * 6 / 10,
                 y: this.containerHeight / 2
             },
             {
-                x: this.containerWidth * 6 / 10,
+                x: this.containerWidth * 9 / 10,
+                y: this.containerHeight / 2
+            },
+            {
+                x: this.containerWidth * 9 / 10,
                 y: this.containerHeight * 9 / 10
             },
             {
-                x: this.containerWidth * 9 / 10,
+                x: this.containerWidth * 6 / 10,
                 y: this.containerHeight * 9 / 10
             }
         ]
 
-        // HAVE TO CHANGE
-        this.dots = this.dotsRight
+        this.allDots = [this.dotsChurch, this.dotsMarket]
+
+        this.currentRoad = this.currentRoad || this.allDots[0]
 
         this.cursor = {
-            x: this.dots[this.currentId].x,
-            y: this.dots[this.currentId].y
+            x: this.currentRoad[this.currentId].x,
+            y: this.currentRoad[this.currentId].y
         }
 
     }
@@ -117,88 +119,85 @@ class Interaction2A extends Graphics {
 
         this.clear()
 
-        // ROAD
-        this.lineStyle(2, 0x666666)
-        this.moveTo(this.dots[0].x, this.dots[0].y) // FIRST
-        for (let i = 1; i < this.dots.length; i++) {
-            this.lineTo(this.dots[i].x, this.dots[i].y)
-        }
-        this.endFill()
-
         // LINES
-        this.lineStyle(3, 0xFFFFFF)
-        this.moveTo(this.dots[0].x, this.dots[0].y) // FIRST
+        for (let road of this.allDots) {
+            this.lineStyle(1, 0x6C707B)
+            this.moveTo(road[0].x, road[0].y)
+            for (let i = 1; i < road.length; i++) {
+                this.lineTo(road[i].x, road[i].y)
+            }
+            this.endFill()
+        }
+
+        // LINES TO CURSOR
+        this.lineStyle(2, 0xFFFFFF)
+        this.moveTo(this.currentRoad[0].x, this.currentRoad[0].y)
         for (let i = 1; i <= this.currentId; i++) {
-            this.lineTo(this.dots[i].x, this.dots[i].y)
+            this.lineTo(this.currentRoad[i].x, this.currentRoad[i].y)
         }
         this.lineTo(this.cursor.x + .01, this.cursor.y + .01) // CURSOR
         this.endFill()
 
-        if (this.cursor.x == this.dots[this.currentId + 1].x && this.cursor.y == this.dots[this.currentId + 1].y) {
-            this.currentId++
-            if (this.currentId < this.dots.length - 1) {
-                this.setDots()
-            }
-            else {
-                this.end = true
-            }
-        }
-
         // DOTS
-        this.lineStyle(0, 0xFFFFFF)
-        for (let id in this.dots) {
-            const dot = this.dots[id]
-            if (id <= this.currentId) {
-                this.beginFill(0x0000FF)
-                this.drawCircle(dot.x, dot.y, 3)
+        for (let road of this.allDots) {
+            this.lineStyle(2, 0xFFFFFF)
+            for (let id in road) {
+                const dot = road[id]
+                if (id == 0 || id <= this.currentId && isEqual(road, this.currentRoad)) {
+                    this.beginFill(0xFF5951)
+                } else {
+                    this.beginFill(0xFFFFFF)
+                }
+                this.drawCircle(dot.x, dot.y, this.dotRadius)
             }
-            else if (id == this.currentId + 1) {
-                this.beginFill(0xFFFFFF)
-                this.drawCircle(dot.x, dot.y, 5)
-            }
-            else {
-                this.beginFill(0xFFFFFF)
-                this.drawCircle(dot.x, dot.y, 3)
-            }
+            this.endFill()
         }
 
     }
 
     /**
 	 * @method
-     * @name onDrag
-     * @param {number} mouseX
-     * @param {number} mouseY
+     * @name drag
 	 */
-    onDrag(mouseX, mouseY) {
+    drag() {
 
         // LIMIT X
-        const pointLeftX = Math.min(this.dots[this.currentId].x, this.dots[this.currentId + 1].x)
-        const pointRightX = Math.max(this.dots[this.currentId].x, this.dots[this.currentId + 1].x)
-        if (mouseX < pointLeftX) {
-            mouseX = pointLeftX
+        const pointLeftX = Math.min(this.currentRoad[this.currentId].x, this.currentRoad[this.currentId + 1].x)
+        const pointRightX = Math.max(this.currentRoad[this.currentId].x, this.currentRoad[this.currentId + 1].x)
+        if (this.mouseX < pointLeftX) {
+            this.mouseX = pointLeftX
         }
-        else if (mouseX > pointRightX) {
-            mouseX = pointRightX
+        else if (this.mouseX > pointRightX) {
+            this.mouseX = pointRightX
         }
-
         // LIMIT Y
-        const pointTopY = Math.min(this.dots[this.currentId].y, this.dots[this.currentId + 1].y)
-        const pointBottomY = Math.max(this.dots[this.currentId].y, this.dots[this.currentId + 1].y)
-        if (mouseY < pointTopY) {
-            mouseY = pointTopY
+        const pointTopY = Math.min(this.currentRoad[this.currentId].y, this.currentRoad[this.currentId + 1].y)
+        const pointBottomY = Math.max(this.currentRoad[this.currentId].y, this.currentRoad[this.currentId + 1].y)
+        if (this.mouseY < pointTopY) {
+            this.mouseY = pointTopY
         }
-        else if (mouseY > pointBottomY) {
-            mouseY = pointBottomY
+        else if (this.mouseY > pointBottomY) {
+            this.mouseY = pointBottomY
         }
 
-        // MOVE X
-        if (this.dots[this.currentId].x != this.dots[this.currentId + 1].x) {
-            this.cursor.x = mouseX
+        // Drag on X
+        if (this.currentRoad[this.currentId].x != this.currentRoad[this.currentId + 1].x) {
+            this.cursor.x = this.mouseX
         }
-        // MOVE Y
+        // Drag on Y
         else {
-            this.cursor.y = mouseY
+            this.cursor.y = this.mouseY
+        }
+
+        // Increment current id
+        if (this.cursor.x == this.currentRoad[this.currentId + 1].x && this.cursor.y == this.currentRoad[this.currentId + 1].y) {
+            this.currentId++
+            if (this.currentId < this.currentRoad.length - 1) {
+                this.setDots()
+            }
+            else {
+                this.end = true
+            }
         }
 
         this.draw()
@@ -230,7 +229,18 @@ class Interaction2A extends Graphics {
     */
     onMouseDown() {
 
-        this.mousePressed = true
+        this.init()
+
+        // Determine the current road
+        if (this.mouseX < this.containerWidth / 2) {
+            this.currentRoad = this.allDots[0]
+        } else {
+            this.currentRoad = this.allDots[1]
+        }
+
+        if (Math.abs(this.mouseX - this.currentRoad[0].x) < this.dotRadius && Math.abs(this.mouseY - this.currentRoad[0].y) < this.dotRadius) {
+            this.dragging = true
+        }
 
     }
 
@@ -241,10 +251,17 @@ class Interaction2A extends Graphics {
     */
     onMouseUp() {
 
-        this.mousePressed = false
+        this.dragging = false
 
         if (!this.end) {
             this.init()
+        } else {
+            TweenMax.to('.choice__interaction-validate', 1, {display: 'block', opacity: 1})
+            if (isEqual(this.currentRoad, this.dotsChurch)) {
+                this.answer = 'eglise'
+            } else {
+                this.answer = 'marche'
+            }
         }
 
     }
@@ -262,8 +279,8 @@ class Interaction2A extends Graphics {
         this.mouseX = event.clientX - this.contextWidth
         this.mouseY = event.clientY
 
-        if (this.mousePressed && !this.end) {
-            this.onDrag(this.mouseX, this.mouseY)
+        if (this.dragging && !this.end) {
+            this.drag()
         }
 
     }

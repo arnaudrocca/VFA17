@@ -18,28 +18,28 @@ class Choices extends React.Component {
 
 		introTimeline.fromTo('.choice__aside', 1, {
 			width: 20
-		},{
+		}, {
 			width: '34%',
 			ease: Expo.easeOut
 		})
 		introTimeline.fromTo('.choice__interaction', 1.2, {
 			width: 0
-		},{
+		}, {
 			width: '66%',
 			ease: Expo.easeOut
-		},'-=0.8')
+		}, '-=0.8')
 		introTimeline.fromTo('.choice__interaction-background', 0.8, {
 			x: -10,
 			scale: 1.1
-		},{
+		}, {
 			x: 0,
 			scale: 1,
 			ease: Expo.easeOut
-		},'-=1')
+		}, '-=1')
 		.from('.choice__description', 0.3, {
 			x : -20,
 			opacity: 0
-		},'-=0.9')
+		}, '-=0.9')
 
 	}
 
@@ -55,8 +55,8 @@ class Choices extends React.Component {
 		this.choiceVersion = currentChoice.version
 
 		//Identifies the correct interaction
-		// const componentName = 'Choice' + this.choiceId + this.choiceVersion
-		const componentName = 'Choice2A'
+		const componentName = 'Choice' + this.choiceId + this.choiceVersion
+		// const componentName = 'Choice2A'
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {

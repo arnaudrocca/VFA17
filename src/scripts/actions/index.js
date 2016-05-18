@@ -69,7 +69,7 @@ const hotpointUpdate = (mapId, answer) => {
 
 }
 
-export const choiceMade = (choiceId, answer, timeout) => {
+export const choiceMade = (choiceId, answer) => {
 
     return (dispatch, getState) => {
         let consequences = answersData.find((choice) => {

@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
 	return {
-	    onSubmit: (choiceId, answer, timeout) => {
+	    onSubmit: (choiceId, answer) => {
 	    	dispatch(choiceMade(choiceId, answer))
 	    }
     }
