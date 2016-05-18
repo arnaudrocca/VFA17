@@ -7,6 +7,15 @@ class Choice0 extends React.Component {
 
 		super()
 
+		this.currentFieldIndex = 1
+
+	}
+
+	componentDidMount() {
+
+		this.gossipFieldLabelNode = ReactDOM.findDOMNode(this.refs.gossipFieldLabel)
+		this.gossipFieldListNode= ReactDOM.findDOMNode(this.refs.gossiFieldList)
+
 	}
 
 	handleSubmit(e) {
@@ -32,39 +41,43 @@ class Choice0 extends React.Component {
 
 	}
 
+	selectField () {
+
+		TweenMax.to(this.gossipFieldListNode, 0.3, {
+			'display': 'block'
+		})
+
+	}
+
 	render() {
 
-		// return (
-		//
-		// 	<div className="choice__interaction-container">
-		// 		<div className="choice__interaction-intro">
-		// 			<p>Reliez les points !</p>
-		// 			<button onClick={this.clickHandler.bind(this)}>
-		// 				Ok !
-		// 			</button>
-		// 		</div>
-		// 		<div className="choice__interaction-main">
-		// 			<p>Choix !</p>
-		// 		</div>
-		// 	</div>
-		//
-		// )
+		// <select className="gossip__field">
+		// 	<option value="Les légumes de la famille plantard">Les légumes de la famille plantard</option>
+		// 	<option value="La viande de la famille viandée">La viande de la famille viandée</option>
+		// </select>
 
 		return (
+		
 			<div className="choice__interaction-container">
-				<h1>Agriculture ou élevage ?</h1>
-				<form onSubmit={this.handleSubmit.bind(this)}>
-					<label labelFor="choice-a">
-						Agriculture
-						<input ref="choiceA" id="choice-a" value="agriculture" name="choice0" type="radio"/>
-					</label>
-					<label labelFor="choice-b">
-						Elevage
-						<input ref="choiceB" id="choice-b" value="elevage" name="choice0" type="radio"/>
-					</label>
-					<input value="Faire mon choix" type="submit"/>
-				</form>
+				<div className="choice__interaction-intro">
+					<p>Reliez les points !</p>
+					<button onClick={this.clickHandler.bind(this)}>
+						Ok !
+					</button>
+				</div>
+				<div className="choice__interaction-main choice__interaction-main--1">
+					<div className="gossip">
+						<div className="gossip__field">
+							<span ref="gossipFieldLabel" className="gossip__field__label" onClick={this.selectField.bind(this)}>Les légumes de la famille plantard</span>
+							<ul ref="gossiFieldList" className="gossip__field__list">
+								<li className="gossip__field__list-item" data-index="1">Les légumes de la famille plantard</li>
+								<li className="gossip__field__list-item" data-index="2">La viande de la famille viandée</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
+
 		)
 
 	}
