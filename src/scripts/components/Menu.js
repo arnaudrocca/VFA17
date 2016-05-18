@@ -90,7 +90,7 @@ class Menu extends React.Component {
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
 
-							dialog = 'RIP'
+							dialog = 'Pas maintenant !'
 							mood = 'sad'
 							break
 

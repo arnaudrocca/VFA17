@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Interaction2A from '../../partials/interactions/Interaction2A'
 
 class Choice2A extends React.Component {
 
@@ -9,19 +10,23 @@ class Choice2A extends React.Component {
 
 	}
 
-	handleSubmit(e) {
+	componentWillUnmount() {
 
-		e.preventDefault()
+		this.interaction.removeListeners()
 
-		let answer
+	}
 
-		if (ReactDOM.findDOMNode(this.refs.choiceA).checked) {
-			answer = ReactDOM.findDOMNode(this.refs.choiceA).value
-		} else {
-			answer = ReactDOM.findDOMNode(this.refs.choiceB).value
-		}
+	clickHandler() {
 
-		this.props.submitHandler(this.props.id, answer)
+		let transitionTimeline = new TimelineLite();
+		transitionTimeline
+			.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
+			.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
+
+		this.interaction = new Interaction2A()
+
+		const root = ReactDOM.findDOMNode(this.refs.root)
+		root.appendChild(this.interaction.scene.renderer.view)
 
 	}
 
@@ -29,18 +34,11 @@ class Choice2A extends React.Component {
 
 		return (
 			<div className="choice__interaction-container">
-				<h1>Jaune ou violette ?</h1>
-				<form onSubmit={this.handleSubmit.bind(this)}>
-					<label labelFor="choice-a">
-						Jaune
-						<input ref="choiceA" id="choice-a" value="jaune" name="choice2A" type="radio"/>
-					</label>
-					<label labelFor="choice-b">
-						Violette
-						<input ref="choiceB" id="choice-b" value="violette" name="choice2A" type="radio"/>
-					</label>
-					<input value="Faire mon choix" type="submit"/>
-				</form>
+				<div className="choice__interaction-intro">
+					<p>Reliez les points !</p>
+					<button onClick={this.clickHandler.bind(this)}>Ok !</button>
+				</div>
+				<div className="choice__interaction-main" ref="root"></div>
 			</div>
 		)
 

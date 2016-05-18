@@ -32,15 +32,19 @@ class Hotpoint extends React.Component {
 
 		let dialog = ''
 
-		for (let answer of this.props.hotpoint.answers) {
+		for (let i in this.props.hotpoint.answers) {
+			const answer = this.props.hotpoint.answers[i]
 			this.hotpointDatum = hotpointsData.find((hotpointData) => {
 				return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == answer
 			})
+
+			if (i > 0) {
+				dialog += '§'
+			}
+			dialog += this.hotpointDatum.text
 		}
 
-		dialog += this.hotpointDatum.text
-
-		this.props.onClick(dialog, this.data.mood)
+		this.props.onClick(dialog, this.hotpointDatum.mood)
 
 	}
 

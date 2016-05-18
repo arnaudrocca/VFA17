@@ -5,8 +5,8 @@
 		"x": 60,
 		"y": 40,
 		"answer": "agriculture",
-		"text": "Le supermarché § eh ben maintenant c'est un Bio C bon.",
-		"mood": "happy"
+		"text": "Le supermarché, § eh ben maintenant c'est un Bio C bon.",
+		"mood": "neutral"
 	},
 	{
 		"id": 1,
@@ -14,7 +14,7 @@
 		"x": 50,
 		"y": 50,
 		"answer": "lapins",
-		"text": "PARTOUT DES LAPINS",
+		"text": "INVASION DE LAPINS DANS LE CENTRE COMMERCIAL !!",
 		"mood": "sad"
 	},
 	{
@@ -23,7 +23,7 @@
 		"x": 60,
 		"y": 60,
 		"answer": "agriculture",
-		"text": "Maintenant les mecs sont dans le Zaïon",
-		"mood": "neutral"
+		"text": "Le parc est vert.",
+		"mood": "happy"
 	}
 ]

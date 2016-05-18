@@ -5,7 +5,7 @@
         "mapIds": [0, 1],
         "mapVersions": ["C", "B"],
         "score": 1,
-        "dialog": "Tu viens de choisir l'agriculture § mon petit sucre",
+        "dialog": "Tu as choisi l'agriculture. § C'est bien l'agriculture.",
         "mood": "happy"
     },
     {
@@ -14,7 +14,7 @@
         "mapIds": [0],
         "mapVersions": ["B"],
         "score": -1,
-        "dialog": "Tu viens de choisir l'élevage § mon petit abricot d'alabama",
+        "dialog": "Tu as choisi l'élevage. § C'est pas top.",
         "mood": "sad"
     },
     {
@@ -23,7 +23,7 @@
         "mapIds": [0],
         "mapVersions": ["A"],
         "score": -1,
-        "dialog": "Tu viens de choisir les lapins § mon petit lapin LOOOOL",
+        "dialog": "Tu as choisi les lapins, § il y en a partout !",
         "mood": "sad"
     },
     {
@@ -32,7 +32,7 @@
         "mapIds": [0],
         "mapVersions": ["C"],
         "score": -1,
-        "dialog": "Tu viens de choisir les lions § mon petit félins du congo",
+        "dialog": "Tu as choisi les lions, § c'était pas une bonne idée.",
         "mood": "sad"
     },
     {

@@ -1,11 +1,17 @@
 .mapContainer
 	position absolute
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
 	width 100vw
 	height 100vh
+	top 0
+	left 0
 	transition transform, transform-origin 0.6s $easeOutExpo
 
 	.map
-		position absolute
+		position relative
 		width 100%
 		overflow visible
 		transition transform 1s $easeOutExpo
