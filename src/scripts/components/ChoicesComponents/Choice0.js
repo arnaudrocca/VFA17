@@ -11,6 +11,15 @@ class Choice0 extends React.Component {
 
 	}
 
+	componentDidMount() {
+
+		this.gossipField1Node = ReactDOM.findDOMNode(this.refs.gossipField1)
+		this.gossipField2Node = ReactDOM.findDOMNode(this.refs.gossipField2)
+
+		this.gossipFieldsNodes = document.querySelectorAll('.gossip__field')
+
+	}
+
 	handleSubmit(e) {
 
 		e.preventDefault()
@@ -29,14 +38,17 @@ class Choice0 extends React.Component {
 
 	clickHandler() {
 
-		TweenMax.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
 		TweenMax.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
-
+		TweenMax.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
+		
 	}
 
 	selectField(e) {
 
-		const matchingList = e.target.nextElementSibling
+		const matchingField = e.target.parentNode.parentNode
+		const matchingList = e.target.parentNode.nextElementSibling
+
+		matchingField.classList.add('is-active')
 
 		TweenMax.to(matchingList, 0.3, {
 			'display': 'block'
@@ -49,18 +61,34 @@ class Choice0 extends React.Component {
 		const optionText = e.target.textContent
 		const optionValue = e.target.getAttribute('data-value')
 		const matchingList = e.target.parentNode
-		const matchingField = matchingList.previousElementSibling
+		const matchingField = matchingList.previousElementSibling.children
 
-		matchingField.textContent = optionText
+		matchingField[0].textContent = optionText
+
+		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
+			this.gossipFieldsNodes[i].classList.remove('is-active')
+		}
 
 		if(optionValue) {
 			this.answer = optionValue
 		}
 
-		TweenMax.to(matchingList, 0.3, {
+		if(this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != ''){
+			console.log('yo !')
+			TweenMax.to('.choice__interaction-validate', 0.3, {
+				display: 'block',
+				opacity: 1
+			})
+		}
+
+		TweenMax.to(matchingList, 0, {
 			'display': 'none'
 		})
 
+	}
+
+	handleSubmit() {
+		this.props.submitHandler(this.props.id, this.answer)
 	}
 
 	render() {
@@ -75,18 +103,27 @@ class Choice0 extends React.Component {
 					</button>
 				</div>
 				<div className="choice__interaction-main">
-					<h1>Agriculture ou élevage ?</h1>
-	  				<form onSubmit={this.handleSubmit.bind(this)}>
-	  					<label labelFor="choice-a">
-	 						Agriculture
-	 						<input ref="choiceA" id="choice-a" value="agriculture" name="choice0" type="radio"/>
-	 					</label>
-	 					<label labelFor="choice-b">
-	 						Elevage
-	 						<input ref="choiceB" id="choice-b" value="elevage" name="choice0" type="radio"/>
-	 					</label>
-	 					<input value="Faire mon choix" type="submit"/>
-	 				</form>
+					<div className="gossip">
+						<div className="gossip__text">J'ai entendu dire que</div>
+						<div className="gossip__field">
+							<div><span ref="gossipField1" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
+							<ul className="gossip__field__list">
+								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">les viandes de monsieur viandé</li>
+								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">les légumes de monsieur plantard</li>
+								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">les légumes de monsieur plantard</li>
+								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">les légumes de monsieur plantard</li>
+							</ul>
+						</div>
+						<div className="gossip__text">provoquent</div>
+						<div className="gossip__field">
+							<div><span ref="gossipField2" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
+							<ul className="gossip__field__list">
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">le choléra</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+							</ul>
+						</div>
+					</div>
+					<button onClick={this.handleSubmit.bind(this)} className="choice__interaction-validate" type="button">Valider</button>
 				</div>
 			</div>
 		
