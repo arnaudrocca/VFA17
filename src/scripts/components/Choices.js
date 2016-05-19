@@ -6,12 +6,19 @@ import choicesData from '../data/choices.json'
 
 class Choices extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+	 * @method
+	 * @name componentDidMount
+	 */
 	componentDidMount() {
 
 		let introTimeline = new TimelineLite();
@@ -37,12 +44,16 @@ class Choices extends React.Component {
 			ease: Expo.easeOut
 		}, '-=1')
 		.from('.choice__description', 0.3, {
-			x : -20,
+			x: -20,
 			opacity: 0
 		}, '-=0.9')
 
 	}
 
+	/**
+	 * @method
+	 * @name getContent
+	 */
 	getContent() {
 
 		//Identifies wich choice to display
@@ -66,17 +77,25 @@ class Choices extends React.Component {
 
 		//Identifies the correct wording to use
 		this.choiceData = choicesData.find((choice) => {
-			return choice.id == this.choiceId
+			return choice.id == this.choiceId && choice.version == this.choiceVersion
 		})
 
 	}
 
+	/**
+	 * @method
+	 * @name returnToMap
+	 */
 	returnToMap() {
 
 		hashHistory.push('/experiment')
 
 	}
 
+	/**
+	 * @method
+	 * @name render
+	 */
 	render() {
 
 		this.getContent()

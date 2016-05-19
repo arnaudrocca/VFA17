@@ -1,20 +1,37 @@
 [
 	{
 		"id": 0,
+		"version": "",
 		"period": "Année 150",
 		"title": "La guerre entre la famille Plantard et la famille Viandé",
 		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive. Lemaire vous propose de lancer une rumeur sur l’une des deux familles, celle que vous voulez, pour mettre fin à son activité et enfin spécialiser la production de la ville."
 	},
 	{
 		"id": 1,
-		"period": "Année 300",
+		"version": "A",
+		"period": "Année 500",
 		"title": "Préservons la forêt de Vizavona",
 		"context": "Lorem ipsum"
 	},
 	{
 		"id": 2,
-		"period": "Année 500",
+		"version": "A",
+		"period": "Année 1600",
 		"title": "Construisons un batiment",
+		"context": "Lorem ipsum"
+	},
+	{
+		"id": 3,
+		"version": "A",
+		"period": "Année 1900",
+		"title": "Ciblons une tranche d age",
+		"context": "Lorem ipsum"
+	},
+	{
+		"id": 4,
+		"version": "",
+		"period": "Année 2017",
+		"title": "Rend la machine !",
 		"context": "Lorem ipsum"
 	}
 ]
