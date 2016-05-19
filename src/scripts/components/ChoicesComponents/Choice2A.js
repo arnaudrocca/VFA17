@@ -4,18 +4,29 @@ import Interaction2A from '../../partials/interactions/Interaction2A'
 
 class Choice2A extends React.Component {
 
+    /**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+    /**
+	 * @method
+	 * @name componentWillUnmount
+	 */
 	componentWillUnmount() {
 
 		this.interaction.removeListeners()
 
 	}
 
+    /**
+	 * @method
+	 * @name clickHandler
+	 */
 	clickHandler() {
 
 		let transitionTimeline = new TimelineLite()
@@ -30,12 +41,20 @@ class Choice2A extends React.Component {
 
 	}
 
+    /**
+	 * @method
+	 * @name handleSubmit
+	 */
 	handleSubmit() {
 
 		this.props.submitHandler(this.props.id, this.interaction.answer)
 
 	}
 
+    /**
+	 * @method
+	 * @name render
+	 */
 	render() {
 
 		return (

@@ -52,5 +52,23 @@
         "score": 1,
         "dialog": "Tu as construit un marche.",
         "mood": "happy"
+    },
+    {
+        "name": "jeunes",
+        "nextChoiceVersion": "",
+        "mapIds": [0],
+        "mapVersions": ["A"],
+        "score": 1,
+        "dialog": "Les jeunes",
+        "mood": "happy"
+    },
+    {
+        "name": "vieux",
+        "nextChoiceVersion": "",
+        "mapIds": [0],
+        "mapVersions": ["B"],
+        "score": -1,
+        "dialog": "Les vieux",
+        "mood": "sad"
     }
 ]

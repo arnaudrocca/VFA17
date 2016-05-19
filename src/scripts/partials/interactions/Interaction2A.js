@@ -15,13 +15,14 @@ class Interaction2A extends Graphics {
         this.containerHeight = window.innerHeight
         this.contextWidth = window.innerWidth - this.containerWidth
 
-        this.dotRadius = 5
+        this.nodeRadius = 5
 
         this.scene = new Scene(this.containerWidth, this.containerHeight)
         this.scene.add(this)
 
-        this.addListeners()
         this.init()
+        
+        this.addListeners()
 
     }
 
@@ -34,19 +35,24 @@ class Interaction2A extends Graphics {
         this.dragging = false
         this.currentId = 0
         this.end = false
+        this.answer = ''
 
-        this.setDots()
+        this.setNodes()
         this.draw()
+
+        TweenMax.to('.choice__interaction-validate', 1, {display: 'none', opacity: 0})
 
     }
 
     /**
 	 * @method
-	 * @name setDots
+	 * @name setNodes
+     * @description Set the nodes position
 	 */
-    setDots() {
+    setNodes() {
 
-        this.dotsChurch = [
+        // Church
+        this.nodesChurch = [
             {
                 x: this.containerWidth / 10,
                 y: this.containerHeight / 10
@@ -73,7 +79,8 @@ class Interaction2A extends Graphics {
             }
         ]
 
-        this.dotsMarket = [
+        // Market
+        this.nodesMarket = [
             {
                 x: this.containerWidth * 9 / 10,
                 y: this.containerHeight / 10
@@ -100,9 +107,9 @@ class Interaction2A extends Graphics {
             }
         ]
 
-        this.allDots = [this.dotsChurch, this.dotsMarket]
+        this.roads = [this.nodesChurch, this.nodesMarket]
 
-        this.currentRoad = this.currentRoad || this.allDots[0]
+        this.currentRoad = this.currentRoad || this.roads[0]
 
         this.cursor = {
             x: this.currentRoad[this.currentId].x,
@@ -114,20 +121,21 @@ class Interaction2A extends Graphics {
     /**
 	 * @method
 	 * @name draw
+     * @description Draw all the elements
 	 */
     draw() {
 
         this.clear()
 
         // LINES
-        for (let road of this.allDots) {
-            this.lineStyle(1, 0x6C707B)
+        this.lineStyle(1, 0x6C707B)
+        for (let road of this.roads) {
             this.moveTo(road[0].x, road[0].y)
             for (let i = 1; i < road.length; i++) {
                 this.lineTo(road[i].x, road[i].y)
             }
-            this.endFill()
         }
+        this.endFill()
 
         // LINES TO CURSOR
         this.lineStyle(2, 0xFFFFFF)
@@ -138,30 +146,31 @@ class Interaction2A extends Graphics {
         this.lineTo(this.cursor.x + .01, this.cursor.y + .01) // CURSOR
         this.endFill()
 
-        // DOTS
-        for (let road of this.allDots) {
-            this.lineStyle(2, 0xFFFFFF)
+        // NODES
+        this.lineStyle(2, 0xFFFFFF)
+        for (let road of this.roads) {
             for (let id in road) {
-                const dot = road[id]
+                const node = road[id]
                 if (id == 0 || id <= this.currentId && isEqual(road, this.currentRoad)) {
                     this.beginFill(0xFF5951)
                 } else {
                     this.beginFill(0xFFFFFF)
                 }
-                this.drawCircle(dot.x, dot.y, this.dotRadius)
+                this.drawCircle(node.x, node.y, this.nodeRadius)
             }
-            this.endFill()
         }
+        this.endFill()
 
     }
 
     /**
 	 * @method
      * @name drag
+     * @description Calculate the cursor position before drawing the elements
 	 */
     drag() {
 
-        // LIMIT X
+        // Limit X
         const pointLeftX = Math.min(this.currentRoad[this.currentId].x, this.currentRoad[this.currentId + 1].x)
         const pointRightX = Math.max(this.currentRoad[this.currentId].x, this.currentRoad[this.currentId + 1].x)
         if (this.mouseX < pointLeftX) {
@@ -170,7 +179,7 @@ class Interaction2A extends Graphics {
         else if (this.mouseX > pointRightX) {
             this.mouseX = pointRightX
         }
-        // LIMIT Y
+        // Limit Y
         const pointTopY = Math.min(this.currentRoad[this.currentId].y, this.currentRoad[this.currentId + 1].y)
         const pointBottomY = Math.max(this.currentRoad[this.currentId].y, this.currentRoad[this.currentId + 1].y)
         if (this.mouseY < pointTopY) {
@@ -189,11 +198,11 @@ class Interaction2A extends Graphics {
             this.cursor.y = this.mouseY
         }
 
-        // Increment current id
+        // Check cursor position
         if (this.cursor.x == this.currentRoad[this.currentId + 1].x && this.cursor.y == this.currentRoad[this.currentId + 1].y) {
             this.currentId++
             if (this.currentId < this.currentRoad.length - 1) {
-                this.setDots()
+                this.setNodes()
             }
             else {
                 this.end = true
@@ -207,7 +216,7 @@ class Interaction2A extends Graphics {
     /**
     * @method
     * @name resize
-    * @description Triggered when window is resized
+    * @description Triggered when the window is resized
     */
     resize() {
 
@@ -217,7 +226,8 @@ class Interaction2A extends Graphics {
 
         this.scene.resize(this.containerWidth, this.containerHeight)
 
-        this.setDots()
+        this.init()
+        this.setNodes()
         this.draw()
 
     }
@@ -233,12 +243,12 @@ class Interaction2A extends Graphics {
 
         // Determine the current road
         if (this.mouseX < this.containerWidth / 2) {
-            this.currentRoad = this.allDots[0]
+            this.currentRoad = this.nodesChurch
         } else {
-            this.currentRoad = this.allDots[1]
+            this.currentRoad = this.nodesMarket
         }
 
-        if (Math.abs(this.mouseX - this.currentRoad[0].x) < this.dotRadius && Math.abs(this.mouseY - this.currentRoad[0].y) < this.dotRadius) {
+        if (Math.abs(this.mouseX - this.currentRoad[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.currentRoad[0].y) < this.nodeRadius) {
             this.dragging = true
         }
 
@@ -257,7 +267,7 @@ class Interaction2A extends Graphics {
             this.init()
         } else {
             TweenMax.to('.choice__interaction-validate', 1, {display: 'block', opacity: 1})
-            if (isEqual(this.currentRoad, this.dotsChurch)) {
+            if (isEqual(this.currentRoad, this.nodesChurch)) {
                 this.answer = 'eglise'
             } else {
                 this.answer = 'marche'
@@ -305,11 +315,11 @@ class Interaction2A extends Graphics {
     */
     removeListeners() {
 
-        window.removeEventListener('resize', this.resize)
-        window.removeEventListener('mousedown', this.onMouseDown)
-        window.removeEventListener('mouseup', this.onMouseUp)
-        window.removeEventListener('mousemove', this.onMouseMove)
-        TweenMax.ticker.removeEventListener('tick', this.update)
+        window.removeEventListener('resize', this.resize.bind(this))
+        window.removeEventListener('mousedown', this.onMouseDown.bind(this))
+        window.removeEventListener('mouseup', this.onMouseUp.bind(this))
+        window.removeEventListener('mousemove', this.onMouseMove.bind(this))
+        TweenMax.ticker.removeEventListener('tick', this.update.bind(this))
 
     }
 
