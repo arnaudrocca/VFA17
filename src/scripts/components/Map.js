@@ -10,8 +10,8 @@ class Map extends React.Component {
 
 		super()
 
-		this.scale = this.initScale = .6
-		this.scaleMin = .5
+		this.scale = this.initScale = .8
+		this.scaleMin = .6
 		this.scaleMax = 2
 		this.scaleStep = .1
 

@@ -6,7 +6,7 @@
         "mapVersions": ["C", "B"],
         "score": 1,
         "dialog": "Tu as choisi l'agriculture. § C'est bien l'agriculture.",
-        "mood": "happy"
+        "mood": "smiling"
     },
     {
         "name": "elevage",
@@ -15,7 +15,7 @@
         "mapVersions": ["B"],
         "score": -1,
         "dialog": "Tu as choisi l'élevage. § C'est pas top.",
-        "mood": "sad"
+        "mood": "angry"
     },
     {
         "name": "fantome",
@@ -24,7 +24,7 @@
         "mapVersions": ["A"],
         "score": -1,
         "dialog": "Tu as choisi le fantome, § ils ont brulé la foret !",
-        "mood": "sad"
+        "mood": "angry"
     },
     {
         "name": "dieu",
@@ -33,24 +33,24 @@
         "mapVersions": ["C"],
         "score": 1,
         "dialog": "Tu as choisi le dieu, § ils venerent la foret.",
-        "mood": "happy"
-    },
-    {
-        "name": "eglise",
-        "nextChoiceVersion": "A",
-        "mapIds": [1],
-        "mapVersions": ["A"],
-        "score": 0,
-        "dialog": "Tu as construit une eglise.",
-        "mood": "neutral"
+        "mood": "smiling"
     },
     {
         "name": "marche",
-        "nextChoiceVersion": "B",
+        "nextChoiceVersion": "A",
         "mapIds": [1],
         "mapVersions": ["B"],
         "score": 1,
         "dialog": "Tu as construit un marche.",
+        "mood": "happy"
+    },
+    {
+        "name": "eglise",
+        "nextChoiceVersion": "B",
+        "mapIds": [1],
+        "mapVersions": ["A"],
+        "score": 0,
+        "dialog": "Tu as construit une eglise.",
         "mood": "happy"
     },
     {
@@ -60,7 +60,7 @@
         "mapVersions": ["A"],
         "score": 1,
         "dialog": "Les jeunes",
-        "mood": "happy"
+        "mood": "satisfied"
     },
     {
         "name": "vieux",
@@ -69,6 +69,6 @@
         "mapVersions": ["B"],
         "score": -1,
         "dialog": "Les vieux",
-        "mood": "sad"
+        "mood": "angry"
     }
 ]

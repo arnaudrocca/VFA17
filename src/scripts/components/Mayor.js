@@ -91,7 +91,7 @@ class Mayor extends React.Component {
 		})
 
 		this.style = {
-			backgroundImage: `url(assets/images/mayor/mayor-${this.props.mood}.jpg)`
+			backgroundImage: `url(assets/images/mayor/mayor-${this.props.mood}.png)`
 		}
 
 	}

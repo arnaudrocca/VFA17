@@ -6,7 +6,7 @@
 		"y": 40,
 		"answer": "agriculture",
 		"text": "Le supermarché, § eh ben maintenant c'est un Bio C bon.",
-		"mood": "neutral"
+		"mood": "satisfied"
 	},
 	{
 		"id": 1,
@@ -15,7 +15,7 @@
 		"y": 50,
 		"answer": "lapins",
 		"text": "INVASION DE LAPINS DANS LE CENTRE COMMERCIAL !!",
-		"mood": "sad"
+		"mood": "angry"
 	},
 	{
 		"id": 2,

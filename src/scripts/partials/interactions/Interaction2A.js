@@ -21,7 +21,7 @@ class Interaction2A extends Graphics {
         this.scene.add(this)
 
         this.init()
-        
+
         this.addListeners()
 
     }
@@ -35,7 +35,6 @@ class Interaction2A extends Graphics {
         this.dragging = false
         this.currentId = 0
         this.end = false
-        this.answer = ''
 
         this.setNodes()
         this.draw()

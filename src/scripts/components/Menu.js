@@ -7,7 +7,6 @@ import IconDone from './iconsComponents/icon-done'
 import IconLocked from './iconsComponents/icon-locked'
 import IconTodo from './iconsComponents/icon-todo'
 
-
 class Menu extends React.Component {
 
 	constructor() {
@@ -91,7 +90,7 @@ class Menu extends React.Component {
 							TweenMax.set(menuDragLine, {width: 0})
 
 							dialog = 'Pas maintenant !'
-							mood = 'sad'
+							mood = 'neutral'
 							break
 
 						case 'done':
