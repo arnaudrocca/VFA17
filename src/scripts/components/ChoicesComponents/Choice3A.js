@@ -3,15 +3,24 @@ import ReactDOM from 'react-dom'
 
 class Choice3A extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name handleSubmit
+	 * @param {object} e - event
+     */
 	handleSubmit(e) {
 
-		e.preventDefault()
+		const event = e || window.e
+		event.preventDefault()
 
 		let answer
 
@@ -25,6 +34,10 @@ class Choice3A extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		return (

@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 
 class Choice0 extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
@@ -11,6 +14,10 @@ class Choice0 extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name componentDidMount
+     */
 	componentDidMount() {
 
 		this.gossipField1Node = ReactDOM.findDOMNode(this.refs.gossipField1)
@@ -20,9 +27,11 @@ class Choice0 extends React.Component {
 
 	}
 
-	handleSubmit(e) {
-
-		e.preventDefault()
+	/**
+     * @method
+	 * @name handleSubmit
+     */
+	handleSubmit() {
 
 		let answer
 
@@ -36,17 +45,30 @@ class Choice0 extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name clickHandler
+     */
 	clickHandler() {
 
-		TweenMax.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
-		TweenMax.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
-		
+		let transitionTimeline = new TimelineLite()
+		transitionTimeline
+			.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
+			.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
+
 	}
 
+	/**
+     * @method
+	 * @name selectField
+	 * @param {object} e - event
+     */
 	selectField(e) {
 
-		const matchingField = e.target.parentNode.parentNode
-		const matchingList = e.target.parentNode.nextElementSibling
+		const event = e || window.e
+
+		const matchingField = event.target.parentNode.parentNode
+		const matchingList = event.target.parentNode.nextElementSibling
 
 		matchingField.classList.add('is-active')
 
@@ -56,11 +78,18 @@ class Choice0 extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name selectOption
+	 * @param {object} e - event
+     */
 	selectOption(e) {
 
-		const optionText = e.target.textContent
-		const optionValue = e.target.getAttribute('data-value')
-		const matchingList = e.target.parentNode
+		const event = e || window.e
+
+		const optionText = event.target.textContent
+		const optionValue = event.target.getAttribute('data-value')
+		const matchingList = event.target.parentNode
 		const matchingField = matchingList.previousElementSibling.children
 
 		matchingField[0].textContent = optionText
@@ -69,12 +98,11 @@ class Choice0 extends React.Component {
 			this.gossipFieldsNodes[i].classList.remove('is-active')
 		}
 
-		if(optionValue) {
+		if (optionValue) {
 			this.answer = optionValue
 		}
 
-		if(this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != ''){
-			console.log('yo !')
+		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
 			TweenMax.to('.choice__interaction-validate', 0.3, {
 				display: 'block',
 				opacity: 1
@@ -87,14 +115,27 @@ class Choice0 extends React.Component {
 
 	}
 
-	handleSubmit() {
+	/**
+     * @method
+	 * @name handleSubmit
+	 * @param {object} e - event
+     */
+	handleSubmit(e) {
+
+		const event = e || window.e
+		event.preventDefault()
+
 		this.props.submitHandler(this.props.id, this.answer)
+
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		return (
-		
 			<div className="choice__interaction-container">
 				<div className="choice__interaction-intro">
 					<p>Fais ton choix !</p>
@@ -133,7 +174,6 @@ class Choice0 extends React.Component {
 					<button onClick={this.handleSubmit.bind(this)} className="choice__interaction-validate" type="button">Valider</button>
 				</div>
 			</div>
-		
 		)
 
 		// // return (

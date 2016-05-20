@@ -9,6 +9,9 @@ import IconTodo from './iconsComponents/icon-todo'
 
 class Menu extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
@@ -17,6 +20,10 @@ class Menu extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name componentDidMount
+	 */
 	componentDidMount() {
 
 		document.body.classList.remove('is-menu-active')
@@ -25,6 +32,10 @@ class Menu extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name createDrag
+	 */
 	createDrag() {
 
 		const props = this.props
@@ -120,6 +131,10 @@ class Menu extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name getContent
+	 */
 	getContent() {
 
 		this.menuItems = this.props.menuState.map((item, index) => {
@@ -157,6 +172,10 @@ class Menu extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name render
+	 */
 	render() {
 
 		this.getContent()

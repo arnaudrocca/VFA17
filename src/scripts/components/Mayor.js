@@ -4,6 +4,9 @@ import { debounce } from 'lodash'
 
 class Mayor extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
@@ -14,6 +17,10 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name componentWillMount
+     */
 	componentWillMount() {
 
 		this.paragraphs = this.props.dialog.split('§')
@@ -21,6 +28,10 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name componentDidMount
+     */
 	componentDidMount() {
 
 		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
@@ -32,12 +43,20 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name componentWillUnmount
+     */
 	componentWillUnmount() {
 
 		window.removeEventListener('keydown', this.spacebarDownHandler.bind(this))
 
 	}
 
+	/**
+     * @method
+	 * @name componentWillReceiveProps
+     */
 	componentWillReceiveProps() {
 
 		this.setState({
@@ -48,6 +67,11 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name componentWillUpdate
+	 * @param {object} nextProps
+     */
 	componentWillUpdate(nextProps) {
 
 		this.paragraphs = nextProps.dialog.split('§')
@@ -58,12 +82,21 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name componentDidUpdate
+     */
 	componentDidUpdate() {
 
 		TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 
 	}
 
+	/**
+     * @method
+	 * @name spacebarDownHandler
+	 * @param {object} e - event
+     */
 	spacebarDownHandler(e) {
 
 		const event = e || document.event
@@ -81,6 +114,10 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name getContent
+     */
 	getContent() {
 
 		let splittedDialog = this.paragraphs[this.state.dialogIndex].split('')
@@ -96,6 +133,10 @@ class Mayor extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		this.getContent()

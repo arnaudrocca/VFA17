@@ -3,34 +3,49 @@ import IconDrag from './iconsComponents/icon-drag'
 
 class ChoicesDone extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 		this.choicesNumber = 5
 		this.state = {
-			circlePerimeter : 0,
+			circlePerimeter : 0
 		}
 
 	}
 
+	/**
+     * @method
+	 * @name componentDidMount
+     */
 	componentDidMount() {
 
-		let circle = document.querySelector('.js-remaining')
+		const circle = document.querySelector('.js-remaining')
 
 		this.setState({
-			circlePerimeter : circle.getAttribute('r') * Math.PI *  2
+			circlePerimeter: circle.getAttribute('r') * Math.PI * 2
 		})
 
 	}
 
+	/**
+     * @method
+	 * @name getContent
+     */
 	getContent() {
 
-		let circlePerimeterFragment = this.state.circlePerimeter / this.choicesNumber
+		const circlePerimeterFragment = this.state.circlePerimeter / this.choicesNumber
 		this.offset = (this.props.choicesDone + this.choicesNumber) * circlePerimeterFragment
-		
+
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		this.getContent()

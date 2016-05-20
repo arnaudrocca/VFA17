@@ -8,7 +8,7 @@ const initialChoices = [
 	},
 	{
 		id: 1,
-		version: '',
+		version: 'undefined',
 		answer: 'undefined'
 	},
 	{

@@ -4,7 +4,7 @@ import { hashHistory, Link } from 'react-router'
 import * as ChoicesComponents from './ChoicesComponents'
 import choicesData from '../data/choices.json'
 
-class Choices extends React.Component {
+class Choice extends React.Component {
 
 	/**
      * @constructor
@@ -21,7 +21,7 @@ class Choices extends React.Component {
 	 */
 	componentDidMount() {
 
-		let introTimeline = new TimelineLite();
+		let introTimeline = new TimelineLite()
 
 		introTimeline.fromTo('.choice__aside', 1, {
 			width: 20
@@ -80,6 +80,11 @@ class Choices extends React.Component {
 			return choice.id == this.choiceId && choice.version == this.choiceVersion
 		})
 
+		//Identifies the correct background image
+		this.backgroundStyle = {
+			backgroundImage: `url(assets/images/choices/${componentName}.png)`
+		}
+
 	}
 
 	/**
@@ -119,7 +124,7 @@ class Choices extends React.Component {
 					</div>
 				</div>
 				<div className="choice__interaction">
-					<div className="choice__interaction-background"></div>
+					<div className="choice__interaction-background" style={this.backgroundStyle}></div>
 					<this.component id={this.choiceId} submitHandler={this.props.onSubmit}/>
 				</div>
 			</div>
@@ -129,4 +134,4 @@ class Choices extends React.Component {
 
 }
 
-export default Choices
+export default Choice

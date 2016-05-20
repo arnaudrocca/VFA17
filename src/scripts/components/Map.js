@@ -6,17 +6,24 @@ import HotpointsContainer from '../containers/HotpointsContainer'
 
 class Map extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
-		this.scale = this.initScale = .8
+		this.scale = this.initScale = .6
 		this.scaleMin = .6
 		this.scaleMax = 2
 		this.scaleStep = .1
 
 	}
 
+	/**
+	 * @method
+	 * @name componentDidMount
+	 */
 	componentDidMount() {
 
 		this.windowWidth = window.innerWidth
@@ -42,6 +49,10 @@ class Map extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name componentWillUpdate
+	 */
 	componentWillUpdate() {
 
 		this.scale = this.initScale
@@ -49,6 +60,11 @@ class Map extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name scaleHandler
+	 * @param {object} e - event
+	 */
 	scaleHandler(e) {
 
         const event = e || document.event
@@ -70,6 +86,10 @@ class Map extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name render
+	 */
 	render() {
 
 		let mapItems = this.props.mapState.map((item, index) => {
