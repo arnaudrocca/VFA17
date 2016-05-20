@@ -1,4 +1,5 @@
 .gossip
+	position relative
 	width 54rem
 	padding 0 5rem 0 2.5rem
 	font-family $font-cooper-medium 
@@ -6,15 +7,50 @@
 	color $white
 	antialiased()
 	
+	&:before
+		content url('../../static/assets/images/quote-open.png')
+		position absolute
+		top -3rem
+		left -1rem
+		opacity .2
+		
+	&:after
+		content url('../../static/assets/images/quote-close.png')
+		position absolute
+		bottom -4rem
+		left -1rem
+		opacity .2	 
+	
 	&__text
 		margin 3.5rem 0 2rem
+		color $white
+		
+		&:first-child
+			margin-top 0
 	
 	&__field
 		position relative
 		
+		&:after
+			content ''
+			position absolute
+			top 50%
+			z-index 110
+			right -2.5rem
+			display block
+			width 0
+			height 0
+			border-left 0.7rem solid transparent
+			border-right 0.7rem solid transparent
+			border-top 0.8rem solid $red
+			transform-origin 50% 50%
+			pointer-events none
+			//transition transform .2s ease-out
+		
 		> div 
 			position relative
-			height 6rem
+			width 51rem
+			height 6.5rem
 		
 		&__label
 			position absolute
@@ -22,11 +58,19 @@
 			display block
 			width 100%
 			height 6.5rem
-			border-bottom 1px solid rgba($white,0.3)
 			line-height 6.5rem
 			color red
 			cursor pointer
 			color rgba($white,0.4)
+			
+			&:after
+				content ''
+				position absolute
+				bottom 0
+				display block
+				width 46rem
+				height 0.1rem
+				background rgba($white,0.3)
 		
 		&__list
 			position absolute
@@ -34,7 +78,6 @@
 			right 0
 			left -2.5rem
 			z-index 100
-			display none
 			width 54rem
 			height 21rem
 			padding 7.5rem 0 0 2.5rem
@@ -42,19 +85,36 @@
 			background $white
 			color rgba($purple, 0.6)
 			overflow auto
+			visibility hidden
+			
+			&::-webkit-scrollbar 
+				width 0.5rem
+				padding-right 1rem
+				background $white
+			 
+			&::-webkit-scrollbar-thumb 
+				background $grey-light
+			
 			
 		&__list-item
 			line-height 1.8em
 			cursor pointer
 			
 		&.is-active
+				
+			&:after
+				z-index 210
+				transform rotate(-180deg)
 			
 			.gossip__field__label
 				z-index 210
-				border-bottom 1px solid rgba($purple,0.3)
 				background $white
 				color $purple
+				
+				&:after
+					background rgba($purple,0.3)
 				
 				
 			.gossip__field__list
 				z-index 200
+				visibility visible
