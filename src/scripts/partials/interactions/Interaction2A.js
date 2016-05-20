@@ -316,7 +316,6 @@ class Interaction2A extends Graphics {
     */
     onMouseMove(e) {
 
-        console.log("move")
         const event = e || window.e
 
         this.mouseX = event.clientX - this.contextWidth
