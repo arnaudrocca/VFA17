@@ -66,16 +66,16 @@ class Choice0 extends React.Component {
 	selectField(e) {
 
 		const event = e || window.e
-
 		const matchingField = event.target.parentNode.parentNode
-		const matchingList = event.target.parentNode.nextElementSibling
 
-		matchingField.classList.add('is-active')
+		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
+			if(matchingField != this.gossipFieldsNodes[i]){
+				this.gossipFieldsNodes[i].classList.remove('is-active')
+			}
+		}
 
-		TweenMax.to(matchingList, 0.3, {
-			'display': 'block'
-		})
-
+		matchingField.classList.toggle('is-active')
+	
 	}
 
 	/**
@@ -108,10 +108,6 @@ class Choice0 extends React.Component {
 				opacity: 1
 			})
 		}
-
-		TweenMax.to(matchingList, 0, {
-			'display': 'none'
-		})
 
 	}
 
@@ -170,50 +166,24 @@ class Choice0 extends React.Component {
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
 							</ul>
 						</div>
+						<button onClick={this.handleSubmit.bind(this)} className="choice__interaction-validate choice__interaction-validate--1" type="button">
+							<span>Valider</span>
+							<svg x="0px" y="0px" viewBox="1 2 122 48">
+								<g className="choice__interaction-validate__border">
+									<g>
+										<path fill="#FFFFFF" d="M107.1,50H1V2h122v32.1L107.1,50z M3,48h103.3L121,33.3V4H3V48z"/>
+									</g>
+								</g>
+								<g className="choice__interaction-validate__fill">
+									<polygon fill="#FF5951" points="105.7,46 5,46 5,6 119,6 119,32.7"/>
+								</g>
+							</svg>
+						</button>
 					</div>
-					<button onClick={this.handleSubmit.bind(this)} className="choice__interaction-validate" type="button">Valider</button>
 				</div>
 			</div>
 		)
 
-		// // return (
-		// 	<select className="gossip__field">
-		// 					<option value="Les légumes de la famille plantard">Les légumes de la famille plantard</option>
-		// 					<option value="La viande de la famille viandée">La viande de la famille viandée</option>
-		// 				</select>
-			// <div className="gossip">
-					// 	<div className="gossip__field">
-					// 		<span onClick={this.selectField.bind(this)} className="gossip__field__label"></span>
-					// 		<ul className="gossip__field__list">
-					// 			<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">Les viandes de monsieur viandé</li>
-					// 			<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">Les légumes de monsieur plantard</li>
-					// 		</ul>
-					// 	</div>
-					// 	<div className="gossip__field">
-					// 		<span onClick={this.selectField.bind(this)} className="gossip__field__label"></span>
-					// 		<ul className="gossip__field__list">
-					// 			<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">provoquent le choléra</li>
-					// 			<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">irritent en dessous des ongls</li>
-					// 		</ul>
-					// 	</div>
-					// </div>
-		// 	<div className="choice__interaction-main">
-	 // 			<div className="choice__interaction-container">
-	 //  				<h1>Agriculture ou élevage ?</h1>
-	 //  				<form onSubmit={this.handleSubmit.bind(this)}>
-	 //  					<label labelFor="choice-a">
-	 // 						Agriculture
-	 // 						<input ref="choiceA" id="choice-a" value="agriculture" name="choice0" type="radio"/>
-	 // 					</label>
-	 // 					<label labelFor="choice-b">
-	 // 						Elevage
-	 // 						<input ref="choiceB" id="choice-b" value="elevage" name="choice0" type="radio"/>
-	 // 					</label>
-	 // 					<input value="Faire mon choix" type="submit"/>
-	 // 				</form>
-	 // 			</div>
-	 // 		</div>
- 	// 	)
 	}
 
 }
