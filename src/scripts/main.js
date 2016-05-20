@@ -11,9 +11,7 @@ import App from './components/App'
 import Home from './components/Home'
 import Video from './components/Video'
 import Experiment from './components/Experiment'
-import Choice from './containers/choiceContainer'
-import ChoiceContext from './components/ChoiceContext'
-import ChoiceInteraction from './components/ChoiceInteraction'
+import Choices from './containers/ChoicesContainer'
 
 const store = createStore(
     mainReducer,
@@ -29,7 +27,7 @@ render(
                 <IndexRoute component={Home}/>
                 <Route path="video" component={Video}></Route>
                 <Route path="experiment" component={Experiment}></Route>
-                <Route name="choice" path="choice/:id" component={Choice}></Route>
+                <Route name="choice" path="choice/:id" component={Choices}></Route>
             </Route>
         </Router>
     </Provider>,

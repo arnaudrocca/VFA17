@@ -1,21 +1,27 @@
 import React from 'react'
 import IconFlower from './iconsComponents/icon-flower'
 import IconShield from './iconsComponents/icon-shield'
-import { hashHistory } from 'react-router'
 
 class City extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
-	componentDidMount(){
+	/**
+     * @method
+	 * @name componentDidMount
+     */
+	componentDidMount() {
 
-		if(window.previousLocation == '/video'){
+		if (window.previousLocation == '/video') {
 
-			let introTimeline = new TimelineLite()
+			const introTimeline = new TimelineLite()
 
 			introTimeline.from('.city__panel', 0.3, {
 				'width': 0
@@ -31,13 +37,18 @@ class City extends React.Component {
 				scale: 0
 			},0.2, '-=0.05')
 		}
+		
 	}
 
+	/**
+     * @method
+	 * @name getContent
+     */
 	getContent() {
 
 		this.flowers = new Array()
 
-		for(let i = 0; i < 5; i++){
+		for (let i = 0; i < 5; i++) {
 			if (i < this.props.score) {
 				this.flowers.push(<IconFlower key={i} width="17" color="#FF5951"/>)
 			} else {
@@ -47,6 +58,10 @@ class City extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		this.getContent()

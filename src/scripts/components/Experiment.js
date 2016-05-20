@@ -6,12 +6,19 @@ import MayorContainer from '../containers/MayorContainer'
 
 class Experiment extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		return (

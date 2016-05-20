@@ -3,22 +3,29 @@ import { Link } from 'react-router'
 
 class Home extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		return (
 			<section className="home">
 				<Link className="link" to="/video">Voir la vidéo</Link>
 				<div className="home__intro">
-					<h1 className="home__title">Ville fleurie <br /> Award 2017</h1>
+					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
 					<p className="home__content">
-						Merci d'être venu si vite ! <br />
-						Glissez le bouton au centre pour <br />
+						Merci d'être venu si vite ! <br/>
+						Glissez le bouton au centre pour <br/>
 						Commencer l'expérience
 					</p>
 				</div>

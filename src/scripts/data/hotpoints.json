@@ -6,24 +6,42 @@
 		"y": 40,
 		"answer": "agriculture",
 		"text": "Le supermarché, § eh ben maintenant c'est un Bio C bon.",
-		"mood": "satisfied"
+		"mood": "smiling"
 	},
 	{
 		"id": 1,
-		"mapId" : 0,
+		"mapId" : 1,
 		"x": 50,
 		"y": 50,
-		"answer": "lapins",
-		"text": "INVASION DE LAPINS DANS LE CENTRE COMMERCIAL !!",
-		"mood": "angry"
+		"answer": "agriculture",
+		"text": "Le parc est vert.",
+		"mood": "happy"
 	},
 	{
 		"id": 2,
-		"mapId" : 1,
+		"mapId" : 0,
 		"x": 60,
-		"y": 60,
-		"answer": "agriculture",
-		"text": "Le parc est vert.",
+		"y": 40,
+		"answer": "fantome",
+		"text": "La foret a brule",
+		"mood": "angry"
+	},
+	{
+		"id": 3,
+		"mapId" : 1,
+		"x": 50,
+		"y": 50,
+		"answer": "marche",
+		"text": "Ici c'est le salon du navet",
+		"mood": "smiling"
+	},
+	{
+		"id": 4,
+		"mapId" : 0,
+		"x": 60,
+		"y": 40,
+		"answer": "jeunes",
+		"text": "Les jeunes ont sauvé la ville",
 		"mood": "happy"
 	}
 ]

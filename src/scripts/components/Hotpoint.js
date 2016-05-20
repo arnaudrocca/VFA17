@@ -3,12 +3,19 @@ import hotpointsData from '../data/hotpoints.json'
 
 class Hotpoint extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name getContent
+     */
 	getContent() {
 
 		this.data = hotpointsData.find((hotpointData) => {
@@ -28,6 +35,10 @@ class Hotpoint extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name clickHandler
+     */
 	clickHandler() {
 
 		let dialog = ''
@@ -48,6 +59,10 @@ class Hotpoint extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		this.getContent()

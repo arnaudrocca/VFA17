@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { choiceMade } from '../actions/index'
-import Choices from '../components/Choices'
+import Choice from '../components/Choice'
 
 const mapStateToProps = (state) => {
 
@@ -21,9 +21,9 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-const ChoiceContainer = connect(
+const ChoicesContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Choices)
+)(Choice)
 
-export default ChoiceContainer
+export default ChoicesContainer

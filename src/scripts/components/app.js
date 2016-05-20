@@ -4,16 +4,29 @@ import Toolbar from './Toolbar'
 
 class App extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name componentWillReceiveProps
+     */
 	componentWillReceiveProps() {
+
 	    window.previousLocation = this.props.location.pathname
+
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		return (

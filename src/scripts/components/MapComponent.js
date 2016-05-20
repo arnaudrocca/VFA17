@@ -3,12 +3,19 @@ import * as MapComponents from './MapComponents'
 
 class MapComponent extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name getContent
+     */
 	getContent() {
 
 		this.componentName = 'MapItem' + this.props.id + this.props.version
@@ -22,6 +29,10 @@ class MapComponent extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		this.getContent()

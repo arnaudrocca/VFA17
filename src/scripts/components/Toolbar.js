@@ -4,12 +4,19 @@ import IconScreen from './iconsComponents/icon-screen'
 
 class Toolbar extends React.Component {
 
+    /**
+     * @constructor
+     */
     constructor() {
 
         super()
 
     }
 
+    /**
+     * @method
+     * @name toggleFullScreen
+     */
     toggleFullScreen() {
 
         if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
@@ -36,6 +43,10 @@ class Toolbar extends React.Component {
 
     }
 
+    /**
+     * @method
+     * @name render
+     */
     render() {
 
         return (

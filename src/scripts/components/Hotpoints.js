@@ -3,12 +3,19 @@ import Hotpoint from './Hotpoint'
 
 class Hotpoints extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+     * @method
+	 * @name getContent
+     */
     getContent() {
 
         this.hotpoints = this.props.hotpoints.map((hotpoint, index) => {
@@ -19,6 +26,10 @@ class Hotpoints extends React.Component {
 
     }
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
         this.getContent()

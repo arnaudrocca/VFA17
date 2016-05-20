@@ -10,12 +10,19 @@ import IconCorner from './iconsComponents/icon-corner'
 
 class Wireframe extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
 
 	}
 
+	/**
+	 * @method
+	 * @name getContent
+	 */
 	getContent() {
 
 		const location = this.props.location.pathname.split('/')
@@ -40,7 +47,10 @@ class Wireframe extends React.Component {
 
 	}
 
-
+	/**
+	 * @method
+	 * @name render
+	 */
 	render() {
 
 		this.getContent()
