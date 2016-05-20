@@ -89,6 +89,24 @@
 			select
 				appearance none
 
+		&--2
+			position absolute
+			display none
+			width 100%
+			opacity 0
+
+			p
+				position relative
+				float left
+				width 50%
+				top 8vw
+				text-align center
+				color $white
+				font-family $font-cooper-medium
+				font-size 1.2rem
+				letter-spacing 0.4px
+				text-transform uppercase
+
 	&__interaction-validate
 		position relative
 		display none
@@ -102,39 +120,38 @@
 		color $white
 		opacity 0
 		antialiased()
-		
+
 		> span
 			position absolute
 			right 0
 			left 0
 			z-index 2
-		
+
 		> svg
 			position absolute
 			left 0
-			
+
 		&__border
 			opacity 0.2
-			
+
 		&__fill
 			transform scale(0)
 			transform-origin 50% 50%
-			transition transform .3s cubic-bezier(0.300, -0.315, 0.680, 1.440)
-			
-			
+			transition transform .3s cubic-bezier(0.3, -0.3, 0.7, 1.4)
+
 		&:hover
-			
+
 			.choice__interaction-validate__fill
 				transform scale(1)
-		
+
 		&--1
 			position absolute
 			right 0
 			bottom -9.5rem
 			left 0
-			z-index 110
 			margin 0 auto
 			text-align center
+			z-index 110
 
 	&__interaction-background
 		position relative
@@ -151,21 +168,3 @@
 			bottom 0
 			left 0
 			background rgba($fucking-blue, 0.75)
-
-	&__interaction--2
-		position absolute
-		display none
-		width 100%
-		opacity 0
-
-		p
-			position relative
-			float left
-			width 50%
-			top 8vw
-			text-align center
-			color $white
-			font-family $font-cooper-medium
-			font-size 1.2rem
-			letter-spacing 0.4px
-			text-transform uppercase

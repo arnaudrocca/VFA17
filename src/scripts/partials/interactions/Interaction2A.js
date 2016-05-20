@@ -36,6 +36,7 @@ class Interaction2A extends Graphics {
         this.dragging = false
         this.currentId = 0
         this.end = false
+        this.answer = ''
 
         this.setNodes()
         this.draw()
@@ -272,14 +273,14 @@ class Interaction2A extends Graphics {
     */
     onMouseDown() {
 
-        // Determine the current road
-        if (this.mouseX < this.containerWidth / 2) {
+        // Start a new drag
+        if (Math.abs(this.mouseX - this.nodesChurch[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesChurch[0].y) < this.nodeRadius) {
             this.currentRoad = this.nodesChurch
-        } else {
-            this.currentRoad = this.nodesMarket
+            this.init()
+            this.dragging = true
         }
-
-        if (Math.abs(this.mouseX - this.currentRoad[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.currentRoad[0].y) < this.nodeRadius) {
+        else if (Math.abs(this.mouseX - this.nodesMarket[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesMarket[0].y) < this.nodeRadius) {
+            this.currentRoad = this.nodesMarket
             this.init()
             this.dragging = true
         }
