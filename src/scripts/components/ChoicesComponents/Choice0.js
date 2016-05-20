@@ -120,6 +120,13 @@ class Choice0 extends React.Component {
 							<ul className="gossip__field__list">
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">le choléra</li>
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
 							</ul>
 						</div>
 					</div>

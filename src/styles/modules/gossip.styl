@@ -8,13 +8,27 @@
 	
 	&__text
 		margin 3.5rem 0 2rem
+		color $white
 	
 	&__field
 		position relative
 		
+		&:after
+			content ''
+			position absolute
+			top 50%
+			z-index 110
+			right -2.5rem
+			display block
+			width 0
+			height 0
+			border-left 0.7rem solid transparent
+			border-right 0.7rem solid transparent
+			border-top 0.8rem solid $red
+		
 		> div 
 			position relative
-			height 6rem
+			height 7rem
 		
 		&__label
 			position absolute
@@ -43,11 +57,23 @@
 			color rgba($purple, 0.6)
 			overflow auto
 			
+			&::-webkit-scrollbar 
+				width 0.5rem
+				padding-right 1rem
+				background $white
+			 
+			&::-webkit-scrollbar-thumb 
+				background $grey-light
+			
+			
 		&__list-item
 			line-height 1.8em
 			cursor pointer
 			
 		&.is-active
+				
+			&:after
+				z-index 210
 			
 			.gossip__field__label
 				z-index 210
