@@ -7,10 +7,7 @@ class Scene {
 	 */
 	constructor(width, height) {
 
-		this.width = width
-		this.height = height
-
-		this.renderer = new CanvasRenderer(this.width, this.height, {antialias: true, transparent: true})
+		this.renderer = new CanvasRenderer(width, height, {antialias: true, transparent: true})
 
 		this.stage = new Container()
 

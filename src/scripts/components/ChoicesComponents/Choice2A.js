@@ -13,10 +13,6 @@ class Choice2A extends React.Component {
 
 	}
 
-    /**
-	 * @method
-	 * @name componentWillUnmount
-	 */
 	componentWillUnmount() {
 
 		this.interaction.removeListeners()
@@ -33,10 +29,10 @@ class Choice2A extends React.Component {
 		transitionTimeline
 			.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
 			.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
-
-		this.interaction = new Interaction2A()
+			.to('.choice__interaction--2', 1, {display: 'block', opacity: 1}, '-=1')
 
 		const root = ReactDOM.findDOMNode(this.refs.root)
+		this.interaction = new Interaction2A()
 		root.appendChild(this.interaction.scene.renderer.view)
 
 	}
@@ -64,6 +60,10 @@ class Choice2A extends React.Component {
 					<button onClick={this.clickHandler.bind(this)}>Ok !</button>
 				</div>
 				<button className="choice__interaction-validate" onClick={this.handleSubmit.bind(this)}>Valider !</button>
+				<div className="choice__interaction--2">
+					<p>Église</p>
+					<p>Marché</p>
+				</div>
 				<div className="choice__interaction-main" ref="root"></div>
 			</div>
 		)

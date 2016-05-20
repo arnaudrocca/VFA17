@@ -14,6 +14,7 @@ class Interaction2A extends Graphics {
         this.containerWidth = (window.innerWidth * 66) / 100
         this.containerHeight = window.innerHeight
         this.contextWidth = window.innerWidth - this.containerWidth
+        this.gridSize = this.containerWidth / 20
 
         this.nodeRadius = 5
 
@@ -53,56 +54,88 @@ class Interaction2A extends Graphics {
         // Church
         this.nodesChurch = [
             {
-                x: this.containerWidth / 10,
-                y: this.containerHeight / 10
+                x: this.gridSize * 4,
+                y: this.gridSize * 4
             },
             {
-                x: this.containerWidth * 4 / 10,
-                y: this.containerHeight / 10
+                x: this.gridSize * 6,
+                y: this.gridSize * 4
             },
             {
-                x: this.containerWidth * 4 / 10,
-                y: this.containerHeight / 2
+                x: this.gridSize * 6,
+                y: this.gridSize * 6
             },
             {
-                x: this.containerWidth / 10,
-                y: this.containerHeight / 2
+                x: this.gridSize * 8,
+                y: this.gridSize * 6
             },
             {
-                x: this.containerWidth / 10,
-                y: this.containerHeight * 9 / 10
+                x: this.gridSize * 8,
+                y: this.gridSize * 8
             },
             {
-                x: this.containerWidth * 4 / 10,
-                y: this.containerHeight * 9 / 10
+                x: this.gridSize * 6,
+                y: this.gridSize * 8
+            },
+            {
+                x: this.gridSize * 6,
+                y: this.gridSize * 11.5
+            },
+            {
+                x: this.gridSize * 4,
+                y: this.gridSize * 11.5
+            },
+            {
+                x: this.gridSize * 4,
+                y: this.gridSize * 8
+            },
+            {
+                x: this.gridSize * 2,
+                y: this.gridSize * 8
+            },
+            {
+                x: this.gridSize * 2,
+                y: this.gridSize * 6
+            },
+            {
+                x: this.gridSize * 4,
+                y: this.gridSize * 6
             }
         ]
 
         // Market
         this.nodesMarket = [
             {
-                x: this.containerWidth * 9 / 10,
-                y: this.containerHeight / 10
+                x: this.gridSize * 14,
+                y: this.gridSize * 6
             },
             {
-                x: this.containerWidth * 6 / 10,
-                y: this.containerHeight / 10
+                x: this.gridSize * 14,
+                y: this.gridSize * 5
             },
             {
-                x: this.containerWidth * 6 / 10,
-                y: this.containerHeight / 2
+                x: this.gridSize * 16,
+                y: this.gridSize * 5
             },
             {
-                x: this.containerWidth * 9 / 10,
-                y: this.containerHeight / 2
+                x: this.gridSize * 16,
+                y: this.gridSize * 7
             },
             {
-                x: this.containerWidth * 9 / 10,
-                y: this.containerHeight * 9 / 10
+                x: this.gridSize * 12,
+                y: this.gridSize * 7
             },
             {
-                x: this.containerWidth * 6 / 10,
-                y: this.containerHeight * 9 / 10
+                x: this.gridSize * 12,
+                y: this.gridSize * 11
+            },
+            {
+                x: this.gridSize * 18,
+                y: this.gridSize * 11
+            },
+            {
+                x: this.gridSize * 18,
+                y: this.gridSize * 7
             }
         ]
 
@@ -142,7 +175,7 @@ class Interaction2A extends Graphics {
         for (let i = 1; i <= this.currentId; i++) {
             this.lineTo(this.currentRoad[i].x, this.currentRoad[i].y)
         }
-        this.lineTo(this.cursor.x + .01, this.cursor.y + .01) // CURSOR
+        this.lineTo(this.cursor.x, this.cursor.y) // CURSOR
         this.endFill()
 
         // NODES
@@ -222,6 +255,7 @@ class Interaction2A extends Graphics {
         this.containerWidth = (window.innerWidth * 66) / 100
         this.containerHeight = window.innerHeight
         this.contextWidth = window.innerWidth - this.containerWidth
+        this.gridSize = this.containerWidth / 20
 
         this.scene.resize(this.containerWidth, this.containerHeight)
 
@@ -238,8 +272,6 @@ class Interaction2A extends Graphics {
     */
     onMouseDown() {
 
-        this.init()
-
         // Determine the current road
         if (this.mouseX < this.containerWidth / 2) {
             this.currentRoad = this.nodesChurch
@@ -248,6 +280,7 @@ class Interaction2A extends Graphics {
         }
 
         if (Math.abs(this.mouseX - this.currentRoad[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.currentRoad[0].y) < this.nodeRadius) {
+            this.init()
             this.dragging = true
         }
 
@@ -283,6 +316,7 @@ class Interaction2A extends Graphics {
     */
     onMouseMove(e) {
 
+        console.log("move")
         const event = e || window.e
 
         this.mouseX = event.clientX - this.contextWidth
