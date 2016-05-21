@@ -148,7 +148,7 @@ class Choice extends React.Component {
 						<svg x="0px" y="0px" viewBox="-6.4 -6.5 224.8 65" >
 							<g className="choice__btn-return__border">
 								<g>
-									<path fill="#FF5951" d="M173.1,50H23V2h166v32L173.1,50z M25,48h147.3L187,33.2V4H25C25,4,25,48,25,48z"/>
+									<path fill="#495495" d="M173.1,50H23V2h166v32L173.1,50z M25,48h147.3L187,33.2V4H25C25,4,25,48,25,48z"/>
 								</g>
 							</g>
 							<g className="choice__btn-return__fill">

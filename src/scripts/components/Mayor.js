@@ -35,9 +35,10 @@ class Mayor extends React.Component {
 	componentDidMount() {
 
 		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
+		this.spacebarIconNode = ReactDOM.findDOMNode(this.refs.spacebarIcon)
 
 		if (this.paragraphs != '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
+			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, visibility: 'visible'})
 			TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 		}
 
@@ -63,7 +64,7 @@ class Mayor extends React.Component {
 			dialogIndex: 0
 		})
 
-		TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
+		TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, visibility: 'visible'})
 
 	}
 
@@ -77,7 +78,7 @@ class Mayor extends React.Component {
 		this.paragraphs = nextProps.dialog.split('§')
 
 		if (this.paragraphs == '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
+			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, visibility: 'hidden'})
 		}
 
 	}
@@ -99,17 +100,30 @@ class Mayor extends React.Component {
      */
 	spacebarDownHandler(e) {
 
+
 		const event = e || document.event
 
 		if (event.keyCode == 32 && this.paragraphs != '') {
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
 				this.props.mayorTalked()
-				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
+				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, visibility: 'hidden'})
 			} else {
 				this.setState({
 					dialogIndex: this.state.dialogIndex + 1
 				})
 			}
+
+			// let introTimeline = new TimelineLite()
+
+			// introTimeline
+			// .to(this.spacebarIconNode, 0.3, {
+			// 	background: 'rgba(0,0,0,0)',
+			// 	color: '#000'
+			// })
+			// .to(this.spacebarIconNode, 0.3, {
+			// 	background: 'rgba(0,0,0,0.2)',
+			// 	color: '#FFF'
+			// })
 		}
 
 	}
@@ -145,6 +159,9 @@ class Mayor extends React.Component {
 			<div className="mayor" style={this.style}>
 			  	<div ref="mayorDialog" className="mayor__dialog">
 			  		<p>{this.dialog}</p>
+			  		<div className="mayor__instructions">
+				  		<span className="mayor__spacebar" ref="spacebarIcon">Espace</span> pour passer
+				  	</div>
 			  	</div>
 			</div>
 		)

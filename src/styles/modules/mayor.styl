@@ -9,14 +9,14 @@
 
 	&__dialog
 		position absolute
-		display none
+		display flex
 		flex-direction column
 		justify-content flex-start
 		align-items flex-start
 		width 30rem
 		min-height 15rem
-		bottom 7.5rem
-		left 7.5rem
+		bottom 8rem
+		left 8rem
 		padding 3rem 3.5rem 0
 		font-family $font-pressura-regular
 		font-size 1.3rem
@@ -24,4 +24,25 @@
 		background linear-gradient(135deg, transparent 0, $white 0) top left, linear-gradient(225deg, transparent 2rem, $white 0) top right, linear-gradient(225deg, transparent 0, $white 0) bottom right, linear-gradient(45deg, transparent 2rem, $white 0) bottom left
 		background-repeat no-repeat
 		background-size 50% 50%
+		visibility hidden
 		opacity 0
+		
+	&__instructions
+		position absolute 
+		bottom -4rem
+		color $white
+		antialiased()
+		
+	&__spacebar
+		display inline-block
+		vertical-align middle
+		width 7rem
+		height 2.5rem
+		border .2rem solid $white
+		line-height 2rem
+		letter-spacing .4px
+		text-align center
+		text-transform uppercase
+		border-radius .3rem
+		background rgba(0,0,0,0.2)
+
