@@ -3,7 +3,11 @@
 
 	&__aside
 		position absolute
-		width 34%
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items center
+		width 24%
 		height calc(100vh - 4rem)
 		top 2rem
 		left 2rem
@@ -11,10 +15,11 @@
 		background linear-gradient(45deg, transparent 2em, $white 0) bottom left // Little trick to get the cutted corner
 
 	&__btn-return
-		position relative
+		position absolute
+		top 1.4rem
+		left 1.4rem
 		width 16.5rem
 		height 4rem
-		margin 1.6rem 0 0 1.5rem
 		color $purple
 		font-family $font-cooper-heavy
 		font-size 1.2rem
@@ -23,15 +28,33 @@
 		text-transform uppercase
 		antialiased()
 
-		svg
+		> span
 			position absolute
-			top -0.1rem
+			right 0
 			left 0
+			z-index 2
+
+		> svg
+			position absolute
+			left 0
+
+		&__border
+			opacity 0.2
+
+		&__fill
+			transform scale(0)
+			transform-origin 50% 50%
+			transition transform .3s cubic-bezier(0.3, -0.3, 0.7, 1.4)
+
+		&:hover
+
+			.choice__btn-return__fill
+				transform scale(1)
 
 
 	&__description
 		width 29rem
-		margin 16.5rem auto 0
+		margin-top 16.5rem
 		antialiased()
 
 		&__date
@@ -58,9 +81,9 @@
 
 	&__interaction
 		position absolute
-		width 66%
+		width 76%
 		height 100vh
-		left 34vw
+		left 24vw
 		overflow hidden
 
 	&__interaction-container
@@ -75,11 +98,27 @@
 		left 0
 
 	&__interaction-intro
-		color $white
+		width 32rem
 		text-align center
+		color $white
+		antialiased()
 
-		button
-			color $white
+		&__title
+			margin-bottom 2.6rem
+			font-family $font-cooper-heavy
+			font-size 1.4rem
+			letter-spacing .3px
+			text-transform uppercase
+			
+		&__text
+			margin-bottom 4rem
+			font-size 1.4rem
+			line-height 2em
+			font-family $font-pressura-regular
+			
+		.choice__main-btn
+			margin 0 auto
+
 
 	&__interaction-main
 		display none
@@ -107,9 +146,9 @@
 				letter-spacing 0.4px
 				text-transform uppercase
 
-	&__interaction-validate
+	&__main-btn
 		position relative
-		display none
+		display block
 		width 12rem
 		height 5rem
 		font-family $font-cooper-heavy
@@ -118,17 +157,18 @@
 		letter-spacing 0.4px
 		line-height 5rem
 		color $white
-		opacity 0
 		antialiased()
 
 		> span
 			position absolute
+			top 0
 			right 0
 			left 0
 			z-index 2
 
 		> svg
 			position absolute
+			top 0
 			left 0
 
 		&__border
@@ -141,8 +181,12 @@
 
 		&:hover
 
-			.choice__interaction-validate__fill
+			.choice__main-btn__fill
 				transform scale(1)
+				
+		&--validate
+			display none
+			opacity 0
 
 		&--1
 			position absolute
@@ -168,3 +212,17 @@
 			bottom 0
 			left 0
 			background rgba($fucking-blue, 0.75)
+			
+	@media (max-width: $desktop-small)
+	
+		&__aside
+			justify-content center
+			width 34%
+			
+		&__description
+			margin-top 0
+			
+		&__interaction
+			width 66%
+			left 34vw
+

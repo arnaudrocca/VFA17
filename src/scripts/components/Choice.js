@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hashHistory, Link } from 'react-router'
+import { debounce } from 'lodash'
 import * as ChoicesComponents from './ChoicesComponents'
+import ChoiceIntro from './ChoiceIntro'
 import choicesData from '../data/choices.json'
 
 class Choice extends React.Component {
@@ -21,18 +23,26 @@ class Choice extends React.Component {
 	 */
 	componentDidMount() {
 
+		if(window.innerWidth > 1400) {
+			this.asideWidth = '24%'
+			this.interactionWidth = '76%'
+		} else {
+			this.asideWidth = '34%'
+			this.interactionWidth = '66%'
+		}
+
 		let introTimeline = new TimelineLite()
 
 		introTimeline.fromTo('.choice__aside', 1, {
 			width: 20
 		}, {
-			width: '34%',
+			width: this.asideWidth,
 			ease: Expo.easeOut
 		})
 		introTimeline.fromTo('.choice__interaction', 1.2, {
 			width: 0
 		}, {
-			width: '66%',
+			width: this.interactionWidth,
 			ease: Expo.easeOut
 		}, '-=0.8')
 		introTimeline.fromTo('.choice__interaction-background', 0.8, {
@@ -47,6 +57,31 @@ class Choice extends React.Component {
 			x: -20,
 			opacity: 0
 		}, '-=0.9')
+
+		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
+		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
+
+		window.addEventListener('resize', debounce(this.handleResize.bind(this), 350))
+
+	}
+
+	componentWillUnmount() {
+		console.log("unmount")
+		window.removeEventListener('resize', this.handleResize.bind(this))
+
+	}
+
+	handleResize() {
+
+		console.log("resize")
+
+		if(window.innerWidth > 1400) {
+			this.choiceAside.style.width = '24%'
+			this.choiceInteraction.style.width = '76%'
+		} else {
+			this.choiceAside.style.width = '34%'
+			this.choiceInteraction.style.width = '66%'
+		}
 
 	}
 
@@ -107,25 +142,29 @@ class Choice extends React.Component {
 
 		return (
 			<div className="choice">
-				<div className="choice__aside">
+				<div className="choice__aside" ref="choiceAside">
 					<button className="choice__btn-return" type="button" onClick={this.returnToMap.bind(this)}>
-						Retour à la ville
-						<svg x="0px" y="0px" width="160" viewBox="0 0 160 40">
-						<g>
-							<polygon fill="transparent" points="145,40 0,40 0,0 160,0 160,30"/>
-							<path fill="#495495" opacity="0.2" d="M158,2v26.9L144.4,38H2V2H158 M160,0H0v40h145l15-10V0L160,0z"/>
-						</g>
-					</svg>
-				</button>
+						<span>Retour à la ville</span>
+						<svg x="0px" y="0px" viewBox="-6.4 -6.5 224.8 65" >
+							<g className="choice__btn-return__border">
+								<g>
+									<path fill="#FF5951" d="M173.1,50H23V2h166v32L173.1,50z M25,48h147.3L187,33.2V4H25C25,4,25,48,25,48z"/>
+								</g>
+							</g>
+							<g className="choice__btn-return__fill">
+								<polygon fill="#FF5951" points="170.7,46 27,46 27,6 185,6 185,31.7 	"/>
+							</g>
+						</svg>
+					</button>
 					<div className="choice__description">
 						<span className ="choice__description__date">{this.choiceData.period}</span>
 						<h1 className ="choice__description__title">{this.choiceData.title}</h1>
 						<p className ="choice__description__context">{this.choiceData.context}</p>
 					</div>
 				</div>
-				<div className="choice__interaction">
+				<div className="choice__interaction" ref="choiceInteraction">
 					<div className="choice__interaction-background" style={this.backgroundStyle}></div>
-					<this.component id={this.choiceId} submitHandler={this.props.onSubmit}/>
+					<this.component choiceData={this.choiceData} id={this.choiceId} submitHandler={this.props.onSubmit}/>
 				</div>
 			</div>
 		)

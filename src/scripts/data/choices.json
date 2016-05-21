@@ -4,7 +4,9 @@
 		"version": "",
 		"period": "Année 150",
 		"title": "La guerre entre la famille Plantard et la famille Viandé",
-		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive. Lemaire vous propose de lancer une rumeur sur l’une des deux familles, celle que vous voulez, pour mettre fin à son activité et enfin spécialiser la production de la ville."
+		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive.",
+		"introTitle": "Ragot builder",
+		"introText": "Completez la phrase à trou pour créer un ragot sur l’une des deux familles et ainsi ternir sa réputation." 
 	},
 	{
 		"id": 1,

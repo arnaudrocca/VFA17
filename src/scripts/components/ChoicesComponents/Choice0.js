@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ChoiceIntro from '../ChoiceIntro'
 
 class Choice0 extends React.Component {
 
@@ -45,16 +46,11 @@ class Choice0 extends React.Component {
 
 	}
 
-	/**
-     * @method
-	 * @name clickHandler
-     */
-	clickHandler() {
+	hideOptionsLists(e) {
 
-		let transitionTimeline = new TimelineLite()
-		transitionTimeline
-			.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
-			.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
+		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
+			this.gossipFieldsNodes[i].classList.remove('is-active')
+		}
 
 	}
 
@@ -103,11 +99,17 @@ class Choice0 extends React.Component {
 		}
 
 		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
-			TweenMax.to('.choice__interaction-validate', 0.3, {
+			TweenMax.to('.choice__main-btn', 0.3, {
 				display: 'block',
 				opacity: 1
 			})
 		}
+
+	}
+
+	stopPropagation(e) {
+
+		e.stopPropagation();
 
 	}
 
@@ -132,17 +134,12 @@ class Choice0 extends React.Component {
 	render() {
 
 		return (
-			<div className="choice__interaction-container">
-				<div className="choice__interaction-intro">
-					<p>Fais ton choix !</p>
-					<button onClick={this.clickHandler.bind(this)}>
-						Ok !
-					</button>
-				</div>
+			<div onClick={this.hideOptionsLists.bind(this)} className="choice__interaction-container">
+				<ChoiceIntro title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
 				<div className="choice__interaction-main">
 					<div className="gossip">
 						<div className="gossip__text">J'ai entendu dire que</div>
-						<div className="gossip__field">
+						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
 							<div><span ref="gossipField1" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
 							<ul className="gossip__field__list">
 								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">les viandes de monsieur viandé</li>
@@ -152,7 +149,7 @@ class Choice0 extends React.Component {
 							</ul>
 						</div>
 						<div className="gossip__text">provoquent</div>
-						<div className="gossip__field">
+						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
 							<div><span ref="gossipField2" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
 							<ul className="gossip__field__list">
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">le choléra</li>
@@ -166,15 +163,15 @@ class Choice0 extends React.Component {
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
 							</ul>
 						</div>
-						<button onClick={this.handleSubmit.bind(this)} className="choice__interaction-validate choice__interaction-validate--1" type="button">
+						<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--1" type="button">
 							<span>Valider</span>
 							<svg x="0px" y="0px" viewBox="1 2 122 48">
-								<g className="choice__interaction-validate__border">
+								<g className="choice__main-btn__border">
 									<g>
 										<path fill="#FFFFFF" d="M107.1,50H1V2h122v32.1L107.1,50z M3,48h103.3L121,33.3V4H3V48z"/>
 									</g>
 								</g>
-								<g className="choice__interaction-validate__fill">
+								<g className="choice__main-btn__fill">
 									<polygon fill="#FF5951" points="105.7,46 5,46 5,6 119,6 119,32.7"/>
 								</g>
 							</svg>
