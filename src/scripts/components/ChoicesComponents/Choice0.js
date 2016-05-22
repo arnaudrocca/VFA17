@@ -28,24 +28,6 @@ class Choice0 extends React.Component {
 
 	}
 
-	/**
-     * @method
-	 * @name handleSubmit
-     */
-	handleSubmit() {
-
-		let answer
-
-		if (ReactDOM.findDOMNode(this.refs.choiceA).checked) {
-			answer = ReactDOM.findDOMNode(this.refs.choiceA).value
-		} else {
-			answer = ReactDOM.findDOMNode(this.refs.choiceB).value
-		}
-
-		this.props.submitHandler(this.props.id, answer)
-
-	}
-
 	hideOptionsLists(e) {
 
 		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
