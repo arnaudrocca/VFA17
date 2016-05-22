@@ -65,13 +65,13 @@ class Choice0 extends React.Component {
 		const matchingField = event.target.parentNode.parentNode
 
 		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
-			if(matchingField != this.gossipFieldsNodes[i]){
+			if (matchingField != this.gossipFieldsNodes[i]) {
 				this.gossipFieldsNodes[i].classList.remove('is-active')
 			}
 		}
 
 		matchingField.classList.toggle('is-active')
-	
+
 	}
 
 	/**
@@ -99,17 +99,20 @@ class Choice0 extends React.Component {
 		}
 
 		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
-			TweenMax.to('.choice__main-btn', 0.3, {
-				display: 'block',
-				opacity: 1
-			})
+			TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'block', opacity: 1})
 		}
 
 	}
 
+	/**
+     * @method
+	 * @name stopPropagation
+	 * @param {object} e - event
+     */
 	stopPropagation(e) {
 
-		e.stopPropagation();
+		const event = e || window.e
+		event.stopPropagation()
 
 	}
 
@@ -163,7 +166,7 @@ class Choice0 extends React.Component {
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
 							</ul>
 						</div>
-						<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--1" type="button">
+						<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--0" type="button">
 							<span>Valider</span>
 							<svg x="0px" y="0px" viewBox="1 2 122 48">
 								<g className="choice__main-btn__border">

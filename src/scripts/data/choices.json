@@ -6,7 +6,7 @@
 		"title": "La guerre entre la famille Plantard et la famille Viandé",
 		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive.",
 		"introTitle": "Ragot builder",
-		"introText": "Completez la phrase à trou pour créer un ragot sur l’une des deux familles et ainsi ternir sa réputation." 
+		"introText": "Completez la phrase à trou pour créer un ragot sur l’une des deux familles et ainsi ternir sa réputation."
 	},
 	{
 		"id": 1,
@@ -20,7 +20,9 @@
 		"version": "A",
 		"period": "Année 1600",
 		"title": "Construisons un batiment",
-		"context": "Lorem ipsum"
+		"context": "Lorem ipsum",
+		"introTitle": "Je suis un architecte",
+		"introText": "Reliez les points pour construire le batiment"
 	},
 	{
 		"id": 3,

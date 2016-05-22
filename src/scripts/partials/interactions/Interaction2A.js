@@ -11,14 +11,18 @@ class Interaction2A extends Graphics {
 
         super()
 
-        this.containerWidth = (window.innerWidth * 66) / 100
-        this.containerHeight = window.innerHeight
-        this.contextWidth = window.innerWidth - this.containerWidth
-        this.gridSize = this.containerWidth / 20
+        if (window.innerWidth > 1400) {
+            this.sceneWidth = (window.innerWidth * 76) / 100
+		} else {
+			this.sceneWidth = (window.innerWidth * 66) / 100
+		}
+        this.sceneHeight = window.innerHeight
+        this.asideWidth = window.innerWidth - this.sceneWidth
+        this.gridSize = this.sceneWidth / 20
 
         this.nodeRadius = 5
 
-        this.scene = new Scene(this.containerWidth, this.containerHeight)
+        this.scene = new Scene(this.sceneWidth, this.sceneHeight)
         this.scene.add(this)
 
         this.init()
@@ -41,7 +45,7 @@ class Interaction2A extends Graphics {
         this.setNodes()
         this.draw()
 
-        TweenMax.to('.choice__interaction-validate', 1, {display: 'none', opacity: 0})
+        TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'none', opacity: 0})
 
     }
 
@@ -253,12 +257,16 @@ class Interaction2A extends Graphics {
     */
     resize() {
 
-        this.containerWidth = (window.innerWidth * 66) / 100
-        this.containerHeight = window.innerHeight
-        this.contextWidth = window.innerWidth - this.containerWidth
-        this.gridSize = this.containerWidth / 20
+        if (window.innerWidth > 1400) {
+            this.sceneWidth = (window.innerWidth * 76) / 100
+		} else {
+			this.sceneWidth = (window.innerWidth * 66) / 100
+		}
+        this.sceneHeight = window.innerHeight
+        this.asideWidth = window.innerWidth - this.sceneWidth
+        this.gridSize = this.sceneWidth / 20
 
-        this.scene.resize(this.containerWidth, this.containerHeight)
+        this.scene.resize(this.sceneWidth, this.sceneHeight)
 
         this.init()
         this.setNodes()
@@ -299,12 +307,12 @@ class Interaction2A extends Graphics {
         if (!this.end) {
             this.init()
         } else {
-            TweenMax.to('.choice__interaction-validate', 1, {display: 'block', opacity: 1})
             if (isEqual(this.currentRoad, this.nodesChurch)) {
                 this.answer = 'eglise'
             } else {
                 this.answer = 'marche'
             }
+            TweenMax.to('.choice__main-btn', 0.3, {display: 'block', opacity: 1})
         }
 
     }
@@ -319,7 +327,7 @@ class Interaction2A extends Graphics {
 
         const event = e || window.e
 
-        this.mouseX = event.clientX - this.contextWidth
+        this.mouseX = event.clientX - this.asideWidth
         this.mouseY = event.clientY
 
         if (this.dragging && !this.end) {

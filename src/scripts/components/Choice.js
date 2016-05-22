@@ -23,7 +23,7 @@ class Choice extends React.Component {
 	 */
 	componentDidMount() {
 
-		if(window.innerWidth > 1400) {
+		if (window.innerWidth > 1400) {
 			this.asideWidth = '24%'
 			this.interactionWidth = '76%'
 		} else {
@@ -61,21 +61,19 @@ class Choice extends React.Component {
 		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
 		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
 
-		window.addEventListener('resize', debounce(this.handleResize.bind(this), 350))
+		window.addEventListener('resize', debounce(this.resize.bind(this), 350))
 
 	}
 
 	componentWillUnmount() {
-		console.log("unmount")
-		window.removeEventListener('resize', this.handleResize.bind(this))
+
+		window.removeEventListener('resize', this.resize.bind(this))
 
 	}
 
-	handleResize() {
+	resize() {
 
-		console.log("resize")
-
-		if(window.innerWidth > 1400) {
+		if (window.innerWidth > 1400) {
 			this.choiceAside.style.width = '24%'
 			this.choiceInteraction.style.width = '76%'
 		} else {
@@ -101,7 +99,7 @@ class Choice extends React.Component {
 		this.choiceVersion = currentChoice.version
 
 		//Identifies the correct interaction
-		const componentName = 'Choice' + this.choiceId + this.choiceVersion
+        const componentName = 'Choice' + this.choiceId + this.choiceVersion
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {

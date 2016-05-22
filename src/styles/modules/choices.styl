@@ -109,13 +109,13 @@
 			font-size 1.4rem
 			letter-spacing .3px
 			text-transform uppercase
-			
+
 		&__text
 			margin-bottom 4rem
 			font-size 1.4rem
 			line-height 2em
 			font-family $font-pressura-regular
-			
+
 		.choice__main-btn
 			margin 0 auto
 
@@ -124,17 +124,21 @@
 		display none
 		opacity 0
 
-		&--1
-			select
-				appearance none
-
-		&--2
+		&--root
 			position absolute
-			display none
 			width 100%
-			opacity 0
+			height 100%
+			left 0
+			top 0
 
-			p
+		&--dom
+			position absolute
+			width 100%
+			height 100%
+			left 0
+			top 0
+
+			&-2A
 				position relative
 				float left
 				width 50%
@@ -183,15 +187,24 @@
 
 			.choice__main-btn__fill
 				transform scale(1)
-				
+
 		&--validate
 			display none
 			opacity 0
 
-		&--1
+		&--0
 			position absolute
 			right 0
 			bottom -9.5rem
+			left 0
+			margin 0 auto
+			text-align center
+			z-index 110
+
+		&--2A
+			position absolute
+			right 0
+			bottom 5rem
 			left 0
 			margin 0 auto
 			text-align center
@@ -212,17 +225,16 @@
 			bottom 0
 			left 0
 			background rgba($fucking-blue, 0.75)
-			
-	@media (max-width: $desktop-small)
-	
+
+	@media (max-width $desktop-small)
+
 		&__aside
 			justify-content center
 			width 34%
-			
+
 		&__description
 			margin-top 0
-			
+
 		&__interaction
 			width 66%
 			left 34vw
-

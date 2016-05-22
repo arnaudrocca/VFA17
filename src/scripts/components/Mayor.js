@@ -38,7 +38,7 @@ class Mayor extends React.Component {
 		this.spacebarIconNode = ReactDOM.findDOMNode(this.refs.spacebarIcon)
 
 		if (this.paragraphs != '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, visibility: 'visible'})
+			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
 			TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 		}
 
@@ -64,7 +64,7 @@ class Mayor extends React.Component {
 			dialogIndex: 0
 		})
 
-		TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, visibility: 'visible'})
+		TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
 
 	}
 
@@ -78,7 +78,7 @@ class Mayor extends React.Component {
 		this.paragraphs = nextProps.dialog.split('§')
 
 		if (this.paragraphs == '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, visibility: 'hidden'})
+			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
 		}
 
 	}
@@ -100,21 +100,19 @@ class Mayor extends React.Component {
      */
 	spacebarDownHandler(e) {
 
-
 		const event = e || document.event
 
 		if (event.keyCode == 32 && this.paragraphs != '') {
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
 				this.props.mayorTalked()
-				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, visibility: 'hidden'})
+				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
 			} else {
 				this.setState({
 					dialogIndex: this.state.dialogIndex + 1
 				})
 			}
-
 			// let introTimeline = new TimelineLite()
-
+			//
 			// introTimeline
 			// .to(this.spacebarIconNode, 0.3, {
 			// 	background: 'rgba(0,0,0,0)',
