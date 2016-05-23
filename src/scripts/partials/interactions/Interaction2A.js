@@ -19,6 +19,7 @@ class Interaction2A extends Graphics {
         this.sceneHeight = window.innerHeight
         this.asideWidth = window.innerWidth - this.sceneWidth
         this.gridSize = this.sceneWidth / 20
+        this.top = (this.sceneHeight - (this.gridSize * 15)) / 2
 
         this.nodeRadius = 5
 
@@ -26,6 +27,12 @@ class Interaction2A extends Graphics {
         this.scene.add(this)
 
         this.init()
+
+        this.resize = this.resize.bind(this)
+        this.onMouseDown = this.onMouseDown.bind(this)
+        this.onMouseUp = this.onMouseUp.bind(this)
+        this.onMouseMove = this.onMouseMove.bind(this)
+        this.update = this.update.bind(this)
 
         this.addListeners()
 
@@ -60,51 +67,51 @@ class Interaction2A extends Graphics {
         this.nodesChurch = [
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 4
+                y: this.gridSize * 4 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 4
+                y: this.gridSize * 4 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 6
+                y: this.gridSize * 6 + this.top
             },
             {
                 x: this.gridSize * 8,
-                y: this.gridSize * 6
+                y: this.gridSize * 6 + this.top
             },
             {
                 x: this.gridSize * 8,
-                y: this.gridSize * 8
+                y: this.gridSize * 8 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 8
+                y: this.gridSize * 8 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 11.5
+                y: this.gridSize * 11.5 + this.top
             },
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 11.5
+                y: this.gridSize * 11.5 + this.top
             },
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 8
+                y: this.gridSize * 8 + this.top
             },
             {
                 x: this.gridSize * 2,
-                y: this.gridSize * 8
+                y: this.gridSize * 8 + this.top
             },
             {
                 x: this.gridSize * 2,
-                y: this.gridSize * 6
+                y: this.gridSize * 6 + this.top
             },
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 6
+                y: this.gridSize * 6 + this.top
             }
         ]
 
@@ -112,35 +119,35 @@ class Interaction2A extends Graphics {
         this.nodesMarket = [
             {
                 x: this.gridSize * 14,
-                y: this.gridSize * 6
+                y: this.gridSize * 6 + this.top
             },
             {
                 x: this.gridSize * 14,
-                y: this.gridSize * 5
+                y: this.gridSize * 5 + this.top
             },
             {
                 x: this.gridSize * 16,
-                y: this.gridSize * 5
+                y: this.gridSize * 5 + this.top
             },
             {
                 x: this.gridSize * 16,
-                y: this.gridSize * 7
+                y: this.gridSize * 7 + this.top
             },
             {
                 x: this.gridSize * 12,
-                y: this.gridSize * 7
+                y: this.gridSize * 7 + this.top
             },
             {
                 x: this.gridSize * 12,
-                y: this.gridSize * 11
+                y: this.gridSize * 11 + this.top
             },
             {
                 x: this.gridSize * 18,
-                y: this.gridSize * 11
+                y: this.gridSize * 11 + this.top
             },
             {
                 x: this.gridSize * 18,
-                y: this.gridSize * 7
+                y: this.gridSize * 7 + this.top
             }
         ]
 
@@ -265,6 +272,7 @@ class Interaction2A extends Graphics {
         this.sceneHeight = window.innerHeight
         this.asideWidth = window.innerWidth - this.sceneWidth
         this.gridSize = this.sceneWidth / 20
+        this.top = (this.sceneHeight - (this.gridSize * 15)) / 2
 
         this.scene.resize(this.sceneWidth, this.sceneHeight)
 
@@ -338,15 +346,26 @@ class Interaction2A extends Graphics {
 
     /**
     * @method
+    * @name update
+    * @description Triggered on every TweenMax tick
+    */
+    update() {
+
+        this.scene.render()
+
+    }
+
+    /**
+    * @method
     * @name addListeners
     */
     addListeners() {
 
-        window.addEventListener('resize', this.resize.bind(this))
-        window.addEventListener('mousedown', this.onMouseDown.bind(this))
-        window.addEventListener('mouseup', this.onMouseUp.bind(this))
-        window.addEventListener('mousemove', this.onMouseMove.bind(this))
-        TweenMax.ticker.addEventListener('tick', this.update.bind(this))
+        window.addEventListener('resize', this.resize)
+        window.addEventListener('mousedown', this.onMouseDown)
+        window.addEventListener('mouseup', this.onMouseUp)
+        window.addEventListener('mousemove', this.onMouseMove)
+        TweenMax.ticker.addEventListener('tick', this.update)
 
     }
 
@@ -356,22 +375,11 @@ class Interaction2A extends Graphics {
     */
     removeListeners() {
 
-        window.removeEventListener('resize', this.resize.bind(this))
-        window.removeEventListener('mousedown', this.onMouseDown.bind(this))
-        window.removeEventListener('mouseup', this.onMouseUp.bind(this))
-        window.removeEventListener('mousemove', this.onMouseMove.bind(this))
-        TweenMax.ticker.removeEventListener('tick', this.update.bind(this))
-
-    }
-
-    /**
-    * @method
-    * @name update
-    * @description Triggered on every TweenMax tick
-    */
-    update() {
-
-        this.scene.render()
+        window.removeEventListener('resize', this.resize)
+        window.removeEventListener('mousedown', this.onMouseDown)
+        window.removeEventListener('mouseup', this.onMouseUp)
+        window.removeEventListener('mousemove', this.onMouseMove)
+        TweenMax.ticker.removeEventListener('tick', this.update)
 
     }
 

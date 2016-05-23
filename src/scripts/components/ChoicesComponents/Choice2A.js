@@ -14,16 +14,6 @@ class Choice2A extends React.Component {
 
 	}
 
-	/**
-	 * @method
-	 * @name componentWillUnmount
-	 */
-	componentWillUnmount() {
-
-		this.interaction.removeListeners()
-
-	}
-
     /**
 	 * @method
 	 * @name clickHandler
@@ -41,6 +31,8 @@ class Choice2A extends React.Component {
 	 * @name handleSubmit
 	 */
 	handleSubmit() {
+
+		this.interaction.removeListeners()
 
 		this.props.submitHandler(this.props.id, this.interaction.answer)
 
