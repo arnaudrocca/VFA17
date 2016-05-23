@@ -59,7 +59,7 @@ class Choice2A extends React.Component {
 					<p>Reliez les points !</p>
 					<button onClick={this.clickHandler.bind(this)}>Ok !</button>
 				</div>
-				<button className="choice__interaction-validate" onClick={this.handleSubmit.bind(this)}>Valider !</button>
+				<button className="choice__main-btn" onClick={this.handleSubmit.bind(this)}>Valider !</button>
 				<div className="choice__interaction-main--2">
 					<p>Église</p>
 					<p>Marché</p>

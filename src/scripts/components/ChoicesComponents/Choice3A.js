@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ChoiceIntro from '../ChoiceIntro'
 
 class Choice3A extends React.Component {
 
@@ -10,29 +11,75 @@ class Choice3A extends React.Component {
 
 		super()
 
-	}
-
-	/**
-     * @method
-	 * @name handleSubmit
-	 * @param {object} e - event
-     */
-	handleSubmit(e) {
-
-		const event = e || window.e
-		event.preventDefault()
-
-		let answer
-
-		if (ReactDOM.findDOMNode(this.refs.choiceA).checked) {
-			answer = ReactDOM.findDOMNode(this.refs.choiceA).value
-		} else {
-			answer = ReactDOM.findDOMNode(this.refs.choiceB).value
-		}
-
-		this.props.submitHandler(this.props.id, answer)
+		this.windowWidth = window.innerWidth;
+        this.windowHeight = window.innerHeight;
 
 	}
+
+	componentDidMount() {
+
+		//this.interactionContainer = document.querySelector('.choice__interaction-container')
+
+        this.positionX = (this.windowWidth * 0.66) / 2;
+
+        console.log(this.positionX)
+
+        this.DELTA_POSITION = 0;
+        this.LAST_POSITION = this.positionX;
+
+		this.cursor = ReactDOM.findDOMNode(this.refs.cursor);
+
+        Draggable.create(this.cursor, {
+            type: 'x',
+            edgeResistance: .95,
+            bounds: {
+                minX: -(this.windowWidth * 0.66) / 2,
+                maxX: (this.windowWidth * 0.66) / 2
+            },
+            zIndex: 1000,
+            zIndexBoost: false
+            // onDrag: () => {
+            // 	this.update()
+            // }
+        });
+
+        TweenMax.ticker.addEventListener('tick', this.update.bind(this));
+	}
+
+	 /**
+	 * @method
+	 * @name resize
+	 * @description Resize the scene according to screen size
+	 * @param {number} newWidth
+	 * @param {number} newHeight
+	 */
+    resize(newWidth, newHeight) {
+
+        this.windowWidth = newWidth;
+        this.windowHeight = newHeight;
+
+        // update Draggable bounds
+
+    }
+
+    update() {
+
+        this.positionX = this.cursor.getBoundingClientRect().left;
+        console.log(this.positionX)
+
+        this.DELTA_POSITION = Math.abs(this.positionX - this.LAST_POSITION);
+        this.LAST_POSITION = this.positionX;
+
+        const cursorHeight = 50 - this.DELTA_POSITION * .75;
+
+        this.cursor.style.height = `${cursorHeight}px`;
+        this.cursor.style.marginTop = `${(this.windowHeight - cursorHeight) / 2}px`;
+
+        const imageId = Math.floor((this.positionX / this.windowWidth) * 5);
+
+        console.log(imageId)
+
+    }
 
 	/**
      * @method
@@ -42,18 +89,11 @@ class Choice3A extends React.Component {
 
 		return (
 			<div className="choice__interaction-container">
-				<h1>Jeunes ou Vieux ?</h1>
-				<form onSubmit={this.handleSubmit.bind(this)}>
-					<label labelFor="choice-a">
-						Jeunes
-						<input ref="choiceA" id="choice-a" value="jeunes" name="choice3A" type="radio"/>
-					</label>
-					<label labelFor="choice-b">
-						Vieux
-						<input ref="choiceB" id="choice-b" value="vieux" name="choice3A" type="radio"/>
-					</label>
-					<input value="Faire mon choix" type="submit"/>
-				</form>
+				<ChoiceIntro title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
+				<div className="choice__interaction-main">
+					<span id="line"></span>
+					<span ref="cursor" id="cursor"></span>
+				</div>
 			</div>
 		)
 

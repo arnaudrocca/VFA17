@@ -118,13 +118,13 @@
 		&.is-active
 			box-shadow 0 0 0 rgba(0,0,0,0.4)
 			.menu__btn__icon
-				transform rotate(90deg)
+				transform rotate(90deg) translate3d(0,0,0)
 
 				span
-					transform translate(-50%, 50%)
+					transform translate3d(-50%, 50%,0)
 
 					&:after, &:before
-						transform translate(-50%, -200%)
+						transform translate3d(-50%, -200%,0)
 
 
 	&__drag-start
