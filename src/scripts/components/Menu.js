@@ -45,7 +45,7 @@ class Menu extends React.Component {
 
 		const windowWidth = window.innerWidth
 		const sideSize = 20
-		const gridWidth = (windowWidth - (sideSize * 2)) / 6
+		const columnWidth = (windowWidth - (sideSize * 2)) / 6
 
 		this.menuBtnDrag = Draggable.create(menuBtn, {
 			type: 'x',
@@ -58,7 +58,7 @@ class Menu extends React.Component {
 			liveSnap: true,
 			snap: {
 				x: (endValue) => {
-					return Math.round(endValue / gridWidth) * gridWidth
+					return Math.round(endValue / columnWidth) * columnWidth
 				}
 			},
 			onPress: () => {
@@ -71,7 +71,7 @@ class Menu extends React.Component {
 			onRelease: (endValue) => {
 				menuBtn.classList.remove('is-active')
 
-				const selectedId = Math.floor(endValue.x / gridWidth)
+				const selectedId = Math.floor(endValue.x / columnWidth)
 
 				if (selectedId < 5) {
 					const selectedItem = props.menuState.find((menuItem) => {

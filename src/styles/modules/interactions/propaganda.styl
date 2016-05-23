@@ -1,0 +1,46 @@
+.propaganda
+	position relative
+	width calc((66vw - 2rem) * .75)
+	height 44rem
+	margin-left -2rem
+	
+	&__slider
+		position absolute 
+		z-index 2
+		top 0
+		right 0
+		left 0
+		width 24.5rem
+		height 24.5rem
+		margin 0 auto
+		border 2px solid $white
+		border-radius 50%
+		overflow hidden
+		
+		&__item
+			position absolute 
+			top 0
+			display none
+			border-radius 50%
+			opacity 0
+	
+	&__line 
+		position absolute
+		top 70%
+		display block
+		width 100%
+		height .1rem
+		background-color rgba($grey-light, 0.5)
+		
+	&__cursor
+		position absolute
+		top calc(70% - 2.5rem)
+		right 0
+		left 0
+		display block
+		width 5rem
+		height 5rem
+		margin 0 auto
+		background-color $white
+		border-radius 50%
+		transition transform .3s $easeOutExpo
