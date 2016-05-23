@@ -4,38 +4,44 @@
 		"version": "",
 		"period": "Année 150",
 		"title": "La guerre entre la famille Plantard et la famille Viandé",
-		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive.",
-		"introTitle": "Ragot builder",
-		"introText": "Completez la phrase à trou pour créer un ragot sur l’une des deux familles et ainsi ternir sa réputation." 
+		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent Ayaux-les-Bains de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu compétitive.",
+		"introTitle": "Ragot Builder",
+		"introText": "Complète la phrase à trous pour créer un ragot qui ternira la réputation de l’une des deux familles."
 	},
 	{
 		"id": 1,
 		"version": "A",
-		"period": "Année 500",
-		"title": "Préservons la forêt de Vizavona",
-		"context": "Lorem ipsum"
+		"period": "Année 1361",
+		"title": "Sauvons la forêt de Vizavona",
+		"context": "Ne sachant où entreposer leurs déchets, les habitants d'Ayaux-les-Bains ont pris la fâcheuse habitude de les déverser dans la forêt, ce qui fait clairement tâche pour une ville qui se veut proche de la nature.",
+		"introTitle": "The Voice",
+		"introText": "Chuchote ou parle fort dans le microphone pour faire croire que le forêt est habitée par un fantôme ou par un Dieu."
 	},
 	{
 		"id": 2,
 		"version": "A",
-		"period": "Année 1600",
-		"title": "Construisons un batiment",
-		"context": "Lorem ipsum"
+		"period": "Année 1578",
+		"title": "Ayaux-les-Bains doit devenir une destination de rêve",
+		"context": "Albert Ivi, le maire de la ville voisine, se targue depuis des décennies d’avoir la plus belle cathédrale de la contrée. Nous avons besoin d'un bâtiment emblêmatique qui attire les touristes.",
+		"introTitle": "Je suis un architecte !",
+		"introText": "Relie les points correspondant au bâtiment que tu souhaites construire."
 	},
 	{
 		"id": 3,
 		"version": "A",
-		"period": "Année 1900",
-		"title": "Ciblons une tranche d age",
+		"period": "Année 1921",
+		"title": "TITRE",
 		"context": "Lorem ipsum",
-		"introTitle": "Propagande !",
-		"introText": "Completez la phrase à trou pour créer un ragot sur l’une des deux familles et ainsi ternir sa réputation." 
+		"introTitle": "Propaganda",
+		"introText": "Choisi la tranche d'âge sur laquelle se fera la propag euh, la campagne de sensibilisation."
 	},
 	{
 		"id": 4,
 		"version": "",
 		"period": "Année 2017",
 		"title": "Rend la machine !",
-		"context": "Lorem ipsum"
+		"context": "Lorem ipsum",
+		"introTitle": "Le Dilemme",
+		"introText": "Appuie sur la barre d'espace pour garder la machine."
 	}
 ]

@@ -2,9 +2,13 @@ import React from 'react'
 
 class ChoiceIntro extends React.Component {
 
+	/**
+     * @constructor
+     */
 	constructor() {
 
 		super()
+
 	}
 
 	/**
@@ -14,12 +18,21 @@ class ChoiceIntro extends React.Component {
 	clickHandler() {
 
 		let transitionTimeline = new TimelineLite()
+
 		transitionTimeline
-			.to('.choice__interaction-intro', 1, {display: 'none', opacity: 0})
-			.to('.choice__interaction-main', 1, {display: 'block', opacity: 1})
+			.to('.choice__interaction-intro', .6, {display: 'none', opacity: 0})
+			.to('.choice__interaction-main', .6, {display: 'block', opacity: 1})
+
+		if (typeof this.props.clickHandler === 'function') {
+			this.props.clickHandler()
+		}
 
 	}
 
+	/**
+     * @method
+	 * @name render
+     */
 	render() {
 
 		return (

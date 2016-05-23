@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ChoiceIntro from '../ChoiceIntro'
 
 class Choice1A extends React.Component {
 
@@ -9,6 +10,24 @@ class Choice1A extends React.Component {
 	constructor() {
 
 		super()
+
+		this.init()
+
+	}
+
+	/**
+     * @method
+	 * @name init
+     */
+	init() {
+
+		this.answer = 'fantome'
+
+	}
+
+	showButton() {
+
+		TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'block', opacity: 1})
 
 	}
 
@@ -22,15 +41,7 @@ class Choice1A extends React.Component {
 		const event = e || window.e
 		event.preventDefault()
 
-		let answer
-
-		if (ReactDOM.findDOMNode(this.refs.choiceA).checked) {
-			answer = ReactDOM.findDOMNode(this.refs.choiceA).value
-		} else {
-			answer = ReactDOM.findDOMNode(this.refs.choiceB).value
-		}
-
-		this.props.submitHandler(this.props.id, answer)
+		this.props.submitHandler(this.props.id, this.answer)
 
 	}
 
@@ -42,18 +53,25 @@ class Choice1A extends React.Component {
 
 		return (
 			<div className="choice__interaction-container">
-				<h1>Fantome ou Dieu ?</h1>
-				<form onSubmit={this.handleSubmit.bind(this)}>
-					<label labelFor="choice-a">
-						Fantome
-						<input ref="choiceA" id="choice-a" value="fantome" name="choice1A" type="radio"/>
-					</label>
-					<label labelFor="choice-b">
-						Dieu
-						<input ref="choiceB" id="choice-b" value="dieu" name="choice1A" type="radio"/>
-					</label>
-					<input value="Faire mon choix" type="submit"/>
-				</form>
+				<ChoiceIntro title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
+				<div className="choice__interaction-main">
+
+					<p onClick={this.showButton.bind(this)}>Suivant</p>
+
+					<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--2A" type="button">
+						<span>Valider</span>
+						<svg x="0px" y="0px" viewBox="1 2 122 48">
+							<g className="choice__main-btn__border">
+								<g>
+									<path fill="#FFFFFF" d="M107.1,50H1V2h122v32.1L107.1,50z M3,48h103.3L121,33.3V4H3V48z"/>
+								</g>
+							</g>
+							<g className="choice__main-btn__fill">
+								<polygon fill="#FF5951" points="105.7,46 5,46 5,6 119,6 119,32.7"/>
+							</g>
+						</svg>
+					</button>
+				</div>
 			</div>
 		)
 

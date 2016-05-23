@@ -28,24 +28,6 @@ class Choice0 extends React.Component {
 
 	}
 
-	/**
-     * @method
-	 * @name handleSubmit
-     */
-	handleSubmit() {
-
-		let answer
-
-		if (ReactDOM.findDOMNode(this.refs.choiceA).checked) {
-			answer = ReactDOM.findDOMNode(this.refs.choiceA).value
-		} else {
-			answer = ReactDOM.findDOMNode(this.refs.choiceB).value
-		}
-
-		this.props.submitHandler(this.props.id, answer)
-
-	}
-
 	hideOptionsLists(e) {
 
 		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
@@ -65,13 +47,13 @@ class Choice0 extends React.Component {
 		const matchingField = event.target.parentNode.parentNode
 
 		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
-			if(matchingField != this.gossipFieldsNodes[i]){
+			if (matchingField != this.gossipFieldsNodes[i]) {
 				this.gossipFieldsNodes[i].classList.remove('is-active')
 			}
 		}
 
 		matchingField.classList.toggle('is-active')
-	
+
 	}
 
 	/**
@@ -99,17 +81,20 @@ class Choice0 extends React.Component {
 		}
 
 		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
-			TweenMax.to('.choice__main-btn', 0.3, {
-				display: 'block',
-				opacity: 1
-			})
+			TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'block', opacity: 1})
 		}
 
 	}
 
+	/**
+     * @method
+	 * @name stopPropagation
+	 * @param {object} e - event
+     */
 	stopPropagation(e) {
 
-		e.stopPropagation();
+		const event = e || window.e
+		event.stopPropagation()
 
 	}
 
@@ -142,28 +127,31 @@ class Choice0 extends React.Component {
 						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
 							<div><span ref="gossipField1" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
 							<ul className="gossip__field__list">
-								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">les viandes de monsieur viandé</li>
-								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">les légumes de monsieur plantard</li>
-								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">les légumes de monsieur plantard</li>
-								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">les légumes de monsieur plantard</li>
+								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">
+									les porcs de Monsieur Viandé
+								</li>
+								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">
+									les courgettes de Monsieur Plantard
+								</li>
+								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">
+									les moutons de Monsieur Viandé
+								</li>
+								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">
+									les poires de Monsieur Plantard
+								</li>
 							</ul>
 						</div>
 						<div className="gossip__text">provoquent</div>
 						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
 							<div><span ref="gossipField2" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
 							<ul className="gossip__field__list">
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">le choléra</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la cardamone</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">des nausées</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la myoclonie phrénoglottique</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte des 5 sens</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte de l'être aimé</li>
 							</ul>
 						</div>
-						<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--1" type="button">
+						<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--0" type="button">
 							<span>Valider</span>
 							<svg x="0px" y="0px" viewBox="1 2 122 48">
 								<g className="choice__main-btn__border">
