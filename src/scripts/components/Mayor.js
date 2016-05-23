@@ -111,7 +111,7 @@ class Mayor extends React.Component {
 					dialogIndex: this.state.dialogIndex + 1
 				})
 			}
-			// let introTimeline = new TimelineLite()
+			// const introTimeline = new TimelineLite()
 			//
 			// introTimeline
 			// .to(this.spacebarIconNode, 0.3, {

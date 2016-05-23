@@ -1,0 +1,97 @@
+.voice
+	position relative
+	display flex
+	flex-direction column
+	justify-content space-between
+	align-items center
+	height 52rem
+	margin-left -2rem
+
+	&__redo-btn
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 4.5rem
+		height 4.5rem
+		border 2px solid rgba($white, .2)
+		border-radius 50%
+
+	&__audiovisualizer
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 62rem
+
+	&__slider
+		position relative
+		width 20rem
+		height 20rem
+		border 2px solid $white
+		border-radius 50%
+		overflow hidden
+		z-index 2
+
+		&__item
+			position absolute
+			top 0
+			border-radius 50%
+
+	&__level
+		position relative
+		width 16rem
+		height 5rem
+		border 2px solid $white
+
+		&:after
+			content ''
+			position absolute
+			top 50%
+			display block
+			width 5rem
+			height 0.2rem
+			background $white
+			transform translateY(-50%)
+
+		&__label
+			position absolute
+			top 0
+			right 0
+			left 0
+			z-index 2
+			line-height 5rem
+			font-size 1.4rem
+			font-family $font-pressura-regular
+			text-align center
+			text-transform uppercase
+			letter-spacing .3px
+
+		&__gauge
+			position absolute
+			top 0
+			width 70%
+			height 100%
+
+		&--ghost
+
+			&:after
+				right -5.2rem
+
+			.voice__level__label
+				color $white
+
+			.voice__level__gauge
+				right 0
+				background rgba($white, .3)
+
+		&--god
+
+			&:after
+				left -5.2rem
+
+			.voice__level__label
+				color $purple
+
+			.voice__level__gauge
+				background $white

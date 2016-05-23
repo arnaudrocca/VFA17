@@ -145,10 +145,10 @@ class Choice0 extends React.Component {
 						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
 							<div><span ref="gossipField2" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
 							<ul className="gossip__field__list">
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">des nausées</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la myoclonie phrénoglottique</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte des 5 sens</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte de l'être aimé</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">des nausées.</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la myoclonie phrénoglottique.</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte des 5 sens.</li>
+								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte de l'être aimé.</li>
 							</ul>
 						</div>
 						<button onClick={this.handleSubmit.bind(this)} className="choice__main-btn choice__main-btn--validate choice__main-btn--0" type="button">
