@@ -122,10 +122,10 @@ class Audio {
      */
     stopStream() {
 
-        const audioStreamAudioTracks = this.audioStream.getAudioTracks()
+        const audioStreamTracks = this.audioStream.getAudioTracks()
 
-        for (let track of audioStreamAudioTracks) {
-            track.stop()
+        for (let audioTrack of audioStreamTracks) {
+            audioTrack.stop()
         }
 
     }

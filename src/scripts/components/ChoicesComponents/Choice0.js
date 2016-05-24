@@ -125,16 +125,16 @@ class Choice0 extends React.Component {
 							<div><span ref="gossipField1" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
 							<ul className="gossip__field__list">
 								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">
-									les porcs de Monsieur Viandé
+									les porcs de la famille Viandé
 								</li>
 								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">
-									les courgettes de Monsieur Plantard
+									les courgettes de la famille Plantard
 								</li>
 								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">
-									les moutons de Monsieur Viandé
+									les moutons de la famille Viandé
 								</li>
 								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">
-									les poires de Monsieur Plantard
+									les poires de la famille Plantard
 								</li>
 							</ul>
 						</div>
