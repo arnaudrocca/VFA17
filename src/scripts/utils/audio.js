@@ -84,19 +84,13 @@ class Audio {
                                     navigator.msGetUserMedia
 
             navigator.getUserMedia({
-
                 'audio': true
-
             // Success callback
             }, this.createStream.bind(this), function(e) {
-
                 console.log(e)
-
             // Error callback
             }, function(error) {
-
-                console.error('The following error occured : ' + error);
-
+                console.error('The following error occured : ' + error)
             })
 
         } else {
@@ -119,6 +113,20 @@ class Audio {
 
         this.analyser.fftSize = 4096
         this.audioSource.connect(this.analyser)
+
+    }
+
+    /**
+     * @method
+     * @name stopStream
+     */
+    stopStream() {
+
+        const audioStreamAudioTracks = this.audioStream.getAudioTracks()
+
+        for (let track of audioStreamAudioTracks) {
+            track.stop()
+        }
 
     }
 
