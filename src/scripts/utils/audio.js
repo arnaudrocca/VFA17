@@ -3,12 +3,10 @@ class Audio {
     /**
 	 * @constructor
 	 */
-    constructor(soundPath = '') {
+    constructor() {
 
-        this.soundPath = soundPath
-
-        const constructor = window.AudioContext || window.webkitAudioContext
-        this.audioContext = new constructor()
+        const Context = window.AudioContext || window.webkitAudioContext
+        this.audioContext = new Context()
         this.analyser = this.audioContext.createAnalyser()
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
 
@@ -19,21 +17,23 @@ class Audio {
 	 * @name loadSound
 	 * @description Load the sound
 	 */
-    loadSound() {
+    loadSound(soundPath) {
+
+        this.soundPath = soundPath
 
         const request = new XMLHttpRequest()
         request.open('GET', this.soundPath, true)
         request.responseType = 'arraybuffer'
 
         // Decode asynchronously
-        request.onload = function() {
+        request.onload = () => {
 
-            // Success callback
-            this.audioContext.decodeAudioData(request.response, function(buffer) {
+            this.audioContext.decodeAudioData(request.response, (buffer) => {
 
-                this.audioBuffer = buffer
+                // SUCCESS CALLBACK
 
                 // Create sound from buffer
+                this.audioBuffer = buffer
                 this.audioSource = this.audioContext.createBufferSource()
                 this.audioSource.buffer = this.audioBuffer
 
@@ -41,31 +41,23 @@ class Audio {
                 this.audioSource.connect(this.analyser)
                 this.analyser.connect(this.audioContext.destination)
 
-                // Loop the sound
+                // Audio source params
+                this.audioSource.crossOrigin = 'anonymous'
                 this.audioSource.loop = true
 
-            // Error callback
-            }.bind(this), function(error) {
+                // Play the sound
+                this.audioSource.start(this.audioContext.currentTime)
 
-                console.error('The following error occured : ' + error)
+            }, (error) => {
+
+                // ERROR CALLBACK
+                console.error(`The following error occured : ${error}`)
 
             })
 
-        }.bind(this)
+        }
 
         request.send()
-
-    }
-
-    /**
-     * @method
-     * @name play
-     * @description Play the sound
-     */
-    play() {
-
-        this.audioSource.crossOrigin = 'anonymous'
-        this.audioSource.start(this.audioContext.currentTime)
 
     }
 
@@ -78,49 +70,40 @@ class Audio {
 
         if (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia) {
 
-            navigator.getUserMedia = navigator.webkitGetUserMedia ||
-                                    navigator.mozGetUserMedia ||
-                                    navigator.mozGetUserMedia ||
-                                    navigator.msGetUserMedia
+            navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
 
             navigator.getUserMedia({
-                'audio': true
-            // Success callback
-            }, this.createStream.bind(this), function(e) {
-                console.log(e)
-            // Error callback
-            }, function(error) {
-                console.error('The following error occured : ' + error)
+
+                'audio': true,
+                'video': false
+
+            }, (stream) => {
+
+                // SUCCESS CALLBACK
+                this.audioStream = stream
+                this.audioSource = this.audioContext.createMediaStreamSource(this.audioStream)
+
+                this.analyser.fftSize = 4096
+                this.audioSource.connect(this.analyser)
+
+            }, (error) => {
+
+                // ERROR CALLBACK
+                console.error(`The following error occured : ${error}`)
+
             })
 
         } else {
-
             console.error("getUserMedia not supported.")
-
         }
 
     }
 
     /**
      * @method
-     * @name createStream
-     * @param {object} stream
+     * @name stopAudioStream
      */
-    createStream(stream) {
-
-        this.audioSource = this.audioContext.createMediaStreamSource(stream)
-        this.audioStream = stream
-
-        this.analyser.fftSize = 4096
-        this.audioSource.connect(this.analyser)
-
-    }
-
-    /**
-     * @method
-     * @name stopStream
-     */
-    stopStream() {
+    stopAudioStream() {
 
         const audioStreamTracks = this.audioStream.getAudioTracks()
 

@@ -50,10 +50,10 @@ class Choice2A extends React.Component {
 				<ChoiceIntro clickHandler={this.clickHandler.bind(this)} title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
 				<div className="choice__interaction-main">
 					<div className="building">
-						<p className="building__name js-building__name">Église</p>
-						<p className="building__name js-building__name">Marché</p>
+						<p className="building__name">Église</p>
+						<p className="building__name">Marché</p>
 						<div className="choice__interaction-main--root" ref="root"></div>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} class="choice__main-btn choice__main-btn--validate choice__main-btn--2A js-btn--validate--2A"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} class="choice__main-btn choice__main-btn--validate choice__main-btn--2A"/>
 					</div>
 				</div>
 			</div>

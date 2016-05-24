@@ -26,8 +26,8 @@ class Interaction2A extends Graphics {
         this.scene = new Scene(this.sceneWidth, this.sceneHeight)
         this.scene.add(this)
 
-        this.buildingNames = document.querySelectorAll('.js-building__name')
-        this.buttonValidate = document.querySelector('.js-btn--validate--2A')
+        this.buildingNames = document.querySelectorAll('.building__name')
+        this.buttonValidate = document.querySelector('.choice__main-btn--2A')
 
         this.buildingNames[0].style.top = `${this.top}px`
         this.buildingNames[1].style.top = `${this.top}px`
@@ -59,7 +59,7 @@ class Interaction2A extends Graphics {
         this.setNodes()
         this.draw()
 
-        TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'none', opacity: 0})
+        TweenMax.to(this.buttonValidate, 0.3, {display: 'none', opacity: 0})
 
     }
 
@@ -331,7 +331,7 @@ class Interaction2A extends Graphics {
             } else {
                 this.answer = 'marche'
             }
-            TweenMax.to('.choice__main-btn', 0.3, {display: 'block', opacity: 1})
+            TweenMax.to(this.buttonValidate, 0.3, {display: 'block', opacity: 1})
         }
 
     }

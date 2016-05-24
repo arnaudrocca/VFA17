@@ -82,7 +82,7 @@ class Choice0 extends React.Component {
 		}
 
 		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
-			TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'block', opacity: 1})
+			TweenMax.to('.choice__main-btn--0', 0.3, {display: 'block', opacity: 1})
 		}
 
 	}

@@ -47,7 +47,7 @@ class Menu extends React.Component {
 		const sideSize = 20
 		const columnWidth = (windowWidth - (sideSize * 2)) / 6
 
-		this.menuBtnDrag = Draggable.create(menuBtn, {
+		Draggable.create(menuBtn, {
 			type: 'x',
 			bounds: {
 				minX: -(windowWidth - (sideSize * 2)) * 10 / 12,

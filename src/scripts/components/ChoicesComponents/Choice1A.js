@@ -31,7 +31,7 @@ class Choice1A extends React.Component {
      */
 	componentWillUnmount() {
 
-		this.audio.stopStream()
+		this.audio.stopAudioStream()
 
 		TweenMax.ticker.removeEventListener('tick', this.update)
 
