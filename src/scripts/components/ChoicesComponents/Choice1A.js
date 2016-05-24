@@ -26,11 +26,11 @@ class Choice1A extends React.Component {
 
 	}
 
-	showButton() {
-
-		TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'block', opacity: 1})
-
-	}
+	// showButton() {
+	//
+	// 	TweenMax.to('.choice__main-btn--validate', 0.3, {display: 'block', opacity: 1})
+	//
+	// }
 
 	/**
      * @method
@@ -57,7 +57,7 @@ class Choice1A extends React.Component {
 				<ChoiceIntro title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
 				<div className="choice__interaction-main">
 					<div className="voice">
-						<button className="voice__redo-btn" type="button">
+						<button onClick={this.init.bind(this)} className="voice__redo-btn" type="button">
 							<IconRedo width="25" color="#FFFFFF" />
 						</button>
 						<div className="voice__audiovisualizer">

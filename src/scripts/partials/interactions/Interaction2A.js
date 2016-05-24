@@ -19,12 +19,19 @@ class Interaction2A extends Graphics {
         this.sceneHeight = window.innerHeight
         this.asideWidth = window.innerWidth - this.sceneWidth
         this.gridSize = this.sceneWidth / 20
-        this.top = (this.sceneHeight - (this.gridSize * 15)) / 2
+        this.top = (this.sceneHeight - (this.gridSize * 10)) / 2
 
         this.nodeRadius = 5
 
         this.scene = new Scene(this.sceneWidth, this.sceneHeight)
         this.scene.add(this)
+
+        this.buildingNames = document.querySelectorAll('.js-building__name')
+        this.buttonValidate = document.querySelector('.js-btn--validate--2A')
+
+        this.buildingNames[0].style.top = `${this.top}px`
+        this.buildingNames[1].style.top = `${this.top}px`
+        this.buttonValidate.style.bottom = `${this.top / 2}px`
 
         this.init()
 
@@ -67,51 +74,51 @@ class Interaction2A extends Graphics {
         this.nodesChurch = [
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 4 + this.top
+                y: this.gridSize * 1 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 4 + this.top
+                y: this.gridSize * 1 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 6 + this.top
+                y: this.gridSize * 3 + this.top
             },
             {
                 x: this.gridSize * 8,
-                y: this.gridSize * 6 + this.top
+                y: this.gridSize * 3 + this.top
             },
             {
                 x: this.gridSize * 8,
-                y: this.gridSize * 8 + this.top
+                y: this.gridSize * 5 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 8 + this.top
+                y: this.gridSize * 5 + this.top
             },
             {
                 x: this.gridSize * 6,
-                y: this.gridSize * 11.5 + this.top
+                y: this.gridSize * 8.5 + this.top
             },
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 11.5 + this.top
+                y: this.gridSize * 8.5 + this.top
             },
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 8 + this.top
+                y: this.gridSize * 5 + this.top
             },
             {
                 x: this.gridSize * 2,
-                y: this.gridSize * 8 + this.top
+                y: this.gridSize * 5 + this.top
             },
             {
                 x: this.gridSize * 2,
-                y: this.gridSize * 6 + this.top
+                y: this.gridSize * 3 + this.top
             },
             {
                 x: this.gridSize * 4,
-                y: this.gridSize * 6 + this.top
+                y: this.gridSize * 3 + this.top
             }
         ]
 
@@ -119,35 +126,35 @@ class Interaction2A extends Graphics {
         this.nodesMarket = [
             {
                 x: this.gridSize * 14,
-                y: this.gridSize * 6 + this.top
+                y: this.gridSize * 3 + this.top
             },
             {
                 x: this.gridSize * 14,
-                y: this.gridSize * 5 + this.top
+                y: this.gridSize * 2 + this.top
             },
             {
                 x: this.gridSize * 16,
-                y: this.gridSize * 5 + this.top
+                y: this.gridSize * 2 + this.top
             },
             {
                 x: this.gridSize * 16,
-                y: this.gridSize * 7 + this.top
+                y: this.gridSize * 4 + this.top
             },
             {
                 x: this.gridSize * 12,
-                y: this.gridSize * 7 + this.top
+                y: this.gridSize * 4 + this.top
             },
             {
                 x: this.gridSize * 12,
-                y: this.gridSize * 11 + this.top
+                y: this.gridSize * 8 + this.top
             },
             {
                 x: this.gridSize * 18,
-                y: this.gridSize * 11 + this.top
+                y: this.gridSize * 8 + this.top
             },
             {
                 x: this.gridSize * 18,
-                y: this.gridSize * 7 + this.top
+                y: this.gridSize * 4 + this.top
             }
         ]
 
@@ -272,7 +279,11 @@ class Interaction2A extends Graphics {
         this.sceneHeight = window.innerHeight
         this.asideWidth = window.innerWidth - this.sceneWidth
         this.gridSize = this.sceneWidth / 20
-        this.top = (this.sceneHeight - (this.gridSize * 15)) / 2
+        this.top = (this.sceneHeight - (this.gridSize * 10)) / 2
+
+        this.buildingNames[0].style.top = `${this.top}px`
+        this.buildingNames[1].style.top = `${this.top}px`
+        this.buttonValidate.style.bottom = `${this.top / 2}px`
 
         this.scene.resize(this.sceneWidth, this.sceneHeight)
 

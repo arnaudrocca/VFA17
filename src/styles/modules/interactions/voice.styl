@@ -47,10 +47,10 @@
 		&:after
 			content ''
 			position absolute
-			top 50%
 			display block
 			width 5rem
 			height 0.2rem
+			top 50%
 			background $white
 			transform translateY(-50%)
 
@@ -59,39 +59,29 @@
 			top 0
 			right 0
 			left 0
-			z-index 2
 			line-height 5rem
-			font-size 1.4rem
+			color $white
 			font-family $font-pressura-regular
-			text-align center
+			font-size 1.4rem
 			text-transform uppercase
+			text-align center
 			letter-spacing .3px
+			z-index 2
 
 		&__gauge
 			position absolute
-			top 0
-			width 70%
+			width 50%
 			height 100%
+			top 0
+			background rgba($white, .3)
 
 		&--ghost
-
 			&:after
 				right -5.2rem
 
-			.voice__level__label
-				color $white
-
 			.voice__level__gauge
 				right 0
-				background rgba($white, .3)
 
 		&--god
-
 			&:after
 				left -5.2rem
-
-			.voice__level__label
-				color $purple
-
-			.voice__level__gauge
-				background $white
