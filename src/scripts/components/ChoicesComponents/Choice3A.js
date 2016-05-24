@@ -13,9 +13,8 @@ class Choice3A extends React.Component {
 
 		super()
 
-		this.answer = ''
         this.itemsNumber =  7
-
+		
         this.createDrag = this.createDrag.bind(this)
 
 	}
@@ -29,10 +28,6 @@ class Choice3A extends React.Component {
 		this.cursor = ReactDOM.findDOMNode(this.refs.cursor)
         this.sliderItems = document.querySelectorAll('.propaganda__slider__item')
 
-		this.createDrag()
-
-        window.addEventListener('resize', debounce(this.createDrag, 350))
-
 	}
 
     /**
@@ -45,59 +40,73 @@ class Choice3A extends React.Component {
 
     }
 
-    /**
-     * @method
-     * @name createDrag
-     */
-    createDrag() {
+	/**
+	 * @method
+	 * @name clickHandler
+	 */
+	clickHandler() {
 
-        if (window.innerWidth > 1400) {
-            this.mainWidth = (window.innerWidth * 76) / 100
-        } else {
-            this.mainWidth = (window.innerWidth * 66) / 100
-        }
-        this.mainHeight = window.innerHeight
+		this.answer = ''
 
-        const itemTransitionTimeline = new TimelineLite()
+		this.createDrag()
 
-        const cursorRadius = 25
-        const lineWidth = (this.mainWidth / 2) * .75
-        const lineLeftOffset = (((this.mainWidth - lineWidth) / 2) + (window.innerWidth - this.mainWidth))
-        const columnWidth = lineWidth / this.itemsNumber
+		window.addEventListener('resize', debounce(this.createDrag, 350))
+
+	}
+
+	/**
+	 * @method
+	 * @name createDrag
+	 */
+	createDrag() {
+
+		if (window.innerWidth > 1400) {
+			this.mainWidth = (window.innerWidth * 76) / 100
+		} else {
+			this.mainWidth = (window.innerWidth * 66) / 100
+		}
+		this.mainHeight = window.innerHeight
+
+		const itemTransitionTimeline = new TimelineLite()
+
+		const cursorRadius = 25
+		const lineWidth = (this.mainWidth / 2) * .75
+		const lineLeftOffset = (((this.mainWidth - lineWidth) / 2) + (window.innerWidth - this.mainWidth))
+		const columnWidth = lineWidth / this.itemsNumber
 
 		const self = this
 
 		let lastId = Math.floor(this.itemsNumber / 2)
-        TweenMax.to(self.sliderItems[lastId], .2, {display: 'block', opacity: 1})
+		TweenMax.to(self.sliderItems[lastId], .2, {display: 'block', opacity: 1})
 
-        Draggable.create(this.cursor, {
-            type: 'x',
-            edgeResistance: .95,
-            bounds: {
-                minX: -lineWidth + cursorRadius,
-                maxX: lineWidth - cursorRadius
-            },
-            zIndex: 1000,
-            zIndexBoost: false,
-            onDrag: throttle(function() {
-                const selectedId = Math.floor(((this.x + lineWidth) / columnWidth) / 2)
+		Draggable.create(this.cursor, {
+			type: 'x',
+			edgeResistance: .95,
+			bounds: {
+				minX: -lineWidth + cursorRadius,
+				maxX: lineWidth - cursorRadius
+			},
+			zIndex: 1000,
+			zIndexBoost: false,
+			onDrag: throttle(function() {
+				const selectedId = Math.floor(((this.x + lineWidth) / columnWidth) / 2)
 
-                if (selectedId != lastId) {
-                    const lastItem = self.sliderItems[lastId]
-                    const currentItem = self.sliderItems[selectedId]
+				if (selectedId != lastId) {
+					const lastItem = self.sliderItems[lastId]
+					const currentItem = self.sliderItems[selectedId]
 
-                    itemTransitionTimeline
-                        .to(lastItem, .5, {
-                            display: 'none',
-                            opacity: 0,
-                            scale: 1.2
-                        })
-                        .to(currentItem, .5, {
-                            display: 'block',
-                            opacity: 1,
-                            scale: 1
-                        }, '-=.5')
-                }
+					itemTransitionTimeline
+						.to(lastItem, .5, {
+							display: 'none',
+							opacity: 0,
+							scale: 1.2
+						})
+						.to(currentItem, .5, {
+							display: 'block',
+							opacity: 1,
+							scale: 1
+						}, '-=.5')
+				}
 
 				if (selectedId <= Math.floor(self.itemsNumber / 2)) {
 					self.answer = 'jeunes'
@@ -106,10 +115,10 @@ class Choice3A extends React.Component {
 				}
 
 				lastId = selectedId
-            }, 150)
-        })
+			}, 150)
+		})
 
-    }
+	}
 
 	/**
 	 * @method
@@ -133,7 +142,7 @@ class Choice3A extends React.Component {
 
 		return (
 			<div className="choice__interaction-container">
-				<ChoiceIntro title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
+				<ChoiceIntro clickHandler={this.clickHandler.bind(this)} title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
 				<div className="choice__interaction-main choice__interaction-main">
                     <div className="propaganda">
                         <div className="propaganda__slider">

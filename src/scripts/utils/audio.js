@@ -3,13 +3,13 @@ class Audio {
     /**
 	 * @constructor
 	 */
-    constructor(soundPath) {
+    constructor(soundPath = '') {
 
         this.soundPath = soundPath
 
         const constructor = window.AudioContext || window.webkitAudioContext
-        this.audioCtx = new constructor()
-        this.analyser = this.audioCtx.createAnalyser()
+        this.audioContext = new constructor()
+        this.analyser = this.audioContext.createAnalyser()
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
 
     }
@@ -21,36 +21,33 @@ class Audio {
 	 */
     loadSound() {
 
-        let request = new XMLHttpRequest()
+        const request = new XMLHttpRequest()
         request.open('GET', this.soundPath, true)
         request.responseType = 'arraybuffer'
 
         // Decode asynchronously
         request.onload = function() {
 
-            this.audioCtx.decodeAudioData(request.response, function(buffer) {
+            // Success callback
+            this.audioContext.decodeAudioData(request.response, function(buffer) {
 
-                // Success callback
                 this.audioBuffer = buffer
 
                 // Create sound from buffer
-                this.audioSource = this.audioCtx.createBufferSource()
+                this.audioSource = this.audioContext.createBufferSource()
                 this.audioSource.buffer = this.audioBuffer
 
                 // Connect the audio source to context's output
                 this.audioSource.connect(this.analyser)
-                this.analyser.connect(this.audioCtx.destination)
-
-                // Play the sound
-                this.audioSource.crossOrigin = 'anonymous'
-                this.audioSource.start(this.audioCtx.currentTime)
+                this.analyser.connect(this.audioContext.destination)
 
                 // Loop the sound
                 this.audioSource.loop = true
 
-            }.bind(this), function() {
+            // Error callback
+            }.bind(this), function(error) {
 
-                // Error callback
+                console.error('The following error occured : ' + error)
 
             })
 
@@ -61,73 +58,87 @@ class Audio {
     }
 
     /**
-	 * @method
-	 * @name splitFrenquencyArray
-	 * @description Split the frequency data
-     * @param {array} frequencyData
-     * @param {number} split - The length of the frequencyArray
-     * @return {array} frequencyArray
-	 */
-    splitFrenquencyArray(frequencyData, split) {
+     * @method
+     * @name play
+     * @description Play the sound
+     */
+    play() {
 
-        let length = frequencyData.length,
-            frequencyArray = new Array(),
-            i = 0
-
-        while (i < length) {
-            let size = Math.ceil((length - i) / split--)
-            frequencyArray.push(frequencyData.slice(i, i + size))
-            i += size
-        }
-
-        return frequencyArray
+        this.audioSource.crossOrigin = 'anonymous'
+        this.audioSource.start(this.audioContext.currentTime)
 
     }
 
     /**
 	 * @method
-	 * @name getAudioData
-     * @description Define how much information you want to get from the original frequency data
-     * @param {number} split - The number of splitted array
-	 * @return {array} audioData / {number} average
+	 * @name readSound
+	 * @description Read the sound from the microphone
 	 */
-    getAudioData(split = 1) {
+    readSound() {
 
-        this.analyser.getByteFrequencyData(this.frequencyData)
+        if (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia) {
 
-        if (split > 1) {
+            navigator.getUserMedia = navigator.webkitGetUserMedia ||
+                                    navigator.mozGetUserMedia ||
+                                    navigator.mozGetUserMedia ||
+                                    navigator.msGetUserMedia
 
-            // Split the frequency array
-		    const frequencyArray = this.splitFrenquencyArray(this.frequencyData, split)
+            navigator.getUserMedia({
 
-            let audioData = new Array()
+                'audio': true
 
-            // Make average of frenquency array entries
-            for (let i in frequencyArray) {
-                const splittedArray = frequencyArray[i]
-                let average = 0
+            // Success callback
+            }, this.createStream.bind(this), function(e) {
 
-                for (let frequency of splittedArray) {
-                    average += frequency
-                }
-                audioData[i] = average / splittedArray.length
-            }
+                console.log(e)
 
-            return audioData
+            // Error callback
+            }, function(error) {
+
+                console.error('The following error occured : ' + error);
+
+            })
 
         } else {
 
-            // Calculate the average
-            let average = 0
-
-            for (let frequency of this.frequencyData) {
-                average += frequency
-            }
-            average = average / this.frequencyData.length
-
-            return average
+            console.error("getUserMedia not supported.")
 
         }
+
+    }
+
+    /**
+     * @method
+     * @name createStream
+     * @param {object} stream
+     */
+    createStream(stream) {
+
+        this.audioSource = this.audioContext.createMediaStreamSource(stream)
+        this.audioStream = stream
+
+        this.analyser.fftSize = 4096
+        this.audioSource.connect(this.analyser)
+
+    }
+
+    /**
+	 * @method
+	 * @name getAverage
+     * @description Calculate the average amplitude
+	 * @return {number} average
+	 */
+    getAverage() {
+
+        this.analyser.getByteFrequencyData(this.frequencyData)
+
+        let average = 0
+        for (let frequency of this.frequencyData) {
+            average += frequency
+        }
+        average = average / this.frequencyData.length
+
+        return average
 
     }
 

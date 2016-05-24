@@ -16,6 +16,11 @@
 		height 4.5rem
 		border 2px solid rgba($white, .2)
 		border-radius 50%
+		opacity 0
+		transition transform .15s ease-out
+
+		&:hover
+			transform rotate(30deg)
 
 	&__audiovisualizer
 		display flex
@@ -36,13 +41,50 @@
 		&__item
 			position absolute
 			top 0
+			opacity 0
 			border-radius 50%
+
+		&__visualizer
+			position absolute
+			top 50%
+			right 0
+			left 0
+			margin 0 auto
+			border-radius 50%
+			background rgba($white, .2)
+			transform-origin 50% 50%
+			transform translateY(-50%)
+
+		&__icon
+			position absolute
+			top 50%
+			right 0
+			left 0
+			z-index 2
+			display flex
+			flex-direction column
+			justify-content center
+			align-items center
+			width 6rem
+			height 6rem
+			margin 0 auto
+			border-radius 50%
+			background $white
+			transform-origin 50% 50%
+			transform translateY(-50%)
 
 	&__level
 		position relative
 		width 16rem
 		height 5rem
 		border 2px solid $white
+
+		&.is-full
+			.voice__level__label
+				color $purple
+
+			.voice__level__gauge
+				background $white
 
 		&:after
 			content ''
@@ -67,13 +109,15 @@
 			text-align center
 			letter-spacing .3px
 			z-index 2
+			transition color .3s ease-out
 
 		&__gauge
 			position absolute
-			width 50%
+			width 0%
 			height 100%
 			top 0
 			background rgba($white, .3)
+			transition background .3s ease-out
 
 		&--ghost
 			&:after
