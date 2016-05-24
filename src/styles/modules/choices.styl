@@ -53,8 +53,17 @@
 
 	&__description
 		width 29rem
+		max-height 65vh
 		margin-top 16.5rem
+		overflow auto
 		antialiased()
+		
+		&::-webkit-scrollbar 
+			width 0.5rem
+			background $white
+		 
+		&::-webkit-scrollbar-thumb 
+			background $grey-light
 
 		&__date
 			color $red

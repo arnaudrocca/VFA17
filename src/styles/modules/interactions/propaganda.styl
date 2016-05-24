@@ -32,6 +32,22 @@
 		height .1rem
 		background-color rgba($grey-light, 0.5)
 		
+		&:after, &:before
+			content ''
+			position absolute
+			width 0.8rem
+			height 0.8rem
+			border 2px solid $white
+			border-radius 50%
+			transform translateY(-50%)
+			
+		&:before
+			left -1rem
+			
+		&:after
+			right -1rem
+			
+		
 	&__cursor
 		position absolute
 		top calc(70% - 2.5rem)
@@ -43,4 +59,24 @@
 		margin 0 auto
 		background-color $white
 		border-radius 50%
-		transition transform .3s $easeOutExpo
+		transition all .3s $easeOutExpo
+		
+		&:after, &:before
+			content ''
+			position absolute
+			top 50%
+			width 0
+			height 0
+			border-top .7rem solid transparent
+			border-bottom .7rem solid transparent
+			transform translateY(-50%)
+			
+		&:before
+			left calc(50% - .3rem)	
+			border-right .8rem solid $red;
+			transform translate(-100%,-50%)
+				
+		&:after
+			right calc(50% - .3rem)
+			border-left .8rem solid $red;
+			transform translate(100%,-50%)
