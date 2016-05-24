@@ -15,25 +15,13 @@ class Choice1A extends React.Component {
 
 		super()
 
-		this.gaugeStep = .3
-		this.ghostLimit = 45
+		this.gaugeStep = .4
+		this.ghostLimit = 50
 
 		this.audio = new Audio()
 		this.endTimeline = new TimelineLite()
 
 		this.update = this.update.bind(this)
-
-	}
-
-	/**
-     * @method
-	 * @name componentWillUnmount
-     */
-	componentWillUnmount() {
-
-		this.audio.stopAudioStream()
-
-		TweenMax.ticker.removeEventListener('tick', this.update)
 
 	}
 
@@ -44,6 +32,32 @@ class Choice1A extends React.Component {
 
 		this.ghostLevelNode = ReactDOM.findDOMNode(this.refs.ghostLevel)
 		this.godLevelNode = ReactDOM.findDOMNode(this.refs.godLevel)
+
+	}
+
+	/**
+	 * @method
+	 * @name componentWillUnmount
+	 */
+	componentWillUnmount() {
+
+		this.audio.stopAudioStream()
+
+		TweenMax.ticker.removeEventListener('tick', this.update)
+
+	}
+
+	/**
+	 * @method
+	 * @name clickHandler
+	 */
+	clickHandler() {
+
+		this.init()
+
+		this.audio.readSound()
+
+		TweenMax.ticker.addEventListener('tick', this.update)
 
 	}
 
@@ -137,20 +151,6 @@ class Choice1A extends React.Component {
 
 			this.endTimelineDone = true
 		}
-
-	}
-
-	/**
-	 * @method
-	 * @name clickHandler
-	 */
-	clickHandler() {
-
-		this.init()
-
-		this.audio.readSound()
-
-		TweenMax.ticker.addEventListener('tick', this.update)
 
 	}
 

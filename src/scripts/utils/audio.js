@@ -69,7 +69,6 @@ class Audio {
     readSound() {
 
         if (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia) {
-
             navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
 
             navigator.getUserMedia({
@@ -92,7 +91,7 @@ class Audio {
                 console.error(`The following error occured : ${error}`)
 
             })
-
+            
         } else {
             console.error("getUserMedia not supported.")
         }
