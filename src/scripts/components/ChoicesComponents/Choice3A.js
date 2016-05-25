@@ -14,7 +14,7 @@ class Choice3A extends React.Component {
 		super()
 
         this.itemsNumber =  7
-		
+
         this.createDrag = this.createDrag.bind(this)
 
 	}

@@ -100,7 +100,7 @@ class Mayor extends React.Component {
      */
 	spacebarDownHandler(e) {
 
-		const event = e || document.event
+		const event = e || window.event
 
 		if (event.keyCode == 32 && this.paragraphs != '') {
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {

@@ -25,6 +25,10 @@ class Choice1A extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name componentDidMount
+	 */
 	componentDidMount() {
 
 		this.ghostImgNode = ReactDOM.findDOMNode(this.refs.ghostImg)
