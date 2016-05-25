@@ -15,8 +15,8 @@ class Choice1A extends React.Component {
 
 		super()
 
-		this.gaugeStep = .4
-		this.ghostLimit = 50
+		this.gaugeStep = .5
+		this.audioLimit = 50
 
 		this.audio = new Audio()
 		this.endTimeline = new TimelineLite()
@@ -41,7 +41,9 @@ class Choice1A extends React.Component {
 	 */
 	componentWillUnmount() {
 
-		this.audio.stopAudioStream()
+		if (this.audio.userMedia === 'success') {
+			this.audio.stopAudioStream()
+		}
 
 		TweenMax.ticker.removeEventListener('tick', this.update)
 
@@ -69,6 +71,7 @@ class Choice1A extends React.Component {
 
 		this.answer = ''
 		this.answerImg = null
+		this.audioAverage = 0
 		this.ghostGauge = 0
 		this.godGauge = 0
 		this.end = false
@@ -85,8 +88,8 @@ class Choice1A extends React.Component {
 		// Scales audio
 		this.endTimeline
 			.to(this.answerImg, .3, {opacity: 0})
-			.to('.voice__slider__visualizer', .3, {width: 30, height: 30, opacity: 1})
-			.to('.voice__slider__icon', .3, {width: 60, height: 60, opacity: 1}, '-=.15')
+			.to('.voice__slider__visualizer', .3, {width: 30, height: 30, opacity: 1}, '-=.1')
+			.to('.voice__slider__icon', .3, {width: 60, height: 60, opacity: 1}, '-=.2')
 
 		// Hides buttons
 		TweenMax.to('.choice__main-btn--1A', .3, {opacity: 0, pointerEvents: 'none'})
@@ -108,14 +111,21 @@ class Choice1A extends React.Component {
 	update() {
 
 		if (!this.end) {
-			const average = this.audio.getAverage()
+			if (this.audio.userMedia === 'success') {
+				// Success
+				this.audioAverage = this.audio.getAverage()
+			}
+			else if (this.audio.userMedia === 'error') {
+				// Error
+				this.audioAverage = this.audioLimit
+			}
 
-			TweenMax.set('.voice__slider__visualizer', {width: `${30 + (average / 2)}%`, height:`${30 + (average / 2)}%`})
+			TweenMax.set('.voice__slider__visualizer', {width: `${30 + (this.audioAverage / 2)}%`, height:`${30 + (this.audioAverage / 2)}%`})
 
 			// Increments gauges
-			if (average >= 1 && average <= this.ghostLimit) {
+			if (this.audioAverage >= 1 && this.audioAverage <= this.audioLimit) {
 				this.ghostGauge += this.gaugeStep
-			} else if (average > this.ghostLimit) {
+			} else if (this.audioAverage > this.audioLimit) {
 				this.godGauge += this.gaugeStep
 			}
 
@@ -146,8 +156,8 @@ class Choice1A extends React.Component {
 			// Descales audio
 			this.endTimeline
 				.to('.voice__slider__icon', .3, {width: 0, height: 0, opacity: 0})
-				.to('.voice__slider__visualizer', .3, {width: 0, height: 0, opacity: 0}, '-=.15')
-				.to(this.answerImg, .3, {opacity: 1})
+				.to('.voice__slider__visualizer', .3, {width: 0, height: 0, opacity: 0}, '-=.2')
+				.to(this.answerImg, .3, {opacity: 1}, '-=.1')
 
 			this.endTimelineDone = true
 		}

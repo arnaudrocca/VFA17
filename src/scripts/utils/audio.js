@@ -51,7 +51,7 @@ class Audio {
             }, (error) => {
 
                 // ERROR CALLBACK
-                console.error(`The following error occured : ${error}`)
+                console.info(`The following error occured : ${error}`)
 
             })
 
@@ -69,6 +69,7 @@ class Audio {
     readSound() {
 
         if (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia) {
+
             navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
 
             navigator.getUserMedia({
@@ -79,6 +80,8 @@ class Audio {
             }, (stream) => {
 
                 // SUCCESS CALLBACK
+                this.userMedia = 'success'
+
                 this.audioStream = stream
                 this.audioSource = this.audioContext.createMediaStreamSource(this.audioStream)
 
@@ -88,12 +91,16 @@ class Audio {
             }, (error) => {
 
                 // ERROR CALLBACK
-                console.error(`The following error occured : ${error}`)
+                this.userMedia = 'error'
+                console.info(`The following error occured : ${error}`)
 
             })
-            
+
         } else {
-            console.error("getUserMedia not supported.")
+
+            this.userMedia = 'error'
+            console.info("getUserMedia not supported.")
+
         }
 
     }

@@ -107,8 +107,7 @@ class Choice extends React.Component {
 		this.choiceVersion = currentChoice.version
 
 		//Identifies the correct interaction
-		// const componentName = 'Choice' + this.choiceId + this.choiceVersion
-		const componentName = 'Choice1A'
+		const componentName = 'Choice' + this.choiceId + this.choiceVersion
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {
