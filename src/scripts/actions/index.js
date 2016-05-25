@@ -79,18 +79,22 @@ export const choiceMade = (choiceId, answer) => {
         hashHistory.push('/experiment')
 
         dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion))
-        dispatch(choicesDoneIncrement())
         dispatch(menuUpdate(choiceId))
 
-        for (let i of consequences.mapIds) {
-            dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]))
-            dispatch(hotpointUpdate(consequences.mapIds[i], answer))
-        }
+        setTimeout(() => {
+            dispatch(choicesDoneIncrement())
 
-        dispatch(scoreUpdate(consequences.score))
-        dispatch(mayorTalks(consequences.dialog, consequences.mood))
+            for (let i of consequences.mapIds) {
+                dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]))
+                dispatch(hotpointUpdate(consequences.mapIds[i], answer))
+            }
 
-        console.log(getState(), 'NEW STATE')
+            dispatch(scoreUpdate(consequences.score))
+            dispatch(mayorTalks(consequences.dialog, consequences.mood))
+
+            console.log(getState(), 'NEW STATE')
+        }, 1000)
+
     }
 
 }
