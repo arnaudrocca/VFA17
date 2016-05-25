@@ -31,7 +31,7 @@ class Choice extends React.Component {
 			this.interactionWidth = '66%'
 		}
 
-		let introTimeline = new TimelineLite()
+		const introTimeline = new TimelineLite()
 
 		introTimeline.fromTo('.choice__aside', 1, {
 			width: 20
@@ -65,12 +65,20 @@ class Choice extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name componentWillUnmount
+	 */
 	componentWillUnmount() {
 
 		window.removeEventListener('resize', this.resize.bind(this))
 
 	}
 
+	/**
+	 * @method
+	 * @name resize
+	 */
 	resize() {
 
 		if (window.innerWidth > 1400) {
@@ -99,8 +107,7 @@ class Choice extends React.Component {
 		this.choiceVersion = currentChoice.version
 
 		//Identifies the correct interaction
-		//const componentName = 'Choice' + this.choiceId + this.choiceVersion
-		const componentName = 'Choice3A' 
+		const componentName = 'Choice' + this.choiceId + this.choiceVersion
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {

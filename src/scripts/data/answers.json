@@ -4,7 +4,7 @@
         "nextChoiceVersion": "A",
         "mapIds": [0, 1],
         "mapVersions": ["C", "B"],
-        "score": 1,
+        "score": 2,
         "dialog": "Tu as choisi l'agriculture. § C'est bien l'agriculture.",
         "mood": "smiling"
     },
@@ -22,17 +22,17 @@
         "nextChoiceVersion": "A",
         "mapIds": [0],
         "mapVersions": ["A"],
-        "score": -1,
+        "score": -2,
         "dialog": "Tu as choisi le fantome, § ils ont brulé la foret !",
         "mood": "angry"
     },
     {
-        "name": "dieu",
+        "name": "divinite",
         "nextChoiceVersion": "B",
         "mapIds": [0],
         "mapVersions": ["C"],
         "score": 1,
-        "dialog": "Tu as choisi le dieu, § ils venerent la foret.",
+        "dialog": "Tu as choisi la divinite, § ils venerent la foret.",
         "mood": "smiling"
     },
     {
@@ -51,23 +51,23 @@
         "mapVersions": ["A"],
         "score": 0,
         "dialog": "Tu as construit une eglise.",
-        "mood": "happy"
+        "mood": "neutral"
     },
     {
         "name": "jeunes",
         "nextChoiceVersion": "",
         "mapIds": [0],
         "mapVersions": ["A"],
-        "score": 1,
+        "score": 2,
         "dialog": "Les jeunes",
-        "mood": "satisfied"
+        "mood": "smiling"
     },
     {
         "name": "vieux",
         "nextChoiceVersion": "",
         "mapIds": [0],
         "mapVersions": ["B"],
-        "score": -1,
+        "score": -2,
         "dialog": "Les vieux",
         "mood": "angry"
     }

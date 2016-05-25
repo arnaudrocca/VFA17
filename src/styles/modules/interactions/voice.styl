@@ -1,0 +1,131 @@
+.voice
+	position relative
+	display flex
+	flex-direction column
+	justify-content space-between
+	align-items center
+	height 52rem
+	margin-left -2rem
+
+	&__redo-btn
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 4.5rem
+		height 4.5rem
+		border 2px solid rgba($white, .2)
+		border-radius 50%
+		opacity 0
+		transition transform .15s ease-out
+
+		&:hover
+			transform rotate(30deg)
+
+	&__audiovisualizer
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 62rem
+
+	&__slider
+		position relative
+		width 20rem
+		height 20rem
+		border 2px solid $white
+		border-radius 50%
+		overflow hidden
+		z-index 2
+
+		&__item
+			position absolute
+			top 0
+			opacity 0
+			border-radius 50%
+
+		&__visualizer
+			position absolute
+			top 50%
+			right 0
+			left 0
+			margin 0 auto
+			border-radius 50%
+			background rgba($white, .2)
+			transform-origin 50% 50%
+			transform translateY(-50%)
+
+		&__icon
+			position absolute
+			top 50%
+			right 0
+			left 0
+			z-index 2
+			display flex
+			flex-direction column
+			justify-content center
+			align-items center
+			width 6rem
+			height 6rem
+			margin 0 auto
+			border-radius 50%
+			background $white
+			transform-origin 50% 50%
+			transform translateY(-50%)
+
+	&__level
+		position relative
+		width 16rem
+		height 5rem
+		border 2px solid $white
+
+		&.is-full
+			.voice__level__label
+				color $purple
+
+			.voice__level__gauge
+				background $white
+
+		&:after
+			content ''
+			position absolute
+			display block
+			width 5rem
+			height 0.2rem
+			top 50%
+			background $white
+			transform translateY(-50%)
+
+		&__label
+			position absolute
+			top 0
+			right 0
+			left 0
+			line-height 5rem
+			color $white
+			font-family $font-pressura-regular
+			font-size 1.4rem
+			text-transform uppercase
+			text-align center
+			letter-spacing .3px
+			z-index 2
+			transition color .3s ease-out
+
+		&__gauge
+			position absolute
+			width 0%
+			height 100%
+			top 0
+			background rgba($white, .3)
+			transition background .3s ease-out
+
+		&--ghost
+			&:after
+				right -5.2rem
+
+			.voice__level__gauge
+				right 0
+
+		&--god
+			&:after
+				left -5.2rem
