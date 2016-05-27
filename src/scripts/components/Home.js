@@ -1,5 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { Link } from 'react-router'
+import DragHome from './DragHome'
 
 class Home extends React.Component {
 
@@ -13,6 +15,24 @@ class Home extends React.Component {
 	}
 
 	/**
+	 * @method
+	 * @name componentDidMount
+	 */
+	componentDidMount() {
+
+		this.videoNode = ReactDOM.findDOMNode(this.refs.video)
+		console.log(this.videoNode)
+
+	}
+
+	showVideo() {
+
+		console.log(this.videoNode)
+		this.videoNode.setAttribute('src','http://techslides.com/demos/sample-videos/small.webm')
+
+	}
+
+	/**
      * @method
 	 * @name render
      */
@@ -20,7 +40,7 @@ class Home extends React.Component {
 
 		return (
 			<section className="home">
-				<Link className="link" to="/video">Voir la vidéo</Link>
+				<Link className="link" to="/experiment">Passer</Link>
 				<div className="home__intro">
 					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
 					<p className="home__content">
@@ -29,7 +49,8 @@ class Home extends React.Component {
 						Commencer l'expérience
 					</p>
 				</div>
-				<video className="home__video" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
+				<DragHome showVideo={this.showVideo.bind(this)} />
+				<video ref="video" className="home__video" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
 			</section>
 		)
 
