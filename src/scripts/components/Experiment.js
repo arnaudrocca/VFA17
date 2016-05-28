@@ -23,10 +23,12 @@ class Experiment extends React.Component {
 
 		return (
 			<div className="experiment">
-				<ScoreContainer />
-				<MayorContainer />
+				<div className="experiment__wrapper">
+					<ScoreContainer />
+					<MayorContainer />
+					<MapContainer />
+				</div>
 				<MenuContainer />
-				<MapContainer />
 				{this.props.children}
 			</div>
 		)

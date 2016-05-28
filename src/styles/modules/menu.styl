@@ -17,6 +17,10 @@
 		position relative
 		width calc((100vw - 4rem) / 6)
 		height calc(100vh - 4rem)
+		transition background .3s ease-out
+		
+		&.is-active
+			background rgba($blue-darker, 0.15)
 
 		&:after
 			content ''
@@ -30,6 +34,10 @@
 		&--empty
 			&:after
 				content none
+				
+		&--todo
+			.menu__label
+				color $white
 
 	&__item
 		position absolute
@@ -41,6 +49,7 @@
 		svg
 			display block
 			margin 0 auto
+			overflow visible
 
 	&__label
 		position absolute
@@ -147,3 +156,9 @@
 		z-index 105
 		transform translate(0, -50%)
 		transition width 0.8s $easeOutExpo
+		
+	.icon-todo
+		
+		&__dots
+			transform-origin 50% 50%
+			animation pulse 1.3s infinite ease-out
