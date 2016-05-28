@@ -61,17 +61,17 @@
 			left 10rem
 			
 .flowers-enter
-	transform scale(0)
+	opacity 0
+	transition opacity .3s ease-out
 
 	&-active
-		transform scale(1)
-		transition transform .3s ease-out
+		opacity 1		
 
 .flowers-leave
-	transform scale(1)
-	transition transform .3s ease-out
+	opacity 1
+	transition opacity .3s ease-out
 
 	&-active
-		transform scale(0)
+		opacity 0
 		
 
