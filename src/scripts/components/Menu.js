@@ -78,58 +78,23 @@ class Menu extends React.Component {
 				document.body.classList.add('is-menu-active')
 				menuBtn.classList.add('is-active')
 			},
-
 			onDrag: function(endValue) {
 				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
-				console.log(endValue)
 
-				let currentSlice = ''
+				const currentId = Math.floor(endValue.x / columnWidth)
 
-				switch(Math.round(endValue.x / columnWidth) * columnWidth) {
-					case (columnWidth):
-						console.log('hello coco 1', Math.round(endValue.x / columnWidth) * columnWidth)
-						currentSlice = document.querySelector('.menu__slice--0')
-					break;
-					case (columnWidth * 2):
-						console.log('hello coco 2', Math.round(endValue.x / columnWidth) * columnWidth)
-						currentSlice = document.querySelector('.menu__slice--1')
-					break;
-					case (columnWidth * 3):
-						console.log('hello coco 3', Math.round(endValue.x / columnWidth) * columnWidth)
-						currentSlice = document.querySelector('.menu__slice--2')
-					break;
-					case (columnWidth * 4):
-						console.log('hello coco 4', Math.round(endValue.x / columnWidth) * columnWidth)
-						currentSlice = document.querySelector('.menu__slice--3')
-					break;
-					case (columnWidth * 5):
-						console.log('hello coco 5', Math.round(endValue.x / columnWidth) * columnWidth)
-						currentSlice = document.querySelector('.menu__slice--4')
-						console.log(currentSlice)
-					break;
-				}
-
-				if(currentSlice != ''){
+				if (currentId < 5) {
+					const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
 					for (var i = slices.length - 1; i >= 0; i--) {
 						slices[i].classList.remove('is-active')
 					}
 					currentSlice.classList.add('is-active')
-					// TweenMax.to('.menu__slice', .3, {
-					// 	backgroundColor: 'transparent'
-					// })
-					// TweenMax.to(currentSlice, .3, {
-					// 	// backgroundColor: 'rgba(41,48,87,.15)'
-					// 	backgroundColor: 'rgba(255,255,255,.1)'
-					// })
-				} else {
+				}
+				else {
 					for (var i = slices.length - 1; i >= 0; i--) {
 						slices[i].classList.remove('is-active')
 					}
-					// TweenMax.to('.menu__slice', .3, {
-					// 	backgroundColor: 'transparent'
-					// })
 				}
-
 			},
 			onRelease: (endValue) => {
 				menuBtn.classList.remove('is-active')
