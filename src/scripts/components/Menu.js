@@ -78,10 +78,10 @@ class Menu extends React.Component {
 				document.body.classList.add('is-menu-active')
 				menuBtn.classList.add('is-active')
 			},
-			onDrag: function(endValue) {
+			onDrag: function() {
 				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
 
-				const currentId = Math.floor(endValue.x / columnWidth)
+				const currentId = 5 - Math.abs(this.x / columnWidth)
 
 				if (currentId < 5) {
 					const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
@@ -96,13 +96,13 @@ class Menu extends React.Component {
 					}
 				}
 			},
-			onRelease: (endValue) => {
+			onRelease: function() {
 				menuBtn.classList.remove('is-active')
 				for (var i = slices.length - 1; i >= 0; i--) {
 					slices[i].classList.remove('is-active')
 				}
 
-				const selectedId = Math.floor(endValue.x / columnWidth)
+				const selectedId = 5 - Math.abs(this.x / columnWidth)
 
 				if (selectedId < 5) {
 					const selectedItem = props.menuState.find((menuItem) => {
