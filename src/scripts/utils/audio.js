@@ -5,8 +5,8 @@ class Audio {
 	 */
     constructor() {
 
-        const Context = window.AudioContext || window.webkitAudioContext
-        this.audioContext = new Context()
+        const Constructor = window.AudioContext || window.webkitAudioContext
+        this.audioContext = new Constructor()
         this.analyser = this.audioContext.createAnalyser()
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
 

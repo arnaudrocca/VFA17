@@ -11,7 +11,9 @@ class MapItem2A extends React.Component {
 	render() {
 
 		return (
-			<img src="assets/images/mapItems/mapItem1A.svg" className="mapItem" id={`mapItem${this.props.id}`}/>
+			<div className="mapItemContainer">
+				<img src="assets/images/mapItems/mapItem1A.svg" className="mapItem" id={`mapItem${this.props.id}`}/>
+			</div>
 		)
 
 	}

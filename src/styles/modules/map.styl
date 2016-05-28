@@ -24,5 +24,16 @@
 			top 0
 			left 0
 
-			.mapItem
+			.mapItemContainer
 				position absolute
+				width 100%
+				height 100%
+
+				.mapItem
+					position absolute
+
+					&-animate
+						top 30%
+						left 58%
+						transform skew(15deg, 15deg)
+						animation blink 2s infinite

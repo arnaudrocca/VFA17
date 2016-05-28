@@ -123,12 +123,8 @@ class Choice3A extends React.Component {
 	/**
 	 * @method
 	 * @name handleSubmit
-	 * @param {object} e - event
 	 */
-	handleSubmit(e) {
-
-		const event = e || window.e
-		event.preventDefault()
+	handleSubmit() {
 
 		this.props.submitHandler(this.props.id, this.answer)
 
