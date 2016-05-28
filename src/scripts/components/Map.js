@@ -124,7 +124,7 @@ class Map extends React.Component {
 						</g>
 					</svg>
 					<ReactCSSTransitionGroup className="mapItems" transitionName="mapItems" component="div"
-						transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
+						transitionEnterTimeout={2000} transitionLeaveTimeout={2000}>
 						{mapItems}
 					</ReactCSSTransitionGroup>
 					<HotpointsContainer />

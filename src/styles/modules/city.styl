@@ -39,7 +39,39 @@
 		text-transform uppercase
 		letter-spacing 0.4px
 		background linear-gradient(315deg, transparent 0.9em, rgba($grey-lighter, 0.5) 0) bottom right
+		
+	&__score
+		position relative
+		height 1.7rem
 
-		> svg
-			& + svg
-				margin-left 0.8rem
+	
+	&__score-item 
+		position absolute
+		top 0
+		
+		&--0
+			left 0
+		&--1
+			left 2.5rem
+		&--2
+			left 5rem
+		&--3
+			left 7.5rem
+		&--4
+			left 10rem
+			
+.flowers-enter
+	transform scale(0)
+
+	&-active
+		transform scale(1)
+		transition transform .3s ease-out
+
+.flowers-leave
+	transform scale(1)
+	transition transform .3s ease-out
+
+	&-active
+		transform scale(0)
+		
+
