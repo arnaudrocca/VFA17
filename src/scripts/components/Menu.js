@@ -16,7 +16,9 @@ class Menu extends React.Component {
 
 		super()
 
-		window.addEventListener('resize', debounce(this.createDrag.bind(this), 350))
+		this.createDrag = this.createDrag.bind(this)
+
+		window.addEventListener('resize', debounce(this.createDrag, 350))
 
 	}
 
@@ -29,6 +31,16 @@ class Menu extends React.Component {
 		document.body.classList.remove('is-menu-active')
 
 		this.createDrag()
+
+	}
+
+	/**
+	 * @method
+	 * @name componentWillUnmount
+	 */
+	componentWillUnmount() {
+
+		window.removeEventListener('resize', this.createDrag)
 
 	}
 
@@ -66,8 +78,9 @@ class Menu extends React.Component {
 				document.body.classList.add('is-menu-active')
 				menuBtn.classList.add('is-active')
 			},
+
 			onDrag: function(endValue) {
-				TweenMax.to(menuDragLine, 0,{width: Math.abs(this.x)})
+				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
 				console.log(endValue)
 
 				let currentSlice = ''
@@ -116,6 +129,7 @@ class Menu extends React.Component {
 					// 	backgroundColor: 'transparent'
 					// })
 				}
+
 			},
 			onRelease: (endValue) => {
 				menuBtn.classList.remove('is-active')
@@ -152,7 +166,7 @@ class Menu extends React.Component {
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
 
-							dialog = 'Pas maintenant !'
+							dialog = 'Chaque chose en son temps...'
 							mood = 'neutral'
 							break
 
