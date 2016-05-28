@@ -1,5 +1,6 @@
 import 'gsap'
 import 'Draggable'
+import 'CSSRulePlugin'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -25,7 +26,6 @@ render(
         <Router history={hashHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={Home}/>
-                <Route path="video" component={Video}></Route>
                 <Route path="experiment" component={Experiment}></Route>
                 <Route name="choice" path="choice/:id" component={Choices}></Route>
             </Route>

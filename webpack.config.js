@@ -28,6 +28,7 @@ module.exports = {
         alias: {
             Draggable: __dirname + '/node_modules/gsap/src/uncompressed/utils/Draggable.js',
             CSSPlugin: __dirname + '/node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js',
+            CSSRulePlugin: __dirname + '/node_modules/gsap/src/uncompressed/plugins/CSSRulePlugin.js',
             TweenLite: __dirname + '/node_modules/gsap/src/uncompressed/TweenMax.js',
             TimelineLite: __dirname + '/node_modules/gsap/src/uncompressed/TimelineLite.js'
         }

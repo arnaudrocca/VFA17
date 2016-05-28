@@ -5,7 +5,8 @@ import Map from '../components/Map'
 const mapStateToProps = (state) => {
 
 	return {
-		mapState: state.map
+		mapState: state.map,
+		score: state.score
 	}
 
 }
