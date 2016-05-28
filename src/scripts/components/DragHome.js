@@ -27,12 +27,20 @@ class DragHome extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name componentWillUnmount
+	 */
 	componentWillUnmount() {
 
 		window.removeEventListener('resize', this.createDrag)
 
 	}
 
+	/**
+	 * @method
+	 * @name createDrag
+	 */
 	createDrag() {
 
 		const props = this.props
@@ -51,7 +59,7 @@ class DragHome extends React.Component {
 			zIndex: 110,
 			zIndexBoost: false,
 			bounds: {
-				minX: 0, 
+				minX: 0,
 				maxX: -dragTarget
 			},
 			liveSnap: true,
@@ -65,15 +73,14 @@ class DragHome extends React.Component {
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
-				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
+				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
 			},
 			onRelease: function() {
 				menuBtn.classList.remove('is-active')
 
-				if(this.x != 0) {
+				if (this.x != 0) {
 
 					const rule = CSSRulePlugin.getRule(".wireframe--home .wireframe__line:after");
-					console.log(rule)
 
 					hideTimeline
 						// .set(menuBtn, {clearProps: 'x', delay: 2000})
@@ -130,9 +137,6 @@ class DragHome extends React.Component {
 	 * @name render
 	 */
 	render() {
-
-		console.log((window.innerWidth - (20 * 2)) * 10 / 12)
-		console.log(window.innerWidth / 2)
 
 		return (
 			<div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import IconSound from './iconsComponents/icon-sound'
+import IconAudio from './iconsComponents/icon-audio'
 import IconScreen from './iconsComponents/icon-screen'
 
 class Toolbar extends React.Component {
@@ -25,7 +25,7 @@ class Toolbar extends React.Component {
      */
     componentDidMount() {
 
-        this.audioButton = ReactDOM.findDOMNode(this.refs.audioButton)
+        this.iconAudio = ReactDOM.findDOMNode(this.refs.iconAudio)
         this.audioPlayer = ReactDOM.findDOMNode(this.refs.audioPlayer)
 
         window.addEventListener('keydown', this.spacebarDownHandler)
@@ -81,10 +81,10 @@ class Toolbar extends React.Component {
 
         if (this.audioEnable) {
             this.audioEnable = false
-            TweenMax.to(this.audioButton, .3, {opacity: .5})
+            TweenMax.to(this.iconAudio, .3, {opacity: .5})
         } else {
             this.audioEnable = true
-            TweenMax.to(this.audioButton, .3, {opacity: 1})
+            TweenMax.to(this.iconAudio, .3, {opacity: 1})
         }
 
     }
@@ -132,11 +132,11 @@ class Toolbar extends React.Component {
                 <button className="toolbar__btn" onMouseEnter={this.mouseEnterHandler.bind(this)}>
                     <span>Infos</span>
                 </button>
-                <button className="toolbar__btn" ref="audioButton" onClick={this.toggleAudio.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
-                    <span><IconSound width="18" color="#fff"/></span>
+                <button className="toolbar__btn" onClick={this.toggleAudio.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
+                    <span ref="iconAudio"><IconAudio width="18" color="#FFF"/></span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleFullScreen.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
-                    <span><IconScreen width="22" color="#fff"/></span>
+                    <span><IconScreen width="22" color="#FFF"/></span>
                 </button>
                 <audio ref="audioPlayer" src="assets/audio/button.mp3" preload="auto"></audio>
             </div>

@@ -21,14 +21,16 @@ class Home extends React.Component {
 	componentDidMount() {
 
 		this.videoNode = ReactDOM.findDOMNode(this.refs.video)
-		console.log(this.videoNode)
 
 	}
 
+	/**
+	 * @method
+	 * @name showVideo
+	 */
 	showVideo() {
 
-		console.log(this.videoNode)
-		this.videoNode.setAttribute('src','http://techslides.com/demos/sample-videos/small.webm')
+		this.videoNode.setAttribute('src', 'http://techslides.com/demos/sample-videos/small.webm')
 
 	}
 
@@ -44,9 +46,9 @@ class Home extends React.Component {
 				<div className="home__intro">
 					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
 					<p className="home__content">
-						Merci d'être venu si vite ! <br/>
-						Glissez le bouton au centre pour <br/>
-						Commencer l'expérience
+						Change le destin <br />
+						Glisse le bouton au centre pour <br/>
+						commencer l'expérience
 					</p>
 				</div>
 				<DragHome showVideo={this.showVideo.bind(this)} />
