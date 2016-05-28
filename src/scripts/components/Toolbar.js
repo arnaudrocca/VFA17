@@ -25,7 +25,6 @@ class Toolbar extends React.Component {
      */
     componentDidMount() {
 
-        this.iconAudio = ReactDOM.findDOMNode(this.refs.iconAudio)
         this.audioPlayer = ReactDOM.findDOMNode(this.refs.audioPlayer)
 
         window.addEventListener('keydown', this.spacebarDownHandler)
@@ -81,10 +80,10 @@ class Toolbar extends React.Component {
 
         if (this.audioEnable) {
             this.audioEnable = false
-            TweenMax.to(this.iconAudio, .3, {opacity: .5})
+            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .3}, .15)
         } else {
             this.audioEnable = true
-            TweenMax.to(this.iconAudio, .3, {opacity: 1})
+            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: 1}, -.15)
         }
 
     }
@@ -133,7 +132,7 @@ class Toolbar extends React.Component {
                     <span>Infos</span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleAudio.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
-                    <span ref="iconAudio"><IconAudio width="18" color="#FFF"/></span>
+                    <span><IconAudio width="18" color="#FFF"/></span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleFullScreen.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
                     <span><IconScreen width="22" color="#FFF"/></span>
