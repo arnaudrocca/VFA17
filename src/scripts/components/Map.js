@@ -26,6 +26,8 @@ class Map extends React.Component {
 	 */
 	componentDidMount() {
 
+		console.log(this.props.score)
+
 		this.windowWidth = window.innerWidth
 		this.windowHeight = window.innerHeight
 
@@ -33,6 +35,7 @@ class Map extends React.Component {
 		this.map = ReactDOM.findDOMNode(this.refs.map)
 
 		TweenMax.set(this.mapContainer, {scale: this.scale})
+		TweenMax.set(this.map, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
 
         Draggable.create(this.map, {
             type: 'x, y',
@@ -59,6 +62,19 @@ class Map extends React.Component {
 		TweenMax.set(this.mapContainer, {scale: this.scale, x: 0, y: 0})
 
 	}
+
+	/**
+	 * @method
+	 * @name componentDidUpdate
+	 */
+	componentDidUpdate() {
+
+		TweenMax.set(this.map, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
+
+		console.log(this.props.score,'hello2')
+
+	}
+
 
 	/**
 	 * @method
