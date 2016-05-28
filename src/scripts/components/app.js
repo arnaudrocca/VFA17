@@ -1,6 +1,7 @@
 import React from 'react'
 import Wireframe from './Wireframe'
 import Toolbar from './Toolbar'
+import About from './About'
 
 class App extends React.Component {
 
@@ -34,6 +35,7 @@ class App extends React.Component {
 				<Wireframe location={this.props.location} />
 				{this.props.children}
 				<Toolbar />
+				<About />
 			</div>
 		)
 

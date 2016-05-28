@@ -26,6 +26,7 @@ class Toolbar extends React.Component {
     componentDidMount() {
 
         this.audioPlayer = ReactDOM.findDOMNode(this.refs.audioPlayer)
+        this.aboutNode = document.querySelector('.about')
 
         window.addEventListener('keydown', this.spacebarDownHandler)
 
@@ -68,6 +69,22 @@ class Toolbar extends React.Component {
         if (this.audioEnable) {
             this.audioPlayer.currentTime = 0
             this.audioPlayer.play()
+        }
+
+    }
+
+    /**
+     * @method
+     * @name toggleAbout
+     */
+    toggleAbout() {
+
+        const aboutToggled = getComputedStyle(this.aboutNode)['opacity']
+
+        if (aboutToggled == false) {
+            TweenMax.fromTo(this.aboutNode, .3, {scale: .9}, {opacity: 1, scale: 1, display: 'flex'})
+        } else {
+            TweenMax.fromTo(this.aboutNode, .3, {scale: 1}, {opacity: 0, scale: 1.1, display: 'none'})
         }
 
     }
@@ -128,7 +145,7 @@ class Toolbar extends React.Component {
 
         return (
             <div className="toolbar">
-                <button className="toolbar__btn" onMouseEnter={this.mouseEnterHandler.bind(this)}>
+                <button className="toolbar__btn" onClick={this.toggleAbout.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
                     <span>Infos</span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleAudio.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>

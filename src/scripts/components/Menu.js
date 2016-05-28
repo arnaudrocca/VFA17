@@ -18,8 +18,6 @@ class Menu extends React.Component {
 
 		this.createDrag = this.createDrag.bind(this)
 
-		window.addEventListener('resize', debounce(this.createDrag, 350))
-
 	}
 
 	/**
@@ -31,6 +29,8 @@ class Menu extends React.Component {
 		document.body.classList.remove('is-menu-active')
 
 		this.createDrag()
+
+		window.addEventListener('resize', debounce(this.createDrag, 350))
 
 	}
 
@@ -81,7 +81,7 @@ class Menu extends React.Component {
 			onDrag: function() {
 				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
 
-				const currentId = 5 - Math.abs(this.x / columnWidth)
+				const currentId = Math.round(5 - Math.abs(this.x / columnWidth))
 
 				if (currentId < 5) {
 					const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
@@ -102,7 +102,7 @@ class Menu extends React.Component {
 					slices[i].classList.remove('is-active')
 				}
 
-				const selectedId = 5 - Math.abs(this.x / columnWidth)
+				const selectedId = Math.round(5 - Math.abs(this.x / columnWidth))
 
 				if (selectedId < 5) {
 					const selectedItem = props.menuState.find((menuItem) => {

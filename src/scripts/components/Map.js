@@ -26,8 +26,6 @@ class Map extends React.Component {
 	 */
 	componentDidMount() {
 
-		console.log(this.props.score)
-
 		this.windowWidth = window.innerWidth
 		this.windowHeight = window.innerHeight
 

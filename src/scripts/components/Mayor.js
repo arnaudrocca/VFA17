@@ -118,14 +118,14 @@ class Mayor extends React.Component {
 			// const introTimeline = new TimelineLite()
 			//
 			// introTimeline
-			// .to(this.spacebarIconNode, 0.3, {
-			// 	background: 'rgba(0,0,0,0)',
-			// 	color: '#000'
-			// })
-			// .to(this.spacebarIconNode, 0.3, {
-			// 	background: 'rgba(0,0,0,0.2)',
-			// 	color: '#FFF'
-			// })
+			// 	.to(this.spacebarIconNode, 0.3, {
+			// 		background: 'rgba(0,0,0,0)',
+			// 		color: '#000'
+			// 	})
+			// 	.to(this.spacebarIconNode, 0.3, {
+			// 		background: 'rgba(0,0,0,0.2)',
+			// 		color: '#FFF'
+			// 	})
 		}
 
 	}
