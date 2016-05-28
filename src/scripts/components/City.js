@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import IconFlower from './iconsComponents/icon-flower'
 import IconShield from './iconsComponents/icon-shield'
 
@@ -50,9 +51,9 @@ class City extends React.Component {
 
 		for (let i = 0; i < 5; i++) {
 			if (i < this.props.score) {
-				this.flowers.push(<IconFlower key={i} width="17" color="#FF5951"/>)
+				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + 'FF5951'} width="17" color="#FF5951"/>)
 			} else {
-				this.flowers.push(<IconFlower key={i} width="17" color="#6c707b"/>)
+				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + '6c707b'} width="17" color="#6c707b"/>)
 			}
 		}
 
@@ -73,7 +74,10 @@ class City extends React.Component {
 					<span className="city__name">Ayaux-les-Bains</span>
 				</div>
 				<div className="city__infos">
-					{this.flowers}
+					<ReactCSSTransitionGroup className="city__score" transitionName="flowers" component="div"
+						transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+						{this.flowers}
+					</ReactCSSTransitionGroup>
 				</div>
 			</div>
 		)

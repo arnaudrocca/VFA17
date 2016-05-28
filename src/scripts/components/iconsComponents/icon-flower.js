@@ -1,8 +1,8 @@
 import React from 'react'
 
-const IconFlower = ({width, color}) => (
+const IconFlower = ({classes, width, color}) => (
 
-	<svg  x="0px" y="0px" viewBox="-297 388 17 17" width={width} fill={color}>
+	<svg className={classes} x="0px" y="0px" viewBox="-297 388 17 17" width={width} fill={color}>
 		<path fill={color} d="M-297,396.5c0-0.9,0.8-1.7,1.7-1.7c0.9,0,3.4,0.8,3.4,1.7s-2.5,1.7-3.4,1.7C-296.2,398.2-297,397.4-297,396.5"
 			/>
 		<path fill={color} d="M-294.5,390.5c0.7-0.7,1.7-0.7,2.4,0c0.7,0.7,1.9,2.9,1.2,3.6c-0.7,0.7-2.9-0.5-3.6-1.2
