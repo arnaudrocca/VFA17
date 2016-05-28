@@ -85,15 +85,15 @@ class Map extends React.Component {
 
         const event = e || document.event
 
-		if (event.deltaY < 0 && this.scale < this.scaleMax) {
+		if (event.deltaY < 0 && this.scale <= this.scaleMax) {
 			this.scale += this.scaleStep * this.scale
 		}
-        else if (event.deltaY > 0 && this.scale > this.scaleMin) {
+        else if (event.deltaY > 0 && this.scale >= this.scaleMin) {
 			this.scale -= this.scaleStep * this.scale
 		}
-        else {
-            return
-        }
+		else {
+			return
+		}
 
 		const originX = 100 * event.clientX / this.windowWidth
 		const originY = 100 * event.clientY / this.windowHeight

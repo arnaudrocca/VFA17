@@ -84,9 +84,10 @@ class Choice4 extends React.Component {
 
     spacebarDownHandler(e) {
 
-        const event = e || window.event
+        const event = e || window.e
+		const key = event.keyCode || event.which
 
-        if (event.keyCode == 32) {
+        if (key == 32) {
             this.userHandPosition -= 100
         }
 

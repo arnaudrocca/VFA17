@@ -2,35 +2,35 @@
 	position relative
 	width 54rem
 	padding 0 5rem 0 2.5rem
-	font-family $font-cooper-medium 
+	font-family $font-cooper-medium
 	font-size 3rem
 	color $white
 	antialiased()
-	
+
 	&:before
-		content url('../../static/assets/images/quote-open.png')
+		content url('../../static/assets/images/interactions/quote-open.png')
 		position absolute
 		top -3rem
 		left -1rem
 		opacity .2
-		
+
 	&:after
-		content url('../../static/assets/images/quote-close.png')
+		content url('../../static/assets/images/interactions/quote-close.png')
 		position absolute
 		bottom -4rem
 		left -1rem
-		opacity .2	 
-	
+		opacity .2
+
 	&__text
 		margin 3.5rem 0 2rem
 		color $white
-		
+
 		&:first-child
 			margin-top 0
-	
+
 	&__field
 		position relative
-		
+
 		&:after
 			content ''
 			position absolute
@@ -46,12 +46,12 @@
 			transform-origin 50% 50%
 			pointer-events none
 			//transition transform .2s ease-out
-		
-		> div 
+
+		> div
 			position relative
 			width 51rem
 			height 6.5rem
-		
+
 		&__label
 			position absolute
 			z-index 110
@@ -62,7 +62,7 @@
 			color red
 			cursor pointer
 			color rgba($white,0.4)
-			
+
 			&:after
 				content ''
 				position absolute
@@ -71,7 +71,7 @@
 				width 46rem
 				height 0.1rem
 				background rgba($white,0.3)
-		
+
 		&__list
 			position absolute
 			top 0
@@ -86,34 +86,34 @@
 			color rgba($purple, 0.6)
 			overflow auto
 			visibility hidden
-			
-			&::-webkit-scrollbar 
+
+			&::-webkit-scrollbar
 				width 0.5rem
 				background $white
-			 
-			&::-webkit-scrollbar-thumb 
+
+			&::-webkit-scrollbar-thumb
 				background $grey-light
-			
-			
+
+
 		&__list-item
 			line-height 1.8em
 			cursor pointer
-			
+
 		&.is-active
-				
+
 			&:after
 				z-index 210
 				transform rotate(-180deg)
-			
+
 			.gossip__field__label
 				z-index 210
 				background $white
 				color $purple
-				
+
 				&:after
 					background rgba($purple,0.3)
-				
-				
+
+
 			.gossip__field__list
 				z-index 200
 				visibility visible

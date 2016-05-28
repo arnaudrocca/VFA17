@@ -17,6 +17,7 @@ class Choice1A extends React.Component {
 
 		this.gaugeStep = .5
 		this.audioLimit = 50
+		this.errorChoice = 'fantome'
 
 		this.audio = new Audio()
 		this.endTimeline = new TimelineLite()
@@ -103,6 +104,13 @@ class Choice1A extends React.Component {
 		this.ghostLevelNode.classList.remove('is-full')
 		this.godLevelNode.classList.remove('is-full')
 
+		// Error choice
+		if (this.errorChoice === 'fantome') {
+			this.errorChoice = 'divinite'
+		} else {
+			this.errorChoice = 'fantome'
+		}
+
 		this.init()
 
 	}
@@ -121,7 +129,11 @@ class Choice1A extends React.Component {
 			}
 			else if (this.audio.userMedia === 'error') {
 				// Error
-				this.audioAverage = this.audioLimit
+				if (this.errorChoice === 'fantome') {
+					this.audioAverage = this.audioLimit / 2
+				} else {
+					this.audioAverage = this.audioLimit * 2
+				}
 			}
 
 			TweenMax.set('.voice__slider__visualizer', {width: `${30 + (this.audioAverage / 2)}%`, height:`${30 + (this.audioAverage / 2)}%`})
@@ -175,7 +187,6 @@ class Choice1A extends React.Component {
 	handleSubmit() {
 
 		this.props.submitHandler(this.props.id, this.answer)
-		//this.props.submitHandler(this.props.id, 'fantome')
 
 	}
 

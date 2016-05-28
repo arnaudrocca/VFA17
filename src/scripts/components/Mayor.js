@@ -15,6 +15,8 @@ class Mayor extends React.Component {
 			dialogIndex: 0
 		}
 
+		this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
+
 	}
 
 	/**
@@ -24,7 +26,6 @@ class Mayor extends React.Component {
 	componentWillMount() {
 
 		this.paragraphs = this.props.dialog.split('§')
-		window.addEventListener('keydown', debounce(this.spacebarDownHandler.bind(this), 350))
 
 	}
 
@@ -42,6 +43,8 @@ class Mayor extends React.Component {
 			TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 		}
 
+		window.addEventListener('keydown', debounce(this.spacebarDownHandler, 350))
+
 	}
 
 	/**
@@ -50,7 +53,7 @@ class Mayor extends React.Component {
      */
 	componentWillUnmount() {
 
-		window.removeEventListener('keydown', this.spacebarDownHandler.bind(this))
+		window.removeEventListener('keydown', this.spacebarDownHandler)
 
 	}
 
@@ -100,9 +103,10 @@ class Mayor extends React.Component {
      */
 	spacebarDownHandler(e) {
 
-		const event = e || window.event
+		const event = e || window.e
+		const key = event.keyCode || event.which
 
-		if (event.keyCode == 32 && this.paragraphs != '') {
+		if (key == 32 && this.paragraphs != '') {
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
 				this.props.mayorTalked()
 				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
