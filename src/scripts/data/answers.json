@@ -3,7 +3,7 @@
         "name": "agriculture",
         "nextChoiceVersion": "A",
         "mapIds": [0, 1],
-        "mapVersions": ["C", "B"],
+        "mapVersions": ["B", "B"],
         "score": 2,
         "dialog": "Tu as choisi l'agriculture. § C'est bien l'agriculture.",
         "mood": "smiling"
@@ -12,7 +12,7 @@
         "name": "elevage",
         "nextChoiceVersion": "B",
         "mapIds": [0],
-        "mapVersions": ["B"],
+        "mapVersions": ["C"],
         "score": -1,
         "dialog": "Tu as choisi l'élevage. § C'est pas top.",
         "mood": "angry"
@@ -48,7 +48,7 @@
         "name": "eglise",
         "nextChoiceVersion": "B",
         "mapIds": [1],
-        "mapVersions": ["A"],
+        "mapVersions": ["C"],
         "score": 0,
         "dialog": "Tu as construit une eglise.",
         "mood": "neutral"
@@ -66,7 +66,7 @@
         "name": "vieux",
         "nextChoiceVersion": "",
         "mapIds": [0],
-        "mapVersions": ["B"],
+        "mapVersions": ["C"],
         "score": -2,
         "dialog": "Les vieux",
         "mood": "angry"

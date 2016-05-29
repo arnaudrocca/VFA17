@@ -12,6 +12,7 @@ class Toolbar extends React.Component {
 
         super()
 
+        this.aboutToggled = 0
         this.fullScreenToggled = false
         this.audioEnable = true
 
@@ -25,8 +26,9 @@ class Toolbar extends React.Component {
      */
     componentDidMount() {
 
-        this.audioPlayer = ReactDOM.findDOMNode(this.refs.audioPlayer)
+        this.audioButton = ReactDOM.findDOMNode(this.refs.audioButton)
         this.aboutNode = document.querySelector('.about')
+        this.aboutContainerNode = document.querySelector('.about__container')
 
         window.addEventListener('keydown', this.spacebarDownHandler)
 
@@ -67,8 +69,8 @@ class Toolbar extends React.Component {
     mouseEnterHandler() {
 
         if (this.audioEnable) {
-            this.audioPlayer.currentTime = 0
-            this.audioPlayer.play()
+            this.audioButton.currentTime = 0
+            this.audioButton.play()
         }
 
     }
@@ -79,12 +81,19 @@ class Toolbar extends React.Component {
      */
     toggleAbout() {
 
-        const aboutToggled = getComputedStyle(this.aboutNode)['opacity']
+        const aboutTimeline = new TimelineLite()
 
-        if (aboutToggled == false) {
-            TweenMax.fromTo(this.aboutNode, .3, {scale: .9}, {opacity: 1, scale: 1, display: 'flex'})
-        } else {
-            TweenMax.fromTo(this.aboutNode, .3, {scale: 1}, {opacity: 0, scale: 1.1, display: 'none'})
+        this.aboutToggled = getComputedStyle(this.aboutNode)['opacity']
+
+        if (this.aboutToggled == 0) {
+            aboutTimeline
+                .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
+                .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')
+        }
+        else if (this.aboutToggled == 1) {
+            aboutTimeline
+                .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})
+                .to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
         }
 
     }
@@ -97,10 +106,10 @@ class Toolbar extends React.Component {
 
         if (this.audioEnable) {
             this.audioEnable = false
-            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .3}, .15)
+            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .1, fill: 'black'}, .15)
         } else {
             this.audioEnable = true
-            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: 1}, -.15)
+            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: 1, fill: 'white'}, -.15)
         }
 
     }
@@ -154,7 +163,7 @@ class Toolbar extends React.Component {
                 <button className="toolbar__btn" onClick={this.toggleFullScreen.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
                     <span><IconScreen width="22" color="#FFF"/></span>
                 </button>
-                <audio ref="audioPlayer" src="assets/audio/button.mp3" preload="auto"></audio>
+                <audio ref="audioButton" src="assets/audio/button.mp3" preload="auto"></audio>
             </div>
         )
 

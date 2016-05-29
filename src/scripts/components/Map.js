@@ -13,7 +13,7 @@ class Map extends React.Component {
 
 		super()
 
-		this.scale = this.initScale = .6
+		this.scale = this.initScale = .7
 		this.scaleMin = .6
 		this.scaleMax = 2
 		this.scaleStep = .1
@@ -69,8 +69,6 @@ class Map extends React.Component {
 
 		TweenMax.set(this.map, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
 
-		console.log(this.props.score,'hello2')
-
 	}
 
 
@@ -116,11 +114,7 @@ class Map extends React.Component {
 		return (
 			<div className="mapContainer" ref="mapContainer" onWheel={this.scaleHandler.bind(this)}>
 				<div className="map" ref="map">
-					<svg x="0px" y="0px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768">
-						<g>
-							<polygon fill="#444444" points="510.9,155.7 20.6,442.8 510.9,724 1003.1,439.8"/>
-						</g>
-					</svg>
+					<img src="assets/images/mapItems/mapItemBase.svg"/>
 					<ReactCSSTransitionGroup className="mapItems" transitionName="mapItems" component="div"
 						transitionEnterTimeout={2000} transitionLeaveTimeout={2000}>
 						{mapItems}

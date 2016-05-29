@@ -73,7 +73,7 @@ class DragHome extends React.Component {
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
-				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
+				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
 			},
 			onRelease: function() {
 				menuBtn.classList.remove('is-active')
@@ -91,11 +91,11 @@ class DragHome extends React.Component {
 							scale: 0,
 							display: 'none'
 						})
-						.to(rule, .3, {cssRule:{
+						.to(rule, .3, {cssRule: {
 							scale: 0,
 							display: 'none'
 						}})
-						.to('.wireframe__line', .3,{
+						.to('.wireframe__line', .3, {
 							height: 0,
 							display: 'none'
 						})

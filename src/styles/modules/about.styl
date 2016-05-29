@@ -6,6 +6,10 @@
     align-items center
     width 100%
     height 100%
+    top 0
+    right 0
+    bottom 0
+    left 0
     z-index 120
     opacity 0
 
@@ -15,55 +19,48 @@
         height 40rem
         background linear-gradient(-45deg, rgba($white, 0) 5%, rgba($white, 1) 5%, rgba($white, 1) 95%, rgba($white, 0) 95%)
         padding 3rem
+
+    &__content
+        position relative
         font-family $font-cooper-bold
         font-size 1.2rem
         letter-spacing 0.4px
         antialiased()
 
-        &__close
+    &__close
+        position absolute
+        display block
+        width 2rem
+        height 2rem
+        right 1rem
+        top 2rem
+        cursor pointer
+
+        &:before
+            content ''
             position absolute
             display block
-            width 2rem
-            height 2rem
-            right 1rem
-            top 2rem
-            cursor pointer
+            width 100%
+            height .2rem
+            background $purple
+            transform-origin 50% 50%
+            transform rotate(45deg)
+            transition transform .2s ease-out
 
+        &:after
+            content ''
+            position absolute
+            display block
+            width 100%
+            height .2rem
+            background $purple
+            transform-origin 50% 50%
+            transform rotate(-45deg)
+            transition transform .2s ease-out
+
+        &:hover, &:active
             &:before
-                content ''
-                position absolute
-                display block
-                width 100%
-                height .2rem
-                background $purple
-                transform-origin 50% 50%
-                transform rotate(45deg)
-                transition transform .2s ease-out
+                transform rotate(0deg)
 
-            &:after
-                content ''
-                position absolute
-                display block
-                width 100%
-                height .2rem
-                background $purple
-                transform-origin 50% 50%
-                transform rotate(-45deg)
-                transition transform .2s ease-out
-
-            &:hover
-                &:before
-                    transform rotate(45deg) scale(1.1)
-
-                 &:after
-                    transform rotate(-45deg) scale(1.1)
-
-            &:active
-                &:before
-                    transform rotate(45deg) scale(.9)
-
-                 &:after
-                    transform rotate(-45deg) scale(.9)
-
-    &__content
-        position relative
+             &:after
+                transform rotate(0deg)

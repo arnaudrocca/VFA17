@@ -46,7 +46,7 @@ class Home extends React.Component {
 				<div className="home__intro">
 					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
 					<p className="home__content">
-						Punchline <br />
+						Le pouvoir des fleurs <br />
 						Glisse le bouton au centre pour <br/>
 						commencer l'expérience
 					</p>
