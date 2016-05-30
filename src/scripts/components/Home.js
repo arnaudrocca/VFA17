@@ -54,7 +54,7 @@ class Home extends React.Component {
 					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
 					<h2 className="home__subtitle">Le pouvoir des fleurs</h2>
 					<p className="home__content">
-						Glissez le bouton au centre de la <br/>
+						Glisse le bouton au centre de la <br/>
 						 fleur pour commencer l’expérience.
 					</p>
 				</div>
