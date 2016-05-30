@@ -149,7 +149,7 @@ class Choice extends React.Component {
 		return (
 			<div className="choice">
 				<div className="choice__aside" ref="choiceAside">
-					<button className="choice__btn-return" type="button" onClick={this.returnToMap.bind(this)}>
+					<button className="btn__return" type="button" onClick={this.returnToMap.bind(this)}>
 						<span>Retour à la ville</span>
 						<svg x="0px" y="0px" viewBox="-6.4 -6.5 224.8 65" >
 							<g className="choice__btn-return__border">

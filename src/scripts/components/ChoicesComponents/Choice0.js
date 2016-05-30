@@ -82,7 +82,7 @@ class Choice0 extends React.Component {
 		}
 
 		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
-			TweenMax.to('.choice__main-btn--0', 0.3, {display: 'block', opacity: 1})
+			TweenMax.to('.btn__main--hidden' , 0.3, {display: 'block', opacity: 1})
 		}
 
 	}
@@ -148,7 +148,7 @@ class Choice0 extends React.Component {
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte de l'être aimé.</li>
 							</ul>
 						</div>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} class="choice__main-btn choice__main-btn--validate choice__main-btn--0"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="valider" labelSecondary="Go" classes="btn__main btn__main--hidden btn__main--0"/>
 					</div>
 				</div>
 			</div>

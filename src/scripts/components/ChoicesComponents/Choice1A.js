@@ -97,7 +97,7 @@ class Choice1A extends React.Component {
 			.to('.voice__slider__icon', .3, {width: 60, height: 60, opacity: 1}, '-=.2')
 
 		// Hides buttons
-		TweenMax.to('.choice__main-btn--1A', .3, {opacity: 0, pointerEvents: 'none'})
+		TweenMax.to('.btn__main--hidden ', .3, {opacity: 0, pointerEvents: 'none'})
 		TweenMax.to('.voice__redo-btn', .3, {opacity: 0, pointerEvents: 'none'})
 
 		// Removes active class
@@ -166,7 +166,7 @@ class Choice1A extends React.Component {
 		}
 		else if (!this.endTimelineDone) {
 			// Displays buttons
-			TweenMax.to('.choice__main-btn--1A', .3, {opacity: 1, pointerEvents: 'visible'})
+			TweenMax.to('.btn__main--hidden', .3, {opacity: 1, pointerEvents: 'visible'})
 			TweenMax.to('.voice__redo-btn', .3, {opacity: 1, pointerEvents: 'visible'})
 
 			// Descales audio
@@ -222,7 +222,7 @@ class Choice1A extends React.Component {
 								<span className="voice__level__gauge voice__level__gauge-god"></span>
 							</div>
 						</div>
-                        <ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} class="choice__main-btn choice__main-btn--validate choice__main-btn--1A"/>
+                        <ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} labelSecondary="Go" label="Valider" classes="btn__main btn__main--hidden btn__main--1A"/>
 					</div>
 				</div>
 			</div>

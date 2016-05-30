@@ -150,7 +150,7 @@ class Choice3A extends React.Component {
                         </div>
     					<span className="propaganda__line"></span>
     					<span ref="cursor" className="propaganda__cursor"></span>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} class="choice__main-btn choice__main-btn--validate choice__main-btn--3A"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} labelSecondary="Go" label="Valider" classes="btn__main btn__main--3A"/>
                     </div>
 				</div>
 			</div>

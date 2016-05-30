@@ -14,44 +14,6 @@
 		background $white
 		background linear-gradient(45deg, transparent 2em, $white 0) bottom left // Little trick to get the cutted corner
 
-	&__btn-return
-		position absolute
-		top 1.4rem
-		left 1.4rem
-		width 16.5rem
-		height 4rem
-		color $purple
-		font-family $font-cooper-heavy
-		font-size 1.2rem
-		line-height 4rem
-		letter-spacing 0.4px
-		text-transform uppercase
-		antialiased()
-
-		> span
-			position absolute
-			right 0
-			left 0
-			z-index 2
-
-		> svg
-			display none
-			position absolute
-			left 0
-
-		&__border
-			opacity 0.2
-
-		&__fill
-			transform scale(0)
-			transform-origin 50% 50%
-			transition transform .3s cubic-bezier(0.3, -0.3, 0.7, 1.4)
-
-		&:hover
-			.choice__btn-return__fill
-				transform scale(1)
-
-
 	&__description
 		width 31rem
 		max-height 65vh
@@ -126,7 +88,7 @@
 			line-height 2em
 			font-family $font-pressura-regular
 
-		.choice__main-btn
+		&__btn
 			margin 0 auto
 
 
@@ -140,98 +102,6 @@
 			height 100%
 			left 0
 			top 0
-
-	&__main-btn
-		position relative
-		display block
-		width 12rem
-		height 5rem
-		font-family $font-cooper-heavy
-		font-size 1.2rem
-		text-transform uppercase
-		letter-spacing 0.4px
-		//line-height 5rem
-		color $white
-		antialiased()
-
-		> span
-			position absolute
-			top 50%
-			right 0
-			left 0
-			z-index 2
-			transform translateY(-50%)
-			overflow hidden
-			transition transform .2s ease-out
-			
-			&:after
-				content 'ta mère'
-				position absolute
-				top 0
-				left 0
-				right 0
-				z-index 3
-				transform translateY(-100%)
-
-		> svg
-			position absolute
-			top 0
-			left 0
-
-		&__border
-			opacity 0.2
-
-		&__fill
-			// width 0
-			 transform scale(0, 1)
-			 transform-origin 5px 50%
-			 transition transform .2s ease-out
-			 //transition width .3s ease-out
-
-		&:hover
-			.choice__main-btn > span
-				transform translateY(50%)
-				
-			.choice__main-btn__fill
-				// width 12rem
-				 transform scale(1, 1)
-
-		&--validate
-			display none
-			opacity 0
-
-		&--0
-			position absolute
-			right 0
-			bottom -10rem
-			left 0
-			margin 0 auto
-			text-align center
-			z-index 110
-
-		&--1A
-			display block
-			opacity 0
-
-		&--2A
-			position absolute
-			right 0
-			bottom 0
-			left 0
-			margin 0 auto
-			text-align center
-			z-index 110
-
-		 &--3A
-			position absolute
-			display block
-			right 0
-			bottom 0
-			left 0
-			margin 0 auto
-			text-align center
-			opacity 1
-			z-index 110
 
 	&__interaction-background
 		position relative

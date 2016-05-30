@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
+import IconArrows from './iconsComponents/icon-arrows'
 
 class DragHome extends React.Component {
 
@@ -24,6 +25,22 @@ class DragHome extends React.Component {
 	componentDidMount() {
 
 		this.createDrag()
+
+		const arrowsTimeline = new TimelineMax({
+			repeat: -1
+		})
+
+		arrowsTimeline
+			.staggerFromTo('.menu__drag-arrows path', 1, {
+				opacity: 0
+			}, {
+				opacity: 1,
+			},-.3)
+			.staggerFromTo('.menu__drag-arrows path', 1, {
+				opacity: 1
+			}, {
+				opacity: 0,
+			},-.3)
 
 	}
 
@@ -80,8 +97,6 @@ class DragHome extends React.Component {
 
 				if (this.x != 0) {
 
-					const rule = CSSRulePlugin.getRule(".wireframe--home .wireframe__line:after");
-
 					hideTimeline
 						// .set(menuBtn, {clearProps: 'x', delay: 2000})
 						.to(menuDragLine, .1, {
@@ -91,10 +106,10 @@ class DragHome extends React.Component {
 							scale: 0,
 							display: 'none'
 						})
-						.to(rule, .3, {cssRule: {
+						.to('.wireframe__flower', .3, {
 							scale: 0,
 							display: 'none'
-						}})
+						})
 						.to('.wireframe__line', .3, {
 							height: 0,
 							display: 'none'
@@ -102,6 +117,15 @@ class DragHome extends React.Component {
 						.to('.home__intro', .3, {
 							y : 50,
 							opacity: 0,
+							display: 'none'
+						})
+						.to('.menu__drag-dots', .3, {
+							width: 0,
+							display: 'none'
+						})
+						.to('.menu__drag-arrows', .3, {
+							opacity: 0,
+							x : 100,
 							display: 'none'
 						})
 						.to('.menu__drag-start', .3, {
@@ -118,14 +142,26 @@ class DragHome extends React.Component {
 						})
 						.to('.wireframe__timeline-connector', .3, {
 							width: 0,
+							display: 'none'
+						})
+						.to('.home__logo__dots-container', .3, {
+							opacity: 0,
+							display: 'none'
+						})
+						.to('.home__logo', .3, {
+							scale: 0,
 							display: 'none',
 							onComplete: () => {
 								props.showVideo()
 							}
 						})
-						.to('.home__video', .3, {
-							opacity: 1
+						.to('.home__overlay', .3, {
+							opacity: 0
 						})
+						.to('.btn__main--hidden', .3, {
+							opacity: 1,
+							display: 'block'
+						})		
 				}
 			}
 		})
@@ -147,6 +183,8 @@ class DragHome extends React.Component {
 				</div>
 				<div className="menu__drag-start"></div>
 				<div ref="menuDragLine" className="menu__drag-line"></div>
+				<div className="menu__drag-dots"></div>
+				<IconArrows classes="menu__drag-arrows" width="25" color="#FFFFFF"/>
 			</div>
 		)
 

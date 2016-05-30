@@ -7,6 +7,8 @@ import IconBorderBottom from './iconsComponents/icon-border-bottom'
 import IconBorderLeft from './iconsComponents/icon-border-left'
 import IconDragHome from './iconsComponents/icon-drag-home'
 import IconCorner from './iconsComponents/icon-corner'
+import IconFlowerSmall from './iconsComponents/icon-flower-small'
+
 
 class Wireframe extends React.Component {
 
@@ -29,6 +31,8 @@ class Wireframe extends React.Component {
 
 		this.classes = 'wireframe'
 		this.drag = null
+		this.lineTop = null
+		this.lineBottom = null
 		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#ffffff"/>
 
 		if (location[1] == 'experiment') {
@@ -40,6 +44,13 @@ class Wireframe extends React.Component {
 							<span className="wireframe__timeline-connector"></span>
 							<IconDragHome classes="wireframe__drag" width="70"/>
 						</div>
+			this.lineTop = <span className="wireframe__line wireframe__line--top">
+						<IconFlowerSmall classes="wireframe__flower wireframe__flower--top" width="15" color="#FF5951"/>
+					</span>
+
+			this.lineBottom = <span className="wireframe__line wireframe__line--bottom">
+						<IconFlowerSmall classes="wireframe__flower wireframe__flower--bottom" width="15" color="#FF5951"/>
+					</span>
 		}
 		else {
 			this.borderRight = <IconBorderRight classes="wireframe__trapezoid wireframe__trapezoid--right" width="7" fill="#ffffff"/>
@@ -58,7 +69,7 @@ class Wireframe extends React.Component {
 		return (
 			<div className={this.classes}>
 				<div className="wireframe__side wireframe__side--top">
-					<span className="wireframe__line wireframe__line--top"></span>
+					{this.lineTop}
 					<IconBorderTop classes="wireframe__trapezoid wireframe__trapezoid--top" width="100" fill="#ffffff"/>
 				</div>
 				<div className="wireframe__side wireframe__side--right">
@@ -67,7 +78,7 @@ class Wireframe extends React.Component {
 					{this.drag}
 				</div>
 				<div className="wireframe__side wireframe__side--bottom">
-					<span className="wireframe__line wireframe__line--bottom"></span>
+					{this.lineBottom}
 					<IconBorderBottom classes="wireframe__trapezoid wireframe__trapezoid--bottom" width="100" fill="#ffffff"/>
 				</div>
 				<div className="wireframe__side wireframe__side--left">
