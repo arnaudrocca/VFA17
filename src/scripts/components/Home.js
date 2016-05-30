@@ -18,21 +18,21 @@ class Home extends React.Component {
 
 	/**
 	 * @method
-	 * @name componentDidMount
-	 */
-	componentDidMount() {
-
-		this.videoNode = ReactDOM.findDOMNode(this.refs.video)
-
-	}
-
-	/**
-	 * @method
 	 * @name showVideo
 	 */
 	showVideo() {
 
-		this.videoNode.setAttribute('src', 'http://techslides.com/demos/sample-videos/small.webm')
+		const videosTimeline = new TimelineLite()
+
+		videosTimeline
+			.to('.home__video--intro', .3, {
+				display: 'none',
+				opacity: 0
+			})
+			.to('.home__video--main', .3, {
+				display: 'block',
+				opacity: 1
+			})
 
 	}
 
@@ -60,7 +60,8 @@ class Home extends React.Component {
 				</div>
 				<IconLogo width="210" classes="home__logo"/>
 				<DragHome showVideo={this.showVideo.bind(this)} />
-				<video ref="video" className="home__video" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
+				<video className="home__video home__video--intro" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
+				<video className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" autoPlay loop muted></video>
 				<ChoiceValidate handleSubmit={this.goToExperiment.bind(this)} label="Passer" labelSecondary="Ok papy !" classes="btn__main btn__main--hidden home__btn-video"/>
 				<div className="home__overlay"></div>
 			</section>
