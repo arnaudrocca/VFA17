@@ -16,6 +16,7 @@ class Mayor extends React.Component {
 		}
 
 		this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
+		this.spacebarUpHandler = this.spacebarUpHandler.bind(this)
 
 	}
 
@@ -43,7 +44,8 @@ class Mayor extends React.Component {
 			TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
 		}
 
-		window.addEventListener('keydown', debounce(this.spacebarDownHandler, 350))
+		window.addEventListener('keydown', debounce(this.spacebarDownHandler, 150))
+		window.addEventListener('keyup', debounce(this.spacebarUpHandler, 150))
 
 	}
 
@@ -54,6 +56,7 @@ class Mayor extends React.Component {
 	componentWillUnmount() {
 
 		window.removeEventListener('keydown', this.spacebarDownHandler)
+		window.removeEventListener('keyup', this.spacebarUpHandler)
 
 	}
 
@@ -106,7 +109,29 @@ class Mayor extends React.Component {
 		const event = e || window.e
 		const key = event.keyCode || event.which
 
-		if (key == 32 && this.paragraphs != '') {
+		const aboutNode = document.querySelector('.about')
+		const aboutOpacity = getComputedStyle(aboutNode)['opacity']
+
+		if (key == 32 && this.paragraphs != '' && aboutOpacity == 0) {
+			TweenMax.to(this.spacebarIconNode, 0.3, {background: 'rgba(0,0,0,0)', color: '#000'})
+		}
+
+	}
+
+	/**
+	 * @method
+	 * @name spacebarUpHandler
+	 * @param {object} e - event
+	 */
+	spacebarUpHandler(e) {
+
+		const event = e || window.e
+		const key = event.keyCode || event.which
+
+		const aboutNode = document.querySelector('.about')
+		const aboutOpacity = getComputedStyle(aboutNode)['opacity']
+
+		if (key == 32 && this.paragraphs != '' && aboutOpacity == 0) {
 			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
 				this.props.mayorTalked()
 				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
@@ -115,17 +140,7 @@ class Mayor extends React.Component {
 					dialogIndex: this.state.dialogIndex + 1
 				})
 			}
-			// const introTimeline = new TimelineLite()
-			//
-			// introTimeline
-			// 	.to(this.spacebarIconNode, 0.3, {
-			// 		background: 'rgba(0,0,0,0)',
-			// 		color: '#000'
-			// 	})
-			// 	.to(this.spacebarIconNode, 0.3, {
-			// 		background: 'rgba(0,0,0,0.2)',
-			// 		color: '#FFF'
-			// 	})
+			TweenMax.to(this.spacebarIconNode, 0.3, {background: 'rgba(0,0,0,0.2)', color: '#FFF'})
 		}
 
 	}
@@ -159,12 +174,12 @@ class Mayor extends React.Component {
 
 		return (
 			<div className="mayor" style={this.style}>
-			  	<div ref="mayorDialog" className="mayor__dialog">
-			  		<p>{this.dialog}</p>
-			  		<div className="mayor__instructions">
-				  		<span className="mayor__spacebar" ref="spacebarIcon">Espace</span> pour passer
-				  	</div>
-			  	</div>
+				<div ref="mayorDialog" className="mayor__dialog">
+					<p>{this.dialog}</p>
+					<div className="mayor__instructions">
+					<span className="mayor__spacebar" ref="spacebarIcon">Espace</span> pour passer
+					</div>
+				</div>
 			</div>
 		)
 
