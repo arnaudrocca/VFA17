@@ -53,7 +53,7 @@ class Choice2A extends React.Component {
 						<p className="building__name">Église</p>
 						<p className="building__name">Marché</p>
 						<div className="choice__interaction-main--root" ref="root"></div>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} class="choice__main-btn choice__main-btn--validate choice__main-btn--2A"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} labelSecondary="Go" label="Valider" classes="btn__main btn__main--hidden btn__main--2A"/>
 					</div>
 				</div>
 			</div>

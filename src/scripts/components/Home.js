@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 import DragHome from './DragHome'
+import ChoiceValidate from './ChoiceValidate'
+import IconLogo from './iconsComponents/icon-logo'
 
 class Home extends React.Component {
 
@@ -34,6 +36,12 @@ class Home extends React.Component {
 
 	}
 
+	goToExperiment() {
+
+		hashHistory.push('/experiment')
+
+	}
+
 	/**
      * @method
 	 * @name render
@@ -42,17 +50,19 @@ class Home extends React.Component {
 
 		return (
 			<section className="home">
-				<Link className="link" to="/experiment">Passer</Link>
 				<div className="home__intro">
 					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
+					<h2 className="home__subtitle">Le pouvoir des fleurs</h2>
 					<p className="home__content">
-						Le pouvoir des fleurs <br />
-						Glisse le bouton au centre pour <br/>
-						commencer l'expérience
+						Glissez le bouton au centre de la <br/>
+						 fleur pour commencer l’expérience.
 					</p>
 				</div>
+				<IconLogo width="210" classes="home__logo"/>
 				<DragHome showVideo={this.showVideo.bind(this)} />
 				<video ref="video" className="home__video" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
+				<ChoiceValidate handleSubmit={this.goToExperiment.bind(this)} label="Passer" labelSecondary="Ok papy !" classes="btn__main btn__main--hidden home__btn-video"/>
+				<div className="home__overlay"></div>
 			</section>
 		)
 

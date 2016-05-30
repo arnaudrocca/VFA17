@@ -33,7 +33,7 @@ module.exports = {
             CSSPlugin: __dirname + '/node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js',
             CSSRulePlugin: __dirname + '/node_modules/gsap/src/uncompressed/plugins/CSSRulePlugin.js',
             TweenLite: __dirname + '/node_modules/gsap/src/uncompressed/TweenMax.js',
-            TimelineLite: __dirname + '/node_modules/gsap/src/uncompressed/TimelineLite.js'
+            TimelineLite: __dirname + '/node_modules/gsap/src/uncompressed/TimelineMax.js'
         }
     },
     plugins: [

@@ -27,7 +27,7 @@ class Interaction2A extends Graphics {
         this.scene.add(this)
 
         this.buildingNames = document.querySelectorAll('.building__name')
-        this.buttonValidate = document.querySelector('.choice__main-btn--2A')
+        this.buttonValidate = document.querySelector('.btn__main--hidden')
 
         this.buildingNames[0].style.top = `${this.top}px`
         this.buildingNames[1].style.top = `${this.top}px`

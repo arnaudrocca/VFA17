@@ -156,7 +156,24 @@
 		z-index 105
 		transform translate(0, -50%)
 		transition width 0.8s $easeOutExpo
-
+		
+	&__drag-arrows
+		position absolute
+		top calc(50%)
+		right calc(((100vw - 4rem) / 12) + 6.5rem)
+		z-index 2
+		transform translateY(-50%)
+		
+	&__drag-dots
+		position absolute
+		top calc(50%)
+		right calc(((100vw - 4rem) / 12) + 11rem)
+		z-index 2
+		height 100vh
+		width 27vw
+		background url('../../static/assets/images/home/dot.svg') repeat-x center
+		transform translateY(-50%)
+		
 	.icon-todo
 		transform-origin 50% 50%
 		animation rotate 6s infinite linear

@@ -23,8 +23,8 @@ class Experiment extends React.Component {
 
 		return (
 			<div className="experiment">
+				<ScoreContainer />
 				<div className="experiment__wrapper">
-					<ScoreContainer />
 					<MayorContainer />
 					<MapContainer />
 				</div>

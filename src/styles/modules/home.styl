@@ -9,7 +9,7 @@
 		flex-direction column
 		justify-content center
 		align-items center
-		width calc(50vw - 2rem)
+		width calc(50vw - 12.4rem)
 		height 100vh
 		top 0
 		left 2rem
@@ -22,17 +22,58 @@
 		font-size 3rem
 		line-height 3.6rem
 		text-transform uppercase
+		
+	&__subtitle
+		margin-top 1rem
+		color $purple
+		font-family $font-cooper-heavy
+		font-size 1.4rem
+		text-transform uppercase
 
 	&__content
-		margin-top 2rem
-		color $grey-dark
+		margin-top 2.2rem
+		color $white
 		font-family $font-pressura-regular
 		font-size 1.4rem
 		line-height 2.4rem
+		
+	&__logo
+		position absolute
+		left 0
+		top 50%
+		right 0
+		z-index 3
+		margin 0 auto
+		transform translateY(-50%)
+		
+		&__text
+			display none
+			
+		&__dots-container
+			transform-origin 50% 50%
+			animation rotate 6s infinite linear
+			
+		&__dots
+			transform-origin 50% 50%
+			animation pulse 2s infinite ease-out
 
 	&__video
 		position relative
 		width 100vw
 		height 100vh
 		object-fit cover
-		opacity 0.2
+		
+	&__btn-video
+		position absolute
+		right 0
+		bottom 10.5rem
+		left 0
+		margin 0 auto
+		
+	&__overlay
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		background rgba(0,0,0,.25)
