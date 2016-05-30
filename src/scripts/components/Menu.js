@@ -79,7 +79,7 @@ class Menu extends React.Component {
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
-				TweenMax.to(menuDragLine, 0, {width: Math.abs(this.x)})
+				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
 
 				const currentId = Math.round(5 - Math.abs(this.x / columnWidth))
 
@@ -96,13 +96,13 @@ class Menu extends React.Component {
 					}
 				}
 			},
-			onRelease: function() {
+			onRelease: function(endValue) {
 				menuBtn.classList.remove('is-active')
 				for (var i = slices.length - 1; i >= 0; i--) {
 					slices[i].classList.remove('is-active')
 				}
 
-				const selectedId = Math.round(5 - Math.abs(this.x / columnWidth))
+				const selectedId = Math.floor(Math.abs(endValue.x / columnWidth))
 
 				if (selectedId < 5) {
 					const selectedItem = props.menuState.find((menuItem) => {
@@ -173,7 +173,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--todo menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconTodo classes="icon-todo" width="75" opacity="0.6" color="#ffffff"/>
+							<IconTodo classes="icon-todo" width="75" opacity="0.6" color="#FFF"/>
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -183,7 +183,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconLocked width="75" opacity="0.6" color="#ffffff"/>
+							<IconLocked width="75" opacity="0.6" color="#FFF"/>
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -193,7 +193,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconDone width="75" opacity="0.6" color="#ffffff"/>
+							<IconDone width="75" opacity="0.6" color="#FFF"/>
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>

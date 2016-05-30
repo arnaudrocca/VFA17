@@ -1,6 +1,6 @@
 import React from 'react'
 
-class MapItem3A extends React.Component {
+class MapItem2A extends React.Component {
 
 	constructor() {
 
@@ -20,4 +20,4 @@ class MapItem3A extends React.Component {
 
 }
 
-export default MapItem3A
+export default MapItem2A

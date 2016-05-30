@@ -13,7 +13,7 @@ class Choice3A extends React.Component {
 
 		super()
 
-        this.itemsNumber =  7
+        this.itemsNumber =  5
 
         this.createDrag = this.createDrag.bind(this)
 
@@ -142,13 +142,11 @@ class Choice3A extends React.Component {
 				<div className="choice__interaction-main choice__interaction-main">
                     <div className="propaganda">
                         <div className="propaganda__slider">
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/simpsons/245/245/1"/>
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/simpsons/245/245/2"/>
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/simpsons/245/245/3"/>
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/simpsons/245/245/4"/>
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/futurama/245/245/1"/>
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/futurama/245/245/2"/>
-                            <img className="propaganda__slider__item" src="http://lorempicsum.com/futurama/245/245/3"/>
+                            <img className="propaganda__slider__item" src="assets/images/interactions/baby.svg"/>
+                            <img className="propaganda__slider__item" src="assets/images/interactions/teen.svg"/>
+                            <img className="propaganda__slider__item" src="assets/images/interactions/adult.svg"/>
+                            <img className="propaganda__slider__item" src="assets/images/interactions/old.svg"/>
+                            <img className="propaganda__slider__item" src="assets/images/interactions/dead.svg"/>
                         </div>
     					<span className="propaganda__line"></span>
     					<span ref="cursor" className="propaganda__cursor"></span>

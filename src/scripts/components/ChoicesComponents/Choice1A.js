@@ -210,8 +210,8 @@ class Choice1A extends React.Component {
 								<span className="voice__level__gauge voice__level__gauge-ghost"></span>
 							</div>
 							<div className="voice__slider">
-								<img className="voice__slider__item" ref="ghostImg" src="http://lorempicsum.com/simpsons/200/200/1"/>
-								<img className="voice__slider__item" ref="godImg" src="http://lorempicsum.com/simpsons/200/200/2"/>
+								<img className="voice__slider__item" ref="ghostImg" src="assets/images/interactions/ghost.svg"/>
+								<img className="voice__slider__item" ref="godImg" src="assets/images/interactions/god.svg"/>
 								<div className="voice__slider__visualizer"></div>
 								<div className="voice__slider__icon">
 									<IconMic width="17" color="#FF5951"/>

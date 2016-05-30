@@ -12,7 +12,31 @@ const initialMap = [
 	{
 		id: 2,
 		version: 'A'
-	}
+	},
+	{
+		id: 3,
+		version: 'A'
+	},
+	{
+		id: 4,
+		version: 'A'
+	},
+	{
+		id: 5,
+		version: 'A'
+	},
+	{
+		id: 6,
+		version: 'A'
+	},
+	{
+		id: 7,
+		version: 'A'
+	},
+	{
+		id: 8,
+		version: 'A'
+	},
 ]
 
 const map = (state = initialMap, action) => {

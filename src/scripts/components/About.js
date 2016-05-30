@@ -19,6 +19,7 @@ class About extends React.Component {
     componentDidMount() {
 
         this.aboutNode = ReactDOM.findDOMNode(this.refs.about)
+        this.aboutContainerNode = ReactDOM.findDOMNode(this.refs.aboutContainer)
 
     }
 
@@ -28,13 +29,10 @@ class About extends React.Component {
 	 */
     clickHandler() {
 
-        const aboutToggled = getComputedStyle(this.aboutNode)['opacity']
-
-        if (aboutToggled == false) {
-            TweenMax.fromTo(this.aboutNode, .3, {scale: .9}, {opacity: 1, scale: 1, display: 'flex'})
-        } else {
-            TweenMax.fromTo(this.aboutNode, .3, {scale: 1}, {opacity: 0, scale: 1.1, display: 'none'})
-        }
+        const aboutTimeline = new TimelineLite()
+        aboutTimeline
+            .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})
+			.to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
 
     }
 
@@ -46,11 +44,11 @@ class About extends React.Component {
 
 		return (
 			<div className="about" ref="about">
-                <div className="about__container">
+                <div className="about__container" ref="aboutContainer">
                     <div className="about__content">
                         <p>Infos</p>
                     </div>
-                    <span className="about__container__close" onClick={this.clickHandler.bind(this)}></span>
+                    <span className="about__close" onClick={this.clickHandler.bind(this)}></span>
                 </div>
             </div>
 		)
