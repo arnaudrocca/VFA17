@@ -12,7 +12,6 @@ class Toolbar extends React.Component {
 
         super()
 
-        this.aboutToggled = 0
         this.fullScreenToggled = false
         this.audioEnable = true
 
@@ -83,18 +82,9 @@ class Toolbar extends React.Component {
 
         const aboutTimeline = new TimelineLite()
 
-        this.aboutToggled = getComputedStyle(this.aboutNode)['opacity']
-
-        if (this.aboutToggled == 0) {
-            aboutTimeline
-                .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
-                .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')
-        }
-        else if (this.aboutToggled == 1) {
-            aboutTimeline
-                .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})
-                .to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
-        }
+        aboutTimeline
+            .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
+            .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')
 
     }
 

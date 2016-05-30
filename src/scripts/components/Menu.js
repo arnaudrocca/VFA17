@@ -77,6 +77,7 @@ class Menu extends React.Component {
 			onPress: () => {
 				document.body.classList.add('is-menu-active')
 				menuBtn.classList.add('is-active')
+				TweenMax.staggerFromTo('.menu__slice', .5, {opacity: 0}, {opacity: 1}, -.1)
 			},
 			onDrag: function() {
 				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
@@ -126,7 +127,12 @@ class Menu extends React.Component {
 							break
 
 						case 'locked':
-							document.body.classList.remove('is-menu-active')
+							TweenMax.staggerTo('.menu__slice', .5, {
+								opacity: 0,
+								onComplete: () => {
+									document.body.classList.remove('is-menu-active')
+								}
+							}, .1)
 
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
@@ -136,7 +142,12 @@ class Menu extends React.Component {
 							break
 
 						case 'done':
-							document.body.classList.remove('is-menu-active')
+							TweenMax.staggerTo('.menu__slice', .5, {
+								opacity: 0,
+								onComplete: () => {
+									document.body.classList.remove('is-menu-active')
+								}
+							}, .1)
 
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
@@ -155,7 +166,12 @@ class Menu extends React.Component {
 					props.mayorTalks(dialog, mood)
 
 				} else {
-					document.body.classList.remove('is-menu-active')
+					TweenMax.staggerTo('.menu__slice', .5, {
+						opacity: 0,
+						onComplete: () => {
+							document.body.classList.remove('is-menu-active')
+						}
+					}, .1)
 				}
 			}
 		})
