@@ -82,7 +82,7 @@ class DragHome extends React.Component {
 			liveSnap: true,
 			snap: {
 				x: (endValue) => {
-					return Math.round(endValue / dragTarget) *  dragTarget
+					return Math.round(endValue / dragTarget) * dragTarget
 				}
 			},
 			onPress: () => {
@@ -95,10 +95,9 @@ class DragHome extends React.Component {
 			onRelease: function() {
 				menuBtn.classList.remove('is-active')
 
-				if (this.x != 0) {
-
+				if (this.x + dragTarget <= 1) {
 					hideTimeline
-						// .set(menuBtn, {clearProps: 'x', delay: 2000})
+						.set(menuBtn, {x: -dragTarget})
 						.to(menuDragLine, .1, {
 							width: 0
 						})
@@ -161,7 +160,10 @@ class DragHome extends React.Component {
 						.to('.btn__main--hidden', .3, {
 							opacity: 1,
 							display: 'block'
-						})		
+						})
+				} else {
+					TweenMax.set(menuBtn, {x: 0})
+					TweenMax.set(menuDragLine, {width: 0})
 				}
 			}
 		})
