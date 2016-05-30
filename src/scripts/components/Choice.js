@@ -163,7 +163,7 @@ class Choice extends React.Component {
 						</svg>
 					</button>
 					<div className="choice__description">
-						<span className ="choice__description__date">{this.choiceData.period}</span>
+						<span className ="choice__description__date">Année {this.choiceData.period}</span>
 						<h1 className ="choice__description__title">{this.choiceData.title}</h1>
 						<p className ="choice__description__context">{this.choiceData.context}</p>
 					</div>
