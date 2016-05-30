@@ -127,12 +127,12 @@ class Menu extends React.Component {
 							break
 
 						case 'locked':
-							TweenMax.staggerTo('.menu__slice', .5, {
+							TweenMax.staggerTo('.menu__slice', .25, {
 								opacity: 0,
 								onComplete: () => {
 									document.body.classList.remove('is-menu-active')
 								}
-							}, .1)
+							}, .05)
 
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
@@ -142,12 +142,12 @@ class Menu extends React.Component {
 							break
 
 						case 'done':
-							TweenMax.staggerTo('.menu__slice', .5, {
+							TweenMax.staggerTo('.menu__slice', .25, {
 								opacity: 0,
 								onComplete: () => {
 									document.body.classList.remove('is-menu-active')
 								}
-							}, .1)
+							}, .05)
 
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
@@ -166,12 +166,12 @@ class Menu extends React.Component {
 					props.mayorTalks(dialog, mood)
 
 				} else {
-					TweenMax.staggerTo('.menu__slice', .5, {
+					TweenMax.staggerTo('.menu__slice', .25, {
 						opacity: 0,
 						onComplete: () => {
 							document.body.classList.remove('is-menu-active')
 						}
-					}, .1)
+					}, .05)
 				}
 			}
 		})

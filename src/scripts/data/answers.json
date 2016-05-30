@@ -5,7 +5,7 @@
         "mapIds": [0, 1],
         "mapVersions": ["B", "B"],
         "score": 2,
-        "dialog": "Tu as choisi l'agriculture. § C'est bien l'agriculture.",
+        "dialog": "Oh, bien joué ! § La famille Viandé a été si humiliée qu’elle a quitté la ville dès l’Antiquité. § Privé d’éleveurs, tous les habitants sont devenus végétaliens. § Les steaks me manquent déjà, mais la ville est bien plus verte comme ça !",
         "mood": "smiling"
     },
     {
@@ -14,7 +14,7 @@
         "mapIds": [0],
         "mapVersions": ["C"],
         "score": -1,
-        "dialog": "Tu as choisi l'élevage. § C'est pas top.",
+        "dialog": "elevage",
         "mood": "angry"
     },
     {
@@ -23,7 +23,7 @@
         "mapIds": [0],
         "mapVersions": ["A"],
         "score": -2,
-        "dialog": "Tu as choisi le fantome, § ils ont brulé la foret !",
+        "dialog": "NOOON ! Les habitants ont eu si peur de ce prétendu fantôme qu’ils ont BRÛLÉ LA FORÊT !! § Comment je vais gagner le concours maintenant ?",
         "mood": "angry"
     },
     {
@@ -32,7 +32,7 @@
         "mapIds": [0],
         "mapVersions": ["C"],
         "score": 1,
-        "dialog": "Tu as choisi la divinite, § ils venerent la foret.",
+        "dialog": "divinite",
         "mood": "smiling"
     },
     {
@@ -41,7 +41,7 @@
         "mapIds": [1],
         "mapVersions": ["B"],
         "score": 1,
-        "dialog": "Tu as construit un marche.",
+        "dialog": "Hé, pas mal ! § Le marché a beaucoup plu, § il accueille en 2017 le salon international du navet. § Ça va plaire aux juges du Ville Fleurie Award ! § Ma victoire se rapproche !",
         "mood": "happy"
     },
     {
@@ -50,7 +50,7 @@
         "mapIds": [1],
         "mapVersions": ["C"],
         "score": 0,
-        "dialog": "Tu as construit une eglise.",
+        "dialog": "eglise",
         "mood": "neutral"
     },
     {
@@ -59,7 +59,7 @@
         "mapIds": [0],
         "mapVersions": ["A"],
         "score": 2,
-        "dialog": "Les jeunes",
+        "dialog": "Parfait ! § La centrale a disparu et toute la ville ne jure que par l’écologie ! § Cette fois c’est sûr, § le Ville Fleurie Award est à moi !",
         "mood": "smiling"
     },
     {
@@ -68,7 +68,7 @@
         "mapIds": [0],
         "mapVersions": ["C"],
         "score": -2,
-        "dialog": "Les vieux",
+        "dialog": "vieux",
         "mood": "angry"
     }
 ]

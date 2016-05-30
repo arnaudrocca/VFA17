@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { debounce } from 'lodash'
 
 class Mayor extends React.Component {
 
@@ -41,11 +40,15 @@ class Mayor extends React.Component {
 
 		if (this.paragraphs != '') {
 			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
-			TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
+
+			this.isTalking = true
+			TweenMax.staggerFrom('.char', .1, {opacity: 0}, .015, () => {
+				this.isTalking = false
+			})
 		}
 
-		window.addEventListener('keydown', debounce(this.spacebarDownHandler, 150))
-		window.addEventListener('keyup', debounce(this.spacebarUpHandler, 150))
+		window.addEventListener('keydown', this.spacebarDownHandler)
+		window.addEventListener('keyup', this.spacebarUpHandler)
 
 	}
 
@@ -85,6 +88,8 @@ class Mayor extends React.Component {
 
 		if (this.paragraphs == '') {
 			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
+		} else {
+			this.isTalking = true
 		}
 
 	}
@@ -95,7 +100,11 @@ class Mayor extends React.Component {
      */
 	componentDidUpdate() {
 
-		TweenMax.staggerFrom('.char', 0, {display: 'none'}, .015)
+		if (this.paragraphs != '') {
+			TweenMax.staggerFrom('.char', .1, {opacity: 0}, .015, () => {
+				this.isTalking = false
+			})
+		}
 
 	}
 
@@ -132,13 +141,15 @@ class Mayor extends React.Component {
 		const aboutOpacity = getComputedStyle(aboutNode)['opacity']
 
 		if (key == 32 && this.paragraphs != '' && aboutOpacity == 0) {
-			if (this.state.dialogIndex + 1 == this.paragraphs.length) {
-				this.props.mayorTalked()
-				TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
-			} else {
-				this.setState({
-					dialogIndex: this.state.dialogIndex + 1
-				})
+			if (!this.isTalking) {
+				if (this.state.dialogIndex + 1 == this.paragraphs.length) {
+					this.props.mayorTalked()
+					TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
+				} else {
+					this.setState({
+						dialogIndex: this.state.dialogIndex + 1
+					})
+				}
 			}
 			TweenMax.to(this.spacebarIconNode, 0.3, {background: 'rgba(0,0,0,0.2)', color: '#FFF'})
 		}
