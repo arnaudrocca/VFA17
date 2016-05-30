@@ -34,6 +34,11 @@ class About extends React.Component {
             .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})
 			.to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
 
+		const videoPlayer = document.querySelector('.home__video')
+        if (videoPlayer) {
+	        videoPlayer.play()
+	    }
+
     }
 
 	/**

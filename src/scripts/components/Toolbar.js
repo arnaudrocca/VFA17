@@ -86,6 +86,11 @@ class Toolbar extends React.Component {
             .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
             .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')
 
+        const videoPlayer = document.querySelector('.home__video')
+        if (videoPlayer) {
+            videoPlayer.pause()
+        }
+
     }
 
     /**
