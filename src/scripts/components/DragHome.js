@@ -130,100 +130,87 @@ class DragHome extends React.Component {
 										scale: 0.85,
 										ease: Expo.easeOut
 									})
-									.to('.home__logo-container', .4, {
-										scale: 1.35,
+									.to('.home__logo-container', .3, {
+										scale: 1.25,
 										ease: Expo.easeOut
 									},'-=.2')
 									.to('.home__logo-container', .4, {
 										scale: 1,
-										ease: Back.easeOut
+										ease: Expo.easeOut
+									},'-=.2')
+									.to('.home__logo__text', .3, {
+										opacity: 1,
+										display: 'block',
+										ease: Expo.easeOut 
+									},'-=.4')
+									.to('.wireframe__line', 1, {
+										height: 0,
+										display: 'none',
+										ease: Expo.easeOut
 									},'-=.3')
+									.to('.wireframe__flower--top', 1, {
+										scale: 0,
+										x: '50%',
+										y: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+									.to('.wireframe__flower--bottom', 1, {
+										scale: 0,
+										x: '50%',
+										y: '-100%',
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+									.to('.home__intro', 1, {
+										y : 20,
+										opacity: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+										.to('.menu__drag-dots', .4, {
+										width: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+									.to('.menu__drag-arrows', .4, {
+										opacity: 0,
+										x : 10,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.4')
+									.to('.menu__drag-start', .4, {
+										scale: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.4')
+									.to('.wireframe__timeline-connector', .4, {
+										width: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.4')
+									.to('.home__logo-container', .3, {
+										scale: 0,
+										rotation: '360deg',
+										display: 'none',
+										onComplete: () => {
+											props.showVideo()
+										}
+									},'+=2')
+									.to('.home__overlay', .3, {
+										opacity: 0
+									})
+									.to('.btn__main--hidden', .3, {
+										opacity: 1,
+										display: 'block'
+									})
+
 							}
 						},'-=.8')
 						
-						
-						// .to('.home__logo-container', .3, {
-						// 	scale: 0.92,
-						// 	ease: Expo.easeOut
-						// },'-=.5')
-						// .to('.home__logo-container', .3, {
-						// 	scale: 1.08,
-						// 	ease: Expo.easeOut
-						// },'-=.2')
-						// .to('.home__logo-container', .3, {
-						// 	scale: 1,
-						// 	ease: Expo.easeOut
-						// },'-=.2')
-						
-						
 
 
-						// .to('.menu__drag-dots', .4, {
-						// 	width: 0,
-						// 	display: 'none',
-						// 	ease: Expo.easeOut
-						// },'-=.')
-						// .to('.menu__drag-arrows', .4, {
-						// 	opacity: 0,
-						// 	x : 100,
-						// 	display: 'none',
-						// 	ease: Expo.easeOut
-						// },'-=.4')
-						// .to('.wireframe__line', .8, {
-						// 	height: 0,
-						// 	display: 'none',
-						// 	ease: Expo.easeOut
-						// },'-=.8')
-						// .to('.wireframe__flower--top', .8, {
-						// 	scale: 0,
-						// 	x: '50%',
-						// 	y: 0,
-						// 	display: 'none',
-						// 	ease: Expo.easeOut
-						// },'-=.8')
-						// .to('.wireframe__flower--bottom', .8, {
-						// 	scale: 0,
-						// 	x: '50%',
-						// 	y: '-100%',
-						// 	display: 'none',
-						// 	ease: Expo.easeOut
-						// },'-=.8')
-						// .to('.home__intro', .4, {
-						// 	y : 50,
-						// 	opacity: 0,
-						// 	display: 'none',
-						// 	ease: Expo.easeOut
-						// },'-=.8')
-						// .to('.menu__drag-start', .3, {
-						// 	scale: 0,
-						// 	display: 'none'
-						// },'-=.4')
-						// .to('.wireframe__drag', .3, {
-						// 	scale: 0,
-						// 	display: 'none'
-						// })
-						// .to('.wireframe__timeline-connector', .3, {
-						// 	width: 0,
-						// 	display: 'none'
-						// })
-						// .to('.home__logo__text', .3, {
-						// 	opacity: 1,
-						// 	display: 'block' 
-						// })
-						.to('.home__logo-container', .3, {
-							scale: 0,
-							display: 'none',
-							onComplete: () => {
-								props.showVideo()
-							}
-						},'+=2')
-						.to('.home__overlay', .3, {
-							opacity: 0
-						})
-						.to('.btn__main--hidden', .3, {
-							opacity: 1,
-							display: 'block'
-						})
+						
 				} else {
 					TweenMax.set(menuBtn, {x: 0})
 					TweenMax.set(menuDragLine, {width: 0})
