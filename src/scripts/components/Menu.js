@@ -52,6 +52,7 @@ class Menu extends React.Component {
 
 		const props = this.props
 
+		const menu = ReactDOM.findDOMNode(this.refs.menu)
 		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
 		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
 		const slices = document.querySelectorAll('.menu__slice')
@@ -75,9 +76,9 @@ class Menu extends React.Component {
 				}
 			},
 			onPress: () => {
-				document.body.classList.add('is-menu-active')
+				TweenMax.to(menu, .3, {opacity: 1, display: 'flex'})
+				TweenMax.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1, delay: .1}, -.03)
 				menuBtn.classList.add('is-active')
-				TweenMax.staggerFromTo('.menu__slice', .5, {opacity: 0}, {opacity: 1}, -.1)
 			},
 			onDrag: function() {
 				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
@@ -120,41 +121,28 @@ class Menu extends React.Component {
 								.to('.map', .3, {x: 0, y: 0, ease: Expo.easeOut}, '-=.3')
 								.to('.experiment', .3, {
 									opacity: 0,
-									delay: 0.3,
 									onComplete: () => {
 										hashHistory.push(`/choice/${selectedId}`)
 									}
-								})
+								}, '+=.3')
 
 							dialog = ''
 							mood = 'neutral'
 							break
 
 						case 'locked':
-							TweenMax.staggerTo('.menu__slice', .25, {
-								opacity: 0,
-								onComplete: () => {
-									document.body.classList.remove('is-menu-active')
-								}
-							}, .05)
-
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
+							TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
 
 							dialog = 'Chaque chose en son temps...'
 							mood = 'neutral'
 							break
 
 						case 'done':
-							TweenMax.staggerTo('.menu__slice', .25, {
-								opacity: 0,
-								onComplete: () => {
-									document.body.classList.remove('is-menu-active')
-								}
-							}, .05)
-
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
+							TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
 
 							const answer = answersData.find((answer) => {
 								return answer.name == props.choicesState[selectedId].answer
@@ -170,12 +158,7 @@ class Menu extends React.Component {
 					props.mayorTalks(dialog, mood)
 
 				} else {
-					TweenMax.staggerTo('.menu__slice', .25, {
-						opacity: 0,
-						onComplete: () => {
-							document.body.classList.remove('is-menu-active')
-						}
-					}, .05)
+					TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
 				}
 			}
 		})
@@ -239,8 +222,8 @@ class Menu extends React.Component {
 					</div>
 				</div>
 				<div className="menu__drag-start"></div>
-				<div ref="menuDragLine" className="menu__drag-line"></div>
-				<div className="menu">
+				<div className="menu__drag-line" ref="menuDragLine"></div>
+				<div className="menu" ref="menu">
 					{this.menuItems}
 					<div className="menu__slice menu__slice--empty"></div>
 					<div className="menu__infos">

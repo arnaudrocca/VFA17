@@ -14,8 +14,7 @@ class Map extends React.Component {
 
 		super()
 
-		this.scale = this.initScale = .7
-		this.scaleMin = .6
+		this.scale = this.initScale = this.scaleMin = .7
 		this.scaleMax = 4
 		this.scaleStep = .1
 
@@ -108,10 +107,10 @@ class Map extends React.Component {
 
         const event = e || document.event
 
-		if (event.deltaY < 0 && this.scale <= this.scaleMax) {
+		if (event.deltaY < 0 && this.scale < this.scaleMax) {
 			this.scale += this.scaleStep * this.scale
 		}
-        else if (event.deltaY > 0 && this.scale >= this.scaleMin) {
+        else if (event.deltaY > 0 && this.scale > this.scaleMin) {
 			this.scale -= this.scaleStep * this.scale
 		}
 		else {

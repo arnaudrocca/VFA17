@@ -10,8 +10,10 @@
 	right 0
 	bottom 0
 	left 0
-	background rgba($blue-darker, 0.25)
+	background rgba($fucking-blue, 0.75)
+	opacity 0
 	z-index 10
+	transition opacity .3s ease-out
 
 	&__slice
 		position relative
@@ -20,7 +22,7 @@
 		transition background .3s ease-out
 
 		&.is-active
-			background rgba($blue-darker, 0.15)
+			background rgba($fucking-blue, .3)
 
 		&:after
 			content ''
@@ -29,7 +31,7 @@
 			height calc(100vh - 4rem)
 			top 0
 			right 0
-			background rgba($white, 0.3)
+			background rgba($white, 0.15)
 
 		&--empty
 			&:after
@@ -156,14 +158,14 @@
 		z-index 105
 		transform translate(0, -50%)
 		transition width 0.8s $easeOutExpo
-		
+
 	&__drag-arrows
 		position absolute
 		top calc(50%)
 		right calc(((100vw - 4rem) / 12) + 6.5rem)
 		z-index 2
 		transform translateY(-50%)
-		
+
 	&__drag-dots
 		position absolute
 		top calc(50%)
@@ -173,7 +175,7 @@
 		width 27vw
 		background url('../../static/assets/images/home/dot.svg') repeat-x center
 		transform translateY(-50%)
-		
+
 	.icon-todo
 		transform-origin 50% 50%
 		animation rotate 6s infinite linear

@@ -46,7 +46,7 @@ class Hotpoint extends React.Component {
 		for (let i in this.props.hotpoint.answers) {
 			const answer = this.props.hotpoint.answers[i]
 			this.hotpointDatum = hotpointsData.find((hotpointData) => {
-				return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == answer
+				return hotpointData.mapId == this.props.hotpoint.mapId && hotpointData.answer == answer
 			})
 
 			if (i > 0) {

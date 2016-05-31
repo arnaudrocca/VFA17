@@ -84,7 +84,7 @@ export const choiceMade = (choiceId, answer) => {
         setTimeout(() => {
             dispatch(choicesDoneIncrement())
 
-            for (let i of consequences.mapIds) {
+            for (let i in consequences.mapIds) {
                 dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]))
                 dispatch(hotpointUpdate(consequences.mapIds[i], answer))
             }

@@ -2,7 +2,7 @@
     {
         "name": "agriculture",
         "nextChoiceVersion": "A",
-        "mapIds": [0, 1],
+        "mapIds": [0, 7],
         "mapVersions": ["B", "B"],
         "score": 2,
         "dialog": "Oh, bien joué ! § La famille Viandé a été si humiliée qu’elle a quitté la ville dès l’Antiquité. § Privé d’éleveurs, tous les habitants sont devenus végétaliens. § Les steaks me manquent déjà, mais la ville est bien plus verte comme ça !",
@@ -11,8 +11,8 @@
     {
         "name": "elevage",
         "nextChoiceVersion": "B",
-        "mapIds": [0],
-        "mapVersions": ["C"],
+        "mapIds": [0, 7],
+        "mapVersions": ["D"],
         "score": -1,
         "dialog": "elevage",
         "mood": "angry"
@@ -20,8 +20,8 @@
     {
         "name": "fantome",
         "nextChoiceVersion": "A",
-        "mapIds": [0],
-        "mapVersions": ["A"],
+        "mapIds": [2],
+        "mapVersions": ["B"],
         "score": -2,
         "dialog": "NOOON ! Les habitants ont eu si peur de ce prétendu fantôme qu’ils ont BRÛLÉ LA FORÊT !! § Comment je vais gagner le concours maintenant ?",
         "mood": "angry"
@@ -29,8 +29,8 @@
     {
         "name": "divinite",
         "nextChoiceVersion": "B",
-        "mapIds": [0],
-        "mapVersions": ["C"],
+        "mapIds": [2],
+        "mapVersions": ["D"],
         "score": 1,
         "dialog": "divinite",
         "mood": "smiling"
@@ -38,7 +38,7 @@
     {
         "name": "marche",
         "nextChoiceVersion": "A",
-        "mapIds": [1],
+        "mapIds": [5],
         "mapVersions": ["B"],
         "score": 1,
         "dialog": "Hé, pas mal ! § Le marché a beaucoup plu, § il accueille en 2017 le salon international du navet. § Ça va plaire aux juges du Ville Fleurie Award ! § Ma victoire se rapproche !",
@@ -47,8 +47,8 @@
     {
         "name": "eglise",
         "nextChoiceVersion": "B",
-        "mapIds": [1],
-        "mapVersions": ["C"],
+        "mapIds": [5],
+        "mapVersions": ["D"],
         "score": 0,
         "dialog": "eglise",
         "mood": "neutral"
@@ -56,8 +56,8 @@
     {
         "name": "jeunes",
         "nextChoiceVersion": "",
-        "mapIds": [0],
-        "mapVersions": ["A"],
+        "mapIds": [0, 6],
+        "mapVersions": ["C", "B"],
         "score": 2,
         "dialog": "Parfait ! § La centrale a disparu et toute la ville ne jure que par l’écologie ! § Cette fois c’est sûr, § le Ville Fleurie Award est à moi !",
         "mood": "smiling"
@@ -65,8 +65,8 @@
     {
         "name": "vieux",
         "nextChoiceVersion": "",
-        "mapIds": [0],
-        "mapVersions": ["C"],
+        "mapIds": [0, 6],
+        "mapVersions": ["D", "D"],
         "score": -2,
         "dialog": "vieux",
         "mood": "angry"

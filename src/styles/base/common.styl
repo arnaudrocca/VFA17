@@ -12,13 +12,7 @@ html, body
 
 body
 	height 100vh
-	background $grey-light
+	background-image radial-gradient(ellipse farthest-corner, #d7e3f2 50%, #a8caf0 100%)
+	background-repeat no-repeat
+	background-attachment fixed
 	overflow hidden
-
-	&.is-menu-active
-		.menu
-			display flex
-
-		.experiment__wrapper
-			// filter blur(5px)
-			transition filter 0.3s ease-out
