@@ -62,6 +62,7 @@ class DragHome extends React.Component {
 
 		const props = this.props
 		const hideTimeline = new TimelineLite()
+		const hideTimeline2 = new TimelineLite()
 
 		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
 		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
@@ -98,69 +99,122 @@ class DragHome extends React.Component {
 				if (this.x + dragTarget <= 1) {
 					hideTimeline
 						.set(menuBtn, {x: -dragTarget})
-						.to(menuDragLine, .1, {
-							width: 0
-						})
-						.to(menuBtn, .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.wireframe__flower', .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.wireframe__line', .3, {
-							height: 0,
-							display: 'none'
-						})
-						.to('.home__intro', .3, {
-							y : 50,
-							opacity: 0,
-							display: 'none'
-						})
-						.to('.menu__drag-dots', .3, {
+						.to(menuDragLine, .4, {
 							width: 0,
-							display: 'none'
+							transition: 'none',
+							ease: Expo.easeOut
 						})
-						.to('.menu__drag-arrows', .3, {
-							opacity: 0,
-							x : 100,
-							display: 'none'
-						})
-						.to('.menu__drag-start', .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.menu__btn', .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.wireframe__drag', .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.wireframe__timeline-connector', .3, {
-							width: 0,
-							display: 'none'
-						})
-						.to('.home__logo__dots-container', .3, {
-							opacity: 0,
-							display: 'none'
-						})
-						.to('.home__logo', .3, {
+						.to(menuBtn, .6, {
+							scale: 1.1,
+							display: 'none',
+							transition: 'none',
+							ease: Expo.easeOut
+						},'-=.4')
+						.to(menuBtn, .8, {
 							scale: 0,
 							display: 'none',
+							transition: 'none',
+							ease: Expo.easeOut
+						},'-=.3')
+						.to('.home__logo-center', .2, {
+							scale: 1, 
+							ease: Back.easeOut
+						},'-=.7')
+						.to('.home__logo__dots-container', .2, {
+							opacity: 0,
+							display: 'none',
+							ease: Expo.easeOut,
 							onComplete: () => {
-								props.showVideo()
+								hideTimeline2
+									.to('.home__logo-container', .3, {
+										scale: 0.75,
+										ease: Expo.easeOut
+									})
+									.to('.home__logo-container', .3, {
+										scale: 1.25,
+										ease: Expo.easeOut
+									},'-=.2')
+									.to('.home__logo-container', .4, {
+										scale: 1,
+										ease: Expo.easeOut
+									},'-=.2')
+									.to('.home__logo__text', .3, {
+										opacity: 1,
+										display: 'block',
+										ease: Expo.easeOut 
+									},'-=.4')
+									.to('.wireframe__line', 1, {
+										height: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.3')
+									.to('.wireframe__flower--top', 1, {
+										scale: 0,
+										x: '50%',
+										y: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+									.to('.wireframe__flower--bottom', 1, {
+										scale: 0,
+										x: '50%',
+										y: '-100%',
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+									.to('.home__intro', 1, {
+										opacity: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+										.to('.menu__drag-dots', .4, {
+										width: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=1')
+									.to('.menu__drag-arrows', .4, {
+										opacity: 0,
+										x : 10,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.4')
+									.to('.menu__drag-start', .8, {
+										scale: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.4')
+									.to('.wireframe__drag', .8, {
+										scale: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.8')
+									.to('.wireframe__timeline-connector', .8, {
+										width: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.8')
+									.to('.home__logo-container', .4, {
+										scale: 0,
+										display: 'none',
+										ease: Expo.easeOut,
+										onComplete: () => {
+											props.showVideo()
+										}
+									},'-=.4')
+									.to('.home__overlay', .3, {
+										opacity: 0
+									})
+									.to('.btn__main--hidden', .3, {
+										opacity: 1,
+										display: 'block'
+									})
+
 							}
-						})
-						.to('.home__overlay', .3, {
-							opacity: 0
-						})
-						.to('.btn__main--hidden', .3, {
-							opacity: 1,
-							display: 'block'
-						})
+						},'-=.8')
+						
+
+
+						
 				} else {
 					TweenMax.set(menuBtn, {x: 0})
 					TweenMax.set(menuDragLine, {width: 0})

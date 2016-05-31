@@ -77,7 +77,10 @@ class Home extends React.Component {
 						 fleur pour commencer l’expérience.
 					</p>
 				</div>
-				<IconLogo width="210" classes="home__logo"/>
+				<div className="home__logo-container">
+					<IconLogo width="210" classes="home__logo"/>
+					<span className="home__logo-center"></span>
+				</div>
 				<DragHome showVideo={this.showVideo.bind(this)} />
 				<video className="home__video home__video--intro" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
 				<video ref="video" className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" loop></video>
