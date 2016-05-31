@@ -18,6 +18,17 @@ class Home extends React.Component {
 
 	/**
 	 * @method
+	 * @name componentDidMount
+	 */
+	componentDidMount() {
+
+		this.videoNode = ReactDOM.findDOMNode(this.refs.video)
+
+	}
+
+
+	/**
+	 * @method
 	 * @name showVideo
 	 */
 	showVideo() {
@@ -31,7 +42,10 @@ class Home extends React.Component {
 			})
 			.to('.home__video--main', .3, {
 				display: 'block',
-				opacity: 1
+				opacity: 1,
+				onComplete : () => {
+					this.videoNode.play()
+				}
 			})
 
 	}
@@ -41,6 +55,11 @@ class Home extends React.Component {
 		hashHistory.push('/experiment')
 
 	}
+
+	// <div className="home__video-container">
+	// 				<iframe ref="video" className="home__video home__video--main" src="https://www.youtube.com/embed/Ep_blZhvI2A?showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&:amp;nologo=1&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+	// 			</div>
+	//<video className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" autoPlay loop muted></video>
 
 	/**
      * @method
@@ -61,7 +80,7 @@ class Home extends React.Component {
 				<IconLogo width="210" classes="home__logo"/>
 				<DragHome showVideo={this.showVideo.bind(this)} />
 				<video className="home__video home__video--intro" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
-				<video className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" autoPlay loop muted></video>
+				<video ref="video" className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" loop></video>
 				<ChoiceValidate handleSubmit={this.goToExperiment.bind(this)} label="Passer" labelSecondary="Ok papy !" classes="btn__main btn__main--hidden home__btn-video"/>
 				<div className="home__overlay"></div>
 			</section>
