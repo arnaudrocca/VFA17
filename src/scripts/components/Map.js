@@ -15,7 +15,7 @@ class Map extends React.Component {
 
 		this.scale = this.initScale = .7
 		this.scaleMin = .6
-		this.scaleMax = 2
+		this.scaleMax = 4
 		this.scaleStep = .1
 
 	}
@@ -32,17 +32,17 @@ class Map extends React.Component {
 		this.mapContainer = ReactDOM.findDOMNode(this.refs.mapContainer)
 		this.map = ReactDOM.findDOMNode(this.refs.map)
 
-		TweenMax.set(this.mapContainer, {scale: this.scale})
-		TweenMax.set(this.map, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
+        TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: '50% 50%'})
+		TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
 
         Draggable.create(this.map, {
             type: 'x, y',
             edgeResistance: .8,
             bounds: {
-                minX: -this.windowWidth / 3,
-                maxX: this.windowWidth / 3,
-                minY: -this.windowHeight / 3,
-                maxY: this.windowHeight / 3
+                minX: -this.windowWidth / 2,
+                maxX: this.windowWidth / 2,
+                minY: -this.windowHeight / 2,
+                maxY: this.windowHeight / 2
             },
 			zIndex: 1,
 			zIndexBoost: false
@@ -57,7 +57,8 @@ class Map extends React.Component {
 	componentWillUpdate() {
 
 		this.scale = this.initScale
-		TweenMax.set(this.mapContainer, {scale: this.scale, x: 0, y: 0})
+		TweenMax.set(this.mapContainer, {scale: this.scale, transformOrign: '50% 50%'})
+        TweenMax.set(this.map, {x: 0, y: 0})
 
 	}
 
@@ -67,7 +68,7 @@ class Map extends React.Component {
 	 */
 	componentDidUpdate() {
 
-		TweenMax.set(this.map, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
+		TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
 
 	}
 
@@ -94,7 +95,7 @@ class Map extends React.Component {
 		const originX = 100 * event.clientX / this.windowWidth
 		const originY = 100 * event.clientY / this.windowHeight
 
-		TweenMax.to(this.mapContainer, .6, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
+        TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
 
 	}
 

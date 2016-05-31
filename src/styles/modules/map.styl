@@ -8,15 +8,14 @@
 	height 100vh
 	top 0
 	left 0
-	will-change filter
-	transition transform, transform-origin 0.6s $easeOutExpo
+	transition transform-origin .6s $easeOutExpo, transform .6s $easeOutExpo
 
 	.map
 		position relative
 		width 100%
 		height auto
 		overflow visible
-		transition transform 1s $easeOutExpo, filter .3s ease-out
+		transition transform 1s $easeOutExpo
 
 		.mapItems
 			position absolute
