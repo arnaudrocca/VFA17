@@ -88,6 +88,9 @@ class Choice3A extends React.Component {
 			},
 			zIndex: 1000,
 			zIndexBoost: false,
+			onPress: () => {
+				TweenMax.to('.btn__main--hidden' , 0.3, {opacity: 1, display: 'block'})
+			},
 			onDrag: throttle(function() {
 				const selectedId = Math.floor(((this.x + lineWidth) / columnWidth) / 2)
 
@@ -115,7 +118,7 @@ class Choice3A extends React.Component {
 				}
 
 				lastId = selectedId
-			}, 150)
+			}, 350)
 		})
 
 	}
@@ -150,7 +153,7 @@ class Choice3A extends React.Component {
                         </div>
     					<span className="propaganda__line"></span>
     					<span ref="cursor" className="propaganda__cursor"></span>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} labelSecondary="Go" label="Valider" classes="btn__main btn__main--3A"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} labelSecondary="Go" label="Valider" classes="btn__main btn__main--hidden btn__main--3A"/>
                     </div>
 				</div>
 			</div>

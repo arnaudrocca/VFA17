@@ -114,13 +114,17 @@ class Menu extends React.Component {
 
 					switch (selectedItem.state) {
 						case 'todo':
-							TweenMax.to('.experiment', 0.3, {
-								opacity: 0,
-								delay: 0.3,
-								onComplete: () => {
-									hashHistory.push(`/choice/${selectedId}`)
-								}
-							})
+							const todoTimeline = new TimelineLite()
+							todoTimeline
+								.to('.mapContainer', .3, {scale: .7, transformOrigin: '50% 50%', ease: Expo.easeOut})
+								.to('.map', .3, {x: 0, y: 0, ease: Expo.easeOut}, '-=.3')
+								.to('.experiment', .3, {
+									opacity: 0,
+									delay: 0.3,
+									onComplete: () => {
+										hashHistory.push(`/choice/${selectedId}`)
+									}
+								})
 
 							dialog = ''
 							mood = 'neutral'

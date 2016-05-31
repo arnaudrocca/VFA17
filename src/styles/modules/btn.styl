@@ -1,4 +1,4 @@
-.btn 
+.btn
 	&__main
 		position relative
 		display block
@@ -10,7 +10,7 @@
 		letter-spacing 0.4px
 		color $white
 		antialiased()
-		
+
 		&__label-container
 			position absolute
 			top 50%
@@ -24,7 +24,7 @@
 			position relative
 			display block
 			transition transform .2s ease-out
-			
+
 			&:after
 				content attr(data-labelSecondary)
 				position absolute
@@ -50,7 +50,7 @@
 		&:hover
 			.btn__main__label
 				transform translate3d(0,100%,0)
-				
+
 			.btn__main__fill
 				 transform scale3d(1, 1, 1)
 
@@ -82,15 +82,13 @@
 
 		 &--3A
 			position absolute
-			display block
 			right 0
 			bottom 0
 			left 0
 			margin 0 auto
 			text-align center
-			opacity 1
 			z-index 110
-			
+
 	&__return
 		position absolute
 		top 1.4rem

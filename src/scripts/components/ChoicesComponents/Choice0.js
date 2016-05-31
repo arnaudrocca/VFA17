@@ -82,7 +82,7 @@ class Choice0 extends React.Component {
 		}
 
 		if (this.gossipField1Node.textContent != '' && this.gossipField2Node.textContent != '') {
-			TweenMax.to('.btn__main--hidden' , 0.3, {display: 'block', opacity: 1})
+			TweenMax.to('.btn__main--hidden' , 0.3, {opacity: 1, display: 'block'})
 		}
 
 	}
