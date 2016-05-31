@@ -1,13 +1,18 @@
-.mapItems-enter
-	opacity 0
-
-	&-active
-		opacity 1
-		transition all 1s ease-out
-
 .mapItems-leave
 	opacity 1
+	filter brightness(100%) blur(0px)
+	transition opacity 1s ease-in-out, filter 1s ease-in-out
 
 	&-active
 		opacity 0
-		transition all 1s ease-out
+		filter brightness(1000%) blur(10px)
+
+.mapItems-enter
+	opacity 0
+	filter brightness(1000%) blur(10px)
+	transition opacity 1s ease-in-out, filter 1s ease-in-out
+
+	&-active
+		opacity 1
+		filter brightness(100%) blur(0px)
+		transform translateY(0)

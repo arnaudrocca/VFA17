@@ -12,7 +12,7 @@ class ChoicesDone extends React.Component {
 
 		this.choicesNumber = 5
 		this.state = {
-			circlePerimeter : 0
+			circlePerimeter: 0
 		}
 
 	}

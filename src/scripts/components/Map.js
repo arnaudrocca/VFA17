@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { debounce } from 'lodash'
 import MapComponent from './MapComponent'
 import HotpointsContainer from '../containers/HotpointsContainer'
 
@@ -18,6 +19,8 @@ class Map extends React.Component {
 		this.scaleMax = 4
 		this.scaleStep = .1
 
+        this.createDrag = this.createDrag.bind(this)
+
 	}
 
 	/**
@@ -33,7 +36,29 @@ class Map extends React.Component {
 		this.map = ReactDOM.findDOMNode(this.refs.map)
 
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: '50% 50%'})
-		TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
+		TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
+
+        this.createDrag()
+
+        window.addEventListener('resize', debounce(this.createDrag, 350))
+
+	}
+
+    /**
+	 * @method
+	 * @name componentWillUnmount
+	 */
+	componentWillUnmount() {
+
+		window.removeEventListener('resize', this.createDrag)
+
+	}
+
+    /**
+	 * @method
+	 * @name createDrag
+	 */
+    createDrag() {
 
         Draggable.create(this.map, {
             type: 'x, y',
@@ -48,7 +73,7 @@ class Map extends React.Component {
 			zIndexBoost: false
         })
 
-	}
+    }
 
 	/**
 	 * @method
@@ -68,7 +93,8 @@ class Map extends React.Component {
 	 */
 	componentDidUpdate() {
 
-		TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${50 - (this.props.score * 10)}%)`})
+        TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
+
 
 	}
 
