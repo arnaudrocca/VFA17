@@ -127,7 +127,7 @@ class DragHome extends React.Component {
 							onComplete: () => {
 								hideTimeline2
 									.to('.home__logo-container', .3, {
-										scale: 0.85,
+										scale: 0.75,
 										ease: Expo.easeOut
 									})
 									.to('.home__logo-container', .3, {
@@ -163,7 +163,6 @@ class DragHome extends React.Component {
 										ease: Expo.easeOut
 									},'-=1')
 									.to('.home__intro', 1, {
-										y : 20,
 										opacity: 0,
 										display: 'none',
 										ease: Expo.easeOut
@@ -179,24 +178,29 @@ class DragHome extends React.Component {
 										display: 'none',
 										ease: Expo.easeOut
 									},'-=.4')
-									.to('.menu__drag-start', .4, {
+									.to('.menu__drag-start', .8, {
 										scale: 0,
 										display: 'none',
 										ease: Expo.easeOut
 									},'-=.4')
-									.to('.wireframe__timeline-connector', .4, {
+									.to('.wireframe__drag', .8, {
+										scale: 0,
+										display: 'none',
+										ease: Expo.easeOut
+									},'-=.8')
+									.to('.wireframe__timeline-connector', .8, {
 										width: 0,
 										display: 'none',
 										ease: Expo.easeOut
-									},'-=.4')
-									.to('.home__logo-container', .3, {
+									},'-=.8')
+									.to('.home__logo-container', .4, {
 										scale: 0,
-										rotation: '360deg',
 										display: 'none',
+										ease: Expo.easeOut,
 										onComplete: () => {
 											props.showVideo()
 										}
-									},'+=2')
+									},'-=.4')
 									.to('.home__overlay', .3, {
 										opacity: 0
 									})
