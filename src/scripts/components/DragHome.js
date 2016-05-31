@@ -98,43 +98,65 @@ class DragHome extends React.Component {
 				if (this.x + dragTarget <= 1) {
 					hideTimeline
 						.set(menuBtn, {x: -dragTarget})
-						.to(menuDragLine, .1, {
-							width: 0
-						})
-						.to(menuBtn, .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.wireframe__flower', .3, {
-							scale: 0,
-							display: 'none'
-						})
-						.to('.wireframe__line', .3, {
-							height: 0,
-							display: 'none'
-						})
-						.to('.home__intro', .3, {
-							y : 50,
-							opacity: 0,
-							display: 'none'
-						})
-						.to('.menu__drag-dots', .3, {
+						.to(menuDragLine, .4, {
 							width: 0,
-							display: 'none'
+							transition: 'none',
+							ease: Expo.easeOut
 						})
-						.to('.menu__drag-arrows', .3, {
+						.to('.menu__drag-dots', .4, {
+							width: 0,
+							display: 'none',
+							ease: Expo.easeOut
+						},'-=.5')
+						.to('.menu__drag-arrows', .4, {
 							opacity: 0,
 							x : 100,
-							display: 'none'
-						})
+							display: 'none',
+							ease: Expo.easeOut
+						},'-=.4')
+						.to(menuBtn, .7, {
+							scale: 1.5,
+							ease: Expo.easeOut
+						},'-=.4')
+						.to(menuBtn, .7, {
+							scale: 0,
+							display: 'none',
+							transition: 'none',
+							ease: Expo.easeOut
+						},'-=.7')
+						// .to('.wireframe__line', .2, {
+						// 	height: '+=10',
+						// 	ease: Quart.easeOut
+						// },'-=.7')
+						.to('.wireframe__line', .7, {
+							height: 0,
+							display: 'none',
+							ease: Expo.easeOut
+						},'-=.7')
+						.to('.wireframe__flower--top', .7, {
+							scale: 0,
+							x: '50%',
+							y: 0,
+							display: 'none',
+							ease: Expo.easeOut
+						},'-=.7')
+						.to('.wireframe__flower--bottom', .7, {
+							scale: 0,
+							x: '50%',
+							y: '-100%',
+							display: 'none',
+							ease: Expo.easeOut
+						},'-=.7')
+						.to('.home__intro', .4, {
+							y : 50,
+							opacity: 0,
+							display: 'none',
+							ease: Expo.easeOut
+						},'-=.7')
 						.to('.menu__drag-start', .3, {
 							scale: 0,
 							display: 'none'
-						})
-						.to('.menu__btn', .3, {
-							scale: 0,
-							display: 'none'
-						})
+						},'-=.4')
 						.to('.wireframe__drag', .3, {
 							scale: 0,
 							display: 'none'
@@ -145,15 +167,26 @@ class DragHome extends React.Component {
 						})
 						.to('.home__logo__dots-container', .3, {
 							opacity: 0,
+							scale: 0,
 							display: 'none'
 						})
-						.to('.home__logo', .3, {
+						.to('.home__logo-center', .3, {
+							scale: 1 
+						})
+						.to('.home__logo-center', .3, {
+							scale: 1 
+						})
+						.to('.home__logo__text', .3, {
+							opacity: 1,
+							display: 'block' 
+						})
+						.to('.home__logo-container', .3, {
 							scale: 0,
 							display: 'none',
 							onComplete: () => {
 								props.showVideo()
 							}
-						})
+						},'+=2')
 						.to('.home__overlay', .3, {
 							opacity: 0
 						})
