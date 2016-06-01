@@ -1,4 +1,27 @@
-@keyframes hotpoints
+/*
+ * Targets
+ */
+@keyframes rotate
+    from
+        transform rotate3d(0, 0, 0, 0deg)
+
+    to
+        transform rotate3d(0, 0, 1, 360deg)
+
+@keyframes pulse
+    0%
+        transform scale(1)
+
+    50%
+        transform scale(1.2)
+
+    100%
+        transform scale(1)
+
+/*
+ * Map
+ */
+@keyframes hotpoint
     0%
         transform scale(1)
 
