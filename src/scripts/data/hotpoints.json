@@ -2,55 +2,55 @@
 	{
 		"id": 0,
 		"mapId": 0,
-		"x": 50,
-		"y": 0,
+		"x": 40,
+		"y": 5,
 		"answer": "agriculture",
-		"text": "Le supermarché, § eh ben maintenant c'est un Bio C bon.",
+		"dialog": "Devenus végétaliens, les habitants sont plus proche de la nature et ont aménagé de nombreux espaces verts.",
 		"mood": "smiling"
 	},
 	{
 		"id": 1,
 		"mapId": 7,
-		"x": 50,
-		"y": 90,
+		"x": 45,
+		"y": 80,
 		"answer": "agriculture",
-		"text": "Les champs.",
+		"dialog": "Les pâturages ont laissé la place à des champs. § La ville est enfin spécialisée et beaucoup plus compétitive !",
 		"mood": "happy"
 	},
 	{
 		"id": 2,
 		"mapId": 2,
-		"x": 50,
-		"y": 0,
+		"x": 85,
+		"y": 40,
 		"answer": "fantome",
-		"text": "La foret a brule",
+		"dialog": "Les habitants ont eu si peur du fantôme qu’ils ont brûlé la forêt. § La légende perdure jusqu’aujourd’hui et des superstitieux enflamment régulièrement cette partie de la ville.",
 		"mood": "angry"
 	},
 	{
 		"id": 3,
 		"mapId": 5,
-		"x": 50,
-		"y": 50,
+		"x": 40,
+		"y": 35,
 		"answer": "marche",
-		"text": "Ici c'est le salon du navet",
+		"dialog": "Le marché accueille cette année le salon international du navet. § C’est un grand évènement pour Ayaux-les-Bains !",
 		"mood": "smiling"
 	},
 	{
 		"id": 4,
 		"mapId": 0,
-		"x": 60,
-		"y": 40,
+		"x": 40,
+		"y": 5,
 		"answer": "jeunes",
-		"text": "Les jeunes ont sauvé la ville",
+		"dialog": "Les habitants sont autosuffisants énergiquement et respectent leur environnement.",
 		"mood": "happy"
 	},
 	{
 		"id": 5,
 		"mapId": 6,
 		"x": 60,
-		"y": 40,
+		"y": 60,
 		"answer": "jeunes",
-		"text": "Les jeunes ont sauvé la ville",
+		"dialog": "La centrale n’existe plus et la ville produit de l’énergie grâce à des éoliennes et des panneaux solaires. § C’est super écologique !",
 		"mood": "happy"
 	}
 ]

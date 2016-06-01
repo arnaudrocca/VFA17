@@ -150,6 +150,9 @@ class Mayor extends React.Component {
 						dialogIndex: this.state.dialogIndex + 1
 					})
 				}
+			} else {
+				TweenMax.set('.char', {opacity: 1})
+				this.isTalking = false
 			}
 			TweenMax.to(this.spacebarIconNode, 0.3, {background: 'rgba(0,0,0,0.2)', color: '#FFF'})
 		}

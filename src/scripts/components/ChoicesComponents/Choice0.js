@@ -148,7 +148,7 @@ class Choice0 extends React.Component {
 								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte de l'être aimé.</li>
 							</ul>
 						</div>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="valider" labelSecondary="Go" classes="btn__main btn__main--hidden btn__main--0"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Lancer" classes="btn__main btn__main--hidden btn__main--0"/>
 					</div>
 				</div>
 			</div>

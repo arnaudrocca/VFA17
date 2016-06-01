@@ -19,7 +19,7 @@ class Hotpoint extends React.Component {
 	getContent() {
 
 		this.data = hotpointsData.find((hotpointData) => {
-			return hotpointData.id == this.props.hotpoint.id
+			return hotpointData.mapId == this.props.hotpoint.id
 		})
 
 		if (this.props.hotpoint.answers.length > 0) {
@@ -29,8 +29,7 @@ class Hotpoint extends React.Component {
 				top: `${this.data.y}%`
 			}
 		} else {
-			this.hotpoint = ''
-			this.position = {}
+			this.hotpoint = false
 		}
 
 	}
@@ -41,21 +40,11 @@ class Hotpoint extends React.Component {
      */
 	clickHandler() {
 
-		let dialog = ''
+		this.hotpointDatum = hotpointsData.find((hotpointData) => {
+			return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == this.props.hotpoint.answers
+		})
 
-		for (let i in this.props.hotpoint.answers) {
-			const answer = this.props.hotpoint.answers[i]
-			this.hotpointDatum = hotpointsData.find((hotpointData) => {
-				return hotpointData.mapId == this.props.hotpoint.mapId && hotpointData.answer == answer
-			})
-
-			if (i > 0) {
-				dialog += '§'
-			}
-			dialog += this.hotpointDatum.text
-		}
-
-		this.props.onClick(dialog, this.hotpointDatum.mood)
+		this.props.onClick(this.hotpointDatum.dialog, this.hotpointDatum.mood)
 
 	}
 
@@ -67,11 +56,15 @@ class Hotpoint extends React.Component {
 
 		this.getContent()
 
-		return (
-			<div className="hotpoint" onClick={this.clickHandler.bind(this)} style={this.position}>
-				{this.hotpoint}
-            </div>
-		)
+		if (this.hotpoint == false) {
+			return null
+		} else {
+			return (
+				<div className="hotpoint" onClick={this.clickHandler.bind(this)} style={this.position}>
+					{this.hotpoint}
+            	</div>
+			)
+		}
 
 	}
 
