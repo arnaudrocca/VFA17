@@ -3,37 +3,46 @@ import { CONSTANTS } from '../constants/index'
 const initialHotpoints = [
 	{
 		id: 0,
-		// mapId: 0,
 		visited: false,
 		answers: []
 	},
 	{
 		id: 1,
-		// mapId: 7,
 		visited: false,
 		answers: []
 	},
 	{
 		id: 2,
-		// mapId: 2,
 		visited: false,
 		answers: []
 	},
 	{
 		id: 3,
-		// mapId: 5,
 		visited: false,
 		answers: []
 	},
 	{
 		id: 4,
-		// mapId: 0,
 		visited: false,
 		answers: []
 	},
 	{
 		id: 5,
-		// mapId: 6,
+		visited: false,
+		answers: []
+	},
+	{
+		id: 6,
+		visited: false,
+		answers: []
+	},
+	{
+		id: 7,
+		visited: false,
+		answers: []
+	},
+	{
+		id: 8,
 		visited: false,
 		answers: []
 	}
@@ -46,7 +55,7 @@ const hotpoints = (state = initialHotpoints, action) => {
             const result = state.map((hotpoint, index) => {
                 if (index == action.mapId) {
 					return Object.assign({}, hotpoint, {
-						answers: [...hotpoint.answers, action.answer]
+						answers: action.answer
 					})
 				} else {
 					return hotpoint

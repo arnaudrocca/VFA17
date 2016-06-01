@@ -13,7 +13,7 @@ class Choice3A extends React.Component {
 
 		super()
 
-        this.itemsNumber =  5
+        this.itemsNumber = 5
 
         this.createDrag = this.createDrag.bind(this)
 
@@ -153,7 +153,7 @@ class Choice3A extends React.Component {
                         </div>
     					<span className="propaganda__line"></span>
     					<span ref="cursor" className="propaganda__cursor"></span>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} labelSecondary="Go" label="Valider" classes="btn__main btn__main--hidden btn__main--3A"/>
+						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Convaincre" classes="btn__main btn__main--hidden btn__main--3A"/>
                     </div>
 				</div>
 			</div>
