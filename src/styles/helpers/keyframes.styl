@@ -10,36 +10,7 @@
 
 @keyframes turbine
    from
-        transform rotate3d(0, 0, 0, 0deg)
-        filter blur(0)
+        transform rotate3d(0, 0, 0, 0deg) scale(.25)
 
    to
-        transform rotate3d(0, 0, 1, 360deg)
-        filter blur(0)
-
-@keyframes pulse
-    0%
-        transform scale(0.85)
-
-    50%
-        transform scale(1.1)
-
-    100%
-       transform scale(0.85)
-
-@keyframes rotate
-   from
-        transform rotate(0deg)
-
-   to
-        transform rotate(360deg)
-
-@keyframes blink
-    0%
-        opacity .4
-
-    50%
-        opacity 1
-
-    100%
-        opacity .4
+        transform rotate3d(0, 0, 1, 360deg) scale(.25)

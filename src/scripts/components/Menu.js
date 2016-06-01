@@ -79,15 +79,14 @@ class Menu extends React.Component {
 			onPress: () => {
 				this.menuTimeline
 					.to(menu, .3, {opacity: 1, display: 'flex'})
-					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03,'-=.15')
-					.staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: '0deg', ease: Quart.easeOut}, -.05,'-=.3')
+					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
+					.staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
 				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
 
 				const currentId = Math.round(5 - Math.abs(this.x / columnWidth))
-
 				if (currentId < 5) {
 					const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
 					for (var i = slices.length - 1; i >= 0; i--) {
@@ -108,7 +107,6 @@ class Menu extends React.Component {
 				}
 
 				const selectedId = Math.floor(Math.abs(endValue.x / columnWidth))
-
 				if (selectedId < 5) {
 					const selectedItem = props.menuState.find((menuItem) => {
 						return menuItem.id == selectedId
