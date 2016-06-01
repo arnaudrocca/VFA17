@@ -42,7 +42,7 @@ class Mayor extends React.Component {
 			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
 
 			this.isTalking = true
-			TweenMax.staggerFrom('.char', .1, {opacity: 0}, .015, () => {
+			TweenMax.staggerFrom('.char', 0, {opacity: 0}, .015, () => {
 				this.isTalking = false
 			})
 		}
@@ -101,7 +101,7 @@ class Mayor extends React.Component {
 	componentDidUpdate() {
 
 		if (this.paragraphs != '') {
-			TweenMax.staggerFrom('.char', .1, {opacity: 0}, .015, () => {
+			TweenMax.staggerFrom('.char', 0, {opacity: 0}, .015, () => {
 				this.isTalking = false
 			})
 		}

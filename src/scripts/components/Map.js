@@ -15,7 +15,7 @@ class Map extends React.Component {
 		super()
 
 		this.scale = this.initScale = this.scaleMin = .7
-		this.scaleMax = 4
+		this.scaleMax = 3
 		this.scaleStep = .1
 
         this.createDrag = this.createDrag.bind(this)
@@ -140,9 +140,9 @@ class Map extends React.Component {
 		return (
 			<div className="mapContainer" ref="mapContainer" onWheel={this.scaleHandler.bind(this)}>
 				<div className="map" ref="map">
-					<img src="assets/images/mapItems/mapItemBase.svg"/>
+					<img className="map__base" src="assets/images/mapItems/mapItemBase.svg"/>
 					<ReactCSSTransitionGroup className="mapItems" transitionName="mapItems" component="div"
-						transitionEnterTimeout={2000} transitionLeaveTimeout={2000}>
+						transitionEnterTimeout={2500} transitionLeaveTimeout={2500}>
 						{mapItems}
 					</ReactCSSTransitionGroup>
 					<HotpointsContainer />

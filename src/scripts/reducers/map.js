@@ -27,7 +27,7 @@ const initialMap = [
 	},
 	{
 		id: 6,
-		version: 'A'
+		version: 'B'
 	},
 	{
 		id: 7,
