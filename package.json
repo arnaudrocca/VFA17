@@ -9,14 +9,14 @@
   },
   "authors": [
     {
-      "name": "Arnaud Rocca",
-      "url": "http://arnaudrocca.fr",
-      "mail": "arnaud.rocca@gmail.com"
-    },
-    {
       "name": "Yann Kubacki",
       "url": "http://yannkubacki.fr",
       "mail": "kubackiyann@gmail.com"
+    },
+    {
+      "name": "Arnaud Rocca",
+      "url": "http://arnaudrocca.fr",
+      "mail": "arnaud.rocca@gmail.com"
     }
   ],
   "license": "ISC",
