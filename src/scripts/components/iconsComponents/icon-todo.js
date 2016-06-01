@@ -2,7 +2,7 @@ import React from 'react'
 
 const IconTodo = ({width, classes}) => (
 
-	<svg className={classes} x="0px" y="0px" viewBox="0 0 73.9 73.8" width={width}>
+	<svg className={classes + ' icon-todo'} x="0px" y="0px" viewBox="0 0 73.9 73.8" width={width}>
 		<g>
 			<path fill="#FFFFFF" d="M37,23c7.7,0,14,6.3,14,14s-6.3,14-14,14s-14-6.3-14-14S29.2,23,37,23 M37,11c-14.4,0-26,11.6-26,26
 				c0,14.4,11.6,26,26,26c14.4,0,26-11.6,26-26C63,22.6,51.3,11,37,11L37,11z"/>
@@ -61,6 +61,7 @@ const IconTodo = ({width, classes}) => (
 				c0,0,0,0-0.1,0C43.8,0.6,43.7,0.6,43.6,0.6L43.6,0.6z"/>
 		</g>
 	</svg>
+
 
 )
 

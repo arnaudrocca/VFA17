@@ -26,11 +26,11 @@ class DragHome extends React.Component {
 
 		this.createDrag()
 
-		const arrowsTimeline = new TimelineMax({
+		this.arrowsTimeline = new TimelineMax({
 			repeat: -1
 		})
 
-		arrowsTimeline
+		this.arrowsTimeline
 			.staggerFromTo('.menu__drag-arrows path', 1, {
 				opacity: 0
 			}, {
@@ -61,6 +61,7 @@ class DragHome extends React.Component {
 	createDrag() {
 
 		const props = this.props
+		const arrowsTimeline = this.arrowsTimeline
 		const hideTimeline = new TimelineLite()
 		const hideTimeline2 = new TimelineLite()
 
@@ -119,6 +120,10 @@ class DragHome extends React.Component {
 						.to('.home__logo-center', .2, {
 							scale: 1, 
 							ease: Back.easeOut
+							// onComplete: () => {
+							// 	self.arrowsTimeline.pause(0, true);
+							// 	self.arrowsTimeline.clear()
+							// }
 						},'-=.7')
 						.to('.home__logo__dots-container', .2, {
 							opacity: 0,

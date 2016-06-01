@@ -23,7 +23,7 @@
 
 		&.is-active
 			background rgba($fucking-blue, .3)
-
+			
 		&:after
 			content ''
 			position absolute
@@ -136,6 +136,28 @@
 
 					&:after, &:before
 						transform translate3d(-50%, -200%,0)
+						
+	.icon-locked
+		position relative
+		
+		&__lock
+			position absolute 
+			top 50%
+			right 0
+			left 0
+			transform translateY(-50%)
+			transform-origin 50% 50%
+			
+	.icon-todo
+		transform-origin 50% 50%
+		animation rotate 6s infinite linear
+
+		&__dots
+			transform-origin 50% 50%
+			animation pulse 2s infinite ease-out
+			
+	.icon-done
+		transform-origin 50% 50%
 
 
 	&__drag-start
@@ -176,10 +198,5 @@
 		background url('../../static/assets/images/home/dot.svg') repeat-x center
 		transform translateY(-50%)
 
-	.icon-todo
-		transform-origin 50% 50%
-		animation rotate 6s infinite linear
 
-		&__dots
-			transform-origin 50% 50%
-			animation pulse 2s infinite ease-out
+			

@@ -17,6 +17,7 @@ class Menu extends React.Component {
 		super()
 
 		this.createDrag = this.createDrag.bind(this)
+		this.menuTimeline = new TimelineLite()
 
 	}
 
@@ -76,8 +77,10 @@ class Menu extends React.Component {
 				}
 			},
 			onPress: () => {
-				TweenMax.to(menu, .3, {opacity: 1, display: 'flex'})
-				TweenMax.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1, delay: .1}, -.03)
+				this.menuTimeline
+					.to(menu, .3, {opacity: 1, display: 'flex'})
+					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03,'-=.15')
+					.staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: '0deg', ease: Quart.easeOut}, -.05,'-=.3')
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
@@ -176,7 +179,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--todo menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconTodo classes="icon-todo" width="75" opacity="0.6" color="#FFF"/>
+							<IconTodo classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -186,7 +189,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconLocked width="75" opacity="0.6" color="#FFF"/>
+							<IconLocked classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -196,7 +199,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconDone width="75" opacity="0.6" color="#FFF"/>
+							<IconDone classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>

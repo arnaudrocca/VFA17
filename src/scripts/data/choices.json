@@ -3,16 +3,16 @@
 		"id": 0,
 		"version": "",
 		"period": "465",
-		"title": "La rivalité entre la famille Plantard et la famille Viandé",
-		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés, la rendant relativement pauvre et peu productive. Il faut trouver un moyen de mettre fin à cette rivalité avant qu’elle ne nuise à Ayaus-les-Bains... En avantageant l’une des deux familles par exemple.",
+		"title": "La guerre des grandes familles",
+		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive. Il faut trouver un moyen de mettre fin à cette guerre avant qu’elle ne commence… Par exemple en déshonorant l’une des familles ?",
 		"introTitle": "Gossip",
-		"introText": "Remplie le texte à trous pour créer un ragot sur l’une des deux familles et ainsi salir sa réputation."
+		"introText": "Lance un ragot sur l’une des deux familles à l'aide des listes déroulantes"
 	},
 	{
 		"id": 1,
 		"version": "A",
 		"period": "1134",
-		"title": "Sauvons la forêt de Vizavona",
+		"title": "Préservons la forêt",
 		"context": "Ne sachant où entreposer leurs déchets, les habitants ont pris la fâcheuse habitude de les déverser dans la forêt : cela fait tâche pour une ville qui se veut proche de la nature. La population était particulièrement crédule en ce milieu de Moyen Âge, il ne sera pas difficile de leur faire croire que la forêt est habitée par une créature surnaturelle afin qu’ils n’y mettent plus les pieds.",
 		"introTitle": "The Voice",
 		"introText": "Active ton micro et parle à voix basse pour imiter un fantôme, ou parle fort pour simuler une divinité."
@@ -21,7 +21,7 @@
 		"id": 2,
 		"version": "A",
 		"period": "1502",
-		"title": "Ayaux-les-Bains doit devenir une destination de rêve",
+		"title": "Nouveaux plans",
 		"context": "Albert Ivi, le maire de la ville voisine, se targue depuis des décennies d’avoir la plus belle cathédrale de la contrée. je veux quelque chose qui attire les touristes à Ayaux-les-Bains, afin de lui rabattre le caquet ! Remplace les plans d’un bâtiment quelconque par ceux d’un nouvel édifice.",
 		"introTitle": "Je suis un architecte !",
 		"introText": "Relie les points pour dessiner une église ou un marché."
@@ -30,7 +30,7 @@
 		"id": 3,
 		"version": "A",
 		"period": "1987",
-		"title": "Sensibilisons la population",
+		"title": "Plus verte la ville",
 		"context": "La vieille usine à charbon pollue énormément, mais ce serait trop coûteux et contraignant de tout changer en 2017. Il faut plutôt faire de la propagande dans les années 80, afin que toute la ville soit déjà passée à des modes de production écologiques au moment où j’arrive au pouvoir.",
 		"introTitle": "Propaganda",
 		"introText": "Sélectionne la tranche d’âge auprès de laquelle tu veux promouvoir l'écologie."
@@ -39,7 +39,7 @@
 		"id": 4,
 		"version": "",
 		"period": "2017",
-		"title": "Rend la machine !",
+		"title": "A moi l'Award !",
 		"context": "Bon, la machine est presque épuisée. Il faut désormais que tu saches comment je l’ai eue : c’est toi-même qui me l’a confiée, il y a 3 jours ! Il faut donc que tu remontes le temps une dernière fois afin de me donner la machine pour boucler la boucle, et que je gagne l’Award. Donne la moi ! MAINTENANT ! Qu’est ce que tu attends, imbécile ?",
 		"introTitle": "Le Dilemme",
 		"introText": "La main du maire d'apprête à saisir la machine... Vous allez le laisser faire, après la façon dont il vous a traité ? Appuyez sur espace si vous voulez l'en empêcher."
