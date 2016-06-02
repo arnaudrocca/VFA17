@@ -11,8 +11,8 @@
 	{
 		"id": 1,
 		"mapId": 7,
-		"x": 45,
-		"y": 80,
+		"x": 35,
+		"y": 70,
 		"answer": "agriculture",
 		"dialog": "Les pâturages ont laissé la place à des champs. § La ville est enfin spécialisée et beaucoup plus compétitive !",
 		"mood": "happy"

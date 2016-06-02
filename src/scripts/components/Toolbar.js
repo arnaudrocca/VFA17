@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import IconAudio from './iconsComponents/icon-audio'
 import IconScreen from './iconsComponents/icon-screen'
+import Audio from '../utils/audio'
 
 class Toolbar extends React.Component {
 
@@ -101,9 +102,11 @@ class Toolbar extends React.Component {
 
         if (this.audioEnable) {
             this.audioEnable = false
+            window.cityAudio.setVolume(0)
             TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .1, fill: 'black'}, .15)
         } else {
             this.audioEnable = true
+            window.cityAudio.setVolume(1)
             TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: 1, fill: 'white'}, -.15)
         }
 
