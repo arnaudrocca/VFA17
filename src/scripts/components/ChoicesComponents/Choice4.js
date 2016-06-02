@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
+import { hashHistory } from 'react-router'
 import ChoiceIntro from '../ChoiceIntro'
 import ChoiceValidate from '../ChoiceValidate'
+import IconHold from '../iconsComponents/icon-hold'
+import {utils} from '../../utils/utils'
 
 class Choice4 extends React.Component {
 
@@ -13,12 +16,20 @@ class Choice4 extends React.Component {
 
 		super()
 
+		this.state = {
+			circlePerimeter: 0,
+			offset: 0
+		}
+
         this.DELTA_TIME = 0
         this.LAST_TIME = Date.now()
 
         this.answer = ''
 		this.end = false
         this.userHandPosition = 0
+        this.holdTime = 2
+        this.holdDuration = 0
+        this.holdIsVisible = false
 
         this.update = this.update.bind(this)
         this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
@@ -31,8 +42,18 @@ class Choice4 extends React.Component {
 	 */
 	componentDidMount() {
 
+		this.holdNode = ReactDOM.findDOMNode(this.refs.hold)
+		this.holdLabelNode = ReactDOM.findDOMNode(this.refs.holdLabel)
+		this.circleNode = document.querySelector('.js-hold-circle')
+
+		this.circlePerimeter = this.circleNode.getAttribute('r') * Math.PI * 2
         this.userHandImgNode = ReactDOM.findDOMNode(this.refs.userHandImg)
         this.mayorHandImgNode = ReactDOM.findDOMNode(this.refs.mayorHandImg)
+
+        this.setState({
+			circlePerimeter: this.circlePerimeter,
+			offset: this.circlePerimeter
+		})
 
         window.addEventListener('keydown', debounce(this.spacebarDownHandler, 100))
 
@@ -55,8 +76,10 @@ class Choice4 extends React.Component {
 	 */
 	clickHandler() {
 
-		TweenMax.ticker.addEventListener('tick', this.update)
-
+		setTimeout(() => {
+			TweenMax.ticker.addEventListener('tick', this.update)
+		}, 1000)
+		
 	}
 
 	/**
@@ -66,16 +89,82 @@ class Choice4 extends React.Component {
 	 */
 	update() {
 
+		
         this.DELTA_TIME = Date.now() - this.LAST_TIME
         this.LAST_TIME = Date.now()
+       
+        this.userHandPosition += 1 
 
-        this.userHandPosition += .1 * this.DELTA_TIME
+        if (this.userHandPosition <= 20) {
 
-        if (this.userHandPosition <= 0) {
-            this.userHandPosition = 0
-        }
-        else if (this.userHandPosition >= 500) {
-            this.userHandPosition = 500
+        	if(!this.holdIsVisible) {
+        		this.holdIsVisible = true
+        		this.holdLabelNode.textContent = 'Garder'
+        		TweenMax.to(this.holdNode, .3,{
+        			display: 'block',
+        			scale: 1
+        		})	
+        	}
+        	
+    		this.holdDuration += this.DELTA_TIME / 1000
+
+	        if(this.userHandPosition <= 0){
+	        	this.userHandPosition = 0
+	        }
+
+	        if(this.holdDuration <= this.holdTime) {
+	        	 TweenMax.set(this.circleNode, {
+					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
+				})
+	        } 
+	        // else {
+	        // 	hashHistory.push('/experiment')
+	        // }
+
+	    } else if (this.userHandPosition >= 105) {
+
+        	if(!this.holdIsVisible) {
+        		this.holdIsVisible = true
+        		this.holdLabelNode.textContent = 'Rendre'
+        		TweenMax.to(this.holdNode, .3,{
+        			display: 'block',
+        			scale: 1
+        		})	
+        	}
+
+        	this.holdDuration += this.DELTA_TIME / 1000
+
+            if(this.userHandPosition >= 165){
+            	this.userHandPosition = 165
+            }
+
+            if(this.holdDuration <= this.holdTime) {
+				TweenMax.set(this.circleNode, {
+					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
+				})
+            } else {
+	        	hashHistory.push('/experiment')
+	        }
+    
+        } else {
+
+        	if(this.holdIsVisible) {
+        		this.holdDuration = 0
+        		this.holdLabelNode.textContent = ''
+        		TweenMax.to(this.holdNode, .3,{
+        			display: 'none',
+        			scale: 0,
+        			onComplete: () => {
+        				TweenMax.set(this.circleNode, {
+							strokeDashoffset: this.circlePerimeter
+						})
+        			}
+        		})	
+	        	 
+
+	        	this.holdIsVisible = false
+        	}
+      
         }
 
         TweenMax.set(this.userHandImgNode, {x: this.userHandPosition})
@@ -106,13 +195,17 @@ class Choice4 extends React.Component {
 					<div className="terminator">
                         <div className="terminator__container">
                             <div ref="userHandImg" className="terminator__image terminator__image--user">
-                                <img src="http://lorempicsum.com/simpsons/245/245/1"/>
+                                <img height="180" src="assets/images/interactions/hand-user.svg"/>
                             </div>
                             <div ref="mayorHandImg" className="terminator__image terminator__image--mayor">
-                                <img src="http://lorempicsum.com/simpsons/245/245/2"/>
+                                <img height="100" src="assets/images/interactions/hand-mayor.svg"/>
                             </div>
                         </div>
-                        <div className="terminator__spacebar">Appuie sur espace</div>
+                        <div ref="hold" className="terminator__hold">
+                        	<IconHold classes="terminator__hold__icon" offset={this.state.offset} circlePerimeter={this.state.circlePerimeter} width="100%" />
+                        	<span ref="holdLabel" className="terminator__hold__label"></span>
+                        </div>
+                        <div className="terminator__spacebar">Garder la machine</div>
 					</div>
 				</div>
 			</div>
