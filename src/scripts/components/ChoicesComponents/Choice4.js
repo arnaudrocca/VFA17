@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router'
 import ChoiceIntro from '../ChoiceIntro'
 import ChoiceValidate from '../ChoiceValidate'
 import IconHold from '../iconsComponents/icon-hold'
-import {utils} from '../../utils/utils'
+import { utils } from '../../utils/utils'
 
 class Choice4 extends React.Component {
 
@@ -79,7 +79,7 @@ class Choice4 extends React.Component {
 		setTimeout(() => {
 			TweenMax.ticker.addEventListener('tick', this.update)
 		}, 1000)
-		
+
 	}
 
 	/**
@@ -89,69 +89,68 @@ class Choice4 extends React.Component {
 	 */
 	update() {
 
-		
+
         this.DELTA_TIME = Date.now() - this.LAST_TIME
         this.LAST_TIME = Date.now()
-       
-        this.userHandPosition += 1 
+
+        this.userHandPosition += 1
 
         if (this.userHandPosition <= 20) {
 
-        	if(!this.holdIsVisible) {
+        	if (!this.holdIsVisible) {
         		this.holdIsVisible = true
         		this.holdLabelNode.textContent = 'Garder'
         		TweenMax.to(this.holdNode, .3,{
         			display: 'block',
         			scale: 1
-        		})	
+        		})
         	}
-        	
+
     		this.holdDuration += this.DELTA_TIME / 1000
 
-	        if(this.userHandPosition <= 0){
+	        if (this.userHandPosition <= 0) {
 	        	this.userHandPosition = 0
 	        }
 
-	        if(this.holdDuration <= this.holdTime) {
+	        if (this.holdDuration <= this.holdTime) {
 	        	 TweenMax.set(this.circleNode, {
 					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
 				})
-	        } 
+	        }
 	        // else {
 	        // 	hashHistory.push('/experiment')
 	        // }
 
-	    } else if (this.userHandPosition >= 105) {
-
-        	if(!this.holdIsVisible) {
+	    }
+		else if (this.userHandPosition >= 105) {
+        	if (!this.holdIsVisible) {
         		this.holdIsVisible = true
         		this.holdLabelNode.textContent = 'Rendre'
-        		TweenMax.to(this.holdNode, .3,{
+        		TweenMax.to(this.holdNode, .3, {
         			display: 'block',
         			scale: 1
-        		})	
+        		})
         	}
 
         	this.holdDuration += this.DELTA_TIME / 1000
 
-            if(this.userHandPosition >= 165){
+            if (this.userHandPosition >= 165) {
             	this.userHandPosition = 165
             }
 
-            if(this.holdDuration <= this.holdTime) {
+            if (this.holdDuration <= this.holdTime) {
 				TweenMax.set(this.circleNode, {
 					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
 				})
             } else {
 	        	hashHistory.push('/experiment')
 	        }
-    
-        } else {
-
-        	if(this.holdIsVisible) {
+        }
+		else {
+        	if (this.holdIsVisible) {
         		this.holdDuration = 0
         		this.holdLabelNode.textContent = ''
-        		TweenMax.to(this.holdNode, .3,{
+        		TweenMax.to(this.holdNode, .3, {
         			display: 'none',
         			scale: 0,
         			onComplete: () => {
@@ -159,12 +158,9 @@ class Choice4 extends React.Component {
 							strokeDashoffset: this.circlePerimeter
 						})
         			}
-        		})	
-	        	 
-
+        		})
 	        	this.holdIsVisible = false
         	}
-      
         }
 
         TweenMax.set(this.userHandImgNode, {x: this.userHandPosition})
