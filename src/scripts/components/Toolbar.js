@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import IconAudio from './iconsComponents/icon-audio'
 import IconScreen from './iconsComponents/icon-screen'
-import Audio from '../utils/audio'
 
 class Toolbar extends React.Component {
 
@@ -81,8 +80,9 @@ class Toolbar extends React.Component {
      */
     toggleAbout() {
 
-        const aboutTimeline = new TimelineLite()
+        window.cityAudio.setFilter(true)
 
+        const aboutTimeline = new TimelineLite()
         aboutTimeline
             .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
             .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')

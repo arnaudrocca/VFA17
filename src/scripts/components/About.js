@@ -29,6 +29,8 @@ class About extends React.Component {
 	 */
     clickHandler() {
 
+		window.cityAudio.setFilter(false)
+
         const aboutTimeline = new TimelineLite()
         aboutTimeline
             .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})

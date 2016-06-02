@@ -150,7 +150,7 @@ class Choice extends React.Component {
 			<div className="choice">
 				<div className="choice__aside" ref="choiceAside">
 					<button className="btn__return" type="button" onClick={this.returnToMap.bind(this)}>
-						<span className="btn__return__label-container"><span className="btn__return__label">Retour à la ville</span></span>						
+						<span className="btn__return__label-container"><span className="btn__return__label">Retour à la ville</span></span>
 						<svg x="0px" y="0px" viewBox="0 0 166 48">
 							<g className="btn__return__border">
 								<g>
@@ -158,7 +158,7 @@ class Choice extends React.Component {
 								</g>
 							</g>
 							<g className="btn__return__fill">
-								<polygon fill="#FF5951" points="147.7,44 4,44 4,4 162,4 162,29.7 	"/>
+								<polygon fill="#495495" points="147.7,44 4,44 4,4 162,4 162,29.7"/>
 							</g>
 						</svg>
 					</button>

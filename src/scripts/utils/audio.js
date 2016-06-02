@@ -13,7 +13,8 @@ class Audio {
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
         this.volume = 0
         this.volumeMin = .3
-        this.initFilterFrequency = 2048
+        this.filterDisableFrequency = 2048
+        this.filterEnableFrequency = 512
 
     }
 
@@ -54,7 +55,7 @@ class Audio {
 
                 // Filter params
                 this.filter.type = 'lowpass'
-                this.filter.frequency.value = this.initFilterFrequency
+                this.filter.frequency.value = this.filterDisableFrequency
 
                 // Play the sound
                 this.audioSource.start(this.audioContext.currentTime)
@@ -90,11 +91,16 @@ class Audio {
     /**
      * @method
      * @name setFilter
-     * @param {number} frequency
+     * @param {boolean} enable
      */
-    setFilter(frequency = this.initFilterFrequency) {
+    setFilter(enable) {
 
-        this.filter.frequency.value = frequency
+        if (enable == true) {
+            this.filter.frequency.value = this.filterEnableFrequency
+        } else {
+            this.filter.frequency.value = this.filterDisableFrequency
+        }
+
 
     }
 

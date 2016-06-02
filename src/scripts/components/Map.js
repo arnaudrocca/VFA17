@@ -35,13 +35,15 @@ class Map extends React.Component {
 
 		this.mapContainer = ReactDOM.findDOMNode(this.refs.mapContainer)
 		this.map = ReactDOM.findDOMNode(this.refs.map)
+		this.mapItems = ReactDOM.findDOMNode(this.refs.mapItems)
 
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: '50% 50%'})
-		TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
+		TweenMax.to(this.mapItems, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
 
         this.createDrag()
 
 		window.cityAudio.setVolume(this.volumeMin)
+		window.cityAudio.setFilter(false)
 
         window.addEventListener('resize', debounce(this.createDrag, 350))
 
@@ -98,7 +100,7 @@ class Map extends React.Component {
 	 */
 	componentDidUpdate() {
 
-        TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
+		TweenMax.to(this.mapItems, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
 
 	}
 
@@ -149,7 +151,7 @@ class Map extends React.Component {
 			<div className="mapContainer" ref="mapContainer" onWheel={this.scaleHandler.bind(this)}>
 				<div className="map" ref="map">
 					<img className="map__base" src="assets/images/mapItems/mapItemBase.svg"/>
-					<ReactCSSTransitionGroup className="mapItems" transitionName="mapItems" component="div"
+					<ReactCSSTransitionGroup className="mapItems" ref="mapItems" transitionName="mapItems" component="div"
 						transitionEnterTimeout={2500} transitionLeaveTimeout={2500}>
 						{mapItems}
 					</ReactCSSTransitionGroup>

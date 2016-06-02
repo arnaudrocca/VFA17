@@ -17,7 +17,6 @@ class Menu extends React.Component {
 		super()
 
 		this.createDrag = this.createDrag.bind(this)
-		this.menuTimeline = new TimelineLite()
 
 	}
 
@@ -77,12 +76,13 @@ class Menu extends React.Component {
 				}
 			},
 			onPress: () => {
-				this.menuTimeline
+				const menuTimeline = new TimelineLite()
+				menuTimeline
 					.to(menu, .3, {opacity: 1, display: 'flex'})
 					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
 					.staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
 
-				window.cityAudio.setFilter(512)
+				window.cityAudio.setFilter(true)
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
@@ -103,7 +103,6 @@ class Menu extends React.Component {
 				}
 			},
 			onRelease: function(endValue) {
-				window.cityAudio.setFilter()
 				menuBtn.classList.remove('is-active')
 				for (var i = slices.length - 1; i >= 0; i--) {
 					slices[i].classList.remove('is-active')
@@ -130,6 +129,7 @@ class Menu extends React.Component {
 							break
 
 						case 'locked':
+							window.cityAudio.setFilter(false)
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
 							TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
@@ -139,6 +139,7 @@ class Menu extends React.Component {
 							break
 
 						case 'done':
+							window.cityAudio.setFilter(false)
 							TweenMax.set(menuBtn, {clearProps: 'x'})
 							TweenMax.set(menuDragLine, {width: 0})
 							TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
@@ -157,6 +158,7 @@ class Menu extends React.Component {
 					props.mayorTalks(dialog, mood)
 
 				} else {
+					window.cityAudio.setFilter(false)
 					TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
 				}
 			}

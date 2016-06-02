@@ -1,4 +1,5 @@
 import React from 'react'
+import IconHotpoint from './iconsComponents/icon-hotpoint'
 import hotpointsData from '../data/hotpoints.json'
 
 class Hotpoint extends React.Component {
@@ -23,7 +24,7 @@ class Hotpoint extends React.Component {
 		})
 
 		if (this.props.hotpoint.answers.length > 0) {
-			this.hotpoint = <span></span>
+			this.hotpoint = <IconHotpoint/>
 			this.position = {
 				left: `${this.data.x}%`,
 				top: `${this.data.y}%`

@@ -9,16 +9,19 @@
     .hotpoint
         position absolute
         cursor pointer
-        width 2vw
-        height 2vw
-        transform-origin 50% 100%
-        animation hotpoint 2s infinite
+        width 2.5vw
+        height 2.5vw
+        transform-origin 50% 150%
+        transition transform .3s ease-out
 
-        span
-            display block
-            width 100%
-            height 100%
-            background-color $white
-            border-radius 50% 50% 0 50%
-            transform-origin 50% 50%
-            transform rotate(45deg)
+        &--shape, &--i
+            transition fill .3s ease-out
+
+        &:hover
+            transform scale(1.2)
+
+            .hotpoint--shape
+                fill $red
+
+            .hotpoint--i
+                fill $white

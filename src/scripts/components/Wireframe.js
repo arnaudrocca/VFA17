@@ -8,7 +8,7 @@ import IconBorderLeft from './iconsComponents/icon-border-left'
 import IconDragHome from './iconsComponents/icon-drag-home'
 import IconCorner from './iconsComponents/icon-corner'
 import IconFlowerSmall from './iconsComponents/icon-flower-small'
-
+import Audio from '../utils/audio'
 
 class Wireframe extends React.Component {
 
@@ -16,6 +16,9 @@ class Wireframe extends React.Component {
      * @constructor
      */
 	constructor() {
+
+		window.cityAudio = new Audio()
+		window.cityAudio.loadSound('assets/audio/ambiance_city.mp3')
 
 		super()
 
