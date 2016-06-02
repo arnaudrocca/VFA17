@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { debounce } from 'lodash'
 import MapComponent from './MapComponent'
 import HotpointsContainer from '../containers/HotpointsContainer'
+import { utils } from '../utils/utils'
 
 class Map extends React.Component {
 
@@ -17,6 +18,7 @@ class Map extends React.Component {
 		this.scale = this.initScale = this.scaleMin = .7
 		this.scaleMax = 3
 		this.scaleStep = .1
+		this.volumeMin = window.cityAudio.volumeMin
 
         this.createDrag = this.createDrag.bind(this)
 
@@ -39,6 +41,8 @@ class Map extends React.Component {
 
         this.createDrag()
 
+		window.cityAudio.setVolume(this.volumeMin)
+
         window.addEventListener('resize', debounce(this.createDrag, 350))
 
 	}
@@ -48,6 +52,8 @@ class Map extends React.Component {
 	 * @name componentWillUnmount
 	 */
 	componentWillUnmount() {
+
+		window.cityAudio.setVolume(0)
 
 		window.removeEventListener('resize', this.createDrag)
 
@@ -94,7 +100,6 @@ class Map extends React.Component {
 
         TweenMax.to(this.map, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
 
-
 	}
 
 
@@ -121,6 +126,9 @@ class Map extends React.Component {
 		const originY = 100 * event.clientY / this.windowHeight
 
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
+
+		const volume = Math.round(utils.normalize(this.scale, this.scaleMin, this.scaleMax, this.volumeMin, 1) * 100) / 100
+		window.cityAudio.setVolume(volume)
 
 	}
 

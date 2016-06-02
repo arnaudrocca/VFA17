@@ -81,6 +81,8 @@ class Menu extends React.Component {
 					.to(menu, .3, {opacity: 1, display: 'flex'})
 					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
 					.staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
+
+				window.cityAudio.setFilter(512)
 				menuBtn.classList.add('is-active')
 			},
 			onDrag: function() {
@@ -101,6 +103,7 @@ class Menu extends React.Component {
 				}
 			},
 			onRelease: function(endValue) {
+				window.cityAudio.setFilter()
 				menuBtn.classList.remove('is-active')
 				for (var i = slices.length - 1; i >= 0; i--) {
 					slices[i].classList.remove('is-active')
@@ -116,16 +119,11 @@ class Menu extends React.Component {
 
 					switch (selectedItem.state) {
 						case 'todo':
-							const todoTimeline = new TimelineLite()
-							todoTimeline
-								.to('.mapContainer', .3, {scale: .7, transformOrigin: '50% 50%', ease: Expo.easeOut})
-								.to('.map', .3, {x: 0, y: 0, ease: Expo.easeOut}, '-=.3')
-								.to('.experiment', .3, {
-									opacity: 0,
-									onComplete: () => {
-										hashHistory.push(`/choice/${selectedId}`)
-									}
-								}, '+=.3')
+							TweenMax.to('.experiment', .3, {opacity: 0, delay: .3,
+								onComplete: () => {
+									hashHistory.push(`/choice/${selectedId}`)
+								}
+							})
 
 							dialog = ''
 							mood = 'neutral'

@@ -7,8 +7,13 @@ class Audio {
 
         const Constructor = window.AudioContext || window.webkitAudioContext
         this.audioContext = new Constructor()
+        this.gainNode = this.audioContext.createGain()
+        this.filter = this.audioContext.createBiquadFilter();
         this.analyser = this.audioContext.createAnalyser()
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
+        this.volume = 0
+        this.volumeMin = .3
+        this.initFilterFrequency = 2048
 
     }
 
@@ -16,6 +21,7 @@ class Audio {
 	 * @method
 	 * @name loadSound
 	 * @description Load the sound
+     * @param {string} soundPath
 	 */
     loadSound(soundPath) {
 
@@ -38,15 +44,23 @@ class Audio {
                 this.audioSource.buffer = this.audioBuffer
 
                 // Connect the audio source to context's output
-                this.audioSource.connect(this.analyser)
-                this.analyser.connect(this.audioContext.destination)
+                this.audioSource.connect(this.filter)
+                this.filter.connect(this.gainNode)
+                this.gainNode.connect(this.audioContext.destination)
 
                 // Audio source params
                 this.audioSource.crossOrigin = 'anonymous'
                 this.audioSource.loop = true
 
+                // Filter params
+                this.filter.type = 'lowpass'
+                this.filter.frequency.value = this.initFilterFrequency
+
                 // Play the sound
                 this.audioSource.start(this.audioContext.currentTime)
+
+                // Mute the sound
+                this.gainNode.gain.value = this.volume
 
             }, (error) => {
 
@@ -58,6 +72,29 @@ class Audio {
         }
 
         request.send()
+
+    }
+
+    /**
+     * @method
+     * @name setVolume
+     * @param {number} volume
+     */
+    setVolume(volume) {
+
+        this.volume = volume
+        this.gainNode.gain.value = this.volume
+
+    }
+
+    /**
+     * @method
+     * @name setFilter
+     * @param {number} frequency
+     */
+    setFilter(frequency = this.initFilterFrequency) {
+
+        this.filter.frequency.value = frequency
 
     }
 

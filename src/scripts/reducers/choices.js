@@ -38,7 +38,7 @@ const choices = (state = initialChoices, action) => {
 						answer: action.choice
 					})
 				}
-				else if (index == parseInt(action.choiceId) + 1) {
+				else if (index == parseInt(action.choiceId, 10) + 1) {
 					return Object.assign({}, choice, {
 						version: action.nextChoiceVersion
 					})

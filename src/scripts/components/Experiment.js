@@ -3,6 +3,7 @@ import ScoreContainer from '../containers/ScoreContainer'
 import MenuContainer from '../containers/MenuContainer'
 import MapContainer from '../containers/MapContainer'
 import MayorContainer from '../containers/MayorContainer'
+import Audio from '../utils/audio'
 
 class Experiment extends React.Component {
 
@@ -12,6 +13,9 @@ class Experiment extends React.Component {
 	constructor() {
 
 		super()
+
+		window.cityAudio = new Audio()
+		window.cityAudio.loadSound('assets/audio/ambiance_city.wav')
 
 	}
 
