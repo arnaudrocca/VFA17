@@ -67,15 +67,15 @@ class Map extends React.Component {
         		y:' -100px'
         	},'-=3')
         	.to('.experiment', .3, {
-        		opacity: 0, 
+        		opacity: 0,
         		display: 'none'
         	})
-        	
+
 	        setTimeout(()=> {
 	        	this.endTimeline.play()
 	        },1000)
         }
-        	
+
 	}
 
     /**

@@ -84,7 +84,6 @@ class Toolbar extends React.Component {
 
         window.cityAudio.setFilter(true)
 
-        
         this.aboutTimeline
             .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
             .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')

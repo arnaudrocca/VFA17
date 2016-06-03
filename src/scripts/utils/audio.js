@@ -84,8 +84,8 @@ class Audio {
      */
     setVolume(volume) {
 
-        this.volume = volume
-        this.gainNode.gain.value = this.volume
+        TweenMax.to(this, 1, {volume: volume})
+        TweenMax.to(this.gainNode.gain, 1, {value: volume})
 
     }
 
@@ -97,9 +97,9 @@ class Audio {
     setFilter(enable) {
 
         if (enable == true) {
-            this.filter.frequency.value = this.filterEnableFrequency
+            TweenMax.to(this.filter.frequency, 1, {value: this.filterEnableFrequency})
         } else {
-            this.filter.frequency.value = this.filterDisableFrequency
+            TweenMax.to(this.filter.frequency, 1, {value: this.filterDisableFrequency})
         }
 
 
