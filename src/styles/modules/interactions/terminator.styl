@@ -36,17 +36,36 @@
 
     &__image
         position absolute
-         
+        
+        // &__over
+        //     position absolute
+        //     top 0
+        //     left 0
+        //     z-index 3 
+                 
         &--user
+            z-index 2
             top calc(50% - 90px)
             left -26rem
             transition transform .3s $easeOutExpo
             
-        &--mayor
-            z-index 2
-            top 50%
+        &--mayor-under
+            z-index 1
+            top calc(50% - 50px)
             right -6rem
+            height 10rem
             transform translateY(-50%)
+            transform-origin 100% 50%
+            // animation grab .6s ease-out infinite
+            
+        &--mayor-over
+            z-index 3
+            top calc(50% - 50px)
+            right -6rem
+            height 10rem
+            transform translateY(-50%)
+            transform-origin 100% 50%
+            // animation grab .6s ease-out infinite
             
     &__hold
         position absolute 

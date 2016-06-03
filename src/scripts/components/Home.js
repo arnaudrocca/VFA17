@@ -14,6 +14,8 @@ class Home extends React.Component {
 
 		super()
 
+		this.videosTimeline = new TimelineLite()
+
 	}
 
 	/**
@@ -33,9 +35,7 @@ class Home extends React.Component {
 	 */
 	showVideo() {
 
-		const videosTimeline = new TimelineLite()
-
-		videosTimeline
+		this.videosTimeline
 			.to('.home__video--intro', .3, {
 				display: 'none',
 				opacity: 0
@@ -55,11 +55,6 @@ class Home extends React.Component {
 		hashHistory.push('/experiment')
 
 	}
-
-	// <div className="home__video-container">
-	// 				<iframe ref="video" className="home__video home__video--main" src="https://www.youtube.com/embed/Ep_blZhvI2A?showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&:amp;nologo=1&amp;controls=0" frameborder="0" allowfullscreen></iframe>
-	// 			</div>
-	//<video className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" autoPlay loop muted></video>
 
 	/**
      * @method

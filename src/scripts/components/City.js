@@ -12,6 +12,8 @@ class City extends React.Component {
 
 		super()
 
+		this.introTimeline = new TimelineLite()
+
 	}
 
 	/**
@@ -22,9 +24,8 @@ class City extends React.Component {
 
 		if (window.previousLocation == '/video') {
 
-			const introTimeline = new TimelineLite()
-
-			introTimeline.from('.city__panel', 0.3, {
+			this.introTimeline
+			.from('.city__panel', 0.3, {
 				'width': 0
 			})
 			.from('.city__panel svg, .city__panel span', 0.3, {

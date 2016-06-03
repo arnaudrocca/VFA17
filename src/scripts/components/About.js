@@ -10,6 +10,8 @@ class About extends React.Component {
 
 		super()
 
+		this.aboutTimeline = new TimelineLite()
+
 	}
 
     /**
@@ -31,8 +33,7 @@ class About extends React.Component {
 
 		window.cityAudio.setFilter(false)
 
-        const aboutTimeline = new TimelineLite()
-        aboutTimeline
+        this.aboutTimeline
             .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})
 			.to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
 

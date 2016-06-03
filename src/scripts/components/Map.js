@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { debounce } from 'lodash'
+import { hashHistory } from 'react-router'
 import MapComponent from './MapComponent'
 import HotpointsContainer from '../containers/HotpointsContainer'
 import { utils } from '../utils/utils'
@@ -21,6 +22,14 @@ class Map extends React.Component {
 		this.volumeMin = window.cityAudio.volumeMin
 
         this.createDrag = this.createDrag.bind(this)
+
+        this.endTimeline = new TimelineLite({
+        	paused: true,
+        	onComplete: () => {
+    			hashHistory.push('/')
+    			console.log('loooool')
+    		}
+        })
 
 	}
 
@@ -49,6 +58,24 @@ class Map extends React.Component {
 
         window.addEventListener('resize', debounce(this.createDrag, 350))
 
+        if(window.isEnding){
+        	 this.endTimeline
+        	.to('.map__shadow', 3, {
+        		y:' 100px'
+        	})
+        	.to('.map__base, .mapItems, .hotpoints', 3, {
+        		y:' -100px'
+        	},'-=3')
+        	.to('.experiment', .3, {
+        		opacity: 0, 
+        		display: 'none'
+        	})
+        	
+	        setTimeout(()=> {
+	        	this.endTimeline.play()
+	        },1000)
+        }
+        	
 	}
 
     /**
@@ -157,6 +184,7 @@ class Map extends React.Component {
 			<div className="mapContainer" ref="mapContainer" onWheel={this.scaleHandler.bind(this)}>
 				<div className="map" ref="map">
 					<img className="map__base" src="assets/images/mapItems/mapItemBase.svg"/>
+					<img className="map__shadow" src="assets/images/mapItems/mapItemShadow.svg"/>
 					<ReactCSSTransitionGroup className="mapItems" ref="mapItems" transitionName="mapItems" component="div"
 						transitionEnterTimeout={2500} transitionLeaveTimeout={2500}>
 						{mapItems}

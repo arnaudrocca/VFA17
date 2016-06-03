@@ -60,6 +60,7 @@ class Menu extends React.Component {
 		const windowWidth = window.innerWidth
 		const sideSize = 20
 		const columnWidth = (windowWidth - (sideSize * 2)) / 6
+		const menuTimeline = new TimelineLite()
 
 		Draggable.create(menuBtn, {
 			type: 'x',
@@ -76,7 +77,6 @@ class Menu extends React.Component {
 				}
 			},
 			onPress: () => {
-				const menuTimeline = new TimelineLite()
 				menuTimeline
 					.to(menu, .3, {opacity: 1, display: 'flex'})
 					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
