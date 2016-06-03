@@ -108,7 +108,7 @@ class Toolbar extends React.Component {
                 window.cityAudio.volumeMask = window.cityAudio.volume
             }
             window.cityAudio.setVolume(0)
-            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .1, fill: 'black'}, .15)
+            TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .15, fill: 'black'}, .15)
         } else {
             this.audioEnable = true
             window.cityAudio.enableAudio = true
@@ -134,7 +134,7 @@ class Toolbar extends React.Component {
             else if (document.documentElement.mozRequestFullScreen) {
                 document.documentElement.mozRequestFullScreen()
             }
-            TweenMax.set('.icon-screen-path', {rotation: '180deg', transformOrigin: '50% 50%', delay: .3})
+            TweenMax.to('.icon-screen-path', 1, {scale: -1, transformOrigin: '50% 50%'})
             this.fullScreenToggled = true
         } else {
             if (document.cancelFullScreen) {
@@ -146,7 +146,7 @@ class Toolbar extends React.Component {
             else if (document.mozCancelFullScreen) {
                 document.mozCancelFullScreen()
             }
-            TweenMax.set('.icon-screen-path', {rotation: 0, transformOrigin: '50% 50%', delay: .3})
+            TweenMax.to('.icon-screen-path', 1, {scale: 1, transformOrigin: '50% 50%'})
             this.fullScreenToggled = false
         }
 

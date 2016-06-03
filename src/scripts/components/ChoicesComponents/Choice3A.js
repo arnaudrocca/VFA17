@@ -89,6 +89,7 @@ class Choice3A extends React.Component {
 			zIndex: 1000,
 			zIndexBoost: false,
 			onPress: () => {
+				document.body.style.cursor = 'ew-resize'
 				TweenMax.to('.btn__main--hidden' , 0.3, {opacity: 1, display: 'block'})
 			},
 			onDrag: throttle(function() {
@@ -118,7 +119,10 @@ class Choice3A extends React.Component {
 				}
 
 				lastId = selectedId
-			}, 350)
+			}, 350),
+			onRelease: () => {
+				document.body.style.cursor = 'default'
+			}
 		})
 
 	}

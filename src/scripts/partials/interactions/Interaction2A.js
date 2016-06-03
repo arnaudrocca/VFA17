@@ -22,6 +22,7 @@ class Interaction2A extends Graphics {
         this.top = (this.sceneHeight - (this.gridSize * 10)) / 2
 
         this.nodeRadius = 5
+        this.onStart = false
 
         this.scene = new Scene(this.sceneWidth, this.sceneHeight)
         this.scene.add(this)
@@ -51,7 +52,6 @@ class Interaction2A extends Graphics {
 	 */
     init() {
 
-        this.dragging = false
         this.currentId = 0
         this.end = false
         this.answer = ''
@@ -300,6 +300,8 @@ class Interaction2A extends Graphics {
     */
     onMouseDown() {
 
+        this.isMouseDown = true
+
         // Start a new drag
         if (Math.abs(this.mouseX - this.nodesChurch[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesChurch[0].y) < this.nodeRadius) {
             this.currentRoad = this.nodesChurch
@@ -321,6 +323,7 @@ class Interaction2A extends Graphics {
     */
     onMouseUp() {
 
+        this.isMouseDown = false
         this.dragging = false
 
         if (!this.end) {
@@ -353,6 +356,12 @@ class Interaction2A extends Graphics {
             this.drag()
         }
 
+        if ((Math.abs(this.mouseX - this.nodesChurch[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesChurch[0].y) < this.nodeRadius) || (Math.abs(this.mouseX - this.nodesMarket[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesMarket[0].y) < this.nodeRadius)) {
+            this.onStart = true
+        } else {
+            this.onStart = false
+        }
+
     }
 
     /**
@@ -361,6 +370,17 @@ class Interaction2A extends Graphics {
     * @description Triggered on every TweenMax tick
     */
     update() {
+
+        // Cursor style
+        if (this.onStart && !this.dragging) {
+            document.body.style.cursor = 'pointer'
+        }
+        else if (this.dragging) {
+            document.body.style.cursor = 'move'
+        }
+        else {
+            document.body.style.cursor = 'default'
+        }
 
         this.scene.render()
 

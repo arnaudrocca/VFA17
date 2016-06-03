@@ -11,6 +11,7 @@
 	bottom 0
 	left 0
 	background rgba($fucking-blue, 0.75)
+	cursor w-resize
 	opacity 0
 	z-index 10
 	transition opacity .3s ease-out
@@ -23,7 +24,7 @@
 
 		&.is-active
 			background rgba($fucking-blue, .3)
-			
+
 		&:after
 			content ''
 			position absolute
@@ -88,7 +89,7 @@
 		background $red
 		border-radius 50%
 		overflow visible
-		cursor w-resize !important
+		cursor pointer !important
 		transition transform .8s $easeOutExpo, box-shadow .15s ease-out
 		box-shadow 0 3px 6px rgba(0,0,0,0.3)
 
@@ -127,7 +128,9 @@
 					left calc(50% + 0.6rem)
 
 		&.is-active
+			cursor w-resize !important
 			box-shadow 0 0 0 rgba(0,0,0,0.4)
+
 			.menu__btn__icon
 				transform rotate(90deg) translate3d(0,0,0)
 
@@ -136,18 +139,18 @@
 
 					&:after, &:before
 						transform translate3d(-50%, -200%,0)
-						
+
 	.icon-locked
 		position relative
-		
+
 		&__lock
-			position absolute 
+			position absolute
 			top 50%
 			right 0
 			left 0
 			transform translateY(-50%)
 			transform-origin 50% 50%
-			
+
 	.icon-todo
 		transform-origin 50% 50%
 		animation rotate 6s infinite linear
@@ -155,7 +158,7 @@
 		&__dots
 			transform-origin 50% 50%
 			animation pulse 2s infinite ease-out
-			
+
 	.icon-done
 		transform-origin 50% 50%
 
@@ -197,6 +200,3 @@
 		width 27vw
 		background url('../../static/assets/images/home/dot.svg') repeat-x center
 		transform translateY(-50%)
-
-
-			

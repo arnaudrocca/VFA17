@@ -52,27 +52,29 @@ class Map extends React.Component {
 
 		if (window.cityAudio.enableAudio) {
 			window.cityAudio.setVolume(window.cityAudio.volumeMask)
+		} else {
+			window.cityAudio.setVolume(0)
 		}
 		window.cityAudio.setFilter(false)
 
         window.addEventListener('resize', debounce(this.createDrag, 350))
 
-        if(window.isEnding){
+        if (window.isEnding) {
         	 this.endTimeline
         	.to('.map__shadow', 3, {
         		y:' 100px'
         	})
         	.to('.map__base, .mapItems, .hotpoints', 3, {
         		y:' -100px'
-        	},'-=3')
+        	}, '-=3')
         	.to('.experiment', .3, {
         		opacity: 0,
         		display: 'none'
         	})
 
-	        setTimeout(()=> {
+	        setTimeout(() => {
 	        	this.endTimeline.play()
-	        },1000)
+	        }, 1000)
         }
 
 	}
@@ -132,7 +134,6 @@ class Map extends React.Component {
 
 	}
 
-
 	/**
 	 * @method
 	 * @name scaleHandler
@@ -158,7 +159,7 @@ class Map extends React.Component {
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
 
 		const volume = Math.round(utils.normalize(this.scale, this.scaleMin, this.scaleMax, window.cityAudio.volumeMin, 1) * 100) / 100
-		if (window.cityAudio.volume > 0 && window.cityAudio.enableAudio) {
+		if (window.cityAudio.enableAudio) {
 			window.cityAudio.setVolume(volume)
 		} else {
 			window.cityAudio.volumeMask = volume
