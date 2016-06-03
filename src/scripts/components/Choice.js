@@ -15,6 +15,8 @@ class Choice extends React.Component {
 
 		super()
 
+		this.introTimeline = new TimelineLite()
+
 	}
 
 	/**
@@ -31,32 +33,31 @@ class Choice extends React.Component {
 			this.interactionWidth = '66%'
 		}
 
-		const introTimeline = new TimelineLite()
-
-		introTimeline.fromTo('.choice__aside', 1, {
-			width: 20
-		}, {
-			width: this.asideWidth,
-			ease: Expo.easeOut
-		})
-		introTimeline.fromTo('.choice__interaction', 1.2, {
-			width: 0
-		}, {
-			width: this.interactionWidth,
-			ease: Expo.easeOut
-		}, '-=0.8')
-		introTimeline.fromTo('.choice__interaction-background', 0.8, {
-			x: -10,
-			scale: 1.1
-		}, {
-			x: 0,
-			scale: 1,
-			ease: Expo.easeOut
-		}, '-=1')
-		.from('.choice__description', 0.3, {
-			x: -20,
-			opacity: 0
-		}, '-=0.9')
+		this.introTimeline
+			.fromTo('.choice__aside', 1, {
+				width: 20
+			}, {
+				width: this.asideWidth,
+				ease: Expo.easeOut
+			})
+			.fromTo('.choice__interaction', 1.2, {
+				width: 0
+			}, {
+				width: this.interactionWidth,
+				ease: Expo.easeOut
+			}, '-=0.8')
+			.fromTo('.choice__interaction-background', 0.8, {
+				x: -10,
+				scale: 1.1
+			}, {
+				x: 0,
+				scale: 1,
+				ease: Expo.easeOut
+			}, '-=1')
+			.from('.choice__description', 0.3, {
+				x: -20,
+				opacity: 0
+			}, '-=0.9')
 
 		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
 		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
@@ -108,6 +109,7 @@ class Choice extends React.Component {
 
 		//Identifies the correct interaction
 		const componentName = 'Choice' + this.choiceId + this.choiceVersion
+		//const componentName = 'Choice4'
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {

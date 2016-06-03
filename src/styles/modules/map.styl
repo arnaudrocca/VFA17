@@ -16,6 +16,20 @@
 		height auto
 		overflow visible
 		transition transform 1s $easeOutExpo
-
+		
 		&__base
-			filter drop-shadow(rgba($fucking-blue, .2) 0px 50px 10px)
+			position relative
+			z-index 2 
+
+		&__shadow
+			position absolute
+			right 0 
+			bottom -3rem
+			left 0
+			width 97%
+			margin 0 auto
+			//filter drop-shadow(rgba(#3D55AB, .2) 0px 50px 0px)
+				
+	.mapItems
+		position absolute
+		z-index 3

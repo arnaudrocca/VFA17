@@ -13,6 +13,10 @@ class DragHome extends React.Component {
 		super()
 
 		this.createDrag = this.createDrag.bind(this)
+		
+		this.arrowsTimeline = new TimelineMax({
+			repeat: -1
+		})
 
 		window.addEventListener('resize', debounce(this.createDrag, 350))
 
@@ -25,10 +29,6 @@ class DragHome extends React.Component {
 	componentDidMount() {
 
 		this.createDrag()
-
-		this.arrowsTimeline = new TimelineMax({
-			repeat: -1
-		})
 
 		this.arrowsTimeline
 			.staggerFromTo('.menu__drag-arrows path', 1, {
@@ -208,7 +208,7 @@ class DragHome extends React.Component {
 									},'-=.4')
 									.to('.home__overlay', .3, {
 										opacity: 0
-									})
+									},'-=.4')
 									.to('.btn__main--hidden', .3, {
 										opacity: 1,
 										display: 'block'

@@ -15,6 +15,8 @@ class Toolbar extends React.Component {
         this.fullScreenToggled = false
         this.audioEnable = true
 
+        this.aboutTimeline = new TimelineLite()
+
         this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
 
     }
@@ -82,8 +84,8 @@ class Toolbar extends React.Component {
 
         window.cityAudio.setFilter(true)
 
-        const aboutTimeline = new TimelineLite()
-        aboutTimeline
+        
+        this.aboutTimeline
             .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
             .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')
 
