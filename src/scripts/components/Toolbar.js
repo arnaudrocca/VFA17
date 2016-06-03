@@ -104,7 +104,9 @@ class Toolbar extends React.Component {
         if (this.audioEnable) {
             this.audioEnable = false
             window.cityAudio.enableAudio = false
-            window.cityAudio.volumeMask = window.cityAudio.volume
+            if (window.cityAudio.volume > 0) {
+                window.cityAudio.volumeMask = window.cityAudio.volume
+            }
             window.cityAudio.setVolume(0)
             TweenMax.staggerTo('.iconAudio-wave', .3, {opacity: .1, fill: 'black'}, .15)
         } else {

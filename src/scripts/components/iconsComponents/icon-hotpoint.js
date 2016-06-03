@@ -2,7 +2,7 @@ import React from 'react'
 
 const IconHotpoint = ({classes}) => (
 
-	<svg className={classes} x="0px" y="0px" viewBox="0 0 60 79.6">
+	<svg className={classes} x="0px" y="0px" viewBox="0 0 60 80">
         <path className="hotpoint--shape" fill="#FFFFFF" d="M60,30c0,20.6-19.9,41.5-27.3,48.5c-1.5,1.5-3.9,1.5-5.5,0C19.8,71.5,0,50.9,0,30
         C0,13.4,13.4,0,30,0S60,13.4,60,30z"/>
         <g id="i_icon">

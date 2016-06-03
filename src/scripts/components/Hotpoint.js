@@ -25,8 +25,7 @@ class Hotpoint extends React.Component {
 		})
 
 		if (this.props.hotpoint.answers.length > 0) {
-			const classes = `icon-hotpoint icon-hotpoint-${this.props.hotpoint.id}`
-			this.hotpoint = <IconHotpoint classes={classes} key={this.props.hotpoint.answers}/>
+			this.hotpoint = <IconHotpoint classes="icon-hotpoint" key={this.props.hotpoint.answers}/>
 			this.position = {
 				left: `${this.data.x}%`,
 				top: `${this.data.y}%`

@@ -39,7 +39,7 @@ class City extends React.Component {
 				scale: 0
 			},0.2, '-=0.05')
 		}
-		
+
 	}
 
 	/**
@@ -54,7 +54,7 @@ class City extends React.Component {
 			if (i < this.props.score) {
 				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + 'FF5951'} width="17" color="#FF5951"/>)
 			} else {
-				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + '6c707b'} width="17" color="#6c707b"/>)
+				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + '6C707B'} width="17" color="#6C707B"/>)
 			}
 		}
 
@@ -76,7 +76,7 @@ class City extends React.Component {
 				</div>
 				<div className="city__infos">
 					<ReactCSSTransitionGroup className="city__score" transitionName="flowers" component="div"
-						transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+						transitionEnterTimeout={1300} transitionLeaveTimeout={1300}>
 						{this.flowers}
 					</ReactCSSTransitionGroup>
 				</div>

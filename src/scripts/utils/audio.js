@@ -13,6 +13,7 @@ class Audio {
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
         this.volume = 0
         this.volumeMin = .3
+        this.volumeMask = .3
         this.enableAudio = true
         this.filterDisableFrequency = 2048
         this.filterEnableFrequency = 512
