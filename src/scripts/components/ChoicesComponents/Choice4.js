@@ -21,11 +21,9 @@ class Choice4 extends React.Component {
 			offset: 0
 		}
 
-        this.DELTA_TIME = 0
-        this.LAST_TIME = Date.now()
-
         this.answer = ''
 		this.end = false
+		this.handSpeed = .15
         this.userHandPosition = 0
         this.holdTime = 2
         this.holdDuration = 0
@@ -44,18 +42,16 @@ class Choice4 extends React.Component {
 
 		this.holdNode = ReactDOM.findDOMNode(this.refs.hold)
 		this.holdLabelNode = ReactDOM.findDOMNode(this.refs.holdLabel)
+		this.userHandImgNode = ReactDOM.findDOMNode(this.refs.userHandImg)
+		this.mayorHandImgNode = ReactDOM.findDOMNode(this.refs.mayorHandImg)
 		this.circleNode = document.querySelector('.js-hold-circle')
 
 		this.circlePerimeter = this.circleNode.getAttribute('r') * Math.PI * 2
-        this.userHandImgNode = ReactDOM.findDOMNode(this.refs.userHandImg)
-        this.mayorHandImgNode = ReactDOM.findDOMNode(this.refs.mayorHandImg)
 
         this.setState({
 			circlePerimeter: this.circlePerimeter,
 			offset: this.circlePerimeter
 		})
-
-        window.addEventListener('keydown', debounce(this.spacebarDownHandler, 100))
 
 	}
 
@@ -65,8 +61,8 @@ class Choice4 extends React.Component {
 	 */
 	componentWillUnmount() {
 
+		TweenMax.ticker.removeEventListener('tick', this.update)
         window.removeEventListener('keydown', this.spacebarDownHandler)
-        TweenMax.ticker.removeEventListener('tick', this.update)
 
 	}
 
@@ -77,7 +73,10 @@ class Choice4 extends React.Component {
 	clickHandler() {
 
 		setTimeout(() => {
+			this.DELTA_TIME = 0
+			this.LAST_TIME = Date.now()
 			TweenMax.ticker.addEventListener('tick', this.update)
+			window.addEventListener('keydown', debounce(this.spacebarDownHandler, 100))
 		}, 1000)
 
 	}
@@ -89,28 +88,26 @@ class Choice4 extends React.Component {
 	 */
 	update() {
 
+		this.DELTA_TIME = Date.now() - this.LAST_TIME
+		this.LAST_TIME = Date.now()
 
-        this.DELTA_TIME = Date.now() - this.LAST_TIME
-        this.LAST_TIME = Date.now()
-
-        this.userHandPosition += 1
+        this.userHandPosition += this.DELTA_TIME * this.handSpeed
 
         if (this.userHandPosition <= 20) {
+			if (this.userHandPosition <= 0) {
+	        	this.userHandPosition = 0
+	        }
 
         	if (!this.holdIsVisible) {
         		this.holdIsVisible = true
         		this.holdLabelNode.textContent = 'Garder'
-        		TweenMax.to(this.holdNode, .3,{
+        		TweenMax.to(this.holdNode, .3, {
         			display: 'block',
         			scale: 1
         		})
         	}
 
-    		this.holdDuration += this.DELTA_TIME / 1000
-
-	        if (this.userHandPosition <= 0) {
-	        	this.userHandPosition = 0
-	        }
+			this.holdDuration += this.DELTA_TIME / 1000
 
 	        if (this.holdDuration <= this.holdTime) {
 	        	 TweenMax.set(this.circleNode, {
@@ -120,9 +117,12 @@ class Choice4 extends React.Component {
 	        // else {
 	        // 	hashHistory.push('/experiment')
 	        // }
-
 	    }
 		else if (this.userHandPosition >= 105) {
+			if (this.userHandPosition >= 165) {
+				this.userHandPosition = 165
+			}
+
         	if (!this.holdIsVisible) {
         		this.holdIsVisible = true
         		this.holdLabelNode.textContent = 'Rendre'
@@ -134,10 +134,6 @@ class Choice4 extends React.Component {
 
         	this.holdDuration += this.DELTA_TIME / 1000
 
-            if (this.userHandPosition >= 165) {
-            	this.userHandPosition = 165
-            }
-
             if (this.holdDuration <= this.holdTime) {
 				TweenMax.set(this.circleNode, {
 					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
@@ -146,21 +142,19 @@ class Choice4 extends React.Component {
 	        	hashHistory.push('/experiment')
 	        }
         }
-		else {
-        	if (this.holdIsVisible) {
-        		this.holdDuration = 0
-        		this.holdLabelNode.textContent = ''
-        		TweenMax.to(this.holdNode, .3, {
-        			display: 'none',
-        			scale: 0,
-        			onComplete: () => {
-        				TweenMax.set(this.circleNode, {
-							strokeDashoffset: this.circlePerimeter
-						})
-        			}
-        		})
-	        	this.holdIsVisible = false
-        	}
+		else if (this.holdIsVisible) {
+    		this.holdDuration = 0
+    		this.holdLabelNode.textContent = ''
+    		TweenMax.to(this.holdNode, .3, {
+    			display: 'none',
+    			scale: 0,
+    			onComplete: () => {
+    				TweenMax.set(this.circleNode, {
+						strokeDashoffset: this.circlePerimeter
+					})
+    			}
+    		})
+        	this.holdIsVisible = false
         }
 
         TweenMax.set(this.userHandImgNode, {x: this.userHandPosition})
