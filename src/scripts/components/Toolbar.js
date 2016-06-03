@@ -134,6 +134,7 @@ class Toolbar extends React.Component {
             else if (document.documentElement.mozRequestFullScreen) {
                 document.documentElement.mozRequestFullScreen()
             }
+            TweenMax.set('.icon-screen-path', {rotation: '180deg', transformOrigin: '50% 50%', delay: .3})
             this.fullScreenToggled = true
         } else {
             if (document.cancelFullScreen) {
@@ -145,6 +146,7 @@ class Toolbar extends React.Component {
             else if (document.mozCancelFullScreen) {
                 document.mozCancelFullScreen()
             }
+            TweenMax.set('.icon-screen-path', {rotation: 0, transformOrigin: '50% 50%', delay: .3})
             this.fullScreenToggled = false
         }
 
