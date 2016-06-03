@@ -55,6 +55,7 @@ class Menu extends React.Component {
 		const menu = ReactDOM.findDOMNode(this.refs.menu)
 		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
 		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
+		const menuInfos = ReactDOM.findDOMNode(this.refs.menuInfos)
 		const slices = document.querySelectorAll('.menu__slice')
 
 		const windowWidth = window.innerWidth
@@ -80,41 +81,74 @@ class Menu extends React.Component {
 				menuTimeline
 					.to(menu, .3, {opacity: 1, display: 'flex'})
 					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
-					.staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
+					// .staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
 
 				window.cityAudio.setFilter(true)
 				menuBtn.classList.add('is-active')
+				this.lastId = 5
+				this.lastState = 'initial'
 			},
 			onDrag: function() {
 				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
 
 				const currentId = Math.round(5 - Math.abs(this.x / columnWidth))
-				if (currentId < 5) {
-					const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
-					for (var i = slices.length - 1; i >= 0; i--) {
-						slices[i].classList.remove('is-active')
+				if (currentId != this.lastId) {
+					if (currentId < 5) {
+						const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
+						for (var i = slices.length - 1; i >= 0; i--) {
+							slices[i].classList.remove('is-active')
+						}
+						currentSlice.classList.add('is-active')
+
+						const currentItem = props.menuState.find((menuItem) => {
+							return menuItem.id == currentId
+						})
+
+						if (currentItem.state != this.lastState) {
+							switch (currentItem.state) {
+								case 'todo':
+									TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Voyager vers le passé'})
+									break
+
+								case 'locked':
+									TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Bloqué'})
+									break
+
+								case 'done':
+									TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Résumé'})
+									break
+
+								default:
+									break
+
+							}
+						}
+						this.lastState = currentItem.state
 					}
-					currentSlice.classList.add('is-active')
-				}
-				else {
-					for (var i = slices.length - 1; i >= 0; i--) {
-						slices[i].classList.remove('is-active')
+					else {
+						this.lastState = 'initial'
+						TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé'})
+						for (var i = slices.length - 1; i >= 0; i--) {
+							slices[i].classList.remove('is-active')
+						}
 					}
 				}
+				this.lastId = currentId
 			},
 			onRelease: function(endValue) {
 				menuBtn.classList.remove('is-active')
 				for (var i = slices.length - 1; i >= 0; i--) {
 					slices[i].classList.remove('is-active')
 				}
+				TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé', delay: .3})
 
 				const selectedId = Math.floor(Math.abs(endValue.x / columnWidth))
 				if (selectedId < 5) {
+					let dialog, mood = ''
+
 					const selectedItem = props.menuState.find((menuItem) => {
 						return menuItem.id == selectedId
 					})
-
-					let dialog, mood = ''
 
 					switch (selectedItem.state) {
 						case 'todo':
@@ -228,7 +262,7 @@ class Menu extends React.Component {
 					{this.menuItems}
 					<div className="menu__slice menu__slice--empty"></div>
 					<div className="menu__infos">
-						<p>Glissez pour voyager dans le temps</p>
+						<p ref="menuInfos">Glisse le bouton pour voyager vers le passé</p>
 					</div>
 				</div>
 			</div>

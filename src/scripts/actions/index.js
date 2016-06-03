@@ -72,7 +72,7 @@ const hotpointUpdate = (mapId, answer) => {
 export const choiceMade = (choiceId, answer) => {
 
     return (dispatch, getState) => {
-        let consequences = answersData.find((choice) => {
+        const consequences = answersData.find((choice) => {
             return choice.name == answer
         })
 
