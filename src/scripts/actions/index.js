@@ -83,17 +83,19 @@ export const choiceMade = (choiceId, answer) => {
 
         setTimeout(() => {
             dispatch(choicesDoneIncrement())
+            dispatch(scoreUpdate(consequences.score))
 
             for (let i in consequences.mapIds) {
                 dispatch(mapUpdate(consequences.mapIds[i], consequences.mapVersions[i]))
                 dispatch(hotpointUpdate(consequences.mapIds[i], answer))
             }
 
-            dispatch(scoreUpdate(consequences.score))
-            dispatch(mayorTalks(consequences.dialog, consequences.mood))
-
-            console.log(getState(), 'NEW STATE')
+            setTimeout(() => {
+                dispatch(mayorTalks(consequences.dialog, consequences.mood))
+            }, 3500)
         }, 1000)
+
+        console.log(getState(), 'NEW STATE')
 
     }
 

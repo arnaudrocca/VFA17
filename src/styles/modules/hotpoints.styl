@@ -25,3 +25,25 @@
 
             .hotpoint--i
                 fill $white
+
+/*
+ * ReactCSSTransitionGroup
+ */
+.hotpoint-leave
+    position absolute
+    opacity 1
+    transition opacity .3s ease-out
+
+    &-active
+        opacity 0
+
+.hotpoint-enter
+    position absolute
+    opacity 0
+    transform translateY(-5rem)
+    transition transform .5s $back, opacity .3s ease-out
+    transition-delay 2s
+
+    &-active
+        opacity 1
+        transform translateY(0rem)

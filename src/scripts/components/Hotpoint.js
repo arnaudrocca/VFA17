@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import IconHotpoint from './iconsComponents/icon-hotpoint'
 import hotpointsData from '../data/hotpoints.json'
 
@@ -24,13 +25,14 @@ class Hotpoint extends React.Component {
 		})
 
 		if (this.props.hotpoint.answers.length > 0) {
-			this.hotpoint = <IconHotpoint/>
+			const classes = `icon-hotpoint icon-hotpoint-${this.props.hotpoint.id}`
+			this.hotpoint = <IconHotpoint classes={classes} key={this.props.hotpoint.answers}/>
 			this.position = {
 				left: `${this.data.x}%`,
 				top: `${this.data.y}%`
 			}
 		} else {
-			this.hotpoint = false
+			this.hotpoint = null
 		}
 
 	}
@@ -57,15 +59,11 @@ class Hotpoint extends React.Component {
 
 		this.getContent()
 
-		if (this.hotpoint == false) {
-			return null
-		} else {
-			return (
-				<div className="hotpoint" onClick={this.clickHandler.bind(this)} style={this.position}>
-					{this.hotpoint}
-            	</div>
-			)
-		}
+		return (
+			<ReactCSSTransitionGroup className="hotpoint" transitionName="hotpoint" onClick={this.clickHandler.bind(this)} style={this.position} component="div" transitionEnterTimeout={3500} transitionLeaveTimeout={1300}>
+				{this.hotpoint}
+        	</ReactCSSTransitionGroup>
+		)
 
 	}
 

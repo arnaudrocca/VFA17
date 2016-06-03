@@ -14,6 +14,8 @@ class Mayor extends React.Component {
 			dialogIndex: 0
 		}
 
+		this.mayorTimeline = new TimelineLite()
+
 		this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
 		this.spacebarUpHandler = this.spacebarUpHandler.bind(this)
 
@@ -36,13 +38,17 @@ class Mayor extends React.Component {
 	componentDidMount() {
 
 		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
+		this.mayorInstructionsNode = ReactDOM.findDOMNode(this.refs.mayorInstructions)
 		this.spacebarIconNode = ReactDOM.findDOMNode(this.refs.spacebarIcon)
 
 		if (this.paragraphs != '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
+			this.mayorTimeline
+				.to(this.mayorDialogNode, 0.3, {opacity: 1, scale: 1})
+				.to(this.mayorInstructionsNode, 0.3, {opacity: 1}, '-=.3')
 
 			this.isTalking = true
-			TweenMax.staggerFrom('.char', 0, {opacity: 0}, .015, () => {
+			TweenMax.set('.char', {opacity: 0})
+			TweenMax.staggerTo('.char', 0, {opacity: 1, delay: .1}, .015, () => {
 				this.isTalking = false
 			})
 		}
@@ -67,13 +73,17 @@ class Mayor extends React.Component {
      * @method
 	 * @name componentWillReceiveProps
      */
-	componentWillReceiveProps() {
+	componentWillReceiveProps(nextProps) {
 
 		this.setState({
 			dialogIndex: 0
 		})
 
-		TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 1, display: 'flex'})
+		if (nextProps.dialog != '') {
+			this.mayorTimeline
+				.to(this.mayorDialogNode, 0.3, {opacity: 1, scale: 1})
+				.to(this.mayorInstructionsNode, 0.3, {opacity: 1}, '-=.3')
+		}
 
 	}
 
@@ -87,7 +97,9 @@ class Mayor extends React.Component {
 		this.paragraphs = nextProps.dialog.split('§')
 
 		if (this.paragraphs == '') {
-			TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
+			this.mayorTimeline
+				.to(this.mayorDialogNode, 0.3, {opacity: 0, scale: 0})
+				.to(this.mayorInstructionsNode, 0.3, {opacity: 0}, '-=.3')
 		} else {
 			this.isTalking = true
 		}
@@ -101,7 +113,8 @@ class Mayor extends React.Component {
 	componentDidUpdate() {
 
 		if (this.paragraphs != '') {
-			TweenMax.staggerFrom('.char', 0, {opacity: 0}, .015, () => {
+			TweenMax.set('.char', {opacity: 0})
+			TweenMax.staggerTo('.char', 0, {opacity: 1, delay: .1}, .015, () => {
 				this.isTalking = false
 			})
 		}
@@ -143,8 +156,10 @@ class Mayor extends React.Component {
 		if (key == 32 && this.paragraphs != '' && aboutOpacity == 0) {
 			if (!this.isTalking) {
 				if (this.state.dialogIndex + 1 == this.paragraphs.length) {
+					this.mayorTimeline
+						.to(this.mayorDialogNode, 0.3, {opacity: 0, scale: 0})
+						.to(this.mayorInstructionsNode, 0.3, {opacity: 0}, '-=.3')
 					this.props.mayorTalked()
-					TweenMax.to(this.mayorDialogNode, 0.3, {opacity: 0, display: 'none'})
 				} else {
 					this.setState({
 						dialogIndex: this.state.dialogIndex + 1
@@ -188,11 +203,11 @@ class Mayor extends React.Component {
 
 		return (
 			<div className="mayor" style={this.style}>
-				<div ref="mayorDialog" className="mayor__dialog">
+				<div className="mayor__dialog" ref="mayorDialog">
 					<p>{this.dialog}</p>
-					<div className="mayor__instructions">
+				</div>
+				<div className="mayor__instructions" ref="mayorInstructions">
 					<span className="mayor__spacebar" ref="spacebarIcon">Espace</span> pour passer
-					</div>
 				</div>
 			</div>
 		)

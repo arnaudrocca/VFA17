@@ -42,7 +42,9 @@ class Map extends React.Component {
 
         this.createDrag()
 
-		window.cityAudio.setVolume(this.volumeMin)
+		if (window.cityAudio.enableAudio) {
+			window.cityAudio.setVolume(this.volumeMin)
+		}
 		window.cityAudio.setFilter(false)
 
         window.addEventListener('resize', debounce(this.createDrag, 350))
@@ -130,7 +132,11 @@ class Map extends React.Component {
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
 
 		const volume = Math.round(utils.normalize(this.scale, this.scaleMin, this.scaleMax, this.volumeMin, 1) * 100) / 100
-		window.cityAudio.setVolume(volume)
+		if (window.cityAudio.volume > 0) {
+			window.cityAudio.setVolume(volume)
+		} else {
+			window.cityAudio.volumeMask = volume
+		}
 
 	}
 

@@ -6,30 +6,31 @@
 	left 2rem
 	background-size cover
 	background-repeat no-repeat
+	font-family $font-pressura-regular
+	font-size 1.3rem
+	line-height 2em
 	z-index 5
 
 	&__dialog
 		position absolute
-		display flex
-		flex-direction column
-		justify-content flex-start
-		align-items flex-start
 		width 30rem
 		min-height 15rem
 		bottom 8rem
 		left 8rem
 		padding 3rem 3.5rem 0
-		font-family $font-pressura-regular
-		font-size 1.3rem
-		line-height 2em
 		background linear-gradient(135deg, transparent 0, $white 0) top left, linear-gradient(225deg, transparent 2rem, $white 0) top right, linear-gradient(225deg, transparent 0, $white 0) bottom right, linear-gradient(45deg, transparent 2rem, $white 0) bottom left
 		background-repeat no-repeat
 		background-size 50% 50%
 		opacity 0
+		transform-origin 0% 100%
+		transform scale(0)
 
 	&__instructions
 		position absolute
-		bottom -4rem
+		width 30rem
+		top 3rem
+		left 11rem
+		opacity 0
 		color $white
 		antialiased()
 
