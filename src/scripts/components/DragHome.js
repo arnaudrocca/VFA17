@@ -95,7 +95,7 @@ class DragHome extends React.Component {
 	 */
 	onPress() {
 
-		document.body.classList.add('is-menu-active')
+		document.body.style.cursor = 'w-resize'
 		this.menuBtn.classList.add('is-active')
 
 		TweenMax.ticker.addEventListener('tick', this.updateDragLine)
@@ -128,6 +128,7 @@ class DragHome extends React.Component {
 	 */
 	onRelease() {
 
+		document.body.style.cursor = 'default'
 		this.menuBtn.classList.remove('is-active')
 
 		const distance = Math.abs(this.dragHome[0].x + this.dragTarget)

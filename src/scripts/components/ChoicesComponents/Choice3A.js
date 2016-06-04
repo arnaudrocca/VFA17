@@ -14,7 +14,11 @@ class Choice3A extends React.Component {
 		super()
 
         this.itemsNumber = 5
+		this.cursorRadius = 25
 
+		this.itemTransitionTimeline = new TimelineLite()
+
+		this.onDrag = this.onDrag.bind(this)
         this.createDrag = this.createDrag.bind(this)
 
 	}
@@ -67,24 +71,18 @@ class Choice3A extends React.Component {
 		}
 		this.mainHeight = window.innerHeight
 
-		const itemTransitionTimeline = new TimelineLite()
+		this.lineWidth = (this.mainWidth / 2) * .75
+		this.columnWidth = this.lineWidth / this.itemsNumber
 
-		const cursorRadius = 25
-		const lineWidth = (this.mainWidth / 2) * .75
-		const lineLeftOffset = (((this.mainWidth - lineWidth) / 2) + (window.innerWidth - this.mainWidth))
-		const columnWidth = lineWidth / this.itemsNumber
+		this.lastId = Math.floor(this.itemsNumber / 2)
+		TweenMax.to(this.sliderItems[this.lastId], .2, {display: 'block', opacity: 1})
 
-		const self = this
-
-		let lastId = Math.floor(this.itemsNumber / 2)
-		TweenMax.to(self.sliderItems[lastId], .2, {display: 'block', opacity: 1})
-
-		Draggable.create(this.cursor, {
+		this.dragChoice = Draggable.create(this.cursor, {
 			type: 'x',
 			edgeResistance: .95,
 			bounds: {
-				minX: -lineWidth + cursorRadius,
-				maxX: lineWidth - cursorRadius
+				minX: -this.lineWidth + this.cursorRadius,
+				maxX: this.lineWidth - this.cursorRadius
 			},
 			zIndex: 1000,
 			zIndexBoost: false,
@@ -92,38 +90,48 @@ class Choice3A extends React.Component {
 				document.body.style.cursor = 'ew-resize'
 				TweenMax.to('.btn__main--hidden' , 0.3, {opacity: 1, display: 'block'})
 			},
-			onDrag: throttle(function() {
-				const selectedId = Math.floor(((this.x + lineWidth) / columnWidth) / 2)
-
-				if (selectedId != lastId) {
-					const lastItem = self.sliderItems[lastId]
-					const currentItem = self.sliderItems[selectedId]
-
-					itemTransitionTimeline
-						.to(lastItem, .5, {
-							display: 'none',
-							opacity: 0,
-							scale: 1.2
-						})
-						.to(currentItem, .5, {
-							display: 'block',
-							opacity: 1,
-							scale: 1
-						}, '-=.5')
-				}
-
-				if (selectedId <= Math.floor(self.itemsNumber / 2)) {
-					self.answer = 'jeunes'
-				} else {
-					self.answer = 'vieux'
-				}
-
-				lastId = selectedId
+			onDrag: throttle(() => {
+				this.onDrag()
 			}, 350),
 			onRelease: () => {
 				document.body.style.cursor = 'default'
 			}
 		})
+
+	}
+
+	/**
+	 * @method
+	 * @name onDrag
+	 */
+	onDrag() {
+
+		const selectedId = Math.floor(((this.dragChoice[0].x + this.lineWidth) / this.columnWidth) / 2)
+
+		if (selectedId != this.lastId) {
+			const lastItem = this.sliderItems[this.lastId]
+			const currentItem = this.sliderItems[selectedId]
+
+			this.itemTransitionTimeline
+				.to(lastItem, .5, {
+					display: 'none',
+					opacity: 0,
+					scale: 1.2
+				})
+				.to(currentItem, .5, {
+					display: 'block',
+					opacity: 1,
+					scale: 1
+				}, '-=.5')
+		}
+
+		if (selectedId <= Math.floor(this.itemsNumber / 2)) {
+			this.answer = 'jeunes'
+		} else {
+			this.answer = 'vieux'
+		}
+
+		this.lastId = selectedId
 
 	}
 

@@ -105,6 +105,7 @@ class Menu extends React.Component {
 			// .staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
 
 		window.cityAudio.setFilter(true)
+		document.body.style.cursor = 'w-resize'
 		this.menuBtn.classList.add('is-active')
 
 		this.lastId = 5
@@ -195,6 +196,7 @@ class Menu extends React.Component {
 	 */
 	onRelease(endValue) {
 
+		document.body.style.cursor = 'default'
 		this.menuBtn.classList.remove('is-active')
 		for (var i = this.slices.length - 1; i >= 0; i--) {
 			this.slices[i].classList.remove('is-active')
