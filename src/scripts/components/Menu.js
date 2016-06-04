@@ -16,7 +16,11 @@ class Menu extends React.Component {
 
 		super()
 
+		this.onPress = this.onPress.bind(this)
+		this.onDrag = this.onDrag.bind(this)
+		this.onRelease = this.onRelease.bind(this)
 		this.createDrag = this.createDrag.bind(this)
+		this.updateDragLine = this.updateDragLine.bind(this)
 
 	}
 
@@ -27,6 +31,14 @@ class Menu extends React.Component {
 	componentDidMount() {
 
 		document.body.classList.remove('is-menu-active')
+
+		this.menu = ReactDOM.findDOMNode(this.refs.menu)
+		this.menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
+		this.menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
+		this.menuInfos = ReactDOM.findDOMNode(this.refs.menuInfos)
+		this.slices = document.querySelectorAll('.menu__slice')
+
+		this.menuTimeline = new TimelineLite()
 
 		this.createDrag()
 
@@ -50,20 +62,11 @@ class Menu extends React.Component {
 	 */
 	createDrag() {
 
-		const props = this.props
-
-		const menu = ReactDOM.findDOMNode(this.refs.menu)
-		const menuBtn = ReactDOM.findDOMNode(this.refs.menuBtn)
-		const menuDragLine = ReactDOM.findDOMNode(this.refs.menuDragLine)
-		const menuInfos = ReactDOM.findDOMNode(this.refs.menuInfos)
-		const slices = document.querySelectorAll('.menu__slice')
-
 		const windowWidth = window.innerWidth
 		const sideSize = 20
-		const columnWidth = (windowWidth - (sideSize * 2)) / 6
-		const menuTimeline = new TimelineLite()
+		this.columnWidth = (windowWidth - (sideSize * 2)) / 6
 
-		Draggable.create(menuBtn, {
+		this.dragMenu = Draggable.create(this.menuBtn, {
 			type: 'x',
 			bounds: {
 				minX: -(windowWidth - (sideSize * 2)) * 10 / 12,
@@ -74,129 +77,186 @@ class Menu extends React.Component {
 			liveSnap: true,
 			snap: {
 				x: (endValue) => {
-					return Math.round(endValue / columnWidth) * columnWidth
+					return Math.round(endValue / this.columnWidth) * this.columnWidth
 				}
 			},
 			onPress: () => {
-				menuTimeline
-					.to(menu, .3, {opacity: 1, display: 'flex'})
-					.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
-					// .staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
-
-				window.cityAudio.setFilter(true)
-				menuBtn.classList.add('is-active')
-				this.lastId = 5
-				this.lastState = 'initial'
+				this.onPress()
 			},
-			onDrag: function() {
-				TweenMax.set(menuDragLine, {width: Math.abs(this.x)})
-
-				const currentId = Math.round(5 - Math.abs(this.x / columnWidth))
-				if (currentId != this.lastId) {
-					if (currentId < 5) {
-						const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
-						for (var i = slices.length - 1; i >= 0; i--) {
-							slices[i].classList.remove('is-active')
-						}
-						currentSlice.classList.add('is-active')
-
-						const currentItem = props.menuState.find((menuItem) => {
-							return menuItem.id == currentId
-						})
-
-						if (currentItem.state != this.lastState) {
-							switch (currentItem.state) {
-								case 'todo':
-									TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Voyager vers le passé'})
-									break
-
-								case 'locked':
-									TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Bloqué'})
-									break
-
-								case 'done':
-									TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Résumé'})
-									break
-
-								default:
-									break
-
-							}
-						}
-						this.lastState = currentItem.state
-					}
-					else {
-						this.lastState = 'initial'
-						TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé'})
-						for (var i = slices.length - 1; i >= 0; i--) {
-							slices[i].classList.remove('is-active')
-						}
-					}
-				}
-				this.lastId = currentId
+			onDrag: () => {
+				this.onDrag()
 			},
-			onRelease: function(endValue) {
-				menuBtn.classList.remove('is-active')
-				for (var i = slices.length - 1; i >= 0; i--) {
-					slices[i].classList.remove('is-active')
+			onRelease: (endValue) => {
+				this.onRelease(endValue)
+			}
+		})
+
+	}
+
+	/**
+	 * @method
+	 * @name onPress
+	 */
+	onPress() {
+
+		this.menuTimeline
+			.to(this.menu, .3, {opacity: 1, display: 'flex'})
+			.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
+			// .staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
+
+		window.cityAudio.setFilter(true)
+		this.menuBtn.classList.add('is-active')
+
+		this.lastId = 5
+		this.lastState = 'initial'
+
+		TweenMax.ticker.addEventListener('tick', this.updateDragLine)
+
+	}
+
+	/**
+	 * @method
+	 * @name onDrag
+	 */
+	onDrag() {
+
+		const currentId = Math.round(5 - Math.abs(this.dragMenu[0].x / this.columnWidth))
+
+		if (currentId != this.lastId) {
+			if (currentId < 5) {
+				const currentSlice = document.querySelector(`.menu__slice--${currentId}`)
+				for (var i = this.slices.length - 1; i >= 0; i--) {
+					this.slices[i].classList.remove('is-active')
 				}
-				TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé', delay: .5})
+				currentSlice.classList.add('is-active')
 
-				const selectedId = Math.floor(Math.abs(endValue.x / columnWidth))
-				if (selectedId < 5) {
-					let dialog, mood = ''
+				const currentItem = this.props.menuState.find((menuItem) => {
+					return menuItem.id == currentId
+				})
 
-					const selectedItem = props.menuState.find((menuItem) => {
-						return menuItem.id == selectedId
-					})
-
-					switch (selectedItem.state) {
+				if (currentItem.state != this.lastState) {
+					switch (currentItem.state) {
 						case 'todo':
-							TweenMax.to('.experiment', .3, {opacity: 0, delay: .3,
-								onComplete: () => {
-									hashHistory.push(`/choice/${selectedId}`)
-								}
-							})
-
-							dialog = ''
-							mood = 'neutral'
+							TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Voyager vers le passé'})
 							break
 
 						case 'locked':
-							window.cityAudio.setFilter(false)
-							TweenMax.set(menuBtn, {clearProps: 'x'})
-							TweenMax.set(menuDragLine, {width: 0})
-							TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
-
-							dialog = 'Chaque chose en son temps...'
-							mood = 'neutral'
+							TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Bloqué'})
 							break
 
 						case 'done':
-							window.cityAudio.setFilter(false)
-							TweenMax.set(menuBtn, {clearProps: 'x'})
-							TweenMax.set(menuDragLine, {width: 0})
-							TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
-
-							const answer = answersData.find((answer) => {
-								return answer.name == props.choicesState[selectedId].answer
-							})
-							dialog = answer.dialog
-							mood = answer.mood
+							TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Résumé'})
 							break
 
 						default:
 							break
 					}
+				}
 
-					props.mayorTalks(dialog, mood)
+				this.lastState = currentItem.state
 
-				} else {
-					window.cityAudio.setFilter(false)
-					TweenMax.to(menu, .3, {opacity: 0, display: 'none'})
+			} else {
+				this.lastState = 'initial'
+				TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé'})
+				for (var i = this.slices.length - 1; i >= 0; i--) {
+					this.slices[i].classList.remove('is-active')
 				}
 			}
-		})
+		}
+
+		this.lastId = currentId
+
+	}
+
+	/**
+	 * @method
+	 * @name updateDragLine
+	 * @description Triggered on every TweenMax tick
+	 */
+	updateDragLine() {
+
+		const menuBtnMatrix = getComputedStyle(this.menuBtn)['-webkit-transform'] ||
+					getComputedStyle(this.menuBtn)['-moz-transform'] ||
+					getComputedStyle(this.menuBtn)['-ms-transform'] ||
+					getComputedStyle(this.menuBtn)['-o-transform'] ||
+					getComputedStyle(this.menuBtn)['transform']
+
+		const menuBtnMatrixArray = menuBtnMatrix.split(',')
+		const menuBtnTranslateY = menuBtnMatrixArray[4]
+
+		TweenMax.set(this.menuDragLine, {width: Math.abs(menuBtnTranslateY)})
+
+	}
+
+	/**
+	 * @method
+	 * @name onRelease
+	 * @param {object} endValue
+	 */
+	onRelease(endValue) {
+
+		this.menuBtn.classList.remove('is-active')
+		for (var i = this.slices.length - 1; i >= 0; i--) {
+			this.slices[i].classList.remove('is-active')
+		}
+		TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé', delay: .5})
+
+		const selectedId = Math.floor(Math.abs(endValue.x / this.columnWidth))
+
+		if (selectedId < 5) {
+			let dialog, mood = ''
+
+			const selectedItem = this.props.menuState.find((menuItem) => {
+				return menuItem.id == selectedId
+			})
+
+			switch (selectedItem.state) {
+				case 'todo':
+					TweenMax.to('.experiment', .3, {opacity: 0, delay: .3,
+						onComplete: () => {
+							hashHistory.push(`/choice/${selectedId}`)
+						}
+					})
+
+					dialog = ''
+					mood = 'neutral'
+					break
+
+				case 'locked':
+					window.cityAudio.setFilter(false)
+					TweenMax.set(this.menuBtn, {clearProps: 'x'})
+					TweenMax.set(this.menuDragLine, {width: 0})
+					TweenMax.to(this.menu, .3, {opacity: 0, display: 'none'})
+
+					dialog = 'Chaque chose en son temps...'
+					mood = 'neutral'
+					break
+
+				case 'done':
+					window.cityAudio.setFilter(false)
+					TweenMax.set(this.menuBtn, {clearProps: 'x'})
+					TweenMax.set(this.menuDragLine, {width: 0})
+					TweenMax.to(this.menu, .3, {opacity: 0, display: 'none'})
+
+					const answer = answersData.find((answer) => {
+						return answer.name == this.props.choicesState[selectedId].answer
+					})
+					dialog = answer.dialog
+					mood = answer.mood
+					break
+
+				default:
+					break
+			}
+
+			this.props.mayorTalks(dialog, mood)
+
+		} else {
+			window.cityAudio.setFilter(false)
+			TweenMax.to(this.menu, .3, {opacity: 0, display: 'none'})
+		}
+
+		TweenMax.ticker.removeEventListener('tick', this.updateDragLine)
 
 	}
 
@@ -257,7 +317,7 @@ class Menu extends React.Component {
 					</div>
 				</div>
 				<div className="menu__drag-start"></div>
-				<div className="menu__drag-line" ref="menuDragLine"></div>
+				<div className="menu__drag-line menu__drag-line" ref="menuDragLine"></div>
 				<div className="menu" ref="menu">
 					{this.menuItems}
 					<div className="menu__slice menu__slice--empty"></div>

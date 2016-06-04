@@ -14,7 +14,7 @@ class Home extends React.Component {
 
 		super()
 
-		this.videosTimeline = new TimelineLite()
+		this.videoTimeline = new TimelineLite()
 
 	}
 
@@ -28,14 +28,13 @@ class Home extends React.Component {
 
 	}
 
-
 	/**
 	 * @method
 	 * @name showVideo
 	 */
 	showVideo() {
 
-		this.videosTimeline
+		this.videoTimeline
 			.to('.home__video--intro', .3, {
 				display: 'none',
 				opacity: 0
@@ -50,6 +49,10 @@ class Home extends React.Component {
 
 	}
 
+	/**
+     * @method
+	 * @name goToExperiment
+     */
 	goToExperiment() {
 
 		hashHistory.push('/experiment')
