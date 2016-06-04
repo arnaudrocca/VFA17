@@ -16,16 +16,6 @@ class App extends React.Component {
 
 	/**
      * @method
-	 * @name componentWillReceiveProps
-     */
-	componentWillReceiveProps() {
-
-	    window.previousLocation = this.props.location.pathname
-
-	}
-
-	/**
-     * @method
 	 * @name render
      */
 	render() {

@@ -52,6 +52,16 @@ class Hotpoint extends React.Component {
 
 	/**
      * @method
+	 * @name mouseEnterHandler
+     */
+	mouseEnterHandler() {
+
+		this.props.onMouseEnter()
+
+	}
+
+	/**
+     * @method
 	 * @name render
      */
 	render() {
@@ -59,7 +69,7 @@ class Hotpoint extends React.Component {
 		this.getContent()
 
 		return (
-			<ReactCSSTransitionGroup className="hotpoint" transitionName="hotpoint" onClick={this.clickHandler.bind(this)} style={this.position} component="div" transitionEnterTimeout={3500} transitionLeaveTimeout={1300}>
+			<ReactCSSTransitionGroup className="hotpoint" transitionName="hotpoint" onClick={this.clickHandler.bind(this)}  onMouseEnter={this.mouseEnterHandler.bind(this)} style={this.position} component="div" transitionEnterTimeout={3500} transitionLeaveTimeout={1300}>
 				{this.hotpoint}
         	</ReactCSSTransitionGroup>
 		)

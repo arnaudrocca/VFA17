@@ -17,6 +17,9 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 	    mayorTalked: () => {
 	    	dispatch(mayorTalks('', 'neutral'))
+	    },
+		mayorTalks: (dialog, mood) => {
+	    	dispatch(mayorTalks(dialog, mood))
 	    }
     }
 

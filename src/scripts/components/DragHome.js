@@ -110,10 +110,10 @@ class DragHome extends React.Component {
 	updateDragLine() {
 
 		const menuBtnMatrix = getComputedStyle(this.menuBtn)['-webkit-transform'] ||
-					getComputedStyle(this.menuBtn)['-moz-transform'] ||
-					getComputedStyle(this.menuBtn)['-ms-transform'] ||
-					getComputedStyle(this.menuBtn)['-o-transform'] ||
-					getComputedStyle(this.menuBtn)['transform']
+			getComputedStyle(this.menuBtn)['-moz-transform'] ||
+			getComputedStyle(this.menuBtn)['-ms-transform'] ||
+			getComputedStyle(this.menuBtn)['-o-transform'] ||
+			getComputedStyle(this.menuBtn)['transform']
 
 		const menuBtnMatrixArray = menuBtnMatrix.split(',')
 		const menuBtnTranslateY = menuBtnMatrixArray[4]
@@ -133,7 +133,7 @@ class DragHome extends React.Component {
 
 		const distance = Math.abs(this.dragHome[0].x + this.dragTarget)
 
-		if (distance <= this.dragTarget / 50) {
+		if (distance <= 10) {
 			this.hideTimeline
 				.to(this.menuBtn, .3, {
 					x: -this.dragTarget,

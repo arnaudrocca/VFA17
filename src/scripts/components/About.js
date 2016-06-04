@@ -38,7 +38,7 @@ class About extends React.Component {
 			.to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
 
 		const videoPlayer = document.querySelector('.home__video--main')
-        if (videoPlayer) {
+        if (videoPlayer && getComputedStyle(videoPlayer)['display'] != 'none') {
 	        videoPlayer.play()
 	    }
 

@@ -25,6 +25,10 @@ class Choice extends React.Component {
 	 */
 	componentDidMount() {
 
+		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
+		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
+		this.audioButton = ReactDOM.findDOMNode(this.refs.audioButton)
+
 		if (window.innerWidth > 1400) {
 			this.asideWidth = '24%'
 			this.interactionWidth = '76%'
@@ -59,9 +63,6 @@ class Choice extends React.Component {
 				opacity: 0
 			}, '-=0.9')
 
-		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
-		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
-
 		window.addEventListener('resize', debounce(this.resize.bind(this), 350))
 
 	}
@@ -88,6 +89,29 @@ class Choice extends React.Component {
 		} else {
 			this.choiceAside.style.width = '34%'
 			this.choiceInteraction.style.width = '66%'
+		}
+
+	}
+
+	/**
+	 * @method
+	 * @name clickHandler
+	 */
+	clickHandler() {
+
+		hashHistory.push('/experiment')
+
+	}
+
+	/**
+	 * @method
+	 * @name mouseEnterHandler
+	 */
+	mouseEnterHandler() {
+
+		if (window.enableAudio) {
+			this.audioButton.currentTime = 0
+			this.audioButton.play()
 		}
 
 	}
@@ -131,16 +155,6 @@ class Choice extends React.Component {
 
 	/**
 	 * @method
-	 * @name returnToMap
-	 */
-	returnToMap() {
-
-		hashHistory.push('/experiment')
-
-	}
-
-	/**
-	 * @method
 	 * @name render
 	 */
 	render() {
@@ -150,7 +164,7 @@ class Choice extends React.Component {
 		return (
 			<div className="choice">
 				<div className="choice__aside" ref="choiceAside">
-					<button className="btn__return" type="button" onClick={this.returnToMap.bind(this)}>
+					<button className="btn__return" type="button" onClick={this.clickHandler.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
 						<span className="btn__return__label-container">
 							<span className="btn__return__label">Quitter</span>
 						</span>
@@ -175,6 +189,7 @@ class Choice extends React.Component {
 					<div className="choice__interaction-background" style={this.backgroundStyle}></div>
 					<this.component choiceData={this.choiceData} id={this.choiceId} submitHandler={this.props.onSubmit}/>
 				</div>
+				<audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
 			</div>
 		)
 

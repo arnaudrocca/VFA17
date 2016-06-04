@@ -177,10 +177,10 @@ class Menu extends React.Component {
 	updateDragLine() {
 
 		const menuBtnMatrix = getComputedStyle(this.menuBtn)['-webkit-transform'] ||
-					getComputedStyle(this.menuBtn)['-moz-transform'] ||
-					getComputedStyle(this.menuBtn)['-ms-transform'] ||
-					getComputedStyle(this.menuBtn)['-o-transform'] ||
-					getComputedStyle(this.menuBtn)['transform']
+			getComputedStyle(this.menuBtn)['-moz-transform'] ||
+			getComputedStyle(this.menuBtn)['-ms-transform'] ||
+			getComputedStyle(this.menuBtn)['-o-transform'] ||
+			getComputedStyle(this.menuBtn)['transform']
 
 		const menuBtnMatrixArray = menuBtnMatrix.split(',')
 		const menuBtnTranslateY = menuBtnMatrixArray[4]

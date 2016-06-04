@@ -26,7 +26,6 @@ class Map extends React.Component {
         	paused: true,
         	onComplete: () => {
     			hashHistory.push('/')
-    			console.log('loooool')
     		}
         })
 
@@ -50,9 +49,10 @@ class Map extends React.Component {
 
         this.createDrag()
 
-		if (window.cityAudio.enableAudio) {
-			window.cityAudio.setVolume(window.cityAudio.volumeMask)
+		if (window.enableAudio) {
+			window.cityAudio.setVolume(window.cityAudio.volumeMin)
 		} else {
+			window.cityAudio.volumeMask = window.cityAudio.volumeMin
 			window.cityAudio.setVolume(0)
 		}
 		window.cityAudio.setFilter(false)
@@ -85,6 +85,7 @@ class Map extends React.Component {
 	 */
 	componentWillUnmount() {
 
+		window.cityAudio.volumeMask = 0
 		window.cityAudio.setVolume(0)
 
 		window.removeEventListener('resize', this.createDrag)
@@ -159,7 +160,7 @@ class Map extends React.Component {
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
 
 		const volume = Math.round(utils.normalize(this.scale, this.scaleMin, this.scaleMax, window.cityAudio.volumeMin, 1) * 100) / 100
-		if (window.cityAudio.enableAudio) {
+		if (window.enableAudio) {
 			window.cityAudio.setVolume(volume)
 		} else {
 			window.cityAudio.volumeMask = volume

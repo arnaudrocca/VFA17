@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 class ChoiceValidate extends React.Component {
 
@@ -13,12 +14,35 @@ class ChoiceValidate extends React.Component {
 
 	/**
 	 * @method
+	 * @name componentDidMount
+	 */
+	componentDidMount() {
+
+		this.audioButton = ReactDOM.findDOMNode(this.refs.audioButton)
+
+	}
+
+	/**
+	 * @method
+	 * @name mouseEnterHandler
+	 */
+	mouseEnterHandler() {
+
+		if (window.enableAudio) {
+            this.audioButton.currentTime = 0
+            this.audioButton.play()
+        }
+
+	}
+
+	/**
+	 * @method
 	 * @name render
 	 */
 	render() {
 
 		return (
-			<button onClick={this.props.handleSubmit} className={this.props.classes} type="button">
+			<button onClick={this.props.handleSubmit} onMouseEnter={this.mouseEnterHandler.bind(this)} className={this.props.classes} type="button">
 				<span className="btn__main__label-container">
 					<span data-labelSecondary={this.props.labelSecondary} className="btn__main__label">{this.props.label}</span></span>
 				<svg x="0px" y="0px" viewBox="1 2 122 48">
@@ -31,6 +55,7 @@ class ChoiceValidate extends React.Component {
 						<polygon fill="#FF5951" points="105.7,46 5,46 5,6 119,6 119,32.7"/>
 					</g>
 				</svg>
+				<audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
 			</button>
 		)
 

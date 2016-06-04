@@ -17,10 +17,15 @@ class Wireframe extends React.Component {
      */
 	constructor() {
 
+		super()
+
+		window.isBeginning = true
+		window.isEnding = false
+
 		window.cityAudio = new Audio()
 		window.cityAudio.loadSound('assets/audio/ambiance_city.mp3')
 
-		super()
+		window.enableAudio = true
 
 	}
 
