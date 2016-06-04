@@ -140,7 +140,7 @@ class Menu extends React.Component {
 				for (var i = slices.length - 1; i >= 0; i--) {
 					slices[i].classList.remove('is-active')
 				}
-				TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé', delay: .3})
+				TweenMax.fromTo(menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Glisse le bouton pour voyager vers le passé', delay: .5})
 
 				const selectedId = Math.floor(Math.abs(endValue.x / columnWidth))
 				if (selectedId < 5) {

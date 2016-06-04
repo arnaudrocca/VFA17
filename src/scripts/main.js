@@ -10,7 +10,6 @@ import mainReducer from './reducers/index'
 import { Router, Route, IndexRoute, Link, IndexLink, hashHistory } from 'react-router'
 import App from './components/App'
 import Home from './components/Home'
-import Video from './components/Video'
 import Experiment from './components/Experiment'
 import Choices from './containers/ChoicesContainer'
 

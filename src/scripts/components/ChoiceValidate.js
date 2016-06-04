@@ -19,7 +19,8 @@ class ChoiceValidate extends React.Component {
 
 		return (
 			<button onClick={this.props.handleSubmit} className={this.props.classes} type="button">
-				<span className="btn__main__label-container"><span data-labelSecondary={this.props.labelSecondary} className="btn__main__label">{this.props.label}</span></span>
+				<span className="btn__main__label-container">
+					<span data-labelSecondary={this.props.labelSecondary} className="btn__main__label">{this.props.label}</span></span>
 				<svg x="0px" y="0px" viewBox="1 2 122 48">
 					<g className="btn__main__border">
 						<g>

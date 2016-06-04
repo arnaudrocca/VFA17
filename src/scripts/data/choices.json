@@ -3,10 +3,10 @@
 		"id": 0,
 		"version": "",
 		"period": "465",
-		"title": "La guerre des grandes familles",
-		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive. Il faut trouver un moyen de mettre fin à cette guerre avant qu’elle ne commence… Par exemple en déshonorant l’une des familles ?",
+		"title": "Les querelles des grandes familles",
+		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive. Il faut trouver un moyen de mettre fin à cette guerre avant qu’elle ne commence... Par exemple en déshonorant l’une des familles ?...",
 		"introTitle": "Gossip",
-		"introText": "Lance un ragot sur l’une des deux familles à l'aide des listes déroulantes"
+		"introText": "Crée une rumeur à propos de l’une des deux familles à l'aide des listes déroulantes."
 	},
 	{
 		"id": 1,

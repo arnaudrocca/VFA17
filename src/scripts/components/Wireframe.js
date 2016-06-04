@@ -73,20 +73,20 @@ class Wireframe extends React.Component {
 			<div className={this.classes}>
 				<div className="wireframe__side wireframe__side--top">
 					{this.lineTop}
-					<IconBorderTop classes="wireframe__trapezoid wireframe__trapezoid--top" width="100" fill="#ffffff"/>
+					<IconBorderTop classes="wireframe__trapezoid wireframe__trapezoid--top" width="100" fill="#FFF"/>
 				</div>
 				<div className="wireframe__side wireframe__side--right">
 					{this.borderRight}
-					<IconCorner classes="wireframe__arrow" width="15" color="#ffffff"/>
+					<IconCorner classes="wireframe__arrow" width="15" color="#FFF"/>
 					{this.drag}
 				</div>
 				<div className="wireframe__side wireframe__side--bottom">
 					{this.lineBottom}
-					<IconBorderBottom classes="wireframe__trapezoid wireframe__trapezoid--bottom" width="100" fill="#ffffff"/>
+					<IconBorderBottom classes="wireframe__trapezoid wireframe__trapezoid--bottom" width="100" fill="#FFF"/>
 				</div>
 				<div className="wireframe__side wireframe__side--left">
-					<IconBorderLeft classes="wireframe__trapezoid wireframe__trapezoid--left" width="7" fill="#ffffff"/>
-					<IconCorner classes="wireframe__arrow" width="15" color="#ffffff"/>
+					<IconBorderLeft classes="wireframe__trapezoid wireframe__trapezoid--left" width="7" fill="#FFF"/>
+					<IconCorner classes="wireframe__arrow" width="15" color="#FFF"/>
 				</div>
 			</div>
 		)

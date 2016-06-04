@@ -60,7 +60,7 @@
         "mapVersions": ["C", "B"],
         "score": 2,
         "dialog": "Parfait ! § La centrale a disparu et toute la ville ne jure que par l’écologie ! § Cette fois c’est sûr, § le Ville Fleurie Award est à moi !",
-        "mood": "smiling"
+        "mood": "satisfied"
     },
     {
         "name": "vieux",
