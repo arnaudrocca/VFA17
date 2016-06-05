@@ -36,6 +36,10 @@ class ChoiceValidate extends React.Component {
 
 	}
 
+	getContent() {
+
+	}
+
 	/**
 	 * @method
 	 * @name render
@@ -46,7 +50,7 @@ class ChoiceValidate extends React.Component {
 			<button className={this.props.classes} onClick={this.props.handleSubmit} onMouseEnter={this.mouseEnterHandler.bind(this)} type="button">
 				<span className="btn__main__label-container">
 					<span className="btn__main__label" data-labelSecondary={this.props.labelSecondary}>{this.props.label}</span></span>
-				<svg x="0px" y="0px" viewBox="1 2 122 48">
+				<svg x="0px" y="0px" viewBox="1 2 122 48" height="100%" width="100%">
 					<g className="btn__main__border">
 						<g>
 							<path fill="#FFFFFF" d="M107.1,50H1V2h122v32.1L107.1,50z M3,48h103.3L121,33.3V4H3V48z"/>

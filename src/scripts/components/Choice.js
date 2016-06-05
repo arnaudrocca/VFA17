@@ -15,7 +15,8 @@ class Choice extends React.Component {
 
 		super()
 
-		this.introTimeline = new TimelineLite()
+		this.introTimeline = new TimelineLite({paused: true})
+		this.resize = this.resize.bind(this)
 
 	}
 
@@ -25,9 +26,9 @@ class Choice extends React.Component {
 	 */
 	componentDidMount() {
 
-		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
-		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
-		this.audioButton = ReactDOM.findDOMNode(this.refs.audioButton)
+		this.choiceAsideNode = ReactDOM.findDOMNode(this.refs.choiceAside)
+		this.choiceInteractionNode = ReactDOM.findDOMNode(this.refs.choiceInteraction)
+		this.audioButtonNode = ReactDOM.findDOMNode(this.refs.audioButton)
 
 		if (window.innerWidth > 1400) {
 			this.asideWidth = '24%'
@@ -38,32 +39,35 @@ class Choice extends React.Component {
 		}
 
 		this.introTimeline
-			.fromTo('.choice__aside', 1, {
-				width: 20
+			.fromTo('.choice__aside', 1.4, {
+				width: 0
 			}, {
 				width: this.asideWidth,
 				ease: Expo.easeOut
 			})
-			.fromTo('.choice__interaction', 1.2, {
+			.fromTo('.choice__interaction', 1.4, {
 				width: 0
 			}, {
 				width: this.interactionWidth,
 				ease: Expo.easeOut
-			}, '-=0.8')
-			.fromTo('.choice__interaction-background', 0.8, {
-				x: -10,
-				scale: 1.1
-			}, {
-				x: 0,
-				scale: 1,
-				ease: Expo.easeOut
-			}, '-=1')
-			.from('.choice__description', 0.3, {
+			},'-=1.2')
+			// .fromTo('.choice__interaction-background', 0.8, {
+			// 	x: -200,
+			// 	scale: 1.4
+			// }, {
+			// 	x: 0,
+			// 	scale: 1,
+			// 	ease: Expo.easeOut
+			// },'-=.8')
+			.from('.choice__description', 0.6, {
 				x: -20,
-				opacity: 0
-			}, '-=0.9')
+				opacity: 0,
+				ease: Expo.easeOut
+			},'-=1.2')
 
-		window.addEventListener('resize', debounce(this.resize.bind(this), 350))
+		this.introTimeline.play()
+
+		window.addEventListener('resize', debounce(this.resize, 350))
 
 	}
 
@@ -73,7 +77,7 @@ class Choice extends React.Component {
 	 */
 	componentWillUnmount() {
 
-		window.removeEventListener('resize', this.resize.bind(this))
+		window.removeEventListener('resize', this.resize)
 
 	}
 
@@ -84,11 +88,11 @@ class Choice extends React.Component {
 	resize() {
 
 		if (window.innerWidth > 1400) {
-			this.choiceAside.style.width = '24%'
-			this.choiceInteraction.style.width = '76%'
+			this.choiceAsideNode.style.width = '24%'
+			this.choiceInteractionNodestyle.width = '76%'
 		} else {
-			this.choiceAside.style.width = '34%'
-			this.choiceInteraction.style.width = '66%'
+			this.choiceAsideNode.style.width = '34%'
+			this.choiceInteractionNode.style.width = '66%'
 		}
 
 	}
@@ -112,8 +116,8 @@ class Choice extends React.Component {
 	mouseEnterHandler() {
 
 		if (window.enableAudio) {
-			this.audioButton.currentTime = 0
-			this.audioButton.play()
+			this.audioButtonNode.currentTime = 0
+			this.audioButtonNode.play()
 		}
 
 	}

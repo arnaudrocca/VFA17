@@ -31,6 +31,12 @@ class Choice4 extends React.Component {
 
         this.spacebarTimeline = new TimelineLite({paused: true})
         this.mayorTimeline = new TimelineMax({repeat: -1})
+        this.timelineEnd = new TimelineLite({
+        	paused: true,
+    		onComplete: () => {
+    			hashHistory.push('/experiment')
+    		}
+    	})
 
         this.update = this.update.bind(this)
 
@@ -56,8 +62,8 @@ class Choice4 extends React.Component {
 		this.circlePerimeter = this.circleNode.getAttribute('r') * Math.PI * 2
 
 		this.spacebarTimeline
-			.to(this.spacebarIconNode, 0.3, {background: 'rgba(255,255,255,0.2)'})
-			.to(this.spacebarIconNode, 0.3, {background: 'transparent'})
+			.to(this.spacebarIconNode, 0.6, {background: 'rgba(255,255,255,0.2)', ease: Power1.easeOut})
+			.to(this.spacebarIconNode, 0.6, {background: 'transparent', ease: Power1.easeOut},'-=.5')
 
 		this.mayorTimeline
 			.to('.terminator__image--mayor-over, .terminator__image--mayor-under', .3, {
@@ -66,6 +72,10 @@ class Choice4 extends React.Component {
 			.to('.terminator__image--mayor-over, .terminator__image--mayor-under', .3, {
 				rotation: 0
 			})
+
+		this.timelineEnd.to('.choice', .3, {
+    		opacity: 0
+		})
 
         this.setState({
 			circlePerimeter: this.circlePerimeter,
@@ -135,8 +145,8 @@ class Choice4 extends React.Component {
 	        }
 	    }
 		else if (this.userHandPosition >= 65) {
-			if (this.userHandPosition >= 160) {
-				this.userHandPosition = 160
+			if (this.userHandPosition >= 140) {
+				this.userHandPosition = 140
 			}
 
         	if (!this.holdIsVisible) {
@@ -160,7 +170,7 @@ class Choice4 extends React.Component {
 				})
             } else {
             	window.isEnding = true
-	        	hashHistory.push('/experiment')
+            	this.timelineEnd.play()
 	        }
         }
 		else if (this.holdIsVisible) {
@@ -195,8 +205,10 @@ class Choice4 extends React.Component {
 		const key = event.keyCode || event.which
 
         if (key == 32) {
-        	this.spacebarTimeline.play()
+
+        	this.spacebarTimeline.restart()
             this.userHandPosition -= 30
+
         }
 
     }

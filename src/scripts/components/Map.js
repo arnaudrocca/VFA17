@@ -26,8 +26,10 @@ class Map extends React.Component {
         this.endTimeline = new TimelineLite({
         	paused: true,
         	onComplete: () => {
-    			hashHistory.push('/')
-    		}
+        		// setTimeout(() => {
+					hashHistory.push('/end')
+				// },200)	
+			}
         })
 
 	}
@@ -69,8 +71,7 @@ class Map extends React.Component {
         		y:' -100px'
         	}, '-=3')
         	.to('.experiment', .3, {
-        		opacity: 0,
-        		display: 'none'
+        		opacity: 0
         	})
 
 	        setTimeout(() => {
