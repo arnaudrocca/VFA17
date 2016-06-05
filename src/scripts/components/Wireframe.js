@@ -41,6 +41,9 @@ class Wireframe extends React.Component {
 		if (location[1] == 'experiment') {
 			this.drag = <ChoicesDoneContainer />
 		}
+		else if (location[1] == 'end') {
+			//this.classes += ' is-hidden'
+		}
 		else if (location[1] == '') {
 			this.classes += ' wireframe--home'
 			this.drag = <div>

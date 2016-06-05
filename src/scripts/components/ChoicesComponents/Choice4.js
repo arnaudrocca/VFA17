@@ -141,8 +141,8 @@ class Choice4 extends React.Component {
 	        // }
 	    }
 		else if (this.userHandPosition >= 65) {
-			if (this.userHandPosition >= 160) {
-				this.userHandPosition = 160
+			if (this.userHandPosition >= 140) {
+				this.userHandPosition = 140
 			}
 
         	if (!this.holdIsVisible) {
@@ -166,7 +166,7 @@ class Choice4 extends React.Component {
 				})
             } else {
             	window.isEnding = true
-	        	hashHistory.push('/experiment')
+	        	hashHistory.push('/end')
 	        }
         }
 		else if (this.holdIsVisible) {

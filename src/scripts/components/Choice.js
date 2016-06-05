@@ -15,7 +15,8 @@ class Choice extends React.Component {
 
 		super()
 
-		this.introTimeline = new TimelineLite()
+		this.introTimeline = new TimelineLite({paused: true})
+		this.resize = this.resize.bind(this)
 
 	}
 
@@ -34,35 +35,38 @@ class Choice extends React.Component {
 		}
 
 		this.introTimeline
-			.fromTo('.choice__aside', 1, {
-				width: 20
+			.fromTo('.choice__aside', 1.4, {
+				width: 0
 			}, {
 				width: this.asideWidth,
 				ease: Expo.easeOut
 			})
-			.fromTo('.choice__interaction', 1.2, {
+			.fromTo('.choice__interaction', 1.4, {
 				width: 0
 			}, {
 				width: this.interactionWidth,
 				ease: Expo.easeOut
-			}, '-=0.8')
-			.fromTo('.choice__interaction-background', 0.8, {
-				x: -10,
-				scale: 1.1
-			}, {
-				x: 0,
-				scale: 1,
-				ease: Expo.easeOut
-			}, '-=1')
-			.from('.choice__description', 0.3, {
+			},'-=1.2')
+			// .fromTo('.choice__interaction-background', 0.8, {
+			// 	x: -200,
+			// 	scale: 1.4
+			// }, {
+			// 	x: 0,
+			// 	scale: 1,
+			// 	ease: Expo.easeOut
+			// },'-=.8')
+			.from('.choice__description', 0.6, {
 				x: -20,
-				opacity: 0
-			}, '-=0.9')
+				opacity: 0,
+				ease: Expo.easeOut
+			},'-=1.2')
+
+		this.introTimeline.play()
 
 		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
 		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
 
-		window.addEventListener('resize', debounce(this.resize.bind(this), 350))
+		window.addEventListener('resize', debounce(this.resize, 350))
 
 	}
 
@@ -72,7 +76,7 @@ class Choice extends React.Component {
 	 */
 	componentWillUnmount() {
 
-		window.removeEventListener('resize', this.resize.bind(this))
+		window.removeEventListener('resize', this.resize)
 
 	}
 
@@ -108,7 +112,8 @@ class Choice extends React.Component {
 		this.choiceVersion = currentChoice.version
 
 		//Identifies the correct interaction
-		const componentName = 'Choice' + this.choiceId + this.choiceVersion
+		// const componentName = 'Choice' + this.choiceId + this.choiceVersion
+		const componentName = 'Choice4'
 
 		for (let choiceComponent in ChoicesComponents) {
 			if (choiceComponent == componentName) {

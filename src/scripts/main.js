@@ -12,6 +12,7 @@ import App from './components/App'
 import Home from './components/Home'
 import Experiment from './components/Experiment'
 import Choices from './containers/ChoicesContainer'
+import End from './components/End'
 
 const store = createStore(
     mainReducer,
@@ -27,6 +28,7 @@ render(
                 <IndexRoute component={Home}/>
                 <Route path="experiment" component={Experiment}></Route>
                 <Route name="choice" path="choice/:id" component={Choices}></Route>
+                <Route path="end" component={End}></Route>
             </Route>
         </Router>
     </Provider>,
