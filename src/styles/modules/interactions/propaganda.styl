@@ -61,9 +61,6 @@
 		cursor pointer !important
 		transition transform .3s $easeOutExpo
 
-		&:active
-			cursor ew-resize !important
-
 		&:after, &:before
 			content ''
 			position absolute
@@ -76,10 +73,21 @@
 
 		&:before
 			left calc(50% - .3rem)
-			border-right .8rem solid $red;
+			border-right .8rem solid $red
 			transform translate(-100%,-50%)
+			transition left .1s linear
 
 		&:after
 			right calc(50% - .3rem)
-			border-left .8rem solid $red;
+			border-left .8rem solid $red
 			transform translate(100%,-50%)
+			transition right .1s linear
+
+		&.is-active
+			cursor ew-resize !important
+
+			&:before
+				left calc(50% - .6rem)
+
+			&:after
+				right calc(50% - .6rem)

@@ -89,6 +89,7 @@ class Choice3A extends React.Component {
 			zIndexBoost: false,
 			onPress: () => {
 				document.body.style.cursor = 'ew-resize'
+				this.cursor.classList.add('is-active')
 				TweenMax.to('.btn__main--hidden' , 0.3, {opacity: 1, display: 'block'})
 			},
 			onDrag: throttle(() => {
@@ -96,6 +97,7 @@ class Choice3A extends React.Component {
 			}, 350),
 			onRelease: () => {
 				document.body.style.cursor = 'default'
+				this.cursor.classList.remove('is-active')
 			}
 		})
 
@@ -166,7 +168,7 @@ class Choice3A extends React.Component {
                             <img className="propaganda__slider__item" src="assets/images/interactions/dead.svg"/>
                         </div>
     					<span className="propaganda__line"></span>
-    					<span ref="cursor" className="propaganda__cursor"></span>
+    					<span className="propaganda__cursor" ref="cursor"></span>
 						<ChoiceValidate classes="btn__main btn__main--hidden btn__main--3A" handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Endoctriner" />
                     </div>
 				</div>

@@ -34,9 +34,7 @@ class Choice4 extends React.Component {
         this.timelineEnd = new TimelineLite({
         	paused: true,
     		onComplete: () => {
-    			// setTimeout(() => {
-    				hashHistory.push('/experiment')
-    			// },200)		
+    			hashHistory.push('/experiment')
     		}
     	})
 
@@ -145,9 +143,6 @@ class Choice4 extends React.Component {
 					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
 				})
 	        }
-	        // else {
-	        // 	hashHistory.push('/experiment')
-	        // }
 	    }
 		else if (this.userHandPosition >= 65) {
 			if (this.userHandPosition >= 140) {
@@ -198,6 +193,12 @@ class Choice4 extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name spacebarDownHandler
+	 * @description Triggered when the spacebar is pressed
+	 * @param {object} e - event
+	 */
     spacebarDownHandler(e) {
 
         const event = e || window.e
