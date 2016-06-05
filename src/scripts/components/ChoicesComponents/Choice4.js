@@ -64,8 +64,8 @@ class Choice4 extends React.Component {
 		this.circlePerimeter = this.circleNode.getAttribute('r') * Math.PI * 2
 
 		this.spacebarTimeline
-			.to(this.spacebarIconNode, 0.3, {background: 'rgba(255,255,255,0.2)'})
-			.to(this.spacebarIconNode, 0.3, {background: 'transparent'},'-=.2')
+			.to(this.spacebarIconNode, 0.6, {background: 'rgba(255,255,255,0.2)', ease: Power1.easeOut})
+			.to(this.spacebarIconNode, 0.6, {background: 'transparent', ease: Power1.easeOut},'-=.5')
 
 		this.mayorTimeline
 			.to('.terminator__image--mayor-over, .terminator__image--mayor-under', .3, {
@@ -106,7 +106,7 @@ class Choice4 extends React.Component {
 		setTimeout(() => {
 			this.DELTA_TIME = 0
 			this.LAST_TIME = Date.now()
-			//TweenMax.ticker.addEventListener('tick', this.update)
+			TweenMax.ticker.addEventListener('tick', this.update)
 			window.addEventListener('keydown', debounce(this.spacebarDownHandler, 100))
 		}, 1000)
 

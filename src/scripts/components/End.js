@@ -19,6 +19,8 @@ class End extends React.Component {
 		this.mousemoveHandler = this.mousemoveHandler.bind(this)
 		this.resize = this.resize.bind(this)
 
+		this.enterTimeline = new TimelineLite({paused: true})
+
 	}
 
 	/**
@@ -32,6 +34,16 @@ class End extends React.Component {
 
 		window.addEventListener('mousemove',this.mousemoveHandler)
 		window.addEventListener('resize', debounce(this.resize, 350))
+
+		this.enterTimeline
+			.from('.end', .5, {
+				opacity: 0,
+				ease: Quart.easeOut
+			})
+
+		setTimeout(() => {
+			this.enterTimeline.play()
+		},200)	
 
 	}
 

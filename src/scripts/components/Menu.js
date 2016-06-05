@@ -326,7 +326,12 @@ class Menu extends React.Component {
 				<div className="menu__drag-line menu__drag-line" ref="menuDragLine"></div>
 				<div className="menu" ref="menu">
 					{this.menuItems}
-					<div className="menu__slice menu__slice--empty"></div>
+					<div className="menu__slice menu__slice--first">
+						<span className="menu__label">
+							Présent <br />
+							2017
+						</span>
+					</div>
 					<div className="menu__infos">
 						<p ref="menuInfos">Glisse le bouton pour voyager vers le passé</p>
 					</div>
