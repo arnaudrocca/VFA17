@@ -16,8 +16,34 @@ class Hotpoint extends React.Component {
 
 	/**
      * @method
-	 * @name getContent
+	 * @name clickHandler
+	 * @description Triggered when the user clicks on the hotpoint
      */
+	clickHandler() {
+
+		this.hotpointDatum = hotpointsData.find((hotpointData) => {
+			return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == this.props.hotpoint.answers
+		})
+
+		this.props.onClick(this.hotpointDatum.dialog, this.hotpointDatum.mood)
+
+	}
+
+	/**
+     * @method
+	 * @name mouseEnterHandler
+	 * @description Play button sound
+     */
+	mouseEnterHandler() {
+
+		this.props.onMouseEnter()
+
+	}
+
+	/**
+	 * @method
+	 * @name getContent
+	 */
 	getContent() {
 
 		this.data = hotpointsData.find((hotpointData) => {
@@ -33,30 +59,6 @@ class Hotpoint extends React.Component {
 		} else {
 			this.hotpoint = null
 		}
-
-	}
-
-	/**
-     * @method
-	 * @name clickHandler
-     */
-	clickHandler() {
-
-		this.hotpointDatum = hotpointsData.find((hotpointData) => {
-			return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == this.props.hotpoint.answers
-		})
-
-		this.props.onClick(this.hotpointDatum.dialog, this.hotpointDatum.mood)
-
-	}
-
-	/**
-     * @method
-	 * @name mouseEnterHandler
-     */
-	mouseEnterHandler() {
-
-		this.props.onMouseEnter()
 
 	}
 

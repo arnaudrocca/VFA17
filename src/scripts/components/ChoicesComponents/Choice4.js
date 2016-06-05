@@ -33,7 +33,7 @@ class Choice4 extends React.Component {
         this.mayorTimeline = new TimelineMax({repeat: -1})
 
         this.update = this.update.bind(this)
-       
+
         this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
 		this.spacebarUpHandler = this.spacebarUpHandler.bind(this)
 
@@ -83,7 +83,7 @@ class Choice4 extends React.Component {
 	componentWillUnmount() {
 
 		TweenMax.ticker.removeEventListener('tick', this.update)
-        window.removeEventListener('keydown', this.spacebarDownHandler) 
+        window.removeEventListener('keydown', this.spacebarDownHandler)
 		// window.removeEventListener('keyup', this.spacebarUpHandler)
 
 	}
@@ -198,7 +198,7 @@ class Choice4 extends React.Component {
         	//console.log(this.spacebarTimeline)
         	this.spacebarTimeline.play()
         	//TweenMax.fromTo(this.spacebarIconNode, 0.3, {background: 'transparent'}, {background: 'rgba(255,255,255,0.2)'})
-            this.userHandPosition -= 30   
+            this.userHandPosition -= 30
         }
 
     }
@@ -228,21 +228,21 @@ class Choice4 extends React.Component {
 				<div className="choice__interaction-main">
 					<div className="terminator">
                         <div className="terminator__container">
-                            <div ref="userHandImg" className="terminator__image terminator__image--user">
+                            <div className="terminator__image terminator__image--user" ref="userHandImg">
                                 <img height="180" src="assets/images/interactions/hand-user.svg"/>
                             </div>
-                            <div ref="mayorHandImg" className="terminator__image terminator__image--mayor-under">     
+                            <div className="terminator__image terminator__image--mayor-under" ref="mayorHandImg">
                                 <img height="100" src="assets/images/interactions/hand-mayor.svg"/>
                             </div>
                             <div  className="terminator__image terminator__image--mayor-over">
                                 <img height="100" src="assets/images/interactions/hand-mayor-over.svg"/>
                             </div>
                         </div>
-                        <div ref="hold" className="terminator__hold">
+                        <div className="terminator__hold" ref="hold">
                         	<IconHold classes="terminator__hold__icon" offset={this.state.offset} circlePerimeter={this.state.circlePerimeter} width="100%" />
-                        	<span ref="holdLabel" className="terminator__hold__label"></span>
+                        	<span className="terminator__hold__label" ref="holdLabel"></span>
                         </div>
-                        <div ref="spacebarIcon" className="terminator__spacebar">Appuies sur espace</div>
+                        <div className="terminator__spacebar" ref="spacebarIcon">Appuies sur espace</div>
 					</div>
 				</div>
 			</div>

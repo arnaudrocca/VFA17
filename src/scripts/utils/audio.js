@@ -11,9 +11,10 @@ class Audio {
         this.filter = this.audioContext.createBiquadFilter();
         this.analyser = this.audioContext.createAnalyser()
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
+
         this.volume = 0
         this.volumeMask = 0
-        this.volumeMin = .3
+        this.volumeMin = .15
         this.filterDisableFrequency = 2048
         this.filterEnableFrequency = 512
 
@@ -50,11 +51,11 @@ class Audio {
                 this.filter.connect(this.gainNode)
                 this.gainNode.connect(this.audioContext.destination)
 
-                // Audio source params
+                // Set the audio source params
                 this.audioSource.crossOrigin = 'anonymous'
                 this.audioSource.loop = true
 
-                // Filter params
+                // Set the filter params
                 this.filter.type = 'lowpass'
                 this.filter.frequency.value = this.filterDisableFrequency
 
@@ -108,7 +109,7 @@ class Audio {
     /**
 	 * @method
 	 * @name readSound
-	 * @description Read the sound from the microphone
+	 * @description Read the sound from the user's microphone
 	 */
     readSound() {
 
@@ -152,6 +153,7 @@ class Audio {
     /**
      * @method
      * @name stopAudioStream
+     * @description Stop all the tracks of the audio stream
      */
     stopAudioStream() {
 

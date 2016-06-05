@@ -29,7 +29,11 @@ class Choice0 extends React.Component {
 
 	}
 
-	hideOptionsLists(e) {
+	/**
+     * @method
+	 * @name hideOptionsLists
+     */
+	hideOptionsLists() {
 
 		for (let i = this.gossipFieldsNodes.length - 1; i >= 0; i--) {
 			this.gossipFieldsNodes[i].classList.remove('is-active')
@@ -116,36 +120,36 @@ class Choice0 extends React.Component {
 	render() {
 
 		return (
-			<div onClick={this.hideOptionsLists.bind(this)} className="choice__interaction-container">
+			<div className="choice__interaction-container" onClick={this.hideOptionsLists.bind(this)}>
 				<ChoiceIntro title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
 				<div className="choice__interaction-main">
 					<div className="gossip">
 						<div className="gossip__text">J'ai entendu dire que</div>
-						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
-							<div><span ref="gossipField1" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
+						<div className="gossip__field" onClick={this.stopPropagation.bind(this)}>
+							<div><span className="gossip__field__label" ref="gossipField1" onClick={this.selectField.bind(this)}></span></div>
 							<ul className="gossip__field__list">
-								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)} data-value="agriculture">
 									les porcs de la famille Viandé
 								</li>
-								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)} data-value="elevage">
 									les courgettes de la famille Plantard
 								</li>
-								<li onClick={this.selectOption.bind(this)} data-value="agriculture" className="gossip__field__list-item">
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)} data-value="agriculture">
 									les moutons de la famille Viandé
 								</li>
-								<li onClick={this.selectOption.bind(this)} data-value="elevage" className="gossip__field__list-item">
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)} data-value="elevage">
 									les poires de la famille Plantard
 								</li>
 							</ul>
 						</div>
 						<div className="gossip__text">provoquent</div>
-						<div onClick={this.stopPropagation.bind(this)} className="gossip__field">
-							<div><span ref="gossipField2" onClick={this.selectField.bind(this)} className="gossip__field__label"></span></div>
+						<div className="gossip__field" onClick={this.stopPropagation.bind(this)}>
+							<div><span className="gossip__field__label" ref="gossipField2" onClick={this.selectField.bind(this)}></span></div>
 							<ul className="gossip__field__list">
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">des nausées.</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la myoclonie phrénoglottique.</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte des 5 sens.</li>
-								<li onClick={this.selectOption.bind(this)} className="gossip__field__list-item">la perte de l'être aimé.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>des nausées.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la myoclonie phrénoglottique.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la perte des 5 sens.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la perte de l'être aimé.</li>
 							</ul>
 						</div>
 						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Colporter" classes="btn__main btn__main--hidden btn__main--0"/>

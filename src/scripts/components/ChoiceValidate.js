@@ -25,6 +25,7 @@ class ChoiceValidate extends React.Component {
 	/**
 	 * @method
 	 * @name mouseEnterHandler
+	 * @description Play button sound
 	 */
 	mouseEnterHandler() {
 

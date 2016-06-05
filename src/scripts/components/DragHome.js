@@ -63,6 +63,7 @@ class DragHome extends React.Component {
 	/**
 	 * @method
 	 * @name createDrag
+	 * @description Create the drag using Draggable
 	 */
 	createDrag() {
 
@@ -92,6 +93,7 @@ class DragHome extends React.Component {
 	/**
 	 * @method
 	 * @name onPress
+	 * @description Triggered when the drag is pressed
 	 */
 	onPress() {
 
@@ -125,6 +127,7 @@ class DragHome extends React.Component {
 	/**
 	 * @method
 	 * @name onRelease
+	 * @description Triggered when the drag is released
 	 */
 	onRelease() {
 
@@ -279,7 +282,7 @@ class DragHome extends React.Component {
 					</div>
 				</div>
 				<div className="menu__drag-start"></div>
-				<div ref="menuDragLine" className="menu__drag-line"></div>
+				<div className="menu__drag-line" ref="menuDragLine"></div>
 				<div className="menu__drag-dots"></div>
 				<IconArrows classes="menu__drag-arrows" width="25" color="#FFFFFF"/>
 			</div>

@@ -172,7 +172,7 @@ class Interaction2A extends Graphics {
     /**
 	 * @method
 	 * @name draw
-     * @description Draw all the elements
+     * @description Draw the elements
 	 */
     draw() {
 
@@ -300,8 +300,6 @@ class Interaction2A extends Graphics {
     */
     onMouseDown() {
 
-        this.isMouseDown = true
-
         // Start a new drag
         if (Math.abs(this.mouseX - this.nodesChurch[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesChurch[0].y) < this.nodeRadius) {
             this.currentRoad = this.nodesChurch
@@ -323,7 +321,6 @@ class Interaction2A extends Graphics {
     */
     onMouseUp() {
 
-        this.isMouseDown = false
         this.dragging = false
 
         if (!this.end) {
@@ -356,6 +353,7 @@ class Interaction2A extends Graphics {
             this.drag()
         }
 
+        // Detect if the mouse position is on a start node
         if ((Math.abs(this.mouseX - this.nodesChurch[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesChurch[0].y) < this.nodeRadius) || (Math.abs(this.mouseX - this.nodesMarket[0].x) < this.nodeRadius && Math.abs(this.mouseY - this.nodesMarket[0].y) < this.nodeRadius)) {
             this.onStart = true
         } else {

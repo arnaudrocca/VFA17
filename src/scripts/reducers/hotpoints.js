@@ -3,48 +3,39 @@ import { CONSTANTS } from '../constants/index'
 const initialHotpoints = [
 	{
 		id: 0,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 1,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 2,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 3,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 4,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 5,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 6,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 7,
-		visited: false,
-		answers: []
+		answers: ''
 	},
 	{
 		id: 8,
-		visited: false,
-		answers: []
+		answers: ''
 	}
 ]
 

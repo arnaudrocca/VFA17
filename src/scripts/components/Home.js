@@ -24,7 +24,7 @@ class Home extends React.Component {
 	 */
 	componentDidMount() {
 
-		this.videoNode = ReactDOM.findDOMNode(this.refs.video)
+		this.homeVideoMainNode = ReactDOM.findDOMNode(this.refs.homeVideoMain)
 
 	}
 
@@ -43,7 +43,7 @@ class Home extends React.Component {
 				display: 'block',
 				opacity: 1,
 				onComplete : () => {
-					this.videoNode.play()
+					this.homeVideoMainNode.play()
 				}
 			})
 
@@ -51,9 +51,10 @@ class Home extends React.Component {
 
 	/**
      * @method
-	 * @name goToExperiment
+	 * @name submitHandler
+	 * @description Go to experiment
      */
-	goToExperiment() {
+	submitHandler() {
 
 		hashHistory.push('/experiment')
 
@@ -71,8 +72,8 @@ class Home extends React.Component {
 					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
 					<h2 className="home__subtitle">Le pouvoir des fleurs</h2>
 					<p className="home__content">
-						Glisse le bouton au centre de la <br/>
-						 fleur pour commencer l’expérience.
+						Glisse le bouton au centre de la fleur <br/>
+						pour commencer l’expérience.
 					</p>
 				</div>
 				<div className="home__logo-container">
@@ -81,8 +82,8 @@ class Home extends React.Component {
 				</div>
 				<DragHome showVideo={this.showVideo.bind(this)} />
 				<video className="home__video home__video--intro" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
-				<video ref="video" className="home__video home__video--main" src="http://techslides.com/demos/sample-videos/small.webm" loop></video>
-				<ChoiceValidate handleSubmit={this.goToExperiment.bind(this)} label="Passer" labelSecondary="Tais-toi !" classes="btn__main btn__main--hidden home__btn-video"/>
+				<video className="home__video home__video--main" ref="homeVideoMain" src="http://techslides.com/demos/sample-videos/small.webm" loop></video>
+				<ChoiceValidate handleSubmit={this.submitHandler.bind(this)} label="Passer" labelSecondary="Tais-toi !" classes="btn__main btn__main--hidden home__btn-video"/>
 				<div className="home__overlay"></div>
 			</section>
 		)

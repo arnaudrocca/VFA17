@@ -92,27 +92,6 @@ class Map extends React.Component {
 
 	}
 
-    /**
-	 * @method
-	 * @name createDrag
-	 */
-    createDrag() {
-
-        Draggable.create(this.map, {
-            type: 'x, y',
-            edgeResistance: .8,
-            bounds: {
-                minX: -this.windowWidth / 2,
-                maxX: this.windowWidth / 2,
-                minY: -this.windowHeight / 2,
-                maxY: this.windowHeight / 2
-            },
-			zIndex: 1,
-			zIndexBoost: false
-        })
-
-    }
-
 	/**
 	 * @method
 	 * @name componentWillUpdate
@@ -137,7 +116,30 @@ class Map extends React.Component {
 
 	/**
 	 * @method
+	 * @name createDrag
+	 * @description Create the drag using Draggable
+	 */
+	createDrag() {
+
+		Draggable.create(this.map, {
+			type: 'x, y',
+			edgeResistance: .8,
+			bounds: {
+				minX: -this.windowWidth / 2,
+				maxX: this.windowWidth / 2,
+				minY: -this.windowHeight / 2,
+				maxY: this.windowHeight / 2
+			},
+			zIndex: 1,
+			zIndexBoost: false
+		})
+
+	}
+
+	/**
+	 * @method
 	 * @name scaleHandler
+	 * @description Triggered when the user scrolls on the map
 	 * @param {object} e - event
 	 */
 	scaleHandler(e) {

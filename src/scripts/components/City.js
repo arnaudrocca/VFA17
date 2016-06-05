@@ -23,21 +23,20 @@ class City extends React.Component {
 	componentDidMount() {
 
 		if (window.previousLocation == '/video') {
-
 			this.introTimeline
-			.from('.city__panel', 0.3, {
-				'width': 0
-			})
-			.from('.city__panel svg, .city__panel span', 0.3, {
-				'x': -10,
-				'opacity': 0
-			},'-=0.05')
-			.from('.city__infos', 0.3, {
-				'width': 0
-			},'-=0.3')
-			.staggerFrom('city__infos svg', 0.3, {
-				scale: 0
-			},0.2, '-=0.05')
+				.from('.city__panel', 0.3, {
+					'width': 0
+				})
+				.from('.city__panel svg, .city__panel span', 0.3, {
+					'x': -10,
+					'opacity': 0
+				},'-=0.05')
+				.from('.city__infos', 0.3, {
+					'width': 0
+				},'-=0.3')
+				.staggerFrom('city__infos svg', 0.3, {
+					scale: 0
+				}, 0.2, '-=0.05')
 		}
 
 	}

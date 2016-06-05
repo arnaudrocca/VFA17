@@ -59,6 +59,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name createDrag
+	 * @description Create the drag using Draggable
 	 */
 	createDrag() {
 
@@ -96,6 +97,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name onPress
+	 * @description Triggered when the drag is pressed
 	 */
 	onPress() {
 
@@ -118,6 +120,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name onDrag
+	 * @description Triggered when the drag is moving
 	 */
 	onDrag() {
 
@@ -192,6 +195,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name onRelease
+	 * @description Triggered when the drag is released
 	 * @param {object} endValue
 	 */
 	onRelease(endValue) {

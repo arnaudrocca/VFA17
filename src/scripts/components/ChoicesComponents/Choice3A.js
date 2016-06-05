@@ -61,6 +61,7 @@ class Choice3A extends React.Component {
 	/**
 	 * @method
 	 * @name createDrag
+	 * @description Create the drag using Draggable
 	 */
 	createDrag() {
 
@@ -103,6 +104,7 @@ class Choice3A extends React.Component {
 	/**
 	 * @method
 	 * @name onDrag
+	 * @description Triggered when the drag is moving
 	 */
 	onDrag() {
 

@@ -36,7 +36,7 @@ const initialMap = [
 	{
 		id: 8,
 		version: 'A'
-	},
+	}
 ]
 
 const map = (state = initialMap, action) => {

@@ -4,6 +4,8 @@ class Scene {
 
 	/**
 	 * @constructor
+	 * @param {number} width
+	 * @param {number} height
 	 */
 	constructor(width, height) {
 
@@ -40,7 +42,7 @@ class Scene {
 	/**
 	 * @method
 	 * @name render
-	 * @description Renders/Draw the scene
+	 * @description Render/Draw the scene
 	 */
 	render() {
 

@@ -137,6 +137,7 @@ class Choice1A extends React.Component {
 				}
 			}
 
+			// Update audio visualizer
 			TweenMax.set('.voice__slider__visualizer', {width: `${30 + (this.audioAverage / 2)}%`, height:`${30 + (this.audioAverage / 2)}%`})
 
 			// Increments gauges
@@ -206,7 +207,7 @@ class Choice1A extends React.Component {
 							<IconRedo width="25" color="#FFFFFF" />
 						</button>
 						<div className="voice__audiovisualizer">
-							<div ref="ghostLevel" className="voice__level voice__level--ghost">
+							<div className="voice__level voice__level--ghost" ref="ghostLevel">
 								<span className="voice__level__label">Fantôme</span>
 								<span className="voice__level__gauge voice__level__gauge-ghost"></span>
 							</div>
@@ -218,7 +219,7 @@ class Choice1A extends React.Component {
 									<IconMic width="17" color="#FF5951"/>
 								</div>
 							</div>
-							<div ref="godLevel" className="voice__level voice__level--god">
+							<div className="voice__level voice__level--god" ref="godLevel">
 								<span className="voice__level__label">Divinité</span>
 								<span className="voice__level__gauge voice__level__gauge-god"></span>
 							</div>

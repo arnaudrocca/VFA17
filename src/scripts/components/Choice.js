@@ -96,6 +96,7 @@ class Choice extends React.Component {
 	/**
 	 * @method
 	 * @name clickHandler
+	 * @description Return to experiment
 	 */
 	clickHandler() {
 
@@ -106,6 +107,7 @@ class Choice extends React.Component {
 	/**
 	 * @method
 	 * @name mouseEnterHandler
+	 * @description Play button sound
 	 */
 	mouseEnterHandler() {
 

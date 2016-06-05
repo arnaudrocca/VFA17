@@ -41,7 +41,7 @@ class Wireframe extends React.Component {
 		this.drag = null
 		this.lineTop = null
 		this.lineBottom = null
-		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#ffffff"/>
+		this.borderRight = <IconBorderRightArrow classes="wireframe__trapezoid wireframe__trapezoid--right" width="14" fill="#FFF"/>
 
 		if (location[1] == 'experiment') {
 			this.drag = <ChoicesDoneContainer />
@@ -53,15 +53,15 @@ class Wireframe extends React.Component {
 							<IconDragHome classes="wireframe__drag" width="70"/>
 						</div>
 			this.lineTop = <span className="wireframe__line wireframe__line--top">
-						<IconFlowerSmall classes="wireframe__flower wireframe__flower--top" width="15" color="#FF5951"/>
-					</span>
+							<IconFlowerSmall classes="wireframe__flower wireframe__flower--top" width="15" color="#FF5951"/>
+						</span>
 
 			this.lineBottom = <span className="wireframe__line wireframe__line--bottom">
-						<IconFlowerSmall classes="wireframe__flower wireframe__flower--bottom" width="15" color="#FF5951"/>
-					</span>
+								<IconFlowerSmall classes="wireframe__flower wireframe__flower--bottom" width="15" color="#FF5951"/>
+							</span>
 		}
 		else {
-			this.borderRight = <IconBorderRight classes="wireframe__trapezoid wireframe__trapezoid--right" width="7" fill="#ffffff"/>
+			this.borderRight = <IconBorderRight classes="wireframe__trapezoid wireframe__trapezoid--right" width="7" fill="#FFF"/>
 		}
 
 	}

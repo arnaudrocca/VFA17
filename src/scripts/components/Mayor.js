@@ -131,6 +131,7 @@ class Mayor extends React.Component {
 	/**
      * @method
 	 * @name spacebarDownHandler
+	 * @description Triggered when spacebar is pressed
 	 * @param {object} e - event
      */
 	spacebarDownHandler(e) {
@@ -150,6 +151,7 @@ class Mayor extends React.Component {
 	/**
 	 * @method
 	 * @name spacebarUpHandler
+	 * @description Triggered when spacebar is released
 	 * @param {object} e - event
 	 */
 	spacebarUpHandler(e) {

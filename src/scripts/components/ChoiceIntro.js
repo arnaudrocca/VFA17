@@ -17,6 +17,7 @@ class ChoiceIntro extends React.Component {
 	/**
      * @method
 	 * @name clickHandler
+	 * @description Start the choice interaction
      */
 	clickHandler() {
 

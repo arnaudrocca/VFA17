@@ -14,7 +14,7 @@ class Toolbar extends React.Component {
 
         this.fullScreenToggled = false
 
-        this.aboutTimeline = new TimelineLite()
+        this.openAboutTimeline = new TimelineLite()
 
         this.keyDownHandler = this.keyDownHandler.bind(this)
         this.fullScreenHandler = this.fullScreenHandler.bind(this)
@@ -33,10 +33,10 @@ class Toolbar extends React.Component {
         this.homeVideoMain = document.querySelector('.home__video--main')
 
         window.addEventListener('keydown', this.keyDownHandler)
-        window.addEventListener('fullscreenchange', this.fullScreenHandler);
-        window.addEventListener('webkitfullscreenchange', this.fullScreenHandler);
-        window.addEventListener('mozfullscreenchange', this.fullScreenHandler);
-        window.addEventListener('MSFullscreenChange', this.fullScreenHandler);
+        window.addEventListener('fullscreenchange', this.fullScreenHandler)
+        window.addEventListener('webkitfullscreenchange', this.fullScreenHandler)
+        window.addEventListener('mozfullscreenchange', this.fullScreenHandler)
+        window.addEventListener('MSFullscreenChange', this.fullScreenHandler)
 
     }
 
@@ -47,55 +47,28 @@ class Toolbar extends React.Component {
     componentWillUnmount() {
 
         window.removeEventListener('keydown', this.keyDownHandler)
+        window.removeEventListener('fullscreenchange', this.fullScreenHandler)
+        window.removeEventListener('webkitfullscreenchange', this.fullScreenHandler)
+        window.removeEventListener('mozfullscreenchange', this.fullScreenHandler)
+        window.removeEventListener('MSFullscreenChange', this.fullScreenHandler)
 
     }
 
     /**
      * @method
-     * @name keyDownHandler
-     * @param {object} e - event
+     * @name openAbout
+     * @description Open the about pop-in
      */
-    keyDownHandler(e) {
-
-        const event = e || window.e
-        const key = event.keyCode || event.which
-
-        if (key == 32) {
-            event.stopPropagation()
-            event.preventDefault()
-            return false
-        }
-
-    }
-
-    /**
-     * @method
-     * @name mouseEnterHandler
-     */
-    mouseEnterHandler() {
-
-        if (window.enableAudio) {
-            this.audioButton.currentTime = 0
-            this.audioButton.play()
-        }
-
-    }
-
-    /**
-     * @method
-     * @name toggleAbout
-     */
-    toggleAbout() {
+    openAbout() {
 
         window.cityAudio.setFilter(true)
 
-        this.aboutTimeline
+        this.openAboutTimeline
             .to(this.aboutNode, .3, {opacity: 1, display: 'flex'})
             .fromTo(this.aboutContainerNode, .3, {scale: 1.1}, {scale: 1}, '-=.3')
 
-        const videoPlayer = document.querySelector('.home__video--main')
-        if (videoPlayer && getComputedStyle(videoPlayer)['display'] != 'none') {
-            videoPlayer.pause()
+        if (this.homeVideoMain) {
+            this.homeVideoMain.pause()
         }
 
     }
@@ -103,6 +76,7 @@ class Toolbar extends React.Component {
     /**
      * @method
      * @name toggleAudio
+     * @description Enable/Disable all the sounds
      */
     toggleAudio() {
 
@@ -128,6 +102,7 @@ class Toolbar extends React.Component {
     /**
      * @method
      * @name toggleFullScreen
+     * @description Toggle the fullscreen
      */
     toggleFullScreen() {
 
@@ -165,6 +140,7 @@ class Toolbar extends React.Component {
     /**
      * @method
      * @name fullScreenHandler
+     * @description Triggered when the fullscreen value change
      */
     fullScreenHandler() {
 
@@ -179,13 +155,46 @@ class Toolbar extends React.Component {
 
     /**
      * @method
+     * @name mouseEnterHandler
+     * @description Play button sound
+     */
+    mouseEnterHandler() {
+
+        if (window.enableAudio) {
+            this.audioButton.currentTime = 0
+            this.audioButton.play()
+        }
+
+    }
+
+    /**
+     * @method
+     * @name keyDownHandler
+     * @description Prevent spacebar actions
+     * @param {object} e - event
+     */
+    keyDownHandler(e) {
+
+        const event = e || window.e
+        const key = event.keyCode || event.which
+
+        if (key == 32) {
+            event.stopPropagation()
+            event.preventDefault()
+            return false
+        }
+
+    }
+
+    /**
+     * @method
      * @name render
      */
     render() {
 
         return (
             <div className="toolbar">
-                <button className="toolbar__btn" onClick={this.toggleAbout.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
+                <button className="toolbar__btn" onClick={this.openAbout.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
                     <span>Infos</span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleAudio.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
