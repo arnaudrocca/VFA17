@@ -36,19 +36,13 @@
 
     &__image
         position absolute
-        
-        // &__over
-        //     position absolute
-        //     top 0
-        //     left 0
-        //     z-index 3 
-                 
+
         &--user
             z-index 2
             top calc(50% - 90px)
             left -26rem
             transition transform .3s $easeOutExpo
-            
+
         &--mayor-under
             z-index 1
             top calc(50% - 50px)
@@ -56,8 +50,7 @@
             height 10rem
             transform translateY(-50%)
             transform-origin 100% 50%
-            // animation grab .6s ease-out infinite
-            
+
         &--mayor-over
             z-index 3
             top calc(50% - 50px)
@@ -65,10 +58,9 @@
             height 10rem
             transform translateY(-50%)
             transform-origin 100% 50%
-            // animation grab .6s ease-out infinite
-            
+
     &__hold
-        position absolute 
+        position absolute
         right 0
         bottom 0
         left 0
@@ -77,12 +69,12 @@
         margin 0 auto
         transform-origin 50% 50%
         transform translateY(50%) scale(0)
-        
+
         &__icon
             transform rotate(-90deg)
-        
+
         &__label
-            position absolute 
+            position absolute
             top 50%
             display block
             width 100%
@@ -92,4 +84,3 @@
             text-transform uppercase
             color $blue-dark
             transform translateY(-50%)
-

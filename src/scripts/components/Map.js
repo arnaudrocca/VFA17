@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { debounce } from 'lodash'
 import { hashHistory } from 'react-router'
 import MapComponent from './MapComponent'
+import Cars from './Cars'
 import HotpointsContainer from '../containers/HotpointsContainer'
 import { utils } from '../utils/utils'
 
@@ -188,8 +189,9 @@ class Map extends React.Component {
 				<div className="map" ref="map">
 					<img className="map__base" src="assets/images/mapItems/mapItemBase.svg"/>
 					<img className="map__shadow" src="assets/images/mapItems/mapItemShadow.svg"/>
+					<Cars />
 					<ReactCSSTransitionGroup className="mapItems" ref="mapItems" transitionName="mapItems" component="div"
-						transitionEnterTimeout={2500} transitionLeaveTimeout={2500}>
+					transitionEnterTimeout={2500} transitionLeaveTimeout={2500}>
 						{mapItems}
 					</ReactCSSTransitionGroup>
 					<HotpointsContainer />

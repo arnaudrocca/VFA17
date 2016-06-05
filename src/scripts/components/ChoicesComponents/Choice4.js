@@ -35,7 +35,6 @@ class Choice4 extends React.Component {
         this.update = this.update.bind(this)
 
         this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
-		this.spacebarUpHandler = this.spacebarUpHandler.bind(this)
 
 	}
 
@@ -46,7 +45,6 @@ class Choice4 extends React.Component {
 	componentDidMount() {
 
 		window.addEventListener('keydown', debounce(this.spacebarDownHandler,150))
-		// window.addEventListener('keyup', this.spacebarUpHandler)
 
 		this.holdNode = ReactDOM.findDOMNode(this.refs.hold)
 		this.holdLabelNode = ReactDOM.findDOMNode(this.refs.holdLabel)
@@ -84,7 +82,6 @@ class Choice4 extends React.Component {
 
 		TweenMax.ticker.removeEventListener('tick', this.update)
         window.removeEventListener('keydown', this.spacebarDownHandler)
-		// window.removeEventListener('keyup', this.spacebarUpHandler)
 
 	}
 
@@ -136,9 +133,6 @@ class Choice4 extends React.Component {
 					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
 				})
 	        }
-	        // else {
-	        // 	hashHistory.push('/experiment')
-	        // }
 	    }
 		else if (this.userHandPosition >= 65) {
 			if (this.userHandPosition >= 160) {
@@ -189,28 +183,21 @@ class Choice4 extends React.Component {
 
 	}
 
+	/**
+	 * @method
+	 * @name spacebarDownHandler
+	 * @description Triggered when the spacebar is pressed
+	 * @param {object} e - event
+	 */
     spacebarDownHandler(e) {
 
         const event = e || window.e
 		const key = event.keyCode || event.which
 
         if (key == 32) {
-        	//console.log(this.spacebarTimeline)
         	this.spacebarTimeline.play()
-        	//TweenMax.fromTo(this.spacebarIconNode, 0.3, {background: 'transparent'}, {background: 'rgba(255,255,255,0.2)'})
             this.userHandPosition -= 30
         }
-
-    }
-
-     spacebarUpHandler(e) {
-
-        const event = e || window.e
-		const key = event.keyCode || event.which
-
-        // if (key == 32) {
-        //     TweenMax.fromTo(this.spacebarIconNode, 0.3, {background: 'rgba(255,255,255,0.2)'}, {background: 'transparent'})
-        // }
 
     }
 
@@ -219,8 +206,6 @@ class Choice4 extends React.Component {
 	 * @name render
 	 */
 	render() {
-
-		// <img className="terminator__image__under" height="100" src="assets/images/interactions/hand-mayor.svg"/>
 
 		return (
 			<div className="choice__interaction-container">
