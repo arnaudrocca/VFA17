@@ -16,8 +16,34 @@ class Hotpoint extends React.Component {
 
 	/**
      * @method
-	 * @name getContent
+	 * @name clickHandler
+	 * @description Triggered when the user clicks on the hotpoint
      */
+	clickHandler() {
+
+		this.hotpointDatum = hotpointsData.find((hotpointData) => {
+			return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == this.props.hotpoint.answers
+		})
+
+		this.props.onClick(this.hotpointDatum.dialog, this.hotpointDatum.mood)
+
+	}
+
+	/**
+     * @method
+	 * @name mouseEnterHandler
+	 * @description Play button sound
+     */
+	mouseEnterHandler() {
+
+		this.props.onMouseEnter()
+
+	}
+
+	/**
+	 * @method
+	 * @name getContent
+	 */
 	getContent() {
 
 		this.data = hotpointsData.find((hotpointData) => {
@@ -38,20 +64,6 @@ class Hotpoint extends React.Component {
 
 	/**
      * @method
-	 * @name clickHandler
-     */
-	clickHandler() {
-
-		this.hotpointDatum = hotpointsData.find((hotpointData) => {
-			return hotpointData.mapId == this.props.hotpoint.id && hotpointData.answer == this.props.hotpoint.answers
-		})
-
-		this.props.onClick(this.hotpointDatum.dialog, this.hotpointDatum.mood)
-
-	}
-
-	/**
-     * @method
 	 * @name render
      */
 	render() {
@@ -59,7 +71,7 @@ class Hotpoint extends React.Component {
 		this.getContent()
 
 		return (
-			<ReactCSSTransitionGroup className="hotpoint" transitionName="hotpoint" onClick={this.clickHandler.bind(this)} style={this.position} component="div" transitionEnterTimeout={3500} transitionLeaveTimeout={1300}>
+			<ReactCSSTransitionGroup className="hotpoint" transitionName="hotpoint" onClick={this.clickHandler.bind(this)}  onMouseEnter={this.mouseEnterHandler.bind(this)} style={this.position} component="div" transitionEnterTimeout={3500} transitionLeaveTimeout={1300}>
 				{this.hotpoint}
         	</ReactCSSTransitionGroup>
 		)

@@ -22,12 +22,14 @@ class About extends React.Component {
 
         this.aboutNode = ReactDOM.findDOMNode(this.refs.about)
         this.aboutContainerNode = ReactDOM.findDOMNode(this.refs.aboutContainer)
+		this.homeVideoMain = document.querySelector('.home__video--main')
 
     }
 
     /**
 	 * @method
 	 * @name clickHandler
+	 * @description Close the about pop-in
 	 */
     clickHandler() {
 
@@ -37,9 +39,8 @@ class About extends React.Component {
             .fromTo(this.aboutContainerNode, .3, {scale: 1}, {scale: .9})
 			.to(this.aboutNode, .3, {opacity: 0, display: 'none'}, '-=.3')
 
-		const videoPlayer = document.querySelector('.home__video--main')
-        if (videoPlayer) {
-	        videoPlayer.play()
+        if (this.homeVideoMain && getComputedStyle(this.homeVideoMain)['display'] != 'none') {
+	        this.homeVideoMain.play()
 	    }
 
     }

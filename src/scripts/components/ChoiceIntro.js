@@ -17,6 +17,7 @@ class ChoiceIntro extends React.Component {
 	/**
      * @method
 	 * @name clickHandler
+	 * @description Start the choice interaction
      */
 	clickHandler() {
 
@@ -42,7 +43,7 @@ class ChoiceIntro extends React.Component {
 				<p className="choice__interaction-intro__text">
 					{this.props.text}
 				</p>
-				<ChoiceValidate classes="btn__main choice__interaction-intro__btn" handleSubmit={this.clickHandler.bind(this)} label="Suivant" labelSecondary="J'ai compris"/>
+				<ChoiceValidate classes="btn__main choice__interaction-intro__btn" handleSubmit={this.clickHandler.bind(this)} label="Suivant" labelSecondary="J'ai compris" />
 			</div>
 		)
 

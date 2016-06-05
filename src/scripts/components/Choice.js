@@ -26,6 +26,10 @@ class Choice extends React.Component {
 	 */
 	componentDidMount() {
 
+		this.choiceAsideNode = ReactDOM.findDOMNode(this.refs.choiceAside)
+		this.choiceInteractionNode = ReactDOM.findDOMNode(this.refs.choiceInteraction)
+		this.audioButtonNode = ReactDOM.findDOMNode(this.refs.audioButton)
+
 		if (window.innerWidth > 1400) {
 			this.asideWidth = '24%'
 			this.interactionWidth = '76%'
@@ -63,9 +67,6 @@ class Choice extends React.Component {
 
 		this.introTimeline.play()
 
-		this.choiceAside = ReactDOM.findDOMNode(this.refs.choiceAside)
-		this.choiceInteraction = ReactDOM.findDOMNode(this.refs.choiceInteraction)
-
 		window.addEventListener('resize', debounce(this.resize, 350))
 
 	}
@@ -87,11 +88,36 @@ class Choice extends React.Component {
 	resize() {
 
 		if (window.innerWidth > 1400) {
-			this.choiceAside.style.width = '24%'
-			this.choiceInteraction.style.width = '76%'
+			this.choiceAsideNode.style.width = '24%'
+			this.choiceInteractionNodestyle.width = '76%'
 		} else {
-			this.choiceAside.style.width = '34%'
-			this.choiceInteraction.style.width = '66%'
+			this.choiceAsideNode.style.width = '34%'
+			this.choiceInteractionNode.style.width = '66%'
+		}
+
+	}
+
+	/**
+	 * @method
+	 * @name clickHandler
+	 * @description Return to experiment
+	 */
+	clickHandler() {
+
+		hashHistory.push('/experiment')
+
+	}
+
+	/**
+	 * @method
+	 * @name mouseEnterHandler
+	 * @description Play button sound
+	 */
+	mouseEnterHandler() {
+
+		if (window.enableAudio) {
+			this.audioButtonNode.currentTime = 0
+			this.audioButtonNode.play()
 		}
 
 	}
@@ -136,16 +162,6 @@ class Choice extends React.Component {
 
 	/**
 	 * @method
-	 * @name returnToMap
-	 */
-	returnToMap() {
-
-		hashHistory.push('/experiment')
-
-	}
-
-	/**
-	 * @method
 	 * @name render
 	 */
 	render() {
@@ -155,7 +171,7 @@ class Choice extends React.Component {
 		return (
 			<div className="choice">
 				<div className="choice__aside" ref="choiceAside">
-					<button className="btn__return" type="button" onClick={this.returnToMap.bind(this)}>
+					<button className="btn__return" type="button" onClick={this.clickHandler.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
 						<span className="btn__return__label-container">
 							<span className="btn__return__label">Quitter</span>
 						</span>
@@ -180,6 +196,7 @@ class Choice extends React.Component {
 					<div className="choice__interaction-background" style={this.backgroundStyle}></div>
 					<this.component choiceData={this.choiceData} id={this.choiceId} submitHandler={this.props.onSubmit}/>
 				</div>
+				<audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
 			</div>
 		)
 

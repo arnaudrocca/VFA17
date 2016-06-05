@@ -5,7 +5,7 @@ const IconLocked = ({classes, width, color, opacity}) => (
 	<div className={classes + ' icon-locked'}>
 		<div className="icon-locked__circle">
 			<svg x="0px" y="0px" viewBox="-682 364 74 74" opacity={opacity} width={width} fill={color}>
-				<g >
+				<g>
 					<g>
 						<path d="M-645,376c13.8,0,25,11.2,25,25s-11.2,25-25,25s-25-11.2-25-25S-658.8,376-645,376 M-645,375c-14.4,0-26,11.6-26,26
 							s11.6,26,26,26s26-11.6,26-26S-630.6,375-645,375L-645,375z"/>

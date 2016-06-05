@@ -4,7 +4,7 @@
 		"version": "",
 		"period": "465",
 		"title": "Les querelles des grandes familles",
-		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés : elle reste donc relativement pauvre et peu productive. Il faut trouver un moyen de mettre fin à cette guerre avant qu’elle ne commence... Par exemple en déshonorant l’une des familles ?...",
+		"context": "L’une est une famille d’éleveurs, l’autre d’agriculteurs. Leurs querelles ancestrales empêchent aujourd’hui la ville de se positionner sur l’un de ces marchés\u00A0:\u00A0elle reste donc relativement pauvre et peu productive. Il faut trouver un moyen de mettre fin à cette guerre avant qu’elle ne commence... Par exemple en déshonorant l’une des familles\u00A0?...",
 		"introTitle": "Gossip",
 		"introText": "Crée une rumeur à propos de l’une des deux familles à l'aide des listes déroulantes."
 	},
@@ -13,7 +13,7 @@
 		"version": "A",
 		"period": "1134",
 		"title": "Préservons la forêt",
-		"context": "Ne sachant où entreposer leurs déchets, les habitants ont pris la fâcheuse habitude de les déverser dans la forêt : cela fait tâche pour une ville qui se veut proche de la nature. La population était particulièrement crédule en ce milieu de Moyen Âge, il ne sera pas difficile de leur faire croire que la forêt est habitée par une créature surnaturelle afin qu’ils n’y mettent plus les pieds.",
+		"context": "Ne sachant où entreposer leurs déchets, les habitants ont pris la fâcheuse habitude de les déverser dans la forêt\u00A0:\u00A0cela fait tâche pour une ville qui se veut proche de la nature. La population était particulièrement crédule en ce milieu de Moyen Âge, il ne sera pas difficile de leur faire croire que la forêt est habitée par une créature surnaturelle afin qu’ils n’y mettent plus les pieds.",
 		"introTitle": "The Voice",
 		"introText": "Active ton micro et parle à voix basse pour imiter un fantôme, ou parle fort pour simuler une divinité."
 	},
@@ -22,7 +22,7 @@
 		"version": "A",
 		"period": "1502",
 		"title": "Nouveaux plans",
-		"context": "Albert Ivi, le maire de la ville voisine, se targue depuis des décennies d’avoir la plus belle cathédrale de la contrée. je veux quelque chose qui attire les touristes à Ayaux-les-Bains, afin de lui rabattre le caquet ! Remplace les plans d’un bâtiment quelconque par ceux d’un nouvel édifice.",
+		"context": "Albert Ivi, le maire de la ville voisine, se targue depuis des décennies d’avoir la plus belle cathédrale de la contrée. je veux quelque chose qui attire les touristes à Ayaux-les-Bains, afin de lui rabattre le caquet\u00A0! Remplace les plans d’un bâtiment quelconque par ceux d’un nouvel édifice.",
 		"introTitle": "Je suis un architecte !",
 		"introText": "Relie les points pour dessiner une église ou un marché."
 	},
@@ -40,8 +40,8 @@
 		"version": "",
 		"period": "2017",
 		"title": "A moi l'Award !",
-		"context": "Bon, la machine est presque épuisée. Il faut désormais que tu saches comment je l’ai eue : c’est toi-même qui me l’a confiée, il y a 3 jours ! Il faut donc que tu remontes le temps une dernière fois afin de me donner la machine pour boucler la boucle, et que je gagne l’Award. Donne la moi ! MAINTENANT ! Qu’est ce que tu attends, imbécile ?",
+		"context": "Bon, la machine est presque épuisée. Il faut désormais que tu saches comment je l’ai eue\u00A0:\u00A0c’est toi-même qui me l’a confiée, il y a 3 jours\u00A0!\u00A0Il faut donc que tu remontes le temps une dernière fois afin de me donner la machine pour boucler la boucle, et que je gagne l’Award. Donne la moi\u00A0!\u00A0MAINTENANT\u00A0!\u00A0Qu’est ce que tu attends, imbécile\u00A0?",
 		"introTitle": "Le Dilemme",
-		"introText": "La main du maire d'apprête à saisir la machine... Vous allez le laisser faire, après la façon dont il vous a traité ? Appuyez sur espace si vous voulez l'en empêcher."
+		"introText": "La main du maire d'apprête à saisir la machine... Vous allez le laisser faire, après la façon dont il vous a traité\u00A0? Appuyez sur espace si vous voulez l'en empêcher."
 	}
 ]

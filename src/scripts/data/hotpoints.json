@@ -2,11 +2,11 @@
 	{
 		"id": 0,
 		"mapId": 0,
-		"x": 38.4,
-		"y": 4.8,
+		"x": 53.3,
+		"y": 1.2,
 		"answer": "agriculture",
 		"dialog": "Devenus végétaliens, les habitants sont plus proche de la nature et ont aménagé de nombreux espaces verts.",
-		"mood": "smiling"
+		"mood": "happy"
 	},
 	{
 		"id": 1,
@@ -14,14 +14,14 @@
 		"x": 39,
 		"y": 71,
 		"answer": "agriculture",
-		"dialog": "Les pâturages ont laissé la place à des champs. § La ville est enfin spécialisée et beaucoup plus compétitive !",
-		"mood": "happy"
+		"dialog": "Les pâturages ont laissé la place à des champs. § La ville est enfin spécialisée et beaucoup plus compétitive\u00A0!",
+		"mood": "smiling"
 	},
 	{
 		"id": 2,
 		"mapId": 2,
-		"x": 85,
-		"y": 42,
+		"x": 84.2,
+		"y": 43,
 		"answer": "fantome",
 		"dialog": "Les habitants ont eu si peur du fantôme qu’ils ont brûlé la forêt. § La légende perdure jusqu’aujourd’hui et des superstitieux enflamment régulièrement cette partie de la ville.",
 		"mood": "angry"
@@ -32,14 +32,14 @@
 		"x": 40,
 		"y": 36,
 		"answer": "marche",
-		"dialog": "Le marché accueille cette année le salon international du navet. § C’est un grand évènement pour Ayaux-les-Bains !",
+		"dialog": "Le marché accueille cette année le salon international du navet. § C’est un grand évènement pour Ayaux-les-Bains\u00A0!",
 		"mood": "smiling"
 	},
 	{
 		"id": 4,
 		"mapId": 0,
-		"x": 38.4,
-		"y": 4.8,
+		"x": 53.3,
+		"y": 1.2,
 		"answer": "jeunes",
 		"dialog": "Les habitants sont autosuffisants énergiquement et respectent leur environnement.",
 		"mood": "happy"
@@ -50,7 +50,7 @@
 		"x": 60.5,
 		"y": 60.8,
 		"answer": "jeunes",
-		"dialog": "La centrale n’existe plus et la ville produit de l’énergie grâce à des éoliennes et des panneaux solaires. § C’est super écologique !",
-		"mood": "happy"
+		"dialog": "La centrale n’existe plus et la ville produit de l’énergie grâce à des éoliennes et des panneaux solaires. § C’est super écologique\u00A0! § La propagande a payé !",
+		"mood": "satisfied"
 	}
 ]

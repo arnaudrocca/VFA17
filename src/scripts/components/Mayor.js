@@ -37,6 +37,13 @@ class Mayor extends React.Component {
      */
 	componentDidMount() {
 
+		if (window.isBeginning) {
+			window.isBeginning = false
+			setTimeout(() => {
+				this.props.mayorTalks('Voici Ayaux-les-Bains. Comme tu peux le constater, il y a du boulot. § Allez, c’est le moment d’utiliser la machine à remonter le temps à droite de ton écran.', 'neutral')
+			}, 1000)
+		}
+
 		this.mayorDialogNode = ReactDOM.findDOMNode(this.refs.mayorDialog)
 		this.mayorInstructionsNode = ReactDOM.findDOMNode(this.refs.mayorInstructions)
 		this.spacebarIconNode = ReactDOM.findDOMNode(this.refs.spacebarIcon)
@@ -124,6 +131,7 @@ class Mayor extends React.Component {
 	/**
      * @method
 	 * @name spacebarDownHandler
+	 * @description Triggered when spacebar is pressed
 	 * @param {object} e - event
      */
 	spacebarDownHandler(e) {
@@ -143,6 +151,7 @@ class Mayor extends React.Component {
 	/**
 	 * @method
 	 * @name spacebarUpHandler
+	 * @description Triggered when spacebar is released
 	 * @param {object} e - event
 	 */
 	spacebarUpHandler(e) {

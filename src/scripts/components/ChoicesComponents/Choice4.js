@@ -31,11 +31,18 @@ class Choice4 extends React.Component {
 
         this.spacebarTimeline = new TimelineLite({paused: true})
         this.mayorTimeline = new TimelineMax({repeat: -1})
+        this.timelineEnd = new TimelineLite({
+        	paused: true,
+    		onComplete: () => {
+    			// setTimeout(() => {
+    				hashHistory.push('/experiment')
+    			// },200)		
+    		}
+    	})
 
         this.update = this.update.bind(this)
-       
+
         this.spacebarDownHandler = this.spacebarDownHandler.bind(this)
-		this.spacebarUpHandler = this.spacebarUpHandler.bind(this)
 
 	}
 
@@ -46,20 +53,19 @@ class Choice4 extends React.Component {
 	componentDidMount() {
 
 		window.addEventListener('keydown', debounce(this.spacebarDownHandler,150))
-		// window.addEventListener('keyup', this.spacebarUpHandler)
 
 		this.holdNode = ReactDOM.findDOMNode(this.refs.hold)
 		this.holdLabelNode = ReactDOM.findDOMNode(this.refs.holdLabel)
 		this.userHandImgNode = ReactDOM.findDOMNode(this.refs.userHandImg)
 		this.mayorHandImgNode = ReactDOM.findDOMNode(this.refs.mayorHandImg)
 		this.spacebarIconNode = ReactDOM.findDOMNode(this.refs.spacebarIcon)
-		this.circleNode = document.querySelector('.js-hold-circle')
+		this.circleNode = document.querySelector('.hold-circle')
 
 		this.circlePerimeter = this.circleNode.getAttribute('r') * Math.PI * 2
 
 		this.spacebarTimeline
 			.to(this.spacebarIconNode, 0.3, {background: 'rgba(255,255,255,0.2)'})
-			.to(this.spacebarIconNode, 0.3, {background: 'transparent'})
+			.to(this.spacebarIconNode, 0.3, {background: 'transparent'},'-=.2')
 
 		this.mayorTimeline
 			.to('.terminator__image--mayor-over, .terminator__image--mayor-under', .3, {
@@ -68,6 +74,10 @@ class Choice4 extends React.Component {
 			.to('.terminator__image--mayor-over, .terminator__image--mayor-under', .3, {
 				rotation: 0
 			})
+
+		this.timelineEnd.to('.choice', .3, {
+    		opacity: 0
+		})
 
         this.setState({
 			circlePerimeter: this.circlePerimeter,
@@ -83,8 +93,7 @@ class Choice4 extends React.Component {
 	componentWillUnmount() {
 
 		TweenMax.ticker.removeEventListener('tick', this.update)
-        window.removeEventListener('keydown', this.spacebarDownHandler) 
-		// window.removeEventListener('keyup', this.spacebarUpHandler)
+        window.removeEventListener('keydown', this.spacebarDownHandler)
 
 	}
 
@@ -97,7 +106,7 @@ class Choice4 extends React.Component {
 		setTimeout(() => {
 			this.DELTA_TIME = 0
 			this.LAST_TIME = Date.now()
-			TweenMax.ticker.addEventListener('tick', this.update)
+			//TweenMax.ticker.addEventListener('tick', this.update)
 			window.addEventListener('keydown', debounce(this.spacebarDownHandler, 100))
 		}, 1000)
 
@@ -166,7 +175,7 @@ class Choice4 extends React.Component {
 				})
             } else {
             	window.isEnding = true
-	        	hashHistory.push('/end')
+            	this.timelineEnd.play()
 	        }
         }
 		else if (this.holdIsVisible) {
@@ -195,22 +204,11 @@ class Choice4 extends React.Component {
 		const key = event.keyCode || event.which
 
         if (key == 32) {
-        	//console.log(this.spacebarTimeline)
-        	this.spacebarTimeline.play()
-        	//TweenMax.fromTo(this.spacebarIconNode, 0.3, {background: 'transparent'}, {background: 'rgba(255,255,255,0.2)'})
-            this.userHandPosition -= 30   
+
+        	this.spacebarTimeline.restart()
+            this.userHandPosition -= 30
+
         }
-
-    }
-
-     spacebarUpHandler(e) {
-
-        const event = e || window.e
-		const key = event.keyCode || event.which
-
-        // if (key == 32) {
-        //     TweenMax.fromTo(this.spacebarIconNode, 0.3, {background: 'rgba(255,255,255,0.2)'}, {background: 'transparent'})
-        // }
 
     }
 
@@ -220,29 +218,27 @@ class Choice4 extends React.Component {
 	 */
 	render() {
 
-		// <img className="terminator__image__under" height="100" src="assets/images/interactions/hand-mayor.svg"/>
-
 		return (
 			<div className="choice__interaction-container">
 				<ChoiceIntro clickHandler={this.clickHandler.bind(this)} title={this.props.choiceData.introTitle} text={this.props.choiceData.introText}/>
 				<div className="choice__interaction-main">
 					<div className="terminator">
                         <div className="terminator__container">
-                            <div ref="userHandImg" className="terminator__image terminator__image--user">
+                            <div className="terminator__image terminator__image--user" ref="userHandImg">
                                 <img height="180" src="assets/images/interactions/hand-user.svg"/>
                             </div>
-                            <div ref="mayorHandImg" className="terminator__image terminator__image--mayor-under">     
+                            <div className="terminator__image terminator__image--mayor-under" ref="mayorHandImg">
                                 <img height="100" src="assets/images/interactions/hand-mayor.svg"/>
                             </div>
                             <div  className="terminator__image terminator__image--mayor-over">
                                 <img height="100" src="assets/images/interactions/hand-mayor-over.svg"/>
                             </div>
                         </div>
-                        <div ref="hold" className="terminator__hold">
+                        <div className="terminator__hold" ref="hold">
                         	<IconHold classes="terminator__hold__icon" offset={this.state.offset} circlePerimeter={this.state.circlePerimeter} width="100%" />
-                        	<span ref="holdLabel" className="terminator__hold__label"></span>
+                        	<span className="terminator__hold__label" ref="holdLabel"></span>
                         </div>
-                        <div ref="spacebarIcon" className="terminator__spacebar">Appuies sur espace</div>
+                        <div className="terminator__spacebar" ref="spacebarIcon">Appuies sur espace</div>
 					</div>
 				</div>
 			</div>

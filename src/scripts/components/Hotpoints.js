@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Hotpoint from './Hotpoint'
 
 class Hotpoints extends React.Component {
@@ -13,6 +14,30 @@ class Hotpoints extends React.Component {
 	}
 
 	/**
+	 * @method
+	 * @name componentDidMount
+	 */
+	componentDidMount() {
+
+		this.audioButton = ReactDOM.findDOMNode(this.refs.audioButton)
+
+	}
+
+	/**
+     * @method
+	 * @name mouseEnterHandler
+	 * @description Play button sound
+     */
+	mouseEnterHandler() {
+
+		if (window.enableAudio) {
+            this.audioButton.currentTime = 0
+            this.audioButton.play()
+        }
+
+	}
+
+	/**
      * @method
 	 * @name getContent
      */
@@ -20,7 +45,7 @@ class Hotpoints extends React.Component {
 
         this.hotpoints = this.props.hotpoints.map((hotpoint, index) => {
             return (
-                <Hotpoint key={index} onClick={this.props.onClick} hotpoint={this.props.hotpoints[index]} />
+                <Hotpoint key={index} onClick={this.props.onClick} onMouseEnter={this.mouseEnterHandler.bind(this)} hotpoint={this.props.hotpoints[index]} />
             )
         })
 
@@ -37,6 +62,7 @@ class Hotpoints extends React.Component {
 		return (
 			<div className="hotpoints">
                 {this.hotpoints}
+				<audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
             </div>
 		)
 

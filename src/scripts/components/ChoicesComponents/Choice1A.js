@@ -34,7 +34,6 @@ class Choice1A extends React.Component {
 
 		this.ghostImgNode = ReactDOM.findDOMNode(this.refs.ghostImg)
 		this.godImgNode = ReactDOM.findDOMNode(this.refs.godImg)
-
 		this.ghostLevelNode = ReactDOM.findDOMNode(this.refs.ghostLevel)
 		this.godLevelNode = ReactDOM.findDOMNode(this.refs.godLevel)
 
@@ -137,6 +136,7 @@ class Choice1A extends React.Component {
 				}
 			}
 
+			// Update audio visualizer
 			TweenMax.set('.voice__slider__visualizer', {width: `${30 + (this.audioAverage / 2)}%`, height:`${30 + (this.audioAverage / 2)}%`})
 
 			// Increments gauges
@@ -206,7 +206,7 @@ class Choice1A extends React.Component {
 							<IconRedo width="25" color="#FFFFFF" />
 						</button>
 						<div className="voice__audiovisualizer">
-							<div ref="ghostLevel" className="voice__level voice__level--ghost">
+							<div className="voice__level voice__level--ghost" ref="ghostLevel">
 								<span className="voice__level__label">Fantôme</span>
 								<span className="voice__level__gauge voice__level__gauge-ghost"></span>
 							</div>
@@ -215,15 +215,15 @@ class Choice1A extends React.Component {
 								<img className="voice__slider__item" ref="godImg" src="assets/images/interactions/god.svg"/>
 								<div className="voice__slider__visualizer"></div>
 								<div className="voice__slider__icon">
-									<IconMic width="17" color="#FF5951"/>
+									<IconMic width="17" color="#FF5951" />
 								</div>
 							</div>
-							<div ref="godLevel" className="voice__level voice__level--god">
+							<div className="voice__level voice__level--god" ref="godLevel">
 								<span className="voice__level__label">Divinité</span>
 								<span className="voice__level__gauge voice__level__gauge-god"></span>
 							</div>
 						</div>
-                        <ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Effrayer" classes="btn__main btn__main--hidden btn__main--1A"/>
+                        <ChoiceValidate classes="btn__main btn__main--hidden btn__main--1A" handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Effrayer" />
 					</div>
 				</div>
 			</div>

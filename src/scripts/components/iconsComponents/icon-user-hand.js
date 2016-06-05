@@ -11,7 +11,6 @@ const IconUserHand = ({width, color, classes}) => (
 			L17.4,9l7.3,7.3c0.4,0.4,0.4,1,0,1.4C24.5,17.9,24.3,18,24,18z"/>
 	</svg>
 
-
 )
 
 export default IconUserHand

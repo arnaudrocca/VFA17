@@ -59,6 +59,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name createDrag
+	 * @description Create the drag using Draggable
 	 */
 	createDrag() {
 
@@ -96,6 +97,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name onPress
+	 * @description Triggered when the drag is pressed
 	 */
 	onPress() {
 
@@ -118,6 +120,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name onDrag
+	 * @description Triggered when the drag is moving
 	 */
 	onDrag() {
 
@@ -177,10 +180,10 @@ class Menu extends React.Component {
 	updateDragLine() {
 
 		const menuBtnMatrix = getComputedStyle(this.menuBtn)['-webkit-transform'] ||
-					getComputedStyle(this.menuBtn)['-moz-transform'] ||
-					getComputedStyle(this.menuBtn)['-ms-transform'] ||
-					getComputedStyle(this.menuBtn)['-o-transform'] ||
-					getComputedStyle(this.menuBtn)['transform']
+			getComputedStyle(this.menuBtn)['-moz-transform'] ||
+			getComputedStyle(this.menuBtn)['-ms-transform'] ||
+			getComputedStyle(this.menuBtn)['-o-transform'] ||
+			getComputedStyle(this.menuBtn)['transform']
 
 		const menuBtnMatrixArray = menuBtnMatrix.split(',')
 		const menuBtnTranslateY = menuBtnMatrixArray[4]
@@ -192,6 +195,7 @@ class Menu extends React.Component {
 	/**
 	 * @method
 	 * @name onRelease
+	 * @description Triggered when the drag is released
 	 * @param {object} endValue
 	 */
 	onRelease(endValue) {
@@ -273,7 +277,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--todo menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconTodo classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
+							<IconTodo classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -283,7 +287,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconLocked classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
+							<IconLocked classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -293,7 +297,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconDone classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
+							<IconDone classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>

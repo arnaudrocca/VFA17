@@ -96,7 +96,6 @@ export const choiceMade = (choiceId, answer) => {
         }, 1000)
 
         console.log(getState(), 'NEW STATE')
-
     }
 
 }

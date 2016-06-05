@@ -63,6 +63,7 @@ class DragHome extends React.Component {
 	/**
 	 * @method
 	 * @name createDrag
+	 * @description Create the drag using Draggable
 	 */
 	createDrag() {
 
@@ -92,6 +93,7 @@ class DragHome extends React.Component {
 	/**
 	 * @method
 	 * @name onPress
+	 * @description Triggered when the drag is pressed
 	 */
 	onPress() {
 
@@ -110,10 +112,10 @@ class DragHome extends React.Component {
 	updateDragLine() {
 
 		const menuBtnMatrix = getComputedStyle(this.menuBtn)['-webkit-transform'] ||
-					getComputedStyle(this.menuBtn)['-moz-transform'] ||
-					getComputedStyle(this.menuBtn)['-ms-transform'] ||
-					getComputedStyle(this.menuBtn)['-o-transform'] ||
-					getComputedStyle(this.menuBtn)['transform']
+			getComputedStyle(this.menuBtn)['-moz-transform'] ||
+			getComputedStyle(this.menuBtn)['-ms-transform'] ||
+			getComputedStyle(this.menuBtn)['-o-transform'] ||
+			getComputedStyle(this.menuBtn)['transform']
 
 		const menuBtnMatrixArray = menuBtnMatrix.split(',')
 		const menuBtnTranslateY = menuBtnMatrixArray[4]
@@ -125,6 +127,7 @@ class DragHome extends React.Component {
 	/**
 	 * @method
 	 * @name onRelease
+	 * @description Triggered when the drag is released
 	 */
 	onRelease() {
 
@@ -133,7 +136,7 @@ class DragHome extends React.Component {
 
 		const distance = Math.abs(this.dragHome[0].x + this.dragTarget)
 
-		if (distance <= this.dragTarget / 50) {
+		if (distance <= 10) {
 			this.hideTimeline
 				.to(this.menuBtn, .3, {
 					x: -this.dragTarget,
@@ -279,9 +282,9 @@ class DragHome extends React.Component {
 					</div>
 				</div>
 				<div className="menu__drag-start"></div>
-				<div ref="menuDragLine" className="menu__drag-line"></div>
+				<div className="menu__drag-line" ref="menuDragLine"></div>
 				<div className="menu__drag-dots"></div>
-				<IconArrows classes="menu__drag-arrows" width="25" color="#FFFFFF"/>
+				<IconArrows classes="menu__drag-arrows" width="25" color="#FFFFFF" />
 			</div>
 		)
 

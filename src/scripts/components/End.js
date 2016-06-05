@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
+import ChoiceValidate from './ChoiceValidate'
+import { hashHistory } from 'react-router'
 
 class End extends React.Component {
 
@@ -26,6 +28,7 @@ class End extends React.Component {
 	componentDidMount() {
 
 		this.endBackgroundNode = ReactDOM.findDOMNode(this.refs.endBackground)
+		this.audioButtonNode = ReactDOM.findDOMNode(this.refs.audioButton)
 
 		window.addEventListener('mousemove',this.mousemoveHandler)
 		window.addEventListener('resize', debounce(this.resize, 350))
@@ -74,6 +77,30 @@ class End extends React.Component {
 	}
 
 	/**
+	 * @method
+	 * @name clickHandler
+	 */
+	clickHandler() {
+
+		hashHistory.push('/')
+
+	}
+
+	/**
+	 * @method
+	 * @name mouseEnterHandler
+	 * @description Play button sound
+	 */
+	mouseEnterHandler() {
+
+		if (window.enableAudio) {
+			this.audioButtonNode.currentTime = 0
+			this.audioButtonNode.play()
+		}
+
+	}
+
+	/**
      * @method
 	 * @name render
      */
@@ -91,8 +118,10 @@ class End extends React.Component {
 							<p>Mais dans son discours, nul mention de vous ou de la machine… </p>
 						</div>
 					</div>
+					<ChoiceValidate classes="btn__main end__btn" handleSubmit={this.clickHandler.bind(this)} label="Recommencer" labelSecondary="Encore !"/>
 				</div>
 				<div ref="endBackground" className="end__background"></div>
+				<audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
 			</section>
 		)
 
