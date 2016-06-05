@@ -25,11 +25,24 @@
 		flex-direction column
 		justify-content center
 		align-items center
-		width 38rem
-		padding 5rem
-		background linear-gradient(135deg, transparent 0, $white 0) top left, linear-gradient(225deg, transparent 4rem, $white 0) top right, linear-gradient(225deg, transparent 0, $white 0) bottom right, linear-gradient(45deg, transparent 4rem, $white 0) bottom left
-		background-repeat no-repeat
-		background-size 50% 50%
+		width 31rem
+		color $white
+		
+	&__title
+		margin-bottom 3rem
+		font-size 3.2rem
+		font-family $font-claudia-shouter
+		text-transform uppercase
+		
+	&__txt
+		font-size 1.4rem
+		line-height 2.4rem
+		font-family $font-pressura-regular
+		text-align center
+		antialiased()
+		
+		p:first-child
+			margin-bottom 3.5rem
 		
 	&__btn
 		margin-top 5rem

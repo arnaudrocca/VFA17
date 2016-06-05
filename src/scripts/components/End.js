@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
-import ChoiceValidate from './ChoiceValidate'
 import { hashHistory } from 'react-router'
+import ChoiceValidate from './ChoiceValidate'
+//import IconLogo from './iconsComponents/icon-logo'
+
 
 class End extends React.Component {
 
@@ -121,13 +123,16 @@ class End extends React.Component {
 		return (
 			<section className="end">
 				<div className="end__main">
-					<img src="assets/images/end/logo-txt.svg" className="end__logo" />
+					
 					<div className="end__content">
 						<h1 className="end__title">Bravo !</h1>
 						<div className="end__txt">
-							<p>Vous avez rendu la machine à John Ricard, ce qui a permis de boucler la boucle.</p>
-							<p>Le lendemain, fier comme un roi, il se vit remettre un Ville Fleurie Award</p>
-							<p>Mais dans son discours, nul mention de vous ou de la machine… </p>
+							<p>
+								Vous avez rendu la machine à John Ricard, ce qui a permis de boucler la boucle. Le lendemain, fier comme un roi, il se vit remettre un Ville Fleurie Award avec un score de {this.props.score} fleurs sur 5. 
+							</p>
+							<p>
+								Mais dans son discours, nul mention de vous ou de la machine… 
+							</p>
 						</div>
 					</div>
 					<ChoiceValidate classes="btn__main end__btn" handleSubmit={this.clickHandler.bind(this)} label="Recommencer" labelSecondary="Encore !"/>

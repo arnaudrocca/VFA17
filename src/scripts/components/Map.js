@@ -69,7 +69,7 @@ class Map extends React.Component {
         	.to('.map__base, .mapItems, .hotpoints', 3, {
         		y:' -100px'
         	}, '-=3')
-        	.to('.experiment', .3, {
+        	.to('.experiment', .5, {
         		opacity: 0
         	})
 

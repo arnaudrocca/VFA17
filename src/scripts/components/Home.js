@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link, hashHistory } from 'react-router'
 import DragHome from './DragHome'
 import ChoiceValidate from './ChoiceValidate'
-import IconLogo from './iconsComponents/icon-logo'
+import IconLogoHole from './iconsComponents/icon-logo-hole'
 
 class Home extends React.Component {
 
@@ -77,7 +77,7 @@ class Home extends React.Component {
 					</p>
 				</div>
 				<div className="home__logo-container">
-					<IconLogo width="210" classes="home__logo" />
+					<IconLogoHole width="210" classes="home__logo" />
 					<span className="home__logo-center"></span>
 				</div>
 				<DragHome showVideo={this.showVideo.bind(this)} />

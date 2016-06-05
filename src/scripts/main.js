@@ -12,7 +12,7 @@ import App from './components/App'
 import Home from './components/Home'
 import Experiment from './components/Experiment'
 import Choices from './containers/ChoicesContainer'
-import End from './components/End'
+import End from './containers/EndContainer'
 
 const store = createStore(
     mainReducer,

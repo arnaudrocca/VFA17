@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IconLogo = ({width, classes}) => (
+const IconLogoHole = ({width, classes}) => (
 
 	<svg width={width} className={classes} x="0px" y="0px" viewBox="0 0 212 212">
 		<g>
@@ -240,4 +240,4 @@ const IconLogo = ({width, classes}) => (
 
 )
 
-export default IconLogo
+export default IconLogoHole
