@@ -11,6 +11,7 @@ class ChoicesDone extends React.Component {
 		super()
 
 		this.choicesNumber = 5
+
 		this.state = {
 			circlePerimeter: 0
 		}
@@ -23,7 +24,7 @@ class ChoicesDone extends React.Component {
      */
 	componentDidMount() {
 
-		const circle = document.querySelector('.js-remaining')
+		const circle = document.querySelector('.wireframe__drag__gauge')
 
 		this.setState({
 			circlePerimeter: circle.getAttribute('r') * Math.PI * 2
@@ -53,7 +54,7 @@ class ChoicesDone extends React.Component {
 		return (
 			<div>
 				<span className="wireframe__timeline-connector"></span>
-				<IconDrag classes="wireframe__drag" offset={this.offset} circlePerimeter={this.state.circlePerimeter} width="75"/>
+				<IconDrag classes="wireframe__drag" offset={this.offset} circlePerimeter={this.state.circlePerimeter} width="75" />
 			</div>
 		)
 

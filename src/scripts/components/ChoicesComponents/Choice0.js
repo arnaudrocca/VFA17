@@ -24,7 +24,6 @@ class Choice0 extends React.Component {
 
 		this.gossipField1Node = ReactDOM.findDOMNode(this.refs.gossipField1)
 		this.gossipField2Node = ReactDOM.findDOMNode(this.refs.gossipField2)
-
 		this.gossipFieldsNodes = document.querySelectorAll('.gossip__field')
 
 	}
@@ -152,7 +151,7 @@ class Choice0 extends React.Component {
 								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la perte de l'être aimé.</li>
 							</ul>
 						</div>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Colporter" classes="btn__main btn__main--hidden btn__main--0"/>
+						<ChoiceValidate classes="btn__main btn__main--hidden btn__main--0" handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Colporter" />
 					</div>
 				</div>
 			</div>

@@ -53,7 +53,7 @@ class Choice4 extends React.Component {
 		this.userHandImgNode = ReactDOM.findDOMNode(this.refs.userHandImg)
 		this.mayorHandImgNode = ReactDOM.findDOMNode(this.refs.mayorHandImg)
 		this.spacebarIconNode = ReactDOM.findDOMNode(this.refs.spacebarIcon)
-		this.circleNode = document.querySelector('.js-hold-circle')
+		this.circleNode = document.querySelector('.hold-circle')
 
 		this.circlePerimeter = this.circleNode.getAttribute('r') * Math.PI * 2
 

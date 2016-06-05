@@ -277,7 +277,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--todo menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconTodo classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
+							<IconTodo classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -287,7 +287,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconLocked classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
+							<IconLocked classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>
@@ -297,7 +297,7 @@ class Menu extends React.Component {
 				return (
 					<div key={index} className={`menu__slice menu__slice--${index}`}>
 						<div className="menu__item">
-							<IconDone classes="menu__icon" width="75" opacity="0.6" color="#FFF"/>
+							<IconDone classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
 						</div>
 					</div>

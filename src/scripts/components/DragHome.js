@@ -284,7 +284,7 @@ class DragHome extends React.Component {
 				<div className="menu__drag-start"></div>
 				<div className="menu__drag-line" ref="menuDragLine"></div>
 				<div className="menu__drag-dots"></div>
-				<IconArrows classes="menu__drag-arrows" width="25" color="#FFFFFF"/>
+				<IconArrows classes="menu__drag-arrows" width="25" color="#FFFFFF" />
 			</div>
 		)
 

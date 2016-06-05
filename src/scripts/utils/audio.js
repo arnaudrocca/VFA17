@@ -14,7 +14,7 @@ class Audio {
 
         this.volume = 0
         this.volumeMask = 0
-        this.volumeMin = .15
+        this.volumeMin = .2
         this.filterDisableFrequency = 2048
         this.filterEnableFrequency = 512
 

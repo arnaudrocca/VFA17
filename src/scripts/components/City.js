@@ -51,9 +51,9 @@ class City extends React.Component {
 
 		for (let i = 0; i < 5; i++) {
 			if (i < this.props.score) {
-				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + 'FF5951'} width="17" color="#FF5951"/>)
+				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + 'FF5951'} width="17" color="#FF5951" />)
 			} else {
-				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + '6C707B'} width="17" color="#6C707B"/>)
+				this.flowers.push(<IconFlower classes={`city__score-item city__score-item--${i}`} key={i + '6C707B'} width="17" color="#6C707B" />)
 			}
 		}
 
@@ -70,7 +70,7 @@ class City extends React.Component {
 		return (
 			<div className="city">
 				<div className="city__panel">
-					<IconShield width="25" classes="city__shield"/>
+					<IconShield width="25" classes="city__shield" />
 					<span className="city__name">Ayaux-les-Bains</span>
 				</div>
 				<div className="city__infos">

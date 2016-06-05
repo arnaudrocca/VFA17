@@ -198,10 +198,10 @@ class Toolbar extends React.Component {
                     <span>Infos</span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleAudio.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
-                    <span><IconAudio width="18" color="#FFF"/></span>
+                    <span><IconAudio width="18" color="#FFF" /></span>
                 </button>
                 <button className="toolbar__btn" onClick={this.toggleFullScreen.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
-                    <span><IconScreen width="22" color="#FFF"/></span>
+                    <span><IconScreen width="22" color="#FFF" /></span>
                 </button>
                 <audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
             </div>

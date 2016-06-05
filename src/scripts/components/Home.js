@@ -77,13 +77,13 @@ class Home extends React.Component {
 					</p>
 				</div>
 				<div className="home__logo-container">
-					<IconLogo width="210" classes="home__logo"/>
+					<IconLogo width="210" classes="home__logo" />
 					<span className="home__logo-center"></span>
 				</div>
 				<DragHome showVideo={this.showVideo.bind(this)} />
 				<video className="home__video home__video--intro" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
 				<video className="home__video home__video--main" ref="homeVideoMain" src="http://techslides.com/demos/sample-videos/small.webm" loop></video>
-				<ChoiceValidate handleSubmit={this.submitHandler.bind(this)} label="Passer" labelSecondary="Tais-toi !" classes="btn__main btn__main--hidden home__btn-video"/>
+				<ChoiceValidate handleSubmit={this.submitHandler.bind(this)} label="Passer" labelSecondary="Tais-toi !" classes="btn__main btn__main--hidden home__btn-video" />
 				<div className="home__overlay"></div>
 			</section>
 		)

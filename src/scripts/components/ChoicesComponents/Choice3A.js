@@ -167,7 +167,7 @@ class Choice3A extends React.Component {
                         </div>
     					<span className="propaganda__line"></span>
     					<span ref="cursor" className="propaganda__cursor"></span>
-						<ChoiceValidate handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Endoctriner" classes="btn__main btn__main--hidden btn__main--3A"/>
+						<ChoiceValidate classes="btn__main btn__main--hidden btn__main--3A" handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Endoctriner" />
                     </div>
 				</div>
 			</div>
