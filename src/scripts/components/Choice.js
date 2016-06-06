@@ -59,10 +59,10 @@ class Choice extends React.Component {
 			// 	scale: 1,
 			// 	ease: Expo.easeOut
 			// },'-=.8')
-			.from('.choice__description', 0.6, {
+			.from('.choice__description', 0.5, {
 				x: -20,
 				opacity: 0,
-				ease: Expo.easeOut
+				ease: Quad.easeOut
 			},'-=1.2')
 
 		this.introTimeline.play()
@@ -89,7 +89,7 @@ class Choice extends React.Component {
 
 		if (window.innerWidth > 1400) {
 			this.choiceAsideNode.style.width = '24%'
-			this.choiceInteractionNodestyle.width = '76%'
+			this.choiceInteractionNode.style.width = '76%'
 		} else {
 			this.choiceAsideNode.style.width = '34%'
 			this.choiceInteractionNode.style.width = '66%'
@@ -177,7 +177,7 @@ class Choice extends React.Component {
 						<svg x="0px" y="0px" viewBox="0 0 166 48">
 							<g className="btn__return__border">
 								<g>
-									<path d="M150.1,48H0V0h166v32L150.1,48z M2,46h147.3L164,31.2V2H2V46z"/>
+									<path fill="#495495" d="M150.1,48H0V0h166v32L150.1,48z M2,46h147.3L164,31.2V2H2V46z"/>
 								</g>
 							</g>
 							<g className="btn__return__fill">
