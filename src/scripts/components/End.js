@@ -96,6 +96,8 @@ class End extends React.Component {
 	 */
 	clickHandler() {
 
+		window.isBeginning = true
+		window.isEnding = false
 		hashHistory.push('/')
 
 	}
