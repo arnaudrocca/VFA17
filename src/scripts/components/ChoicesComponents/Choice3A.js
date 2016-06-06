@@ -80,7 +80,7 @@ class Choice3A extends React.Component {
 
 		this.dragChoice = Draggable.create(this.cursor, {
 			type: 'x',
-			edgeResistance: .95,
+			edgeResistance: .99,
 			bounds: {
 				minX: -this.lineWidth + this.cursorRadius,
 				maxX: this.lineWidth - this.cursorRadius
