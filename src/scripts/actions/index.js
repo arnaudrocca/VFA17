@@ -1,6 +1,7 @@
 import { CONSTANTS } from '../constants/index'
 import { hashHistory } from 'react-router'
 import answersData from '../data/answers.json'
+import choicesData from '../data/choices.json'
 
 const choiceUpdate = (choiceId, choice, nextChoiceVersion) => {
 
@@ -21,11 +22,12 @@ const choicesDoneIncrement = () => {
 
 }
 
-const menuUpdate = (choiceId) => {
+const menuUpdate = (choiceId, period) => {
 
     return {
         type: CONSTANTS.MENU_UPDATE,
-        choiceId
+        choiceId,
+        period
     }
 
 }
@@ -76,10 +78,14 @@ export const choiceMade = (choiceId, answer) => {
             return choice.name == answer
         })
 
+        const choiceDone = choicesData.find((choice) => {
+            return choice.id == choiceId
+        })
+
         hashHistory.push('/experiment')
 
         dispatch(choiceUpdate(choiceId, answer, consequences.nextChoiceVersion))
-        dispatch(menuUpdate(choiceId))
+        dispatch(menuUpdate(choiceId, choiceDone.period))
 
         setTimeout(() => {
             dispatch(choicesDoneIncrement())

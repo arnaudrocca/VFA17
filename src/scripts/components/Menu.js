@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { hashHistory } from 'react-router'
 import { debounce } from 'lodash'
 import answersData from '../data/answers.json'
+import choicesData from '../data/choices.json'
 import IconDone from './iconsComponents/icon-done'
 import IconLocked from './iconsComponents/icon-locked'
 import IconTodo from './iconsComponents/icon-todo'
@@ -299,6 +300,7 @@ class Menu extends React.Component {
 						<div className="menu__item">
 							<IconDone classes="menu__icon" width="75" opacity="0.6" color="#FFF" />
 							<span className="menu__label">Voyage {index + 1}</span>
+							<span className="menu__label menu__label--period">{this.props.menuState[index].period}</span>
 						</div>
 					</div>
 				)
