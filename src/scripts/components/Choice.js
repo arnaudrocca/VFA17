@@ -120,7 +120,6 @@ class Choice extends React.Component {
 	 */
 	getContent() {
 
-		// Identifies wich choice to display
 		this.choiceId = this.props.params.id
 
 		const currentChoice = this.props.choicesState.find((choice) => {
@@ -129,7 +128,6 @@ class Choice extends React.Component {
 
 		this.choiceVersion = currentChoice.version
 
-		// Identifies the correct interaction
 		const componentName = 'Choice' + this.choiceId + this.choiceVersion
 
 		for (let choiceComponent in ChoicesComponents) {
@@ -139,12 +137,10 @@ class Choice extends React.Component {
 			}
 		}
 
-		// Identifies the correct wording to use
 		this.choiceData = choicesData.find((choice) => {
 			return choice.id == this.choiceId && choice.version == this.choiceVersion
 		})
 
-		// Identifies the correct background image
 		this.backgroundStyle = {
 			backgroundImage: `url(assets/images/choices/${componentName}.png)`
 		}
