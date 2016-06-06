@@ -66,7 +66,7 @@ class Choice3A extends React.Component {
 	createDrag() {
 
 		if (window.innerWidth > 1400) {
-			this.mainWidth = (window.innerWidth * 76) / 100
+			this.mainWidth = (window.innerWidth * 70) / 100
 		} else {
 			this.mainWidth = (window.innerWidth * 66) / 100
 		}

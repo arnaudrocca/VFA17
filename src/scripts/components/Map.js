@@ -30,7 +30,10 @@ class Map extends React.Component {
 			}
         })
 
-		this.mountTimeline = new TimelineLite()
+		this.mountTimeline = new TimelineLite({
+			delay: .3,
+			paused: true
+		})
 
 	}
 
@@ -48,9 +51,11 @@ class Map extends React.Component {
 		this.mapItems = ReactDOM.findDOMNode(this.refs.mapItems)
 
 		this.mountTimeline
-        	.fromTo(this.mapContainer, 1, {opacity: 0, scale: 1}, {opacity: 1, scale: this.scale, transformOrigin: '50% 50', ease: Quart.easeOut})
-			.to(this.mapItems, .5, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`}, '+=.5')
+        	.set(this.mapContainer, {opacity: 1, scale: this.scale, transformOrigin: '50% 50'})
+			.set(this.mapItems, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`}, '+=.5')
 
+		this.mountTimeline.play()
+        
         this.createDrag()
 
 		if (window.enableAudio) {

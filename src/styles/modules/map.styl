@@ -8,8 +8,8 @@
 	height 100vh
 	top 0
 	left 0
-	transform scale3d(1, 1, 1)
-	transition transform-origin 1s $easeOutExpo, transform 1s $easeOutExpo
+	opacity 0
+	transition transform-origin 1s $easeOutExpo, transform 1s $easeOutExpo, opacity 1s $easeOutExpo
 
 	.map
 		position relative
@@ -35,3 +35,4 @@
 	.mapItems
 		position absolute
 		z-index 3
+		transition filter 1s ease-out

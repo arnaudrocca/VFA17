@@ -99,6 +99,7 @@ class End extends React.Component {
 		window.isBeginning = true
 		window.isEnding = false
 		hashHistory.push('/')
+		location.reload()
 
 	}
 

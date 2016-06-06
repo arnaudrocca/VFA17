@@ -14,7 +14,7 @@ const choiceUpdate = (choiceId, choice, nextChoiceVersion) => {
 
 }
 
-const choicesDoneIncrement = () => {
+export const choicesDoneIncrement = () => {
 
     return {
         type: CONSTANTS.CHOICESDONE_INCREMENT

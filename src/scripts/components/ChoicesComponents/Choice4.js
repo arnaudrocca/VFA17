@@ -34,6 +34,7 @@ class Choice4 extends React.Component {
         this.timelineEnd = new TimelineLite({
         	paused: true,
     		onComplete: () => {
+    			this.props.choiceDone()
     			hashHistory.push('/experiment')
     		}
     	})

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { choiceMade } from '../actions/index'
+import { choiceMade, choicesDoneIncrement } from '../actions/index'
 import Choice from '../components/Choice'
 
 const mapStateToProps = (state) => {
@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 	    onSubmit: (choiceId, answer) => {
 	    	dispatch(choiceMade(choiceId, answer))
+	    },
+	    onChoiceDone: () => {
+	    	dispatch(choicesDoneIncrement())
 	    }
     }
 

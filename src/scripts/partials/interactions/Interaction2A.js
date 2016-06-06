@@ -12,7 +12,7 @@ class Interaction2A extends Graphics {
         super()
 
         if (window.innerWidth > 1400) {
-            this.sceneWidth = (window.innerWidth * 76) / 100
+            this.sceneWidth = (window.innerWidth * 70) / 100
 		} else {
 			this.sceneWidth = (window.innerWidth * 66) / 100
 		}
@@ -272,7 +272,7 @@ class Interaction2A extends Graphics {
     resize() {
 
         if (window.innerWidth > 1400) {
-            this.sceneWidth = (window.innerWidth * 76) / 100
+            this.sceneWidth = (window.innerWidth * 70) / 100
 		} else {
 			this.sceneWidth = (window.innerWidth * 66) / 100
 		}

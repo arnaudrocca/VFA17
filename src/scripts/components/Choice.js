@@ -31,8 +31,8 @@ class Choice extends React.Component {
 		this.audioButtonNode = ReactDOM.findDOMNode(this.refs.audioButton)
 
 		if (window.innerWidth > 1400) {
-			this.asideWidth = '24%'
-			this.interactionWidth = '76%'
+			this.asideWidth = '30%'
+			this.interactionWidth = '70%'
 		} else {
 			this.asideWidth = '34%'
 			this.interactionWidth = '66%'
@@ -50,20 +50,12 @@ class Choice extends React.Component {
 			}, {
 				width: this.interactionWidth,
 				ease: Expo.easeOut
-			},'-=1.2')
-			// .fromTo('.choice__interaction-background', 0.8, {
-			// 	x: -200,
-			// 	scale: 1.4
-			// }, {
-			// 	x: 0,
-			// 	scale: 1,
-			// 	ease: Expo.easeOut
-			// },'-=.8')
+			}, '-=1.2')
 			.from('.choice__description', 0.5, {
 				x: -20,
 				opacity: 0,
 				ease: Quad.easeOut
-			},'-=1.2')
+			}, '-=1.2')
 
 		this.introTimeline.play()
 
@@ -88,8 +80,8 @@ class Choice extends React.Component {
 	resize() {
 
 		if (window.innerWidth > 1400) {
-			this.choiceAsideNode.style.width = '24%'
-			this.choiceInteractionNode.style.width = '76%'
+			this.choiceAsideNode.style.width = '30%'
+			this.choiceInteractionNode.style.width = '70%'
 		} else {
 			this.choiceAsideNode.style.width = '34%'
 			this.choiceInteractionNode.style.width = '66%'
@@ -194,7 +186,7 @@ class Choice extends React.Component {
 				</div>
 				<div className="choice__interaction" ref="choiceInteraction">
 					<div className="choice__interaction-background" style={this.backgroundStyle}></div>
-					<this.component choiceData={this.choiceData} id={this.choiceId} submitHandler={this.props.onSubmit}/>
+					<this.component choiceData={this.choiceData} id={this.choiceId} choiceDone={this.props.onChoiceDone} submitHandler={this.props.onSubmit}/>
 				</div>
 				<audio ref="audioButton" src="assets/audio/button.wav" preload="auto"></audio>
 			</div>
