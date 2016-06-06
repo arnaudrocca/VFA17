@@ -26,11 +26,11 @@ class Map extends React.Component {
         this.endTimeline = new TimelineLite({
         	paused: true,
         	onComplete: () => {
-        		// setTimeout(() => {
-					hashHistory.push('/end')
-				// },200)	
+				hashHistory.push('/end')
 			}
         })
+
+		this.mountTimeline = new TimelineLite()
 
 	}
 
@@ -47,8 +47,9 @@ class Map extends React.Component {
 		this.map = ReactDOM.findDOMNode(this.refs.map)
 		this.mapItems = ReactDOM.findDOMNode(this.refs.mapItems)
 
-        TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: '50% 50%'})
-		TweenMax.to(this.mapItems, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
+		this.mountTimeline
+        	.fromTo(this.mapContainer, 1, {opacity: 0, scale: 1}, {opacity: 1, scale: this.scale, transformOrigin: '50% 50', ease: Quart.easeOut})
+			.to(this.mapItems, .5, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`}, '+=.5')
 
         this.createDrag()
 
@@ -112,7 +113,7 @@ class Map extends React.Component {
 	 */
 	componentDidUpdate() {
 
-		TweenMax.to(this.mapItems, .3, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
+		TweenMax.set(this.mapItems, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`})
 
 	}
 
