@@ -45,7 +45,7 @@ class End extends React.Component {
 
 		setTimeout(() => {
 			this.enterTimeline.play()
-		},200)	
+		},200)
 
 	}
 
@@ -98,8 +98,7 @@ class End extends React.Component {
 
 		window.isBeginning = true
 		window.isEnding = false
-		hashHistory.push('/')
-		location.reload()
+		window.location.href = '/'
 
 	}
 
@@ -131,10 +130,10 @@ class End extends React.Component {
 						<h1 className="end__title">Bravo !</h1>
 						<div className="end__txt">
 							<p>
-								Vous avez rendu la machine à John Ricard, ce qui a permis de boucler la boucle. Le lendemain, fier comme un roi, il se vit remettre un Ville Fleurie Award avec un score de {this.props.score} fleurs sur 5. 
+								Vous avez rendu la machine à John Ricard, ce qui a permis de boucler la boucle. Le lendemain, fier comme un roi, il se vit remettre un Ville Fleurie Award avec un score de {this.props.score} fleurs sur 5.
 							</p>
 							<p>
-								Mais dans son discours, nul mention de vous ou de la machine… 
+								Mais dans son discours, nul mention de vous ou de la machine…
 							</p>
 						</div>
 					</div>
