@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
 import { hashHistory } from 'react-router'
 import ChoiceValidate from './ChoiceValidate'
-//import IconLogo from './iconsComponents/icon-logo'
+import IconLogo from './iconsComponents/icon-logo'
 
 
 class End extends React.Component {
@@ -123,7 +123,7 @@ class End extends React.Component {
 		return (
 			<section className="end">
 				<div className="end__main">
-					
+					<IconLogo classes="end__logo" width="125"/>
 					<div className="end__content">
 						<h1 className="end__title">Bravo !</h1>
 						<div className="end__txt">
