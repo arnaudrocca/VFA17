@@ -261,7 +261,7 @@ class DragHome extends React.Component {
 
 		} else {
 			TweenMax.set(this.menuBtn, {x: 0})
-			TweenMax.set(this.menuDragLine, {width: 0})
+			TweenMax.to(this.menuDragLine, .3, {width: 0})
 		}
 
 		TweenMax.ticker.removeEventListener('tick', this.updateDragLine)

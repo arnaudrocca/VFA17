@@ -232,7 +232,7 @@ class Menu extends React.Component {
 				case 'locked':
 					window.cityAudio.setFilter(false)
 					TweenMax.set(this.menuBtn, {clearProps: 'x'})
-					TweenMax.set(this.menuDragLine, {width: 0})
+					TweenMax.to(this.menuDragLine, .3, {width: 0})
 					TweenMax.to(this.menu, .3, {opacity: 0, display: 'none'})
 
 					dialog = 'Chaque chose en son temps...'
@@ -242,7 +242,7 @@ class Menu extends React.Component {
 				case 'done':
 					window.cityAudio.setFilter(false)
 					TweenMax.set(this.menuBtn, {clearProps: 'x'})
-					TweenMax.set(this.menuDragLine, {width: 0})
+					TweenMax.to(this.menuDragLine, .3, {width: 0})
 					TweenMax.to(this.menu, .3, {opacity: 0, display: 'none'})
 
 					const answer = answersData.find((answer) => {
