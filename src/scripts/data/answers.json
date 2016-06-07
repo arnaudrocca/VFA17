@@ -5,7 +5,7 @@
         "mapIds": [0, 7],
         "mapVersions": ["B", "B"],
         "score": 2,
-        "dialog": "Oh, bien joué ! § La famille Viandé a été si humiliée qu’elle a quitté la ville dès l’Antiquité. § Privé d’éleveurs, tous les habitants sont devenus végétaliens. § Les steaks me manquent déjà, mais la ville est bien plus verte comme ça\u00A0!",
+        "dialog": "Bien joué\u00A0! La famille Viandé a été si humiliée qu’elle a quitté la ville dès l’Antiquité. § Privé d’éleveurs, tous les habitants sont devenus végétaliens.",
         "mood": "smiling"
     },
     {
@@ -23,7 +23,7 @@
         "mapIds": [2],
         "mapVersions": ["B"],
         "score": -2,
-        "dialog": "NOOON ! Les habitants ont eu si peur de ce prétendu fantôme qu’ils ont BRÛLÉ LA FORÊT\u00A0!! § Comment je vais gagner le concours maintenant\u00A0?",
+        "dialog": "NOOON\u00A0! Les habitants ont eu si peur de ce prétendu fantôme qu’ils ont BRÛLÉ LA FORÊT\u00A0!! § Comment vais-je gagner le concours maintenant\u00A0?!",
         "mood": "angry"
     },
     {
@@ -41,7 +41,7 @@
         "mapIds": [5],
         "mapVersions": ["B"],
         "score": 1,
-        "dialog": "Hé, pas mal ! § Le marché a beaucoup plu, § il accueille en 2017 le salon international du navet. § Ça va plaire aux juges du Ville Fleurie Award\u00A0! § Ma victoire se rapproche\u00A0!",
+        "dialog": "Pas mal\u00A0! Le marché a beaucoup plu et il accueille en 2017 le salon international du navet. § Ça va plaire aux juges du Ville Fleurie Award\u00A0! Ma victoire se rapproche\u00A0!",
         "mood": "happy"
     },
     {
@@ -59,7 +59,7 @@
         "mapIds": [0, 6],
         "mapVersions": ["C", "B"],
         "score": 2,
-        "dialog": "Parfait\u00A0! § La centrale a disparu et toute la ville ne jure que par l’écologie\u00A0! § Cette fois c’est sûr, § le Ville Fleurie Award est à moi\u00A0!",
+        "dialog": "Parfait\u00A0! La centrale a disparu et toute la ville ne jure que par l’écologie\u00A0! § Cette fois c’est sûr, le Ville Fleurie Award est à moi\u00A0!",
         "mood": "satisfied"
     },
     {

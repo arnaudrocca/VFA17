@@ -85,9 +85,9 @@ class Home extends React.Component {
 					<span className="home__logo-center"></span>
 				</div>
 				<DragHome showVideo={this.showVideo.bind(this)} />
-				<video className="home__video home__video--intro" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" autoPlay loop muted></video>
-				<video className="home__video home__video--main" ref="homeVideoMain" src="http://techslides.com/demos/sample-videos/small.webm"></video>
-				<ChoiceValidate handleSubmit={this.submitHandler.bind(this)} label="Passer" labelSecondary="Commencer !" classes="btn__main btn__main--hidden home__btn-video" />
+				<video className="home__video home__video--intro" src="assets/video/home_video_intro.mp4" autoPlay loop muted></video>
+				<video className="home__video home__video--main" ref="homeVideoMain" src="assets/video/home_video_main.mp4"></video>
+				<ChoiceValidate handleSubmit={this.submitHandler.bind(this)} label="Passer" labelSecondary="Commencer" classes="btn__main btn__main--hidden home__btn-video" />
 				<div className="home__overlay"></div>
 			</section>
 		)

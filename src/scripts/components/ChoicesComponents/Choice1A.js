@@ -223,7 +223,7 @@ class Choice1A extends React.Component {
 								<span className="voice__level__gauge voice__level__gauge-god"></span>
 							</div>
 						</div>
-                        <ChoiceValidate classes="btn__main btn__main--hidden btn__main--1A" handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Effrayer" />
+                        <ChoiceValidate classes="btn__main btn__main--hidden btn__main--1A" handleSubmit={this.handleSubmit.bind(this)} label="Valider" labelSecondary="Imiter" />
 					</div>
 				</div>
 			</div>

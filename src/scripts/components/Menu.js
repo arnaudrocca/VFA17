@@ -105,7 +105,6 @@ class Menu extends React.Component {
 		this.menuTimeline
 			.to(this.menu, .3, {opacity: 1, display: 'flex'})
 			.staggerFromTo('.menu__slice', .3, {opacity: 0}, {opacity: 1}, -.03, '-=.15')
-			// .staggerFromTo('.icon-locked__circle, .icon-done', .3, {rotation: '-30deg'}, {rotation: 0, ease: Quart.easeOut}, -.05, '-=.3')
 
 		window.cityAudio.setFilter(true)
 		document.body.style.cursor = 'w-resize'
@@ -146,7 +145,7 @@ class Menu extends React.Component {
 							break
 
 						case 'locked':
-							TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Bloqué'})
+							TweenMax.fromTo(this.menuInfos, .3, {opacity: 0}, {opacity: 1, textContent: 'Verrouillé'})
 							break
 
 						case 'done':

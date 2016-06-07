@@ -160,7 +160,7 @@ class Choice extends React.Component {
 				<div className="choice__aside" ref="choiceAside">
 					<button className="btn__return" type="button" onClick={this.clickHandler.bind(this)} onMouseEnter={this.mouseEnterHandler.bind(this)}>
 						<span className="btn__return__label-container">
-							<span className="btn__return__label">Quitter</span>
+							<span className="btn__return__label">Retour à la ville</span>
 						</span>
 						<svg x="0px" y="0px" viewBox="0 0 166 48">
 							<g className="btn__return__border">

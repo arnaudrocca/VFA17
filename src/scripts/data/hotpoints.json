@@ -5,7 +5,7 @@
 		"x": 53.3,
 		"y": 1.2,
 		"answer": "agriculture",
-		"dialog": "Devenus végétaliens, les habitants sont plus proche de la nature et ont aménagé de nombreux espaces verts.",
+		"dialog": "Devenus végétaliens, les habitants sont plus proches de la nature. § Ils ont aménagé de nombreux parcs et espaces verts.",
 		"mood": "happy"
 	},
 	{
@@ -23,7 +23,7 @@
 		"x": 84.2,
 		"y": 43,
 		"answer": "fantome",
-		"dialog": "Les habitants ont eu si peur du fantôme qu’ils ont brûlé la forêt. § La légende perdure jusqu’aujourd’hui et des superstitieux enflamment régulièrement cette partie de la ville.",
+		"dialog": "Les habitants ont eu si peur du fantôme qu’ils ont brûlé la forêt. § La légende perdure encore aujourd’hui... § Des superstitieux enflamment régulièrement cette partie de la ville.",
 		"mood": "angry"
 	},
 	{
@@ -41,7 +41,7 @@
 		"x": 53.3,
 		"y": 1.2,
 		"answer": "jeunes",
-		"dialog": "Les habitants sont autosuffisants énergiquement et respectent leur environnement.",
+		"dialog": "Les habitants sont autosuffisants énergiquement grâce aux panneaux solaires.",
 		"mood": "happy"
 	},
 	{
@@ -50,7 +50,7 @@
 		"x": 60.5,
 		"y": 60.8,
 		"answer": "jeunes",
-		"dialog": "La centrale n’existe plus et la ville produit de l’énergie grâce à des éoliennes et des panneaux solaires. § C’est super écologique\u00A0! § La propagande a payé !",
+		"dialog": "La centrale n’existe plus. § L’énergie est maintenant produite grâce aux éoliennes et aux panneaux solaires.",
 		"mood": "satisfied"
 	}
 ]
