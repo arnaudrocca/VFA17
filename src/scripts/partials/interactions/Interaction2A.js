@@ -7,7 +7,7 @@ class Interaction2A extends Graphics {
     /**
      * @constructor
      */
-    constructor() {
+    constructor(root) {
 
         super()
 
@@ -24,7 +24,7 @@ class Interaction2A extends Graphics {
         this.nodeRadius = 5
         this.onStart = false
 
-        this.scene = new Scene(this.sceneWidth, this.sceneHeight)
+        this.scene = new Scene(this.sceneWidth, this.sceneHeight, root)
         this.scene.add(this)
 
         this.buildingNames = document.querySelectorAll('.building__name')

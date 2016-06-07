@@ -7,9 +7,12 @@ class Scene {
 	 * @param {number} width
 	 * @param {number} height
 	 */
-	constructor(width, height) {
+	constructor(width, height, root) {
 
-		this.renderer = new CanvasRenderer(width, height, {transparent: true, antialias: true})
+		this.pixelRatio = window.devicePixelRatio
+		TweenMax.set(root, {scale: 1 / this.pixelRatio})
+
+		this.renderer = new CanvasRenderer(width, height, {transparent: true, antialias: true, resolution: this.pixelRatio})
 
 		this.stage = new Container()
 

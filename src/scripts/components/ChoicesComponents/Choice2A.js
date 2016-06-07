@@ -22,7 +22,7 @@ class Choice2A extends React.Component {
 	clickHandler() {
 
 		const root = ReactDOM.findDOMNode(this.refs.root)
-		this.interaction = new Interaction2A()
+		this.interaction = new Interaction2A(root)
 		root.appendChild(this.interaction.scene.renderer.view)
 
 	}
