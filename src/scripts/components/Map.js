@@ -55,7 +55,7 @@ class Map extends React.Component {
 			.set(this.mapItems, {'-webkit-filter': `grayscale(${40 - (this.props.score * 15)}%)`}, '+=.5')
 
 		this.mountTimeline.play()
-        
+
         this.createDrag()
 
 		if (window.enableAudio) {
@@ -69,16 +69,17 @@ class Map extends React.Component {
         window.addEventListener('resize', debounce(this.createDrag, 350))
 
         if (window.isEnding) {
-        	 this.endTimeline
-        	.to('.map__shadow', 3, {
-        		y:' 100px'
-        	})
-        	.to('.map__base, .mapItems, .hotpoints', 3, {
-        		y:' -100px'
-        	}, '-=3')
-        	.to('.experiment', .3, {
-        		opacity: 0
-        	})
+        	this.endTimeline
+				.to('.mapItem__container--car', .3, {opacity: 0, display: 'none'})
+        		.to('.map__shadow', 3, {
+        			y:' 100px'
+        		})
+        		.to('.map__base, .mapItems, .hotpoints', 3, {
+        			y:' -100px'
+        		}, '-=3')
+        		.to('.experiment', .3, {
+        			opacity: 0
+        		})
 
 	        setTimeout(() => {
 	        	this.endTimeline.play()
