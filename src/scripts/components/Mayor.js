@@ -40,7 +40,7 @@ class Mayor extends React.Component {
 		if (window.isBeginning) {
 			window.isBeginning = false
 			setTimeout(() => {
-				this.props.mayorTalks('Voici Ayaux-les-Bains. Comme tu peux le constater, il y a du boulot. § Fais glisser la ville pour te déplacer et utilise le scroll pour zoomer. § Allez, c’est le moment d’utiliser la machine à remonter le temps à droite de ton écran.', 'neutral')
+				this.props.mayorTalks('Voici Ayaux-les-Bains. Comme tu peux le constater, il y a du boulot. § Selon les critère VFA, il me faut au moins 4 fleurs sur 5 pour remporter l\'Award. § Fais glisser la ville pour te déplacer et utilise le scroll pour zoomer. § Allez, c’est le moment d’utiliser la machine à remonter le temps à droite de ton écran.', 'neutral')
 			}, 1000)
 		}
 
