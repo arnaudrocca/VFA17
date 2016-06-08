@@ -240,7 +240,7 @@ class Choice4 extends React.Component {
                         	<IconHold classes="terminator__hold__icon" offset={this.state.offset} circlePerimeter={this.state.circlePerimeter} width="100%" />
                         	<span className="terminator__hold__label" ref="holdLabel"></span>
                         </div>
-                        <div className="terminator__spacebar" ref="spacebarIcon">Appuies sur espace</div>
+                        <div className="terminator__spacebar" ref="spacebarIcon">Appuie sur espace</div>
 					</div>
 				</div>
 			</div>
