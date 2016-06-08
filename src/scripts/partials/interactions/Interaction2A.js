@@ -27,11 +27,10 @@ class Interaction2A extends Graphics {
         this.scene = new Scene(this.sceneWidth, this.sceneHeight, root)
         this.scene.add(this)
 
-        this.buildingNames = document.querySelectorAll('.building__name')
+        this.buildingNames = document.querySelector('.building__container-names')
         this.buttonValidate = document.querySelector('.btn__main--hidden')
 
-        this.buildingNames[0].style.top = `${this.top}px`
-        this.buildingNames[1].style.top = `${this.top}px`
+        this.buildingNames.style.top = `${this.top}px`
         this.buttonValidate.style.bottom = `${this.top / 2}px`
 
         this.init()
@@ -281,8 +280,7 @@ class Interaction2A extends Graphics {
         this.gridSize = this.sceneWidth / 20
         this.top = (this.sceneHeight - (this.gridSize * 10)) / 2
 
-        this.buildingNames[0].style.top = `${this.top}px`
-        this.buildingNames[1].style.top = `${this.top}px`
+        this.buildingNames.style.top = `${this.top}px`
         this.buttonValidate.style.bottom = `${this.top / 2}px`
 
         this.scene.resize(this.sceneWidth, this.sceneHeight)

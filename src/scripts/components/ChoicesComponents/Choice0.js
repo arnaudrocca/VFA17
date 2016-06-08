@@ -145,9 +145,11 @@ class Choice0 extends React.Component {
 						<div className="gossip__field" onClick={this.stopPropagation.bind(this)}>
 							<div><span className="gossip__field__label" ref="gossipField2" onClick={this.selectField.bind(this)}></span></div>
 							<ul className="gossip__field__list">
-								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>des nausées.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>de fortes nausées.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>des crampes à la langue.</li>
 								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la myoclonie phrénoglottique.</li>
-								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la perte des 5 sens.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la perte des cinq sens.</li>
+								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>des boutons sous les pieds.</li>
 								<li className="gossip__field__list-item" onClick={this.selectOption.bind(this)}>la perte de l'être aimé.</li>
 							</ul>
 						</div>

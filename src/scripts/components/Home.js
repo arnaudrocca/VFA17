@@ -73,7 +73,7 @@ class Home extends React.Component {
 		return (
 			<section className="home">
 				<div className="home__intro">
-					<h1 className="home__title">Ville fleurie <br/> Award 2017</h1>
+					<h1 className="home__title">Ville fleurie <br/> Awards 2017</h1>
 					<h2 className="home__subtitle">Le pouvoir des fleurs</h2>
 					<p className="home__content">
 						Glisse le bouton au centre de la fleur <br/>

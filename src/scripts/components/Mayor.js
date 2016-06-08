@@ -40,7 +40,7 @@ class Mayor extends React.Component {
 		if (window.isBeginning) {
 			window.isBeginning = false
 			setTimeout(() => {
-				this.props.mayorTalks('Voici Ayaux-les-Bains. Comme tu peux le constater, il y a du boulot. § Glisse la ville pour la déplacer ou scroll pour zoomer. § Allez, c’est le moment d’utiliser la machine à remonter le temps à droite de ton écran.', 'neutral')
+				this.props.mayorTalks('Voici Ayaux-les-Bains. Comme tu peux le constater, il y a du boulot. § Fais glisser la ville pour te déplacer et utilise le scroll pour zoomer. § Allez, c’est le moment d’utiliser la machine à remonter le temps à droite de ton écran.', 'neutral')
 			}, 1000)
 		}
 
