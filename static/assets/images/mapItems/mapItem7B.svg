@@ -1,316 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1440 875.8" enable-background="new 0 0 1440 875.8" xml:space="preserve">
-<g>
-	<g enable-background="new    ">
-		<g>
-			<polyline fill="#CEDA91" points="895.4,739.4 524.4,524.9 351.2,625.4 722.4,840 895.5,739.4 			"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_1_" enable-background="new    " points="678.2,578.7 678.3,544.6 727.8,573.1 727.7,607.3 					"/>
-				</defs>
-				<clipPath id="SVGID_2_">
-					<use xlink:href="#SVGID_1_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_2_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#F1526B" points="727.8,573.1 678.3,544.6 678.2,578.7 727.7,607.3 727.8,573.1 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<g>
-					<path fill="#F5967F" d="M687.3,565.3l-0.2,66.5c0,0.2-0.1,0.3-0.3,0.4c-0.4,0.2-1.1,0.2-1.5,0c-0.2-0.1-0.3-0.3-0.3-0.4
-						l0.2-66.5c0,0.2,0.1,0.3,0.3,0.4c0.4,0.2,1.1,0.2,1.5,0C687.2,565.6,687.3,565.4,687.3,565.3z"/>
-				</g>
-				<g>
-					<path fill="#F5967F" d="M687,564.8c0.4,0.2,0.4,0.6,0,0.9c-0.4,0.2-1.1,0.2-1.5,0c-0.4-0.2-0.4-0.6,0-0.9
-						C685.9,564.6,686.6,564.6,687,564.8z"/>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<g>
-					<path fill="#F5967F" d="M717.3,581.3l-0.2,66.5c0,0.2-0.1,0.3-0.3,0.4c-0.4,0.2-1.1,0.2-1.5,0c-0.2-0.1-0.3-0.3-0.3-0.4
-						l0.2-66.5c0,0.2,0.1,0.3,0.3,0.4c0.4,0.2,1.1,0.3,1.5,0C717.2,581.6,717.3,581.5,717.3,581.3z"/>
-				</g>
-				<g>
-					<path fill="#F5967F" d="M717,580.8c0.4,0.2,0.4,0.7,0,0.9c-0.4,0.2-1.1,0.2-1.5,0c-0.4-0.2-0.4-0.6,0-0.9
-						S716.6,580.6,717,580.8z"/>
-				</g>
-			</g>
-		</g>
-	</g>
-</g>
-<g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_3_" enable-background="new    " points="510.7,712.6 663.9,623.6 744.2,670 591,759 					"/>
-				</defs>
-				<clipPath id="SVGID_4_">
-					<use xlink:href="#SVGID_3_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_4_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#A4AD60" points="667.8,625.8 663.9,623.6 510.7,712.6 514.6,714.8 667.8,625.8 								"/>
-								<polyline fill="#A4AD60" points="675.4,630.2 671.6,628 518.4,717 522.2,719.3 675.4,630.2 								"/>
-								<polyline fill="#A4AD60" points="683.1,634.6 679.2,632.4 526,721.5 529.9,723.7 683.1,634.6 								"/>
-								<polyline fill="#A4AD60" points="690.7,639.1 686.9,636.8 533.7,725.9 537.5,728.1 690.7,639.1 								"/>
-								<polyline fill="#A4AD60" points="698.3,643.5 694.5,641.3 541.3,730.3 545.1,732.5 698.3,643.5 								"/>
-								<polyline fill="#A4AD60" points="706,647.9 702.2,645.7 549,734.7 552.8,736.9 706,647.9 								"/>
-								<polyline fill="#A4AD60" points="713.6,652.3 709.8,650.1 556.6,739.1 560.4,741.3 713.6,652.3 								"/>
-								<polyline fill="#A4AD60" points="721.3,656.7 717.5,654.5 564.3,743.5 568.1,745.7 721.3,656.7 								"/>
-								<polyline fill="#A4AD60" points="728.9,661.1 725.1,658.9 571.9,747.9 575.7,750.2 728.9,661.1 								"/>
-								<polyline fill="#A4AD60" points="736.6,665.5 732.7,663.3 579.5,752.4 583.4,754.6 736.6,665.5 								"/>
-								<polyline fill="#A4AD60" points="744.2,670 740.4,667.7 587.2,756.8 591,759 744.2,670 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_5_" enable-background="new    " points="688.8,706.5 748,672 798,700.9 738.7,735.3 					"/>
-				</defs>
-				<clipPath id="SVGID_6_">
-					<use xlink:href="#SVGID_5_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_6_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#A4AD60" points="767.4,683.2 763.6,681 704.3,715.5 708.2,717.7 767.4,683.2 								"/>
-								<polyline fill="#A4AD60" points="759.6,678.7 755.8,676.5 696.6,711 700.4,713.2 759.6,678.7 								"/>
-								<polyline fill="#A4AD60" points="751.9,674.2 748,672 688.8,706.5 692.6,708.7 751.9,674.2 								"/>
-								<polyline fill="#A4AD60" points="775.1,687.6 771.2,685.4 712,719.9 715.8,722.1 775.1,687.6 								"/>
-								<polyline fill="#A4AD60" points="782.7,692.1 778.9,689.8 719.6,724.3 723.5,726.5 782.7,692.1 								"/>
-								<polyline fill="#A4AD60" points="790.4,696.5 786.5,694.3 727.3,728.7 731.1,730.9 790.4,696.5 								"/>
-								<polyline fill="#A4AD60" points="798,700.9 794.2,698.7 734.9,733.1 738.7,735.3 798,700.9 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_7_" enable-background="new    " points="653.5,795.7 710.4,762.6 783.1,804.6 726.1,837.7 					"/>
-				</defs>
-				<clipPath id="SVGID_8_">
-					<use xlink:href="#SVGID_7_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_8_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#A4AD60" points="783.1,804.6 710.4,762.6 706.6,764.8 779.3,806.8 783.1,804.6 								"/>
-								<polyline fill="#A4AD60" points="775.5,809 702.8,767.1 699,769.3 771.7,811.2 775.5,809 								"/>
-								<polyline fill="#A4AD60" points="767.9,813.4 695.2,771.5 691.4,773.7 764.1,815.6 767.9,813.4 								"/>
-								<polyline fill="#A4AD60" points="760.3,817.8 687.6,775.9 683.8,778.1 756.5,820 760.3,817.8 								"/>
-								<polyline fill="#A4AD60" points="752.7,822.2 680,780.3 676.2,782.5 748.9,824.4 752.7,822.2 								"/>
-								<polyline fill="#A4AD60" points="745.1,826.6 672.4,784.7 668.6,786.9 741.3,828.8 745.1,826.6 								"/>
-								<polyline fill="#A4AD60" points="737.5,831 664.9,789.1 661.1,791.3 733.7,833.3 737.5,831 								"/>
-								<polyline fill="#A4AD60" points="729.9,835.5 657.3,793.5 653.5,795.7 726.1,837.7 729.9,835.5 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_9_" enable-background="new    " points="633.6,702.5 667.8,682.6 704.7,704 670.6,723.8 					"/>
-				</defs>
-				<clipPath id="SVGID_10_">
-					<use xlink:href="#SVGID_9_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_10_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#676B2F" points="704.7,704 667.8,682.6 633.6,702.5 670.6,723.8 704.7,704 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_11_" enable-background="new    " points="591.1,763.1 685.2,708.4 745.4,743.2 651.3,797.9 					"/>
-				</defs>
-				<clipPath id="SVGID_12_">
-					<use xlink:href="#SVGID_11_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_12_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#FFE5A8" points="745.4,743.2 685.2,708.4 591.1,763.1 651.3,797.9 745.4,743.2 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g enable-background="new    ">
-				<defs>
-					<polygon id="SVGID_13_" enable-background="new    " points="710.8,756.3 800.5,704.2 874,746.7 784.3,798.8 					"/>
-				</defs>
-				<clipPath id="SVGID_14_">
-					<use xlink:href="#SVGID_13_"  overflow="visible"/>
-				</clipPath>
-				<g clip-path="url(#SVGID_14_)">
-					<g>
-						<g>
-							<g>
-								<polyline fill="#676B2F" points="874,746.7 800.5,704.2 710.8,756.3 784.3,798.8 874,746.7 								"/>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-</g>
-<g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_15_" enable-background="new    " points="293.5,586.4 446.7,497.3 527,543.7 373.8,632.7 				"/>
-			</defs>
-			<clipPath id="SVGID_16_">
-				<use xlink:href="#SVGID_15_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_16_)">
-				<polyline fill="#A4AD60" points="519.3,539.3 515.5,537.1 362.3,626.1 366.1,628.3 519.3,539.3 				"/>
-				<polyline fill="#A4AD60" points="527,543.7 523.1,541.5 369.9,630.5 373.8,632.7 527,543.7 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_17_" enable-background="new    " points="471.5,580.2 530.8,545.8 580.7,574.6 521.5,609 				"/>
-			</defs>
-			<clipPath id="SVGID_18_">
-				<use xlink:href="#SVGID_17_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_18_)">
-				<polyline fill="#A4AD60" points="550.2,556.9 546.3,554.7 487.1,589.2 490.9,591.4 550.2,556.9 				"/>
-				<polyline fill="#A4AD60" points="542.4,552.4 538.6,550.2 479.3,584.7 483.1,586.9 542.4,552.4 				"/>
-				<polyline fill="#A4AD60" points="534.6,548 530.8,545.8 471.5,580.2 475.4,582.4 534.6,548 				"/>
-				<polyline fill="#A4AD60" points="557.8,561.4 554,559.2 494.7,593.6 498.6,595.8 557.8,561.4 				"/>
-				<polyline fill="#A4AD60" points="565.5,565.8 561.6,563.6 502.4,598 506.2,600.2 565.5,565.8 				"/>
-				<polyline fill="#A4AD60" points="573.1,570.2 569.3,568 510,602.4 513.8,604.6 573.1,570.2 				"/>
-				<polyline fill="#A4AD60" points="580.7,574.6 576.9,572.4 517.7,606.8 521.5,609 580.7,574.6 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_19_" enable-background="new    " points="436.2,669.5 493.2,636.4 565.8,678.3 508.8,711.4 				"/>
-			</defs>
-			<clipPath id="SVGID_20_">
-				<use xlink:href="#SVGID_19_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_20_)">
-				<polyline fill="#A4AD60" points="565.8,678.3 493.2,636.4 489.4,638.6 562,680.5 565.8,678.3 				"/>
-				<polyline fill="#A4AD60" points="558.2,682.7 485.6,640.8 481.8,643 554.4,684.9 558.2,682.7 				"/>
-				<polyline fill="#A4AD60" points="550.6,687.1 478,645.2 474.2,647.4 546.8,689.3 550.6,687.1 				"/>
-				<polyline fill="#A4AD60" points="543,691.5 470.4,649.6 466.6,651.8 539.2,693.7 543,691.5 				"/>
-				<polyline fill="#A4AD60" points="535.4,695.9 462.8,654 459,656.2 531.6,698.1 535.4,695.9 				"/>
-				<polyline fill="#A4AD60" points="527.8,700.4 455.2,658.4 451.4,660.6 524,702.6 527.8,700.4 				"/>
-				<polyline fill="#A4AD60" points="520.2,704.8 447.6,662.8 443.8,665 516.4,707 520.2,704.8 				"/>
-				<polyline fill="#A4AD60" points="512.6,709.2 440,667.3 436.2,669.5 508.8,711.4 512.6,709.2 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_21_" enable-background="new    " points="373.9,636.8 467.9,582.2 528.1,616.9 434,671.6 				"/>
-			</defs>
-			<clipPath id="SVGID_22_">
-				<use xlink:href="#SVGID_21_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_22_)">
-				<polyline fill="#676B2F" points="528.1,616.9 467.9,582.2 373.9,636.8 434,671.6 528.1,616.9 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_23_" enable-background="new    " points="493.5,630.1 583.2,577.9 656.8,620.4 567.1,672.5 				"/>
-			</defs>
-			<clipPath id="SVGID_24_">
-				<use xlink:href="#SVGID_23_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_24_)">
-				<polyline fill="#FFE5A8" points="656.8,620.4 583.2,577.9 493.5,630.1 567.1,672.5 656.8,620.4 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_25_" enable-background="new    " points="509.3,685.7 543.5,665.8 580.4,687.1 546.3,707 				"/>
-			</defs>
-			<clipPath id="SVGID_26_">
-				<use xlink:href="#SVGID_25_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_26_)">
-				<g>
-					<g>
-						<g>
-							<polyline fill="#FFE5A8" points="580.4,687.1 543.5,665.8 509.3,685.7 546.3,707 580.4,687.1 							"/>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 875.8">
+  <path fill="#CEDA91" d="M895.4 739.4l-371-214.5-173.2 100.5L722.4 840l173.1-100.6"/>
+  <defs>
+    <path id="a" d="M678.2 578.7l.1-34.1 49.5 28.5-.1 34.2z"/>
+  </defs>
+  <clipPath id="b">
+    <use xlink:href="#a" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#b)">
+    <path fill="#F1526B" d="M727.8 573.1l-49.5-28.5-.1 34.1 49.5 28.6.1-34.2"/>
+  </g>
+  <path fill="#F5967F" d="M687.3 565.3l-.2 66.5c0 .2-.1.3-.3.4-.4.2-1.1.2-1.5 0-.2-.1-.3-.3-.3-.4l.2-66.5c0 .2.1.3.3.4.4.2 1.1.2 1.5 0 .2-.1.3-.3.3-.4z"/>
+  <path fill="#F5967F" d="M687 564.8c.4.2.4.6 0 .9-.4.2-1.1.2-1.5 0-.4-.2-.4-.6 0-.9.4-.2 1.1-.2 1.5 0z"/>
+  <g fill="#F5967F">
+    <path d="M717.3 581.3l-.2 66.5c0 .2-.1.3-.3.4-.4.2-1.1.2-1.5 0-.2-.1-.3-.3-.3-.4l.2-66.5c0 .2.1.3.3.4.4.2 1.1.3 1.5 0 .2-.1.3-.2.3-.4z"/>
+    <path d="M717 580.8c.4.2.4.7 0 .9-.4.2-1.1.2-1.5 0-.4-.2-.4-.6 0-.9s1.1-.2 1.5 0z"/>
+  </g>
+  <defs>
+    <path id="c" d="M510.7 712.6l153.2-89 80.3 46.4L591 759z"/>
+  </defs>
+  <clipPath id="d">
+    <use xlink:href="#c" overflow="visible"/>
+  </clipPath>
+  <g fill="#A4AD60" clip-path="url(#d)">
+    <path d="M667.8 625.8l-3.9-2.2-153.2 89 3.9 2.2 153.2-89m7.6 4.4l-3.8-2.2-153.2 89 3.8 2.3 153.2-89.1m7.7 4.4l-3.9-2.2L526 721.5l3.9 2.2 153.2-89.1m7.6 4.5l-3.8-2.3-153.2 89.1 3.8 2.2 153.2-89m7.6 4.4l-3.8-2.2-153.2 89 3.8 2.2 153.2-89m7.7 4.4l-3.8-2.2-153.2 89 3.8 2.2 153.2-89m7.6 4.4l-3.8-2.2-153.2 89 3.8 2.2 153.2-89m7.7 4.4l-3.8-2.2-153.2 89 3.8 2.2 153.2-89m7.6 4.4l-3.8-2.2-153.2 89 3.8 2.3 153.2-89.1m7.7 4.4l-3.9-2.2-153.2 89.1 3.9 2.2 153.2-89.1m7.6 4.5l-3.8-2.3-153.2 89.1 3.8 2.2 153.2-89"/>
+  </g>
+  <defs>
+    <path id="e" d="M688.8 706.5L748 672l50 28.9-59.3 34.4z"/>
+  </defs>
+  <clipPath id="f">
+    <use xlink:href="#e" overflow="visible"/>
+  </clipPath>
+  <g fill="#A4AD60" clip-path="url(#f)">
+    <path d="M767.4 683.2l-3.8-2.2-59.3 34.5 3.9 2.2 59.2-34.5m-7.8-4.5l-3.8-2.2-59.2 34.5 3.8 2.2 59.2-34.5m-7.7-4.5L748 672l-59.2 34.5 3.8 2.2 59.3-34.5m23.2 13.4l-3.9-2.2-59.2 34.5 3.8 2.2 59.3-34.5m7.6 4.5l-3.8-2.3-59.3 34.5 3.9 2.2 59.2-34.4m7.7 4.4l-3.9-2.2-59.2 34.4 3.8 2.2 59.3-34.4m7.6 4.4l-3.8-2.2-59.3 34.4 3.8 2.2 59.3-34.4"/>
+  </g>
+  <defs>
+    <path id="g" d="M653.5 795.7l56.9-33.1 72.7 42-57 33.1z"/>
+  </defs>
+  <clipPath id="h">
+    <use xlink:href="#g" overflow="visible"/>
+  </clipPath>
+  <g fill="#A4AD60" clip-path="url(#h)">
+    <path d="M783.1 804.6l-72.7-42-3.8 2.2 72.7 42 3.8-2.2m-7.6 4.4l-72.7-41.9-3.8 2.2 72.7 41.9 3.8-2.2m-7.6 4.4l-72.7-41.9-3.8 2.2 72.7 41.9 3.8-2.2m-7.6 4.4l-72.7-41.9-3.8 2.2 72.7 41.9 3.8-2.2m-7.6 4.4L680 780.3l-3.8 2.2 72.7 41.9 3.8-2.2m-7.6 4.4l-72.7-41.9-3.8 2.2 72.7 41.9 3.8-2.2m-7.6 4.4l-72.6-41.9-3.8 2.2 72.6 42 3.8-2.3m-7.6 4.5l-72.6-42-3.8 2.2 72.6 42 3.8-2.2"/>
+  </g>
+  <defs>
+    <path id="i" d="M633.6 702.5l34.2-19.9 36.9 21.4-34.1 19.8z"/>
+  </defs>
+  <clipPath id="j">
+    <use xlink:href="#i" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#j)">
+    <path fill="#676B2F" d="M704.7 704l-36.9-21.4-34.2 19.9 37 21.3 34.1-19.8"/>
+  </g>
+  <defs>
+    <path id="k" d="M591.1 763.1l94.1-54.7 60.2 34.8-94.1 54.7z"/>
+  </defs>
+  <clipPath id="l">
+    <use xlink:href="#k" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#l)">
+    <path fill="#FFE5A8" d="M745.4 743.2l-60.2-34.8-94.1 54.7 60.2 34.8 94.1-54.7"/>
+  </g>
+  <defs>
+    <path id="m" d="M710.8 756.3l89.7-52.1 73.5 42.5-89.7 52.1z"/>
+  </defs>
+  <clipPath id="n">
+    <use xlink:href="#m" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#n)">
+    <path fill="#676B2F" d="M874 746.7l-73.5-42.5-89.7 52.1 73.5 42.5 89.7-52.1"/>
+  </g>
+  <defs>
+    <path id="o" d="M293.5 586.4l153.2-89.1 80.3 46.4-153.2 89z"/>
+  </defs>
+  <clipPath id="p">
+    <use xlink:href="#o" overflow="visible"/>
+  </clipPath>
+  <g fill="#A4AD60" clip-path="url(#p)">
+    <path d="M519.3 539.3l-3.8-2.2-153.2 89 3.8 2.2 153.2-89m7.7 4.4l-3.9-2.2-153.2 89 3.9 2.2 153.2-89"/>
+  </g>
+  <defs>
+    <path id="q" d="M471.5 580.2l59.3-34.4 49.9 28.8-59.2 34.4z"/>
+  </defs>
+  <clipPath id="r">
+    <use xlink:href="#q" overflow="visible"/>
+  </clipPath>
+  <g fill="#A4AD60" clip-path="url(#r)">
+    <path d="M550.2 556.9l-3.9-2.2-59.2 34.5 3.8 2.2 59.3-34.5m-7.8-4.5l-3.8-2.2-59.3 34.5 3.8 2.2 59.3-34.5m-7.8-4.4l-3.8-2.2-59.3 34.4 3.9 2.2 59.2-34.4m23.2 13.4l-3.8-2.2-59.3 34.4 3.9 2.2 59.2-34.4m7.7 4.4l-3.9-2.2-59.2 34.4 3.8 2.2 59.3-34.4m7.6 4.4l-3.8-2.2-59.3 34.4 3.8 2.2 59.3-34.4m7.6 4.4l-3.8-2.2-59.2 34.4 3.8 2.2 59.2-34.4"/>
+  </g>
+  <defs>
+    <path id="s" d="M436.2 669.5l57-33.1 72.6 41.9-57 33.1z"/>
+  </defs>
+  <clipPath id="t">
+    <use xlink:href="#s" overflow="visible"/>
+  </clipPath>
+  <g fill="#A4AD60" clip-path="url(#t)">
+    <path d="M565.8 678.3l-72.6-41.9-3.8 2.2 72.6 41.9 3.8-2.2m-7.6 4.4l-72.6-41.9-3.8 2.2 72.6 41.9 3.8-2.2m-7.6 4.4L478 645.2l-3.8 2.2 72.6 41.9 3.8-2.2m-7.6 4.4l-72.6-41.9-3.8 2.2 72.6 41.9 3.8-2.2m-7.6 4.4L462.8 654l-3.8 2.2 72.6 41.9 3.8-2.2m-7.6 4.5l-72.6-42-3.8 2.2 72.6 42 3.8-2.2m-7.6 4.4l-72.6-42-3.8 2.2 72.6 42 3.8-2.2m-7.6 4.4L440 667.3l-3.8 2.2 72.6 41.9 3.8-2.2"/>
+  </g>
+  <defs>
+    <path id="u" d="M373.9 636.8l94-54.6 60.2 34.7-94.1 54.7z"/>
+  </defs>
+  <clipPath id="v">
+    <use xlink:href="#u" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#v)">
+    <path fill="#676B2F" d="M528.1 616.9l-60.2-34.7-94 54.6 60.1 34.8 94.1-54.7"/>
+  </g>
+  <defs>
+    <path id="w" d="M493.5 630.1l89.7-52.2 73.6 42.5-89.7 52.1z"/>
+  </defs>
+  <clipPath id="x">
+    <use xlink:href="#w" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#x)">
+    <path fill="#FFE5A8" d="M656.8 620.4l-73.6-42.5-89.7 52.2 73.6 42.4 89.7-52.1"/>
+  </g>
+  <defs>
+    <path id="y" d="M509.3 685.7l34.2-19.9 36.9 21.3-34.1 19.9z"/>
+  </defs>
+  <clipPath id="z">
+    <use xlink:href="#y" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#z)">
+    <path fill="#FFE5A8" d="M580.4 687.1l-36.9-21.3-34.2 19.9 37 21.3 34.1-19.9"/>
+  </g>
 </svg>

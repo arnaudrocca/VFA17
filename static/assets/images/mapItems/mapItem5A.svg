@@ -1,837 +1,547 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1440 875.8" enable-background="new 0 0 1440 875.8" xml:space="preserve">
-<polygon fill="#FFF5D4" points="601.2,360.5 601.2,393.5 579.5,381.3 579.6,348.4 "/>
-<polygon fill="#FFBD6A" points="579.6,348.4 600.9,336 622.6,348.1 601.2,360.5 "/>
-<polygon fill="#97D2E8" points="601.2,360.6 579.5,348.4 590.5,328.4 611.9,340.6 "/>
-<polygon fill="#FFBD6A" points="622.6,348.1 611.9,340.6 601.3,360.5 601.2,360.5 601.2,360.6 601.2,360.6 601.2,360.6 601.2,393.5 
-	622.5,381.1 622.6,348.1 "/>
-<g>
-	<defs>
-		<polygon id="SVGID_1_" points="601.2,360.6 571,343.4 582,323.4 611.9,340.6 		"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  overflow="visible"/>
-	</clipPath>
-	
-		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#348193" stroke-width="0.3355" stroke-miterlimit="10" x1="620.3" y1="344.6" x2="608.5" y2="366.8"/>
-	
-		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#348193" stroke-width="0.3355" stroke-miterlimit="10" x1="614.1" y1="340.9" x2="602.2" y2="363.1"/>
-	
-		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#348193" stroke-width="0.3355" stroke-miterlimit="10" x1="607.8" y1="337.3" x2="595.9" y2="359.4"/>
-	
-		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#348193" stroke-width="0.3355" stroke-miterlimit="10" x1="601.5" y1="333.6" x2="589.7" y2="355.8"/>
-	
-		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#348193" stroke-width="0.3355" stroke-miterlimit="10" x1="595.3" y1="329.9" x2="583.4" y2="352.1"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_189_" enable-background="new    " points="584.4,365.3 584.5,361.1 587,362.6 587,366.8 		"/>
-	</defs>
-	<clipPath id="SVGID_3_">
-		<use xlink:href="#SVGID_189_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_3_)" fill="#F59680" points="587,362.6 584.5,361.1 584.4,365.3 587,366.8 587,362.6 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_188_" enable-background="new    " points="584.4,360.4 584.4,358.4 587,359.9 587,361.9 		"/>
-	</defs>
-	<clipPath id="SVGID_4_">
-		<use xlink:href="#SVGID_188_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_4_)" fill="#F59680" points="587,359.9 584.4,358.4 584.4,360.4 587,361.9 587,359.9 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_187_" enable-background="new    " points="593.2,372.4 593.2,368.2 595.8,369.7 595.8,373.9 		"/>
-	</defs>
-	<clipPath id="SVGID_5_">
-		<use xlink:href="#SVGID_187_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_5_)" fill="#F59680" points="595.8,369.7 593.2,368.2 593.2,372.4 595.8,373.9 595.8,369.7 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_186_" enable-background="new    " points="593.2,367.5 593.2,365.5 595.8,367 595.8,369 		"/>
-	</defs>
-	<clipPath id="SVGID_6_">
-		<use xlink:href="#SVGID_186_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_6_)" fill="#F59680" points="595.8,367 593.2,365.5 593.2,367.5 595.8,369 595.8,367 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_185_" enable-background="new    " points="609.4,378.8 609.4,374.7 611.9,373.2 612,377.3 		"/>
-	</defs>
-	<clipPath id="SVGID_7_">
-		<use xlink:href="#SVGID_185_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_7_)" fill="#F59680" points="611.9,373.2 609.4,374.7 609.4,378.8 612,377.3 611.9,373.2 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_184_" enable-background="new    " points="609.4,374 609.4,371.9 612,370.4 612,372.5 		"/>
-	</defs>
-	<clipPath id="SVGID_8_">
-		<use xlink:href="#SVGID_184_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_8_)" fill="#F59680" points="612,370.4 609.4,371.9 609.4,374 612,372.5 612,370.4 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_183_" enable-background="new    " points="586.6,385.4 586.6,375.4 590.7,377.8 590.7,387.8 		"/>
-	</defs>
-	<clipPath id="SVGID_9_">
-		<use xlink:href="#SVGID_183_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_9_)" fill="#5198A8" points="590.7,377.8 586.6,375.4 586.6,385.4 590.7,387.8 590.7,377.8 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_182_" enable-background="new    " points="609.9,363.9 609.9,357.2 615.8,353.8 615.8,360.5 		"/>
-	</defs>
-	<clipPath id="SVGID_10_">
-		<use xlink:href="#SVGID_182_"  overflow="visible"/>
-	</clipPath>
-	<path clip-path="url(#SVGID_10_)" fill="#F1526B" d="M612.8,355.5c-1.6,0.9-2.9,3.2-2.9,5.1c0,1.9,1.3,2.6,3,1.7
-		c1.6-0.9,2.9-3.2,2.9-5.1C615.8,355.3,614.4,354.5,612.8,355.5"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_181_" enable-background="new    " points="568.6,426.1 595.5,410.4 627,428.6 600.1,444.3 		"/>
-	</defs>
-	<clipPath id="SVGID_11_">
-		<use xlink:href="#SVGID_181_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_11_)" fill="#0066AE" points="627,428.6 595.5,410.4 568.6,426.1 600.1,444.3 627,428.6 	"/>
-</g>
-<polygon fill="#97D2E8" points="602.5,384.1 579.4,397.5 554.4,383.1 577.6,369.7 "/>
-<polygon fill="#43A4C9" points="602.5,384.1 602.5,408.5 579.3,422 579.4,397.5 "/>
-<polygon fill="#EDF6F9" points="579.4,397.5 579.3,422 554.4,407.6 554.4,383.1 "/>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_180_" enable-background="new    " points="591.6,404.3 591.5,397.8 594.7,396 594.7,402.5 		"/>
-	</defs>
-	<clipPath id="SVGID_12_">
-		<use xlink:href="#SVGID_180_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_12_)" fill="#FFFFFF" points="594.7,396 591.5,397.8 591.6,404.3 594.7,402.5 594.7,396 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_179_" enable-background="new    " points="584,413.4 584,406.8 587.1,405 587.1,411.6 		"/>
-	</defs>
-	<clipPath id="SVGID_13_">
-		<use xlink:href="#SVGID_179_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_13_)" fill="#FFFFFF" points="587.1,405 584,406.8 584,413.4 587.1,411.6 587.1,405 	"/>
-</g>
-<polygon fill="#F1526B" points="593.3,381.3 593.4,385 590.2,386.9 "/>
-<polygon fill="#FFF5D4" points="590.1,386.8 585.3,384 588.5,378.5 593.3,381.3 "/>
-<polygon fill="#F5967F" points="589.9,385.6 586.6,383.6 588.8,379.8 592.1,381.7 "/>
-<polygon fill="#F5967F" points="681,365 664.1,374.8 649.9,366.5 666.7,356.8 "/>
-<polygon fill="#FEF4F2" points="664.1,374.8 664,407.1 649.8,398.9 649.9,366.5 "/>
-<polygon fill="#F5967F" points="664.7,354.6 641.5,368.1 616.6,353.7 639.8,340.3 "/>
-<polygon fill="#F1526B" points="664.6,374.5 664.7,354.6 641.5,368.1 641.4,420.3 664,407.1 664,407.1 680.9,397.3 681,365 "/>
-<polygon fill="#FFCABE" points="641.5,368.1 641.4,420.3 616.4,405.9 616.6,353.7 "/>
-<polygon fill="#FFE5A7" points="638,346.9 636,348.1 634.2,347 636.1,345.8 "/>
-<polygon fill="#FFE29E" points="638,346.9 638,356.7 636,357.8 636,348.1 "/>
-<polygon fill="#FFF9EA" points="636,348.1 636,357.8 634.1,356.8 634.2,347 "/>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_14_" enable-background="new    " points="648.3,381 648.3,374.4 651.4,372.6 651.4,379.2 		"/>
-	</defs>
-	<clipPath id="SVGID_15_">
-		<use xlink:href="#SVGID_14_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_15_)" fill="#FFFFFF" points="651.4,372.6 648.3,374.4 648.3,381 651.4,379.2 651.4,372.6 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_16_" enable-background="new    " points="657.5,383.4 657.5,376.9 660.6,375 660.7,381.6 		"/>
-	</defs>
-	<clipPath id="SVGID_17_">
-		<use xlink:href="#SVGID_16_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_17_)" fill="#FFFFFF" points="660.6,375 657.5,376.9 657.5,383.4 660.7,381.6 660.6,375 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_18_" enable-background="new    " points="651.7,397.1 651.7,390.5 654.8,388.7 654.8,395.3 		"/>
-	</defs>
-	<clipPath id="SVGID_19_">
-		<use xlink:href="#SVGID_18_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_19_)" fill="#FFFFFF" points="654.8,388.7 651.7,390.5 651.7,397.1 654.8,395.3 654.8,388.7 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_20_" enable-background="new    " points="673.4,383.6 673.4,377.1 676.5,375.2 676.5,381.8 		"/>
-	</defs>
-	<clipPath id="SVGID_21_">
-		<use xlink:href="#SVGID_20_"  overflow="visible"/>
-	</clipPath>
-	<g clip-path="url(#SVGID_21_)">
-		<polyline fill="#FFFFFF" points="676.5,375.2 673.4,377.1 673.4,383.6 676.5,381.8 676.5,375.2 		"/>
-	</g>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_22_" enable-background="new    " points="668.4,396.6 668.4,390.1 671.5,388.2 671.5,394.8 		"/>
-	</defs>
-	<clipPath id="SVGID_23_">
-		<use xlink:href="#SVGID_22_"  overflow="visible"/>
-	</clipPath>
-	<g clip-path="url(#SVGID_23_)">
-		<polyline fill="#FFFFFF" points="671.5,388.2 668.4,390.1 668.4,396.6 671.5,394.8 671.5,388.2 		"/>
-	</g>
-</g>
-<polygon fill="#97D2E8" points="641.5,379.5 627,387.9 597.6,370.9 612.1,362.5 "/>
-<polygon fill="#43A4C9" points="641.5,379.5 641.4,420.2 626.9,428.6 627,387.9 "/>
-<polygon fill="#EDF6F9" points="627,387.9 626.9,428.6 597.5,411.6 597.6,370.9 "/>
-<polygon fill="#F1526B" points="630.6,376.1 630.6,379.8 627.4,381.6 "/>
-<polygon fill="#FFF5D4" points="627.4,381.6 622.6,378.8 625.8,373.3 630.6,376.1 "/>
-<polygon fill="#F5967F" points="627.2,380.3 623.8,378.4 626,374.6 629.4,376.5 "/>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_24_" enable-background="new    " points="629.4,411.9 629.3,392.9 634.2,390.1 634.2,409.1 		"/>
-	</defs>
-	<clipPath id="SVGID_25_">
-		<use xlink:href="#SVGID_24_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_25_)" fill="#FFFFFF" points="634.2,390.1 629.3,392.9 629.4,411.9 634.2,409.1 634.2,390.1 	"/>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_26_" enable-background="new    " points="635,408.7 634.9,389.7 639.8,386.9 639.8,405.9 		"/>
-	</defs>
-	<clipPath id="SVGID_27_">
-		<use xlink:href="#SVGID_26_"  overflow="visible"/>
-	</clipPath>
-	<polyline clip-path="url(#SVGID_27_)" fill="#FFFFFF" points="639.8,386.9 634.9,389.7 635,408.7 639.8,405.9 639.8,386.9 	"/>
-</g>
-<g enable-background="new    ">
-	<g>
-		<polygon fill="#F5967F" points="592.9,445.2 529.1,482.3 464.9,445.2 528.7,408.2 		"/>
-	</g>
-	<g>
-		<polygon fill="#F1526B" points="592.9,445.2 592.9,448.5 529.1,485.6 529.1,482.3 		"/>
-	</g>
-	<g>
-		<polygon fill="#FFCABE" points="529.1,482.3 529.1,485.6 464.8,448.5 464.9,445.2 		"/>
-	</g>
-</g>
-<polygon fill="#97D2E8" points="590.2,434.8 529.1,470.3 467.6,434.8 528.7,399.3 "/>
-<polygon fill="#43A4C9" points="590.2,434.8 590.1,443.8 529,479.3 529.1,470.3 "/>
-<polygon fill="#EDF6F9" points="529.1,470.3 529,479.3 467.6,443.8 467.6,434.8 "/>
-<g enable-background="new    ">
-	<g>
-		<polygon fill="#FFDD8E" points="538.8,366.6 489,395.6 478.7,389.7 528.5,360.7 		"/>
-	</g>
-	<g>
-		<polygon fill="#FFBD6A" points="538.8,366.6 538.7,407.4 488.8,436.4 489,395.6 		"/>
-	</g>
-	<g>
-		<polygon fill="#FFF5D4" points="489,395.6 488.8,436.4 478.6,430.4 478.7,389.7 		"/>
-	</g>
-</g>
-<g enable-background="new    ">
-	<g>
-		<polygon fill="#97D2E8" points="497.5,383 490.4,387.1 486.2,384.8 493.4,380.6 		"/>
-	</g>
-	<g>
-		<polygon fill="#43A4C9" points="497.5,383 497.5,387 490.3,391.2 490.4,387.1 		"/>
-	</g>
-	<g>
-		<polygon fill="#EEF7FA" points="490.4,387.1 490.3,391.2 486.2,388.8 486.2,384.8 		"/>
-	</g>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_178_" enable-background="new    " points="493.7,428.4 493.7,417.1 510,407.7 510.1,419 		"/>
-	</defs>
-	<clipPath id="SVGID_28_">
-		<use xlink:href="#SVGID_178_"  overflow="visible"/>
-	</clipPath>
-	<g clip-path="url(#SVGID_28_)">
-		<polyline fill="#FFFFFF" points="510,407.7 493.7,417.1 493.7,428.4 510.1,419 510,407.7 		"/>
-	</g>
-</g>
-<g enable-background="new    ">
-	<defs>
-		<polygon id="SVGID_177_" enable-background="new    " points="516,420.6 516,412.5 519.4,410.6 519.4,418.6 		"/>
-	</defs>
-	<clipPath id="SVGID_29_">
-		<use xlink:href="#SVGID_177_"  overflow="visible"/>
-	</clipPath>
-	<g clip-path="url(#SVGID_29_)">
-		<polyline fill="#F59680" points="519.4,410.6 516,412.5 516,420.6 519.4,418.6 519.4,410.6 		"/>
-	</g>
-</g>
-<g>
-	<defs>
-		<polygon id="SVGID_30_" points="493.7,428.4 493.7,417.1 510,407.7 510.1,419 		"/>
-	</defs>
-	<defs>
-		<polyline id="SVGID_31_" points="510,407.7 493.7,417.1 493.7,428.4 510.1,419 510,407.7 		"/>
-	</defs>
-	<clipPath id="SVGID_32_">
-		<use xlink:href="#SVGID_30_"  overflow="visible"/>
-	</clipPath>
-	<clipPath id="SVGID_33_" clip-path="url(#SVGID_32_)">
-		<use xlink:href="#SVGID_31_"  overflow="visible"/>
-	</clipPath>
-	<g clip-path="url(#SVGID_33_)" enable-background="new    ">
-		<defs>
-			<polygon id="SVGID_34_" enable-background="new    " points="489.9,418.5 489.9,414.3 508.7,425.1 508.7,429.3 			"/>
-		</defs>
-		<clipPath id="SVGID_35_">
-			<use xlink:href="#SVGID_34_"  overflow="visible"/>
-		</clipPath>
-		<g clip-path="url(#SVGID_35_)">
-			<polyline fill="#EBF6F9" points="508.7,425.1 489.9,414.3 489.9,418.5 508.7,429.3 508.7,425.1 			"/>
-		</g>
-	</g>
-	<g clip-path="url(#SVGID_33_)" enable-background="new    ">
-		<defs>
-			<polygon id="SVGID_36_" enable-background="new    " points="495.7,414.7 495.7,410.5 514.5,421.4 514.5,425.6 			"/>
-		</defs>
-		<clipPath id="SVGID_37_">
-			<use xlink:href="#SVGID_36_"  overflow="visible"/>
-		</clipPath>
-		<g clip-path="url(#SVGID_37_)">
-			<polyline fill="#EBF6F9" points="514.5,421.4 495.7,410.5 495.7,414.7 514.5,425.6 514.5,421.4 			"/>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_176_" enable-background="new    " points="519.1,421.5 524.9,418.1 530.6,421.4 524.8,424.7 				"/>
-			</defs>
-			<clipPath id="SVGID_38_">
-				<use xlink:href="#SVGID_176_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_38_)">
-				<polyline fill="#83BECC" points="530.6,421.4 524.9,418.1 519.1,421.5 524.8,424.7 530.6,421.4 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_175_" enable-background="new    " points="526.1,425.5 531.9,422.2 537.6,425.5 531.8,428.8 				"/>
-			</defs>
-			<clipPath id="SVGID_39_">
-				<use xlink:href="#SVGID_175_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_39_)">
-				<polyline fill="#83BECC" points="537.6,425.5 531.9,422.2 526.1,425.5 531.8,428.8 537.6,425.5 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_174_" enable-background="new    " points="533.1,429.6 538.8,426.3 544.5,429.6 538.8,432.9 				"/>
-			</defs>
-			<clipPath id="SVGID_40_">
-				<use xlink:href="#SVGID_174_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_40_)">
-				<polyline fill="#83BECC" points="544.5,429.6 538.8,426.3 533.1,429.6 538.8,432.9 544.5,429.6 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_173_" enable-background="new    " points="512.2,425.5 517.9,422.2 523.6,425.5 517.8,428.8 				"/>
-			</defs>
-			<clipPath id="SVGID_41_">
-				<use xlink:href="#SVGID_173_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_41_)">
-				<polyline fill="#83BECC" points="523.6,425.5 517.9,422.2 512.2,425.5 517.8,428.8 523.6,425.5 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_172_" enable-background="new    " points="519.2,429.6 524.9,426.3 530.6,429.6 524.9,432.9 				"/>
-			</defs>
-			<clipPath id="SVGID_42_">
-				<use xlink:href="#SVGID_172_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_42_)">
-				<polyline fill="#83BECC" points="530.6,429.6 524.9,426.3 519.2,429.6 524.9,432.9 530.6,429.6 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_171_" enable-background="new    " points="526.1,433.7 531.8,430.3 537.5,433.6 531.8,437 				"/>
-			</defs>
-			<clipPath id="SVGID_43_">
-				<use xlink:href="#SVGID_171_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_43_)">
-				<polyline fill="#83BECC" points="537.5,433.6 531.8,430.3 526.1,433.7 531.8,437 537.5,433.6 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_170_" enable-background="new    " points="505.1,429.6 510.9,426.2 516.5,429.5 510.8,432.8 				"/>
-			</defs>
-			<clipPath id="SVGID_44_">
-				<use xlink:href="#SVGID_170_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_44_)">
-				<polyline fill="#83BECC" points="516.5,429.5 510.9,426.2 505.1,429.6 510.8,432.8 516.5,429.5 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_169_" enable-background="new    " points="512.1,433.6 517.9,430.3 523.6,433.6 517.8,436.9 				"/>
-			</defs>
-			<clipPath id="SVGID_45_">
-				<use xlink:href="#SVGID_169_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_45_)">
-				<polyline fill="#83BECC" points="523.6,433.6 517.9,430.3 512.1,433.6 517.8,436.9 523.6,433.6 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_168_" enable-background="new    " points="519.1,437.7 524.8,434.4 530.5,437.7 524.8,441 				"/>
-			</defs>
-			<clipPath id="SVGID_46_">
-				<use xlink:href="#SVGID_168_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_46_)">
-				<polyline fill="#83BECC" points="530.5,437.7 524.8,434.4 519.1,437.7 524.8,441 530.5,437.7 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_167_" enable-background="new    " points="498.1,433.6 503.9,430.3 509.6,433.6 503.8,436.9 				"/>
-			</defs>
-			<clipPath id="SVGID_47_">
-				<use xlink:href="#SVGID_167_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_47_)">
-				<polyline fill="#83BECC" points="509.6,433.6 503.9,430.3 498.1,433.6 503.8,436.9 509.6,433.6 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_166_" enable-background="new    " points="505.1,437.7 510.9,434.4 516.6,437.7 510.8,441 				"/>
-			</defs>
-			<clipPath id="SVGID_48_">
-				<use xlink:href="#SVGID_166_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_48_)">
-				<polyline fill="#83BECC" points="516.6,437.7 510.9,434.4 505.1,437.7 510.8,441 516.6,437.7 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_165_" enable-background="new    " points="512.1,441.8 517.8,438.4 523.5,441.7 517.8,445.1 				"/>
-			</defs>
-			<clipPath id="SVGID_49_">
-				<use xlink:href="#SVGID_165_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_49_)">
-				<polyline fill="#83BECC" points="523.5,441.7 517.8,438.4 512.1,441.8 517.8,445.1 523.5,441.7 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_164_" enable-background="new    " points="490.9,437.7 496.6,434.4 502.3,437.6 496.6,441 				"/>
-			</defs>
-			<clipPath id="SVGID_50_">
-				<use xlink:href="#SVGID_164_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_50_)">
-				<polyline fill="#83BECC" points="502.3,437.6 496.6,434.4 490.9,437.7 496.6,441 502.3,437.6 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_163_" enable-background="new    " points="497.9,441.8 503.6,438.4 509.3,441.7 503.6,445.1 				"/>
-			</defs>
-			<clipPath id="SVGID_51_">
-				<use xlink:href="#SVGID_163_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_51_)">
-				<polyline fill="#83BECC" points="509.3,441.7 503.6,438.4 497.9,441.8 503.6,445.1 509.3,441.7 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_162_" enable-background="new    " points="504.8,445.8 510.5,442.5 516.2,445.8 510.5,449.1 				"/>
-			</defs>
-			<clipPath id="SVGID_52_">
-				<use xlink:href="#SVGID_162_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_52_)">
-				<polyline fill="#83BECC" points="516.2,445.8 510.5,442.5 504.8,445.8 510.5,449.1 516.2,445.8 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_161_" enable-background="new    " points="525.9,441.8 531.7,438.4 537.4,441.7 531.6,445.1 				"/>
-			</defs>
-			<clipPath id="SVGID_53_">
-				<use xlink:href="#SVGID_161_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_53_)">
-				<polyline fill="#83BECC" points="537.4,441.7 531.7,438.4 525.9,441.8 531.6,445.1 537.4,441.7 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_160_" enable-background="new    " points="519,445.8 524.7,442.5 530.4,445.8 524.7,449.1 				"/>
-			</defs>
-			<clipPath id="SVGID_54_">
-				<use xlink:href="#SVGID_160_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_54_)">
-				<polyline fill="#83BECC" points="530.4,445.8 524.7,442.5 519,445.8 524.7,449.1 530.4,445.8 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_159_" enable-background="new    " points="511.7,449.9 517.4,446.6 523.1,449.9 517.4,453.2 				"/>
-			</defs>
-			<clipPath id="SVGID_55_">
-				<use xlink:href="#SVGID_159_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_55_)">
-				<polyline fill="#83BECC" points="523.1,449.9 517.4,446.6 511.7,449.9 517.4,453.2 523.1,449.9 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_158_" enable-background="new    " points="533.1,445.8 538.8,442.5 544.5,445.8 538.8,449.1 				"/>
-			</defs>
-			<clipPath id="SVGID_56_">
-				<use xlink:href="#SVGID_158_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_56_)">
-				<polyline fill="#83BECC" points="544.5,445.8 538.8,442.5 533.1,445.8 538.8,449.1 544.5,445.8 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_157_" enable-background="new    " points="525.9,449.9 531.7,446.6 537.4,449.9 531.6,453.2 				"/>
-			</defs>
-			<clipPath id="SVGID_57_">
-				<use xlink:href="#SVGID_157_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_57_)">
-				<polyline fill="#83BECC" points="537.4,449.9 531.7,446.6 525.9,449.9 531.6,453.2 537.4,449.9 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g opacity="0.6">
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_156_" enable-background="new    " points="518.8,454 524.6,450.7 530.3,453.9 524.5,457.3 				"/>
-			</defs>
-			<clipPath id="SVGID_58_">
-				<use xlink:href="#SVGID_156_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_58_)">
-				<polyline fill="#83BECC" points="530.3,453.9 524.6,450.7 518.8,454 524.5,457.3 530.3,453.9 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<polygon fill="#FFF5D4" points="544.5,402.9 544.5,427.4 524.3,415.7 524.4,391.3 "/>
-<polygon fill="#FFE9BC" points="545.4,408.9 545.4,433.4 544.5,427.4 544.5,402.9 "/>
-<polygon fill="#FFDD8E" points="580.9,407.4 566.7,415.7 552.6,423.8 536.1,414.2 545.4,408.9 544.5,402.9 524.4,391.3 538.7,383 
-	"/>
-<polygon fill="#FFBD6A" points="552.6,423.8 552.5,448.2 580.9,431.8 580.9,407.4 "/>
-<polygon fill="#FFF5D4" points="552.6,423.8 552.5,448.2 536.1,438.7 536.1,414.2 "/>
-<polygon fill="#FFCABE" points="544.6,399.6 544.6,403.7 524.4,392.1 524.4,388 "/>
-<polygon fill="#F9C3B5" points="545.5,405.6 545.5,409.7 544.6,403.7 544.6,399.6 "/>
-<polygon fill="#F5967F" points="581,404.1 566.7,412.4 552.7,420.5 536.2,411 545.5,405.6 544.6,399.6 524.4,388 538.7,379.7 "/>
-<polygon fill="#F1526B" points="552.7,420.5 552.7,424.6 581,408.2 581,404.1 "/>
-<polygon fill="#FFCABE" points="552.7,420.5 552.7,424.6 536.2,415.1 536.2,411 "/>
-<polygon fill="#97D2E8" points="571.6,400.5 567.5,402.8 560.3,398.7 564.4,396.3 "/>
-<polygon fill="#43A4C9" points="571.6,400.5 571.6,404.5 567.5,406.9 567.5,402.8 "/>
-<polygon fill="#EEF7FA" points="567.5,402.8 567.5,406.9 560.3,402.7 560.3,398.7 "/>
-<g>
-	<g enable-background="new    ">
-		<defs>
-			<polygon id="SVGID_155_" enable-background="new    " points="539.8,430.1 539.8,423.5 542.3,425 542.3,431.6 			"/>
-		</defs>
-		<clipPath id="SVGID_59_">
-			<use xlink:href="#SVGID_155_"  overflow="visible"/>
-		</clipPath>
-		<g clip-path="url(#SVGID_59_)">
-			<polyline fill="#F59680" points="542.3,425 539.8,423.5 539.8,430.1 542.3,431.6 542.3,425 			"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g enable-background="new    ">
-		<defs>
-			<polygon id="SVGID_154_" enable-background="new    " points="544.6,436 544.7,429.4 547.1,430.8 547.1,437.4 			"/>
-		</defs>
-		<clipPath id="SVGID_60_">
-			<use xlink:href="#SVGID_154_"  overflow="visible"/>
-		</clipPath>
-		<g clip-path="url(#SVGID_60_)">
-			<polyline fill="#F59680" points="547.1,430.8 544.7,429.4 544.6,436 547.1,437.4 547.1,430.8 			"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g enable-background="new    ">
-		<g>
-			<polygon fill="#F5967F" points="518.9,442.1 514.8,444.5 507.6,440.3 511.7,438 			"/>
-		</g>
-		<g>
-			<polygon fill="#F1526B" points="518.9,442.1 518.9,446.2 514.8,448.6 514.8,444.5 			"/>
-		</g>
-		<g>
-			<polygon fill="#FFCABE" points="514.8,444.5 514.8,448.6 507.6,444.4 507.6,440.3 			"/>
-		</g>
-	</g>
-</g>
-<g>
-	<polygon fill="#FFDD8E" points="511.2,444.2 507.1,446.6 499.9,442.4 504,440 	"/>
-</g>
-<g>
-	<polygon fill="#FFBD6A" points="511.2,444.2 511.2,448.2 507.1,450.6 507.1,446.6 	"/>
-</g>
-<g>
-	<polygon fill="#FFF5D4" points="507.1,446.6 507.1,450.6 499.8,446.5 499.9,442.4 	"/>
-</g>
-<g>
-	<g enable-background="new    ">
-		<g>
-			<polygon fill="#F5967F" points="521.6,448.7 517.5,451.1 510.3,447 514.4,444.6 			"/>
-		</g>
-		<g>
-			<polygon fill="#F1526B" points="521.5,448.7 521.6,452.8 517.6,455.3 517.5,451.2 			"/>
-		</g>
-		<g>
-			<polygon fill="#FFCABE" points="517.5,451.1 517.5,455.2 510.3,451 510.3,447 			"/>
-		</g>
-	</g>
-</g>
-<g>
-	<polygon fill="#FFDD8E" points="521.1,444.8 517.4,446.9 510.8,443.1 514.5,441 	"/>
-</g>
-<g>
-	<polygon fill="#FFBD6A" points="521.1,444.8 521.1,448.5 517.3,450.7 517.4,446.9 	"/>
-</g>
-<g>
-	<polygon fill="#FFF5D4" points="517.4,446.9 517.3,450.7 510.8,446.9 510.8,443.1 	"/>
-</g>
-<g>
-	<g enable-background="new    ">
-		<g>
-			<path fill="#F5967F" d="M575.2,431.5c0.1,0,0.1,0.1,0,0.1c-0.1,0-0.2,0-0.2,0s-0.1-0.1,0-0.1
-				C575.1,431.5,575.2,431.5,575.2,431.5z"/>
-		</g>
-		<g>
-			<path fill="#F5967F" d="M575.3,431.6l0,8.2c0,0,0,0.1-0.1,0.1c-0.1,0-0.2,0-0.2,0c0,0-0.1,0-0.1-0.1l0-8.2c0,0,0,0.1,0.1,0.1
-				C575.1,431.7,575.2,431.7,575.3,431.6C575.3,431.7,575.3,431.6,575.3,431.6z"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g enable-background="new    ">
-		<g>
-			<path fill="#F5967F" d="M569,435.2c0.1,0,0.1,0.1,0,0.1s-0.2,0-0.3,0c-0.1,0-0.1-0.1,0-0.1C568.8,435.1,568.9,435.1,569,435.2z"
-				/>
-		</g>
-		<g>
-			<path fill="#F5967F" d="M569,435.2l0,8.2c0,0,0,0,0,0.1c-0.1,0-0.2,0-0.3,0c0,0,0,0,0-0.1l0-8.2c0,0,0,0.1,0,0.1
-				C568.8,435.4,568.9,435.4,569,435.2C569,435.3,569,435.3,569,435.2z"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g enable-background="new    ">
-		<defs>
-			<polygon id="SVGID_61_" enable-background="new    " points="563.9,440.3 563.9,433.6 576.7,426.3 576.7,432.9 			"/>
-		</defs>
-		<clipPath id="SVGID_62_">
-			<use xlink:href="#SVGID_61_"  overflow="visible"/>
-		</clipPath>
-		<g clip-path="url(#SVGID_62_)">
-			<path fill="#FFFFFF" d="M568.8,433.6c-0.1,0.1-0.2,0.1-0.2,0.1l0,1.2c0,0,0.1,0,0.2-0.1c0.4-0.2,0.6-0.6,0.6-1
-				C569.4,433.6,569.2,433.4,568.8,433.6 M570.3,432.8c-0.3,0.2-0.4,0.5-0.4,0.9c0,0.3,0.1,0.5,0.4,0.4c0.3-0.2,0.4-0.5,0.4-0.9
-				C570.7,432.9,570.6,432.6,570.3,432.8 M571.9,433L571.9,433c0-0.2,0-0.4,0-0.6l0-0.6l0.2-0.1l0,1.5l-0.2,0.1l-0.4-0.5
-				c-0.1-0.1-0.2-0.2-0.2-0.4l0,0c0,0.2,0,0.4,0,0.6l0,0.6l-0.2,0.1l0-1.5l0.2-0.1l0.4,0.5C571.8,432.7,571.9,432.8,571.9,433
-				 M572.8,432.6c0.2-0.1,0.3-0.3,0.3-0.7l0-0.9l0.2-0.1l0,0.9c0,0.5-0.2,0.8-0.5,0.9c-0.3,0.2-0.5,0.1-0.5-0.4l0-0.9l0.2-0.1l0,0.9
-				C572.5,432.6,572.7,432.7,572.8,432.6 M573.5,431l0-0.2l1-0.6l0,0.2l-0.4,0.2l0,1.3l-0.2,0.1l0-1.3L573.5,431 M568.8,435
-				c-0.1,0.1-0.2,0.1-0.3,0.2l0-1.5c0.1-0.1,0.2-0.2,0.4-0.2c0.2-0.1,0.4-0.2,0.5-0.1c0.1,0.1,0.2,0.2,0.2,0.4
-				c0,0.2-0.1,0.5-0.2,0.7C569.2,434.7,569,434.9,568.8,435 M570.3,434.2c-0.3,0.2-0.6,0-0.6-0.4c0-0.5,0.3-0.9,0.6-1.1
-				c0.4-0.2,0.6,0,0.6,0.4C570.9,433.6,570.6,434,570.3,434.2 M574.8,431.4c0.2-0.1,0.3-0.3,0.3-0.4c0-0.1-0.1-0.2-0.2-0.2
-				c-0.2,0-0.3,0-0.3-0.2c0-0.2,0.2-0.5,0.4-0.7c0.1-0.1,0.2-0.1,0.3-0.1l-0.1,0.2c0,0-0.1,0-0.2,0.1c-0.2,0.1-0.2,0.3-0.2,0.4
-				c0,0.1,0.1,0.2,0.3,0.1c0.2,0,0.3,0,0.3,0.2c0,0.2-0.2,0.5-0.5,0.7c-0.1,0.1-0.3,0.1-0.3,0.1l0-0.2
-				C574.6,431.5,574.7,431.5,574.8,431.4 M576.7,427.7l-9.9,5.7l0.1,4l9.9-5.7L576.7,427.7"/>
-			<polyline fill="#FFFFFF" points="566.7,432 563.9,437 566.8,438.6 566.8,437.5 566.8,433.5 566.7,432 			"/>
-			<path fill="#F69E89" d="M568.8,434.9c-0.1,0-0.1,0.1-0.2,0.1l0-1.2c0,0,0.1-0.1,0.2-0.1c0.4-0.2,0.5-0.1,0.5,0.3
-				C569.4,434.3,569.2,434.7,568.8,434.9 M568.8,433.5c-0.1,0.1-0.3,0.2-0.4,0.2l0,1.5c0.1,0,0.2-0.1,0.3-0.2
-				c0.2-0.1,0.5-0.3,0.6-0.5c0.1-0.2,0.2-0.4,0.2-0.7c0-0.2-0.1-0.4-0.2-0.4C569.3,433.3,569.1,433.4,568.8,433.5"/>
-			<path fill="#F69E89" d="M570.3,434c-0.3,0.2-0.4,0-0.4-0.4c0-0.3,0.1-0.7,0.4-0.9s0.4,0.1,0.4,0.4
-				C570.7,433.5,570.6,433.9,570.3,434 M570.3,432.6c-0.3,0.2-0.6,0.7-0.6,1.1c0,0.5,0.2,0.6,0.6,0.4c0.3-0.2,0.6-0.6,0.6-1.1
-				C570.9,432.6,570.6,432.4,570.3,432.6"/>
-			<path fill="#F69E89" d="M572.1,431.6l-0.2,0.1l0,0.6c0,0.2,0,0.4,0,0.6l0,0c-0.1-0.1-0.1-0.2-0.2-0.3l-0.4-0.5l-0.2,0.1l0,1.5
-				l0.2-0.1l0-0.6c0-0.2,0-0.4,0-0.6l0,0c0.1,0.1,0.2,0.2,0.2,0.4l0.4,0.5l0.2-0.1L572.1,431.6"/>
-			<path fill="#F69E89" d="M573.3,430.9l-0.2,0.1l0,0.9c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.1-0.3,0-0.3-0.3l0-0.9l-0.2,0.1l0,0.9
-				c0,0.5,0.2,0.5,0.5,0.4c0.3-0.2,0.5-0.5,0.5-0.9L573.3,430.9"/>
-			<polyline fill="#F69E89" points="574.4,430.3 573.5,430.8 573.5,431 573.8,430.8 573.9,432.1 574,432 574,430.7 574.4,430.4 
-				574.4,430.3 			"/>
-			<path fill="#F69E89" d="M574.9,430c-0.3,0.1-0.4,0.4-0.4,0.7c0,0.2,0.1,0.3,0.3,0.2c0.2,0,0.2,0,0.2,0.2c0,0.1-0.1,0.3-0.3,0.4
-				c-0.1,0.1-0.2,0.1-0.3,0.1l0,0.2c0.1,0,0.2,0,0.3-0.1c0.3-0.2,0.5-0.5,0.5-0.7c0-0.2-0.1-0.3-0.3-0.2c-0.2,0-0.3,0-0.3-0.1
-				c0-0.1,0.1-0.3,0.2-0.4c0.1-0.1,0.2-0.1,0.2-0.1l0.1-0.2C575.2,429.9,575.1,429.9,574.9,430"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g>
-		<g enable-background="new    ">
-			<defs>
-				<polygon id="SVGID_153_" enable-background="new    " points="494.4,409.4 494.4,405.2 508,397.3 508,401.6 				"/>
-			</defs>
-			<clipPath id="SVGID_63_">
-				<use xlink:href="#SVGID_153_"  overflow="visible"/>
-			</clipPath>
-			<g clip-path="url(#SVGID_63_)">
-				<path fill="#FFFFFF" d="M507.1,397.8l-11.8,6.8c-0.5,0.3-0.9,1.5-0.9,2.7c0,1.2,0.4,1.9,0.9,1.6l11.8-6.8
-					c0.5-0.3,0.9-1.5,0.9-2.7C508,398.2,507.6,397.5,507.1,397.8"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g>
-	<g enable-background="new    ">
-		<defs>
-			<polygon id="SVGID_152_" enable-background="new    " points="497.2,410.1 497.2,400.4 505.7,395.5 505.7,405.2 			"/>
-		</defs>
-		<clipPath id="SVGID_64_">
-			<use xlink:href="#SVGID_152_"  overflow="visible"/>
-		</clipPath>
-		<g clip-path="url(#SVGID_64_)">
-			<path fill="#F1526B" d="M501.8,406.7l-0.4-0.3l0.8-1.6l0.4,0.3L501.8,406.7 M498.9,405.8l-0.9-0.4l0.4-0.8l0.9,0.4L498.9,405.8
-				 M504,402.3l-0.3-1.4l0.7-0.6l0.3,1.4L504,402.3 M501.5,404.2c-0.7,0.4-1.2,0.1-1.2-0.7c0-0.8,0.5-1.7,1.2-2.1
-				c0.7-0.4,1.2-0.1,1.2,0.7C502.7,402.9,502.1,403.8,501.5,404.2 M499.7,401.7l-0.4-0.2l0.8-1.4l0.4,0.2L499.7,401.7 M501.4,397.9
-				c-2.3,1.3-4.2,4.6-4.2,7.3s1.9,3.8,4.2,2.4s4.2-4.6,4.2-7.3c0-0.7-0.1-1.3-0.4-1.8c-0.2,0.2-0.4,0.4-0.6,0.5
-				c-0.6,0.3-1.1,0.1-1.1-0.6c-0.1,0.1-0.2,0.2-0.3,0.2c-0.6,0.3-1.1,0.1-1.1-0.6c0-0.2,0-0.4,0.1-0.6
-				C502.1,397.6,501.8,397.7,501.4,397.9"/>
-		</g>
-	</g>
-</g>
-<path fill="#3F3F3F" d="M522.4,428.2c0,0-0.3-1.4,0.9-1.7c0,0,1.1-0.2,1.1,1.2c0,0,0.1,1.1-0.7,1.2
-	C523.7,428.8,522.7,429,522.4,428.2z"/>
-<ellipse fill="#FFFFFF" cx="523.3" cy="427.4" rx="0.7" ry="0.8"/>
-<path fill="#3F3F3F" d="M523.6,426.7c0,0-0.1,0.8-1,0.7C522.6,427.4,522.6,426.4,523.6,426.7z"/>
-<path fill="#FFFFFF" d="M523.4,428.2c0,0,0,0.3,0,0.3l-0.4,0.2c0,0-0.1,0.7,0.4,0.6c0,0,0.7,0,0.6-0.6c0,0-0.3-0.2-0.3-0.2l0-0.4
-	L523.4,428.2z"/>
-<path fill="#FFFFFF" d="M522.9,432.7l0.1,2.7c0,0,0,0.1,0.1,0.2c0.1,0,0.2-0.1,0.2-0.1c0-0.1,0-2.7,0-2.7H522.9z"/>
-<path fill="#FFFFFF" d="M523.6,432.7l0.1,2.7c0,0,0,0.1,0.1,0.2c0.1,0,0.2-0.1,0.2-0.1s0-2.7,0-2.7H523.6z"/>
-<path fill="#F5967F" d="M523,428.7c0,0-0.2,0-0.2,0.2c0,0-0.1,3.9-0.1,3.9l1.7,0l-0.1-4.1c0,0-0.1-0.1-0.2-0.1c0,0,0,0.4-0.4,0.4
-	C523.4,429.1,523,429.1,523,428.7z"/>
-<path fill="#FFFFFF" d="M522.7,428.9c0,0-0.4,1.8-0.4,2.9c0,0,0,0.2,0.1,0.2c0,0,0.2,0,0.2-0.2C522.6,431.9,522.7,428.9,522.7,428.9
-	z"/>
-<path fill="#FFFFFF" d="M524.1,428.7l0.1,3.3c0,0,0,0.2,0.2,0.2c0.2,0,0.1-0.1,0.1-0.2c0-0.1-0.1-2.8-0.1-2.8
-	S524.3,428.8,524.1,428.7z"/>
-<circle fill="#3F3F3F" cx="523.5" cy="427.4" r="0"/>
-<circle fill="#3F3F3F" cx="523.2" cy="427.4" r="0"/>
-<ellipse fill="#FFFFFF" cx="520.7" cy="426.4" rx="0.7" ry="0.8"/>
-<path fill="#FFE29D" d="M521.8,425.8c0,0,0,0.5-0.8,0.5c-0.8,0-0.8-0.4-0.8-0.4l-0.2,0.2c0,0-0.2-0.2,0.1-0.6c0,0,0.6-0.5,0.9,0.1
-	C521.3,425.9,521.8,425.8,521.8,425.8z"/>
-<path fill="#FFFFFF" d="M520.6,427.1v0.3c0,0,0.4-0.1,0.6,0.1c0,0,0,0.5-0.6,0.4s-0.6-0.5-0.6-0.5s0.3-0.1,0.4,0c0,0,0-0.4,0-0.4
-	L520.6,427.1z"/>
-<path fill="#FFFFFF" d="M521.5,429c0,0,0,2.6,0,2.6s0,0.3-0.2,0.2c-0.2,0-0.2-0.2-0.2-0.2l0-2.7L521.5,429z"/>
-<path fill="#FFFFFF" d="M520.1,432.4c0,0-0.1,2.6-0.1,2.6s0,0.3-0.2,0.2c-0.2,0-0.2-0.2-0.2-0.2l0.1-2.7L520.1,432.4z"/>
-<path fill="#FFFFFF" d="M521.2,432.3c0,0,0.2,2.6,0.2,2.6s0,0.3-0.1,0.3c-0.2,0-0.2-0.2-0.2-0.2l-0.2-2.7L521.2,432.3z"/>
-<polygon fill="#0066AE" points="521.2,430.7 521.4,432.9 520.8,432.9 520.8,431.2 520.2,431.2 520.2,432.9 519.6,432.9 519.6,430.7 
-	"/>
-<path fill="#BCE5EC" d="M521,427.5c0,0,0.6,0,0.6,1.7c0,0-0.4,0-0.4,0v1.7l-1.5,0v-1.6l-0.4-0.1c0,0-0.2-1.6,0.7-1.7
-	c0,0-0.1,0.4,0.4,0.4C520.5,427.9,521,427.9,521,427.5z"/>
-<path fill="#FFFFFF" d="M519.8,429.2c0,0,0,2.6,0,2.6s0,0.3-0.2,0.2c-0.2,0-0.2-0.2-0.2-0.2l0-2.7L519.8,429.2z"/>
-<circle fill="#3F3F3F" cx="520.4" cy="426.4" r="0.1"/>
-<circle fill="#3F3F3F" cx="521" cy="426.4" r="0.1"/>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 875.8">
+  <path fill="#FFF5D4" d="M601.2 360.5v33l-21.7-12.2.1-32.9"/>
+  <path fill="#FFBD6A" d="M579.6 348.4l21.3-12.4 21.7 12.1-21.4 12.4"/>
+  <path fill="#97D2E8" d="M601.2 360.6l-21.7-12.2 11-20 21.4 12.2"/>
+  <path fill="#FFBD6A" d="M622.6 348.1l-10.7-7.5-10.6 19.9h-.1v33l21.3-12.4.1-33"/>
+  <defs>
+    <path id="a" d="M601.2 360.6L571 343.4l11-20 29.9 17.2z"/>
+  </defs>
+  <clipPath id="b">
+    <use xlink:href="#a" overflow="visible"/>
+  </clipPath>
+  <path fill="none" stroke="#348193" stroke-width="0.3355" stroke-miterlimit="10" d="M620.3 344.6l-11.8 22.2m5.6-25.9l-11.9 22.2m5.6-25.8l-11.9 22.1m5.6-25.8l-11.8 22.2m5.6-25.9l-11.9 22.2" clip-path="url(#b)"/>
+  <defs>
+    <path id="c" d="M584.4 365.3l.1-4.2 2.5 1.5v4.2z"/>
+  </defs>
+  <clipPath id="d">
+    <use xlink:href="#c" overflow="visible"/>
+  </clipPath>
+  <path fill="#F59680" d="M587 362.6l-2.5-1.5-.1 4.2 2.6 1.5v-4.2" clip-path="url(#d)"/>
+  <defs>
+    <path id="e" d="M584.4 360.4v-2l2.6 1.5v2z"/>
+  </defs>
+  <clipPath id="f">
+    <use xlink:href="#e" overflow="visible"/>
+  </clipPath>
+  <path fill="#F59680" d="M587 359.9l-2.6-1.5v2l2.6 1.5v-2" clip-path="url(#f)"/>
+  <defs>
+    <path id="g" d="M593.2 372.4v-4.2l2.6 1.5v4.2z"/>
+  </defs>
+  <clipPath id="h">
+    <use xlink:href="#g" overflow="visible"/>
+  </clipPath>
+  <path fill="#F59680" d="M595.8 369.7l-2.6-1.5v4.2l2.6 1.5v-4.2" clip-path="url(#h)"/>
+  <defs>
+    <path id="i" d="M593.2 367.5v-2l2.6 1.5v2z"/>
+  </defs>
+  <clipPath id="j">
+    <use xlink:href="#i" overflow="visible"/>
+  </clipPath>
+  <path fill="#F59680" d="M595.8 367l-2.6-1.5v2l2.6 1.5v-2" clip-path="url(#j)"/>
+  <defs>
+    <path id="k" d="M609.4 378.8v-4.1l2.5-1.5.1 4.1z"/>
+  </defs>
+  <clipPath id="l">
+    <use xlink:href="#k" overflow="visible"/>
+  </clipPath>
+  <path fill="#F59680" d="M611.9 373.2l-2.5 1.5v4.1l2.6-1.5-.1-4.1" clip-path="url(#l)"/>
+  <defs>
+    <path id="m" d="M609.4 374v-2.1l2.6-1.5v2.1z"/>
+  </defs>
+  <clipPath id="n">
+    <use xlink:href="#m" overflow="visible"/>
+  </clipPath>
+  <path fill="#F59680" d="M612 370.4l-2.6 1.5v2.1l2.6-1.5v-2.1" clip-path="url(#n)"/>
+  <defs>
+    <path id="o" d="M586.6 385.4v-10l4.1 2.4v10z"/>
+  </defs>
+  <clipPath id="p">
+    <use xlink:href="#o" overflow="visible"/>
+  </clipPath>
+  <path fill="#5198A8" d="M590.7 377.8l-4.1-2.4v10l4.1 2.4v-10" clip-path="url(#p)"/>
+  <defs>
+    <path id="q" d="M609.9 363.9v-6.7l5.9-3.4v6.7z"/>
+  </defs>
+  <clipPath id="r">
+    <use xlink:href="#q" overflow="visible"/>
+  </clipPath>
+  <path fill="#F1526B" d="M612.8 355.5c-1.6.9-2.9 3.2-2.9 5.1 0 1.9 1.3 2.6 3 1.7 1.6-.9 2.9-3.2 2.9-5.1 0-1.9-1.4-2.7-3-1.7" clip-path="url(#r)"/>
+  <defs>
+    <path id="s" d="M568.6 426.1l26.9-15.7 31.5 18.2-26.9 15.7z"/>
+  </defs>
+  <clipPath id="t">
+    <use xlink:href="#s" overflow="visible"/>
+  </clipPath>
+  <path fill="#0066AE" d="M627 428.6l-31.5-18.2-26.9 15.7 31.5 18.2 26.9-15.7" clip-path="url(#t)"/>
+  <path fill="#97D2E8" d="M602.5 384.1l-23.1 13.4-25-14.4 23.2-13.4"/>
+  <path fill="#43A4C9" d="M602.5 384.1v24.4L579.3 422l.1-24.5"/>
+  <path fill="#EDF6F9" d="M579.4 397.5l-.1 24.5-24.9-14.4v-24.5"/>
+  <defs>
+    <path id="u" d="M591.6 404.3l-.1-6.5 3.2-1.8v6.5z"/>
+  </defs>
+  <clipPath id="v">
+    <use xlink:href="#u" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M594.7 396l-3.2 1.8.1 6.5 3.1-1.8V396" clip-path="url(#v)"/>
+  <defs>
+    <path id="w" d="M584 413.4v-6.6l3.1-1.8v6.6z"/>
+  </defs>
+  <clipPath id="x">
+    <use xlink:href="#w" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M587.1 405l-3.1 1.8v6.6l3.1-1.8V405" clip-path="url(#x)"/>
+  <path fill="#F1526B" d="M593.3 381.3l.1 3.7-3.2 1.9"/>
+  <path fill="#FFF5D4" d="M590.1 386.8l-4.8-2.8 3.2-5.5 4.8 2.8"/>
+  <path fill="#F5967F" d="M589.9 385.6l-3.3-2 2.2-3.8 3.3 1.9M681 365l-16.9 9.8-14.2-8.3 16.8-9.7"/>
+  <path fill="#FEF4F2" d="M664.1 374.8l-.1 32.3-14.2-8.2.1-32.4"/>
+  <path fill="#F5967F" d="M664.7 354.6l-23.2 13.5-24.9-14.4 23.2-13.4"/>
+  <path fill="#F1526B" d="M664.6 374.5l.1-19.9-23.2 13.5-.1 52.2 22.6-13.2 16.9-9.8.1-32.3"/>
+  <path fill="#FFCABE" d="M641.5 368.1l-.1 52.2-25-14.4.2-52.2"/>
+  <path fill="#FFE5A7" d="M638 346.9l-2 1.2-1.8-1.1 1.9-1.2"/>
+  <path fill="#FFE29E" d="M638 346.9v9.8l-2 1.1v-9.7"/>
+  <path fill="#FFF9EA" d="M636 348.1v9.7l-1.9-1 .1-9.8"/>
+  <defs>
+    <path id="y" d="M648.3 381v-6.6l3.1-1.8v6.6z"/>
+  </defs>
+  <clipPath id="z">
+    <use xlink:href="#y" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M651.4 372.6l-3.1 1.8v6.6l3.1-1.8v-6.6" clip-path="url(#z)"/>
+  <defs>
+    <path id="A" d="M657.5 383.4v-6.5l3.1-1.9.1 6.6z"/>
+  </defs>
+  <clipPath id="B">
+    <use xlink:href="#A" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M660.6 375l-3.1 1.9v6.5l3.2-1.8-.1-6.6" clip-path="url(#B)"/>
+  <defs>
+    <path id="C" d="M651.7 397.1v-6.6l3.1-1.8v6.6z"/>
+  </defs>
+  <clipPath id="D">
+    <use xlink:href="#C" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M654.8 388.7l-3.1 1.8v6.6l3.1-1.8v-6.6" clip-path="url(#D)"/>
+  <defs>
+    <path id="E" d="M673.4 383.6v-6.5l3.1-1.9v6.6z"/>
+  </defs>
+  <clipPath id="F">
+    <use xlink:href="#E" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#F)">
+    <path fill="#FFF" d="M676.5 375.2l-3.1 1.9v6.5l3.1-1.8v-6.6"/>
+  </g>
+  <defs>
+    <path id="G" d="M668.4 396.6v-6.5l3.1-1.9v6.6z"/>
+  </defs>
+  <clipPath id="H">
+    <use xlink:href="#G" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#H)">
+    <path fill="#FFF" d="M671.5 388.2l-3.1 1.9v6.5l3.1-1.8v-6.6"/>
+  </g>
+  <path fill="#97D2E8" d="M641.5 379.5l-14.5 8.4-29.4-17 14.5-8.4"/>
+  <path fill="#43A4C9" d="M641.5 379.5l-.1 40.7-14.5 8.4.1-40.7"/>
+  <path fill="#EDF6F9" d="M627 387.9l-.1 40.7-29.4-17 .1-40.7"/>
+  <path fill="#F1526B" d="M630.6 376.1v3.7l-3.2 1.8"/>
+  <path fill="#FFF5D4" d="M627.4 381.6l-4.8-2.8 3.2-5.5 4.8 2.8"/>
+  <path fill="#F5967F" d="M627.2 380.3l-3.4-1.9 2.2-3.8 3.4 1.9"/>
+  <defs>
+    <path id="I" d="M629.4 411.9l-.1-19 4.9-2.8v19z"/>
+  </defs>
+  <clipPath id="J">
+    <use xlink:href="#I" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M634.2 390.1l-4.9 2.8.1 19 4.8-2.8v-19" clip-path="url(#J)"/>
+  <defs>
+    <path id="K" d="M635 408.7l-.1-19 4.9-2.8v19z"/>
+  </defs>
+  <clipPath id="L">
+    <use xlink:href="#K" overflow="visible"/>
+  </clipPath>
+  <path fill="#FFF" d="M639.8 386.9l-4.9 2.8.1 19 4.8-2.8v-19" clip-path="url(#L)"/>
+  <path fill="#F5967F" d="M592.9 445.2l-63.8 37.1-64.2-37.1 63.8-37"/>
+  <path fill="#F1526B" d="M592.9 445.2v3.3l-63.8 37.1v-3.3"/>
+  <path fill="#FFCABE" d="M529.1 482.3v3.3l-64.3-37.1.1-3.3"/>
+  <path fill="#97D2E8" d="M590.2 434.8l-61.1 35.5-61.5-35.5 61.1-35.5"/>
+  <path fill="#43A4C9" d="M590.2 434.8l-.1 9-61.1 35.5.1-9"/>
+  <path fill="#EDF6F9" d="M529.1 470.3l-.1 9-61.4-35.5v-9"/>
+  <path fill="#FFDD8E" d="M538.8 366.6l-49.8 29-10.3-5.9 49.8-29"/>
+  <path fill="#FFBD6A" d="M538.8 366.6l-.1 40.8-49.9 29 .2-40.8"/>
+  <path fill="#FFF5D4" d="M489 395.6l-.2 40.8-10.2-6 .1-40.7"/>
+  <path fill="#97D2E8" d="M497.5 383l-7.1 4.1-4.2-2.3 7.2-4.2"/>
+  <path fill="#43A4C9" d="M497.5 383v4l-7.2 4.2.1-4.1"/>
+  <path fill="#EEF7FA" d="M490.4 387.1l-.1 4.1-4.1-2.4v-4"/>
+  <defs>
+    <path id="M" d="M493.7 428.4v-11.3l16.3-9.4.1 11.3z"/>
+  </defs>
+  <clipPath id="N">
+    <use xlink:href="#M" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#N)">
+    <path fill="#FFF" d="M510 407.7l-16.3 9.4v11.3l16.4-9.4-.1-11.3"/>
+  </g>
+  <defs>
+    <path id="O" d="M516 420.6v-8.1l3.4-1.9v8z"/>
+  </defs>
+  <clipPath id="P">
+    <use xlink:href="#O" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#P)">
+    <path fill="#F59680" d="M519.4 410.6l-3.4 1.9v8.1l3.4-2v-8"/>
+  </g>
+  <defs>
+    <path id="Q" d="M493.7 428.4v-11.3l16.3-9.4.1 11.3z"/>
+  </defs>
+  <defs>
+    <path id="S" d="M510 407.7l-16.3 9.4v11.3l16.4-9.4-.1-11.3"/>
+  </defs>
+  <clipPath id="R">
+    <use xlink:href="#Q" overflow="visible"/>
+  </clipPath>
+  <clipPath id="T" clip-path="url(#R)">
+    <use xlink:href="#S" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#T)">
+    <defs>
+      <path id="U" d="M489.9 418.5v-4.2l18.8 10.8v4.2z"/>
+    </defs>
+    <clipPath id="V">
+      <use xlink:href="#U" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#V)">
+      <path fill="#EBF6F9" d="M508.7 425.1l-18.8-10.8v4.2l18.8 10.8v-4.2"/>
+    </g>
+  </g>
+  <g clip-path="url(#T)">
+    <defs>
+      <path id="W" d="M495.7 414.7v-4.2l18.8 10.9v4.2z"/>
+    </defs>
+    <clipPath id="X">
+      <use xlink:href="#W" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#X)">
+      <path fill="#EBF6F9" d="M514.5 421.4l-18.8-10.9v4.2l18.8 10.9v-4.2"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="Y" d="M519.1 421.5l5.8-3.4 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="Z">
+      <use xlink:href="#Y" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#Z)">
+      <path fill="#83BECC" d="M530.6 421.4l-5.7-3.3-5.8 3.4 5.7 3.2 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aa" d="M526.1 425.5l5.8-3.3 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="ab">
+      <use xlink:href="#aa" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#ab)">
+      <path fill="#83BECC" d="M537.6 425.5l-5.7-3.3-5.8 3.3 5.7 3.3 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ac" d="M533.1 429.6l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="ad">
+      <use xlink:href="#ac" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#ad)">
+      <path fill="#83BECC" d="M544.5 429.6l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ae" d="M512.2 425.5l5.7-3.3 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="af">
+      <use xlink:href="#ae" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#af)">
+      <path fill="#83BECC" d="M523.6 425.5l-5.7-3.3-5.7 3.3 5.6 3.3 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ag" d="M519.2 429.6l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="ah">
+      <use xlink:href="#ag" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#ah)">
+      <path fill="#83BECC" d="M530.6 429.6l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ai" d="M526.1 433.7l5.7-3.4 5.7 3.3-5.7 3.4z"/>
+    </defs>
+    <clipPath id="aj">
+      <use xlink:href="#ai" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aj)">
+      <path fill="#83BECC" d="M537.5 433.6l-5.7-3.3-5.7 3.4 5.7 3.3 5.7-3.4"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ak" d="M505.1 429.6l5.8-3.4 5.6 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="al">
+      <use xlink:href="#ak" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#al)">
+      <path fill="#83BECC" d="M516.5 429.5l-5.6-3.3-5.8 3.4 5.7 3.2 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="am" d="M512.1 433.6l5.8-3.3 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="an">
+      <use xlink:href="#am" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#an)">
+      <path fill="#83BECC" d="M523.6 433.6l-5.7-3.3-5.8 3.3 5.7 3.3 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ao" d="M519.1 437.7l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="ap">
+      <use xlink:href="#ao" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#ap)">
+      <path fill="#83BECC" d="M530.5 437.7l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aq" d="M498.1 433.6l5.8-3.3 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="ar">
+      <use xlink:href="#aq" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#ar)">
+      <path fill="#83BECC" d="M509.6 433.6l-5.7-3.3-5.8 3.3 5.7 3.3 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="as" d="M505.1 437.7l5.8-3.3 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="at">
+      <use xlink:href="#as" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#at)">
+      <path fill="#83BECC" d="M516.6 437.7l-5.7-3.3-5.8 3.3 5.7 3.3 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="au" d="M512.1 441.8l5.7-3.4 5.7 3.3-5.7 3.4z"/>
+    </defs>
+    <clipPath id="av">
+      <use xlink:href="#au" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#av)">
+      <path fill="#83BECC" d="M523.5 441.7l-5.7-3.3-5.7 3.4 5.7 3.3 5.7-3.4"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aw" d="M490.9 437.7l5.7-3.3 5.7 3.2-5.7 3.4z"/>
+    </defs>
+    <clipPath id="ax">
+      <use xlink:href="#aw" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#ax)">
+      <path fill="#83BECC" d="M502.3 437.6l-5.7-3.2-5.7 3.3 5.7 3.3 5.7-3.4"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="ay" d="M497.9 441.8l5.7-3.4 5.7 3.3-5.7 3.4z"/>
+    </defs>
+    <clipPath id="az">
+      <use xlink:href="#ay" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#az)">
+      <path fill="#83BECC" d="M509.3 441.7l-5.7-3.3-5.7 3.4 5.7 3.3 5.7-3.4"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aA" d="M504.8 445.8l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="aB">
+      <use xlink:href="#aA" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aB)">
+      <path fill="#83BECC" d="M516.2 445.8l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aC" d="M525.9 441.8l5.8-3.4 5.7 3.3-5.8 3.4z"/>
+    </defs>
+    <clipPath id="aD">
+      <use xlink:href="#aC" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aD)">
+      <path fill="#83BECC" d="M537.4 441.7l-5.7-3.3-5.8 3.4 5.7 3.3 5.8-3.4"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aE" d="M519 445.8l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="aF">
+      <use xlink:href="#aE" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aF)">
+      <path fill="#83BECC" d="M530.4 445.8l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aG" d="M511.7 449.9l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="aH">
+      <use xlink:href="#aG" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aH)">
+      <path fill="#83BECC" d="M523.1 449.9l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aI" d="M533.1 445.8l5.7-3.3 5.7 3.3-5.7 3.3z"/>
+    </defs>
+    <clipPath id="aJ">
+      <use xlink:href="#aI" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aJ)">
+      <path fill="#83BECC" d="M544.5 445.8l-5.7-3.3-5.7 3.3 5.7 3.3 5.7-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aK" d="M525.9 449.9l5.8-3.3 5.7 3.3-5.8 3.3z"/>
+    </defs>
+    <clipPath id="aL">
+      <use xlink:href="#aK" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aL)">
+      <path fill="#83BECC" d="M537.4 449.9l-5.7-3.3-5.8 3.3 5.7 3.3 5.8-3.3"/>
+    </g>
+  </g>
+  <g opacity="0.6">
+    <defs>
+      <path id="aM" d="M518.8 454l5.8-3.3 5.7 3.2-5.8 3.4z"/>
+    </defs>
+    <clipPath id="aN">
+      <use xlink:href="#aM" overflow="visible"/>
+    </clipPath>
+    <g clip-path="url(#aN)">
+      <path fill="#83BECC" d="M530.3 453.9l-5.7-3.2-5.8 3.3 5.7 3.3 5.8-3.4"/>
+    </g>
+  </g>
+  <path fill="#FFF5D4" d="M544.5 402.9v24.5l-20.2-11.7.1-24.4"/>
+  <path fill="#FFE9BC" d="M545.4 408.9v24.5l-.9-6v-24.5"/>
+  <path fill="#FFDD8E" d="M580.9 407.4l-14.2 8.3-14.1 8.1-16.5-9.6 9.3-5.3-.9-6-20.1-11.6 14.3-8.3"/>
+  <path fill="#FFBD6A" d="M552.6 423.8l-.1 24.4 28.4-16.4v-24.4"/>
+  <path fill="#FFF5D4" d="M552.6 423.8l-.1 24.4-16.4-9.5v-24.5"/>
+  <path fill="#FFCABE" d="M544.6 399.6v4.1l-20.2-11.6V388"/>
+  <path fill="#F9C3B5" d="M545.5 405.6v4.1l-.9-6v-4.1"/>
+  <path fill="#F5967F" d="M581 404.1l-14.3 8.3-14 8.1-16.5-9.5 9.3-5.4-.9-6-20.2-11.6 14.3-8.3"/>
+  <path fill="#F1526B" d="M552.7 420.5v4.1l28.3-16.4v-4.1"/>
+  <path fill="#FFCABE" d="M552.7 420.5v4.1l-16.5-9.5V411"/>
+  <path fill="#97D2E8" d="M571.6 400.5l-4.1 2.3-7.2-4.1 4.1-2.4"/>
+  <path fill="#43A4C9" d="M571.6 400.5v4l-4.1 2.4v-4.1"/>
+  <path fill="#EEF7FA" d="M567.5 402.8v4.1l-7.2-4.2v-4"/>
+  <defs>
+    <path id="aO" d="M539.8 430.1v-6.6l2.5 1.5v6.6z"/>
+  </defs>
+  <clipPath id="aP">
+    <use xlink:href="#aO" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#aP)">
+    <path fill="#F59680" d="M542.3 425l-2.5-1.5v6.6l2.5 1.5V425"/>
+  </g>
+  <defs>
+    <path id="aQ" d="M544.6 436l.1-6.6 2.4 1.4v6.6z"/>
+  </defs>
+  <clipPath id="aR">
+    <use xlink:href="#aQ" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#aR)">
+    <path fill="#F59680" d="M547.1 430.8l-2.4-1.4-.1 6.6 2.5 1.4v-6.6"/>
+  </g>
+  <path fill="#F5967F" d="M518.9 442.1l-4.1 2.4-7.2-4.2 4.1-2.3"/>
+  <path fill="#F1526B" d="M518.9 442.1v4.1l-4.1 2.4v-4.1"/>
+  <path fill="#FFCABE" d="M514.8 444.5v4.1l-7.2-4.2v-4.1"/>
+  <path fill="#FFDD8E" d="M511.2 444.2l-4.1 2.4-7.2-4.2 4.1-2.4"/>
+  <path fill="#FFBD6A" d="M511.2 444.2v4l-4.1 2.4v-4"/>
+  <path fill="#FFF5D4" d="M507.1 446.6v4l-7.3-4.1.1-4.1"/>
+  <path fill="#F5967F" d="M521.6 448.7l-4.1 2.4-7.2-4.1 4.1-2.4"/>
+  <path fill="#F1526B" d="M521.5 448.7l.1 4.1-4 2.5-.1-4.1"/>
+  <path fill="#FFCABE" d="M517.5 451.1v4.1l-7.2-4.2v-4"/>
+  <path fill="#FFDD8E" d="M521.1 444.8l-3.7 2.1-6.6-3.8 3.7-2.1"/>
+  <path fill="#FFBD6A" d="M521.1 444.8v3.7l-3.8 2.2.1-3.8"/>
+  <path fill="#FFF5D4" d="M517.4 446.9l-.1 3.8-6.5-3.8v-3.8"/>
+  <path fill="#F5967F" d="M575.2 431.5c.1 0 .1.1 0 .1h-.2s-.1-.1 0-.1h.2zm.1.1v8.2s0 .1-.1.1h-.2s-.1 0-.1-.1v-8.2s0 .1.1.1.2 0 .3-.1c0 .1 0 0 0 0z"/>
+  <g fill="#F5967F">
+    <path d="M569 435.2c.1 0 .1.1 0 .1h-.3c-.1 0-.1-.1 0-.1.1-.1.2-.1.3 0z"/>
+    <path d="M569 435.2v8.3h-.3v-8.3.1c.1.1.2.1.3-.1 0 .1 0 .1 0 0z"/>
+  </g>
+  <defs>
+    <path id="aS" d="M563.9 440.3v-6.7l12.8-7.3v6.6z"/>
+  </defs>
+  <clipPath id="aT">
+    <use xlink:href="#aS" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#aT)">
+    <path fill="#FFF" d="M568.8 433.6c-.1.1-.2.1-.2.1v1.2s.1 0 .2-.1c.4-.2.6-.6.6-1 0-.2-.2-.4-.6-.2m1.5-.8c-.3.2-.4.5-.4.9 0 .3.1.5.4.4.3-.2.4-.5.4-.9 0-.3-.1-.6-.4-.4m1.6.2v-1.2l.2-.1v1.5l-.2.1-.4-.5c-.1-.1-.2-.2-.2-.4v1.2l-.2.1v-1.5l.2-.1.4.5c.1.1.2.2.2.4m.9-.4c.2-.1.3-.3.3-.7v-.9l.2-.1v.9c0 .5-.2.8-.5.9-.3.2-.5.1-.5-.4v-.9l.2-.1v.9c0 .4.2.5.3.4m.7-1.6v-.2l1-.6v.2l-.4.2v1.3l-.2.1v-1.3l-.4.3m-4.7 4c-.1.1-.2.1-.3.2v-1.5c.1-.1.2-.2.4-.2.2-.1.4-.2.5-.1.1.1.2.2.2.4s-.1.5-.2.7c-.2.2-.4.4-.6.5m1.5-.8c-.3.2-.6 0-.6-.4 0-.5.3-.9.6-1.1.4-.2.6 0 .6.4 0 .5-.3.9-.6 1.1m4.5-2.8c.2-.1.3-.3.3-.4 0-.1-.1-.2-.2-.2-.2 0-.3 0-.3-.2s.2-.5.4-.7c.1-.1.2-.1.3-.1l-.1.2s-.1 0-.2.1c-.2.1-.2.3-.2.4 0 .1.1.2.3.1.2 0 .3 0 .3.2s-.2.5-.5.7c-.1.1-.3.1-.3.1v-.2c0 .1.1.1.2 0m1.9-3.7l-9.9 5.7.1 4 9.9-5.7-.1-4m-10 4.3l-2.8 5 2.9 1.6v-5.1l-.1-1.5"/>
+    <path fill="#F69E89" d="M568.8 434.9c-.1 0-.1.1-.2.1v-1.2s.1-.1.2-.1c.4-.2.5-.1.5.3.1.3-.1.7-.5.9m0-1.4c-.1.1-.3.2-.4.2v1.5c.1 0 .2-.1.3-.2.2-.1.5-.3.6-.5.1-.2.2-.4.2-.7 0-.2-.1-.4-.2-.4 0-.1-.2 0-.5.1m1.5.5c-.3.2-.4 0-.4-.4 0-.3.1-.7.4-.9s.4.1.4.4c0 .4-.1.8-.4.9m0-1.4c-.3.2-.6.7-.6 1.1 0 .5.2.6.6.4.3-.2.6-.6.6-1.1 0-.4-.3-.6-.6-.4m1.8-1l-.2.1v1.2c-.1-.1-.1-.2-.2-.3l-.4-.5-.2.1v1.5l.2-.1v-1.2c.1.1.2.2.2.4l.4.5.2-.1v-1.6m1.2-.7l-.2.1v.9c0 .3-.1.5-.3.7-.2.1-.3 0-.3-.3v-.9l-.2.1v.9c0 .5.2.5.5.4.3-.2.5-.5.5-.9v-1m1.1-.6l-.9.5v.2l.3-.2.1 1.3.1-.1v-1.3l.4-.3v-.1m.5-.3c-.3.1-.4.4-.4.7 0 .2.1.3.3.2.2 0 .2 0 .2.2 0 .1-.1.3-.3.4-.1.1-.2.1-.3.1v.2c.1 0 .2 0 .3-.1.3-.2.5-.5.5-.7 0-.2-.1-.3-.3-.2-.2 0-.3 0-.3-.1s.1-.3.2-.4c.1-.1.2-.1.2-.1l.1-.2c.1-.1 0-.1-.2 0"/>
+  </g>
+  <defs>
+    <path id="aU" d="M494.4 409.4v-4.2l13.6-7.9v4.3z"/>
+  </defs>
+  <clipPath id="aV">
+    <use xlink:href="#aU" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#aV)">
+    <path fill="#FFF" d="M507.1 397.8l-11.8 6.8c-.5.3-.9 1.5-.9 2.7 0 1.2.4 1.9.9 1.6l11.8-6.8c.5-.3.9-1.5.9-2.7 0-1.2-.4-1.9-.9-1.6"/>
+  </g>
+  <defs>
+    <path id="aW" d="M497.2 410.1v-9.7l8.5-4.9v9.7z"/>
+  </defs>
+  <clipPath id="aX">
+    <use xlink:href="#aW" overflow="visible"/>
+  </clipPath>
+  <g clip-path="url(#aX)">
+    <path fill="#F1526B" d="M501.8 406.7l-.4-.3.8-1.6.4.3-.8 1.6m-2.9-.9l-.9-.4.4-.8.9.4-.4.8m5.1-3.5l-.3-1.4.7-.6.3 1.4-.7.6m-2.5 1.9c-.7.4-1.2.1-1.2-.7 0-.8.5-1.7 1.2-2.1.7-.4 1.2-.1 1.2.7 0 .8-.6 1.7-1.2 2.1m-1.8-2.5l-.4-.2.8-1.4.4.2-.8 1.4m1.7-3.8c-2.3 1.3-4.2 4.6-4.2 7.3s1.9 3.8 4.2 2.4 4.2-4.6 4.2-7.3c0-.7-.1-1.3-.4-1.8-.2.2-.4.4-.6.5-.6.3-1.1.1-1.1-.6-.1.1-.2.2-.3.2-.6.3-1.1.1-1.1-.6 0-.2 0-.4.1-.6-.1.2-.4.3-.8.5"/>
+  </g>
+  <path fill="#3F3F3F" d="M522.4 428.2s-.3-1.4.9-1.7c0 0 1.1-.2 1.1 1.2 0 0 .1 1.1-.7 1.2 0-.1-1 .1-1.3-.7z"/>
+  <ellipse cx="523.3" cy="427.4" fill="#FFF" rx="0.7" ry="0.8"/>
+  <path fill="#3F3F3F" d="M523.6 426.7s-.1.8-1 .7c0 0 0-1 1-.7z"/>
+  <path fill="#FFF" d="M523.4 428.2v.3l-.4.2s-.1.7.4.6c0 0 .7 0 .6-.6l-.3-.2v-.4l-.3.1zm-.5 4.5l.1 2.7s0 .1.1.2c.1 0 .2-.1.2-.1v-2.7h-.4zm.7 0l.1 2.7s0 .1.1.2c.1 0 .2-.1.2-.1v-2.7h-.4z"/>
+  <path fill="#F5967F" d="M523 428.7s-.2 0-.2.2l-.1 3.9h1.7l-.1-4.1s-.1-.1-.2-.1c0 0 0 .4-.4.4-.3.1-.7.1-.7-.3z"/>
+  <path fill="#FFF" d="M522.7 428.9s-.4 1.8-.4 2.9c0 0 0 .2.1.2 0 0 .2 0 .2-.2 0 .1.1-2.9.1-2.9zm1.4-.2l.1 3.3s0 .2.2.2.1-.1.1-.2-.1-2.8-.1-2.8-.1-.4-.3-.5z"/>
+  <ellipse cx="520.7" cy="426.4" fill="#FFF" rx="0.7" ry="0.8"/>
+  <path fill="#FFE29D" d="M521.8 425.8s0 .5-.8.5-.8-.4-.8-.4l-.2.2s-.2-.2.1-.6c0 0 .6-.5.9.1.3.3.8.2.8.2z"/>
+  <path fill="#FFF" d="M520.6 427.1v.3s.4-.1.6.1c0 0 0 .5-.6.4s-.6-.5-.6-.5.3-.1.4 0v-.4l.2.1zm.9 1.9v2.6s0 .3-.2.2c-.2 0-.2-.2-.2-.2v-2.7l.4.1zm-1.4 3.4l-.1 2.6s0 .3-.2.2c-.2 0-.2-.2-.2-.2l.1-2.7.4.1zm1.1-.1l.2 2.6s0 .3-.1.3c-.2 0-.2-.2-.2-.2l-.2-2.7h.3z"/>
+  <path fill="#0066AE" d="M521.2 430.7l.2 2.2h-.6v-1.7h-.6v1.7h-.6v-2.2"/>
+  <path fill="#BCE5EC" d="M521 427.5s.6 0 .6 1.7h-.4v1.7h-1.5v-1.6l-.4-.1s-.2-1.6.7-1.7c0 0-.1.4.4.4.1 0 .6 0 .6-.4z"/>
+  <path fill="#FFF" d="M519.8 429.2v2.6s0 .3-.2.2c-.2 0-.2-.2-.2-.2v-2.7l.4.1z"/>
+  <circle cx="520.4" cy="426.4" r="0.1" fill="#3F3F3F"/>
+  <circle cx="521" cy="426.4" r="0.1" fill="#3F3F3F"/>
 </svg>
