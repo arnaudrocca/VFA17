@@ -67,13 +67,13 @@ class About extends React.Component {
 	                                <span className="about__content__team--role">Designer</span>
 	                            </p>
 	                            <p className="about__content__team--member">
-	                                Nicolas Loureiro <br />
-	                                <span className="about__content__team--role">Designer</span>
-	                            </p>
-	                            <p className="about__content__team--member">
 	                                Yann Kubacki <br />
 	                                <span className="about__content__team--role">Développeur</span>
 	                            </p>
+								<p className="about__content__team--member">
+									Nicolas Loureiro <br />
+									<span className="about__content__team--role">Designer</span>
+								</p>
 	                            <p className="about__content__team--member">
 	                                Arnaud Rocca <br />
 	                                <span className="about__content__team--role">Développeur</span>
@@ -86,7 +86,7 @@ class About extends React.Component {
                                 Remerciements
                             </h1>
     						<p>
-    							UN GRAND MERCI À <br />
+    							<big>Un grand merci à</big>
     							Véronique Ficara, Thierry Audoux, Takumi Kobayashi, Thomas Menia, Catherine Nyeki, Tony Houziaux, Laurent Voulzy, John Ricard et toute l'équipe pédagogique de l'école des Gobelins.
     						</p>
                         </div>
@@ -95,8 +95,12 @@ class About extends React.Component {
                             	<IconFlowerSmall classes="about__content--flowers" color="#FF5951" width="18" />
                             	Crédits
                         	</h1>
-							<p>Les crédits</p>
-							<p>Les logos</p>
+							<p>Voix off : Tony Houziaux</p>
+							<p>Musique : <a href="http://www.bensound.com" target="_blank">http://www.bensound.com</a></p>
+							<div className="about__content__credits--images-container">
+								<img className="about__content__credits--cci" src="assets/images/logos/Logo_CCI.svg"/>
+								<img className="about__content__credits--gobelins" src="assets/images/logos/Logo_Gobelins.svg"/>
+							</div>
 						</div>
                     </div>
                     <span className="about__close" onClick={this.clickHandler.bind(this)}></span>
