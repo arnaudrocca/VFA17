@@ -1,12 +1,11 @@
 #VFA17
 
 **VFA17** is our final project for our first year at **Gobelins Paris**.
-It consists in an interactive experiment where the user has to improve the environnemental state of a fake city by changing its past. 
+It consists in an interactive experiment where the user has to improve the environnemental state of a fake city by changing its past.
 Concretely the user must make differents choices for the city through interactives experiments and can see the consequences of his choices by exploring the city wich takes the form of an isometric SVG.
 
 #### Technologies :
 
- - HTLM5 / CSS3
  - ES6 - Babel
  - React / Redux
  - GSAP
@@ -14,7 +13,7 @@ Concretely the user must make differents choices for the city through interactiv
  - SVG
  - Stylus
  - Webpack
- 
+
 #### Install :
 
 Clone this repository and install dependencies :
