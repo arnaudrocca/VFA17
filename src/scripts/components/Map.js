@@ -6,7 +6,7 @@ import { hashHistory } from 'react-router'
 import MapComponent from './MapComponent'
 import Cars from './Cars'
 import HotpointsContainer from '../containers/HotpointsContainer'
-import { utils } from '../utils/utils'
+import { map } from '../utils/math'
 
 class Map extends React.Component {
 
@@ -170,7 +170,7 @@ class Map extends React.Component {
 
         TweenMax.set(this.mapContainer, {scale: this.scale, transformOrigin: `${originX}% ${originY}%`})
 
-		const volume = Math.round(utils.normalize(this.scale, this.scaleMin, this.scaleMax, window.cityAudio.volumeMin, 1) * 100) / 100
+		const volume = Math.round(map(this.scale, this.scaleMin, this.scaleMax, window.cityAudio.volumeMin, 1) * 100) / 100
 		if (window.enableAudio) {
 			window.cityAudio.setVolume(volume)
 		} else {

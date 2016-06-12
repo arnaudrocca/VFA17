@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router'
 import ChoiceIntro from '../ChoiceIntro'
 import ChoiceValidate from '../ChoiceValidate'
 import IconHold from '../iconsComponents/icon-hold'
-import { utils } from '../../utils/utils'
+import { map } from '../../utils/math'
 
 class Choice4 extends React.Component {
 
@@ -141,7 +141,7 @@ class Choice4 extends React.Component {
 
 	        if (this.holdDuration <= this.holdTime) {
 	        	 TweenMax.set(this.circleNode, {
-					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
+					strokeDashoffset: map(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
 				})
 	        }
 	    }
@@ -167,7 +167,7 @@ class Choice4 extends React.Component {
 
             if (this.holdDuration <= this.holdTime) {
 				TweenMax.set(this.circleNode, {
-					strokeDashoffset: utils.normalize(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
+					strokeDashoffset: map(this.holdDuration, 0, this.holdTime, this.circlePerimeter, 0)
 				})
             } else {
             	window.isEnding = true
