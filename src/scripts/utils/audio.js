@@ -68,7 +68,7 @@ class Audio {
             }, (error) => {
 
                 // ERROR CALLBACK
-                console.info(`The following error occured : \n${error}`)
+                console.warn(`The following error occured : \n${error}`)
 
             })
 
@@ -137,14 +137,14 @@ class Audio {
 
                 // ERROR CALLBACK
                 this.userMedia = 'error'
-                console.info(`The following error occured : \n${error}`)
+                console.warn(`The following error occured : \n${error}`)
 
             })
 
         } else {
 
             this.userMedia = 'error'
-            console.info("getUserMedia not supported.")
+            console.warn("getUserMedia not supported.")
 
         }
 
