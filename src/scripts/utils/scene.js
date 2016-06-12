@@ -9,10 +9,10 @@ class Scene {
 	 */
 	constructor(width, height, root) {
 
-		this.pixelRatio = window.devicePixelRatio
-		TweenMax.set(root, {scale: 1 / this.pixelRatio})
+		const pixelRatio = window.devicePixelRatio
+		TweenMax.set(root, {scale: 1 / pixelRatio})
 
-		this.renderer = new CanvasRenderer(width, height, {transparent: true, antialias: true, resolution: this.pixelRatio})
+		this.renderer = new CanvasRenderer(width, height, {transparent: true, antialias: true, resolution: pixelRatio})
 
 		this.stage = new Container()
 
