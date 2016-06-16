@@ -1,13 +1,13 @@
 {
   "name": "VFA17",
   "version": "1.0.0",
-  "description": "Final project for our first year at Gobelins",
+  "description": "Study project made during our first year at Gobelins Paris",
   "main": "src/scripts/main.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --inline --config webpack.config.js",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
-  "authors": [
+  "author": [
     {
       "name": "Yann Kubacki",
       "url": "http://yannkubacki.fr",
