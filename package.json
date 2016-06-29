@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --progress --colors --hot --inline --config webpack.config.js",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
-  "author": [
+  "contributors": [
     {
       "name": "Yann Kubacki",
       "url": "http://yannkubacki.fr",
