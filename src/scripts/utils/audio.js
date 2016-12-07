@@ -8,7 +8,7 @@ class Audio {
         const Constructor = window.AudioContext || window.webkitAudioContext
         this.audioContext = new Constructor()
         this.gainNode = this.audioContext.createGain()
-        this.filter = this.audioContext.createBiquadFilter();
+        this.filter = this.audioContext.createBiquadFilter()
         this.analyser = this.audioContext.createAnalyser()
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
 
